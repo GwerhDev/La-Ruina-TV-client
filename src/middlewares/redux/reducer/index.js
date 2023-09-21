@@ -34,9 +34,9 @@ const initialState = {
     option: '',
 
     /*----------------Media----------------*/
-    dbMediatype: [],
-    dbGenre: [],
-    dbCategory: [],
+    dbMediatypes: [],
+    dbGenres: [],
+    dbCategories: [],
     allUserLikes: [],
     ytPlayerState: '',
     typeMediaList:
@@ -126,17 +126,17 @@ export default function rootReducer(state = initialState, action) {
         case GET_CATEGORIES:
             return {
                 ...state,
-                dbCategory: action.payload
+                dbCategories: action.payload
             };
         case GET_GENRES:
             return {
                 ...state,
-                dbGenre: action.payload
+                dbGenres: action.payload
             }
         case GET_MEDIATYPES:
             return {
                 ...state,
-                dbMediatype: action.payload
+                dbMediatypes: action.payload
             };
         /*----------------Admin----------------*/
         case __GOD_MODE__:

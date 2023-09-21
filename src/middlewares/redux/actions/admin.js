@@ -1,17 +1,14 @@
 import axios from "axios";
 import { URL_API } from "../../config";
-import { CREATE_MEDIA, UPDATE_MEDIA } from "../../misc";
+import { UPDATE_MEDIA } from "../../misc";
 import { options } from "../../helpers";
 import { getCategories, getGenres, getMedia, getMediatypes } from "./media";
 
 export const createMedia = (formData) => {
   return async function (dispatch) {
     const response = await axios.post(`${URL_API}/admin/media/create`, formData, options());
-    return dispatch({
-      type: CREATE_MEDIA,
-      payload: response.data
-    }, getMedia()
-    )
+    dispatch(getMedia());
+    return response.data;
   }
 };
 
