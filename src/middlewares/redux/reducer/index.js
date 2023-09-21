@@ -12,7 +12,6 @@ import {
     GET_ALL_LIKES,
     GET_YT_SUBSCRIBERS,
     CURRENT_USER,
-    UPDATE_MEDIA,
     GET_USER_DATA,
     GET_CATEGORIES,
     GET_GENRES,
@@ -143,12 +142,6 @@ export default function rootReducer(state = initialState, action) {
             window.location.reload()
             return {
                 ...state,
-            };
-
-        case UPDATE_MEDIA:
-            return {
-                ...state,
-                mediaWithConnectionId: action.payload.files
             };
         /*----------------YT----------------*/
         case GET_YT_SUBSCRIBERS:

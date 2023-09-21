@@ -12,7 +12,8 @@ export function getUserData() {
         payload: response.data?.userData
       })
     } catch (e) {
-      console.error(e)
+      console.error(e);
+      localStorage.removeItem('userToken');
     }
   }
 };

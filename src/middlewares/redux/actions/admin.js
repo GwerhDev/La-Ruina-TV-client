@@ -1,6 +1,5 @@
 import axios from "axios";
 import { URL_API } from "../../config";
-import { UPDATE_MEDIA } from "../../misc";
 import { options } from "../../helpers";
 import { getCategories, getGenres, getMedia, getMediatypes } from "./media";
 
@@ -15,11 +14,8 @@ export const createMedia = (formData) => {
 export const updateMedia = (id) => {
   return async function (dispatch) {
     const response = await axios.patch(`${URL_API}/admin/media/update/${id}`, options());
-    return dispatch({
-      type: UPDATE_MEDIA,
-      payload: response.data
-    }, getMedia()
-    )
+    dispatch(getMedia());
+    return response.data;
   }
 };
 

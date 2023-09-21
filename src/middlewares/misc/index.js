@@ -27,7 +27,6 @@ export const GET_GENRES = 'GET_GENRES'
 export const GET_MEDIATYPES = 'GET_MEDIATYPES'
 /* -----------------Admin----------------- */
 export const __GOD_MODE__ = '__GOD_MODE__'
-export const UPDATE_MEDIA = 'UPDATE_MEDIA'
 export const DELETE_MEDIA = 'DELETE_MEDIA'
 export const GET_USERS = ' GET_USERS'
 export const GET_EDIT_USERS = 'GET_EDIT_USERS'

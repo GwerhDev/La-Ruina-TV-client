@@ -26,14 +26,14 @@ export function loginInner(email, password, history) {
       .then(res => {
         localStorage.setItem('userToken', res.data.token);
         res.data.logged && history.push(`/auth?token=${res.data.token}`);
-        $d(`.bodyApp`).style.transform='translateX(0)';
-        $d(`.navCont`).style.transitionDuration='.2s';
-        $d(`.bodyApp`).style.transitionDuration='.2s';
-        $d(`.navCont`).style.width='100vw';
-        $d(`.browserBody`).style.height='auto';
-        $d(`.browserBody`).style.overflowY='scroll';
-        $d(`.visor`).style.transform='translateX(0)';
-        $d('#slideCanvasCont').style.overflowY="scroll";
+        $d(`.bodyApp`).style.transform = 'translateX(0)';
+        $d(`.navCont`).style.transitionDuration = '.2s';
+        $d(`.bodyApp`).style.transitionDuration = '.2s';
+        $d(`.navCont`).style.width = '100vw';
+        $d(`.browserBody`).style.height = 'auto';
+        $d(`.browserBody`).style.overflowY = 'scroll';
+        $d(`.visor`).style.transform = 'translateX(0)';
+        $d('#slideCanvasCont').style.overflowY = "scroll";
       })
       .catch((e) => {
         console.error(e);
