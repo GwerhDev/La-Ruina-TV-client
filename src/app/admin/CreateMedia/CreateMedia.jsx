@@ -294,6 +294,7 @@ const CreateMedia = () => {
                         type="text"
                         name="idLinkYT"
                         value={data.idLinkYT}
+                        placeholder='ejemplo: hMS8RtYVouc'
                         onChange={(e) =>
                           setData({ ...data, idLinkYT: e.target.value })
                         } />
@@ -304,6 +305,7 @@ const CreateMedia = () => {
                         type="text"
                         name="idLinkSPOTY"
                         value={data.idLinkSPOTY}
+                        placeholder='ejemplo: hMS8RtYVouc'
                         onChange={(e) =>
                           setData({ ...data, idLinkSPOTY: e.target.value })
                         }
@@ -315,6 +317,7 @@ const CreateMedia = () => {
                         type="text"
                         name="urlLinkWEB"
                         value={data.urlLinkWEB}
+                        placeholder='ejemplo: http://2girls1cup.com'
                         onChange={(e) =>
                           setData({ ...data, urlLinkWEB: e.target.value })
                         }
@@ -326,6 +329,7 @@ const CreateMedia = () => {
                         type="text"
                         name="urlLinkDOWNLOAD"
                         value={data.urlLinkDOWNLOAD}
+                        placeholder='ejemplo: http://2girls1cup.com'
                         onChange={(e) => setData({ ...data, urlLinkDOWNLOAD: e.target.value })} />
                     </p>
                   </div>
@@ -333,7 +337,7 @@ const CreateMedia = () => {
 
                 <label>Tipo de contenido</label>
                 <button type='button' onClick={() => setEditMediatype(!editMediatype)}>{!editMediatype ? "Editar" : "Cancelar"}</button>
-                <br />
+                <br/>
 
                 <div className={s.types}>
                   {
@@ -343,7 +347,6 @@ const CreateMedia = () => {
                           type="checkbox"
                           name={t.name}
                           value={t.name}
-                          id={t.name}
                           onChange={(e) => checkboxMediatype(e)} />
                         <label htmlFor={t.name}>{t.name}</label>
                         {
@@ -366,10 +369,10 @@ const CreateMedia = () => {
                   }
                 </div>
 
-                <br />
+                <br/>
                 <label>Género</label>
                 <button type='button' onClick={() => setEditGenres(!editGenres)}>{!editGenres ? "Editar" : "Cancelar"}</button>
-                <br />
+                <br/>
 
                 <div className={s.types}>
                   {
@@ -379,7 +382,6 @@ const CreateMedia = () => {
                           type="checkbox"
                           name={t.name}
                           value={t.name}
-                          id={t.name}
                           onChange={(e) => checkboxGenres(e)}
                         />
                         <label htmlFor={t.name}>{t.name}</label>
@@ -403,10 +405,10 @@ const CreateMedia = () => {
                   }
                 </div>
 
-                <br />
+                <br/>
                 <label>Categoria</label>
                 <button type='button' onClick={() => setEditCategories(!editCategories)}>{!editCategories ? "Editar" : "Cancelar"}</button>
-                <br />
+                <br/>
 
                 <div className={s.types}>
                   {
@@ -416,7 +418,6 @@ const CreateMedia = () => {
                           type="checkbox"
                           name={t.name}
                           value={t.name}
-                          id={t.name}
                           onChange={(e) => checkboxCategories(e)}
                         />
                         <label htmlFor={t.name}>{t.name}</label>
