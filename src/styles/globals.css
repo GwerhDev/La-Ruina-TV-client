@@ -6,7 +6,7 @@
   aspect-ratio: 1;
   border-radius: 50%;
   background: var(--primary-white);
-  -webkit-mask: radial-gradient(circle closest-side at 50% 40%,#0000 94%, #000);
+  mask: radial-gradient(circle closest-side at 50% 40%,#0000 94%, #000);
   transform-origin: 50% 40%;
   animation: l25 1s infinite linear;
 }

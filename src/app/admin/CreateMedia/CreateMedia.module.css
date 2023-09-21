@@ -13,7 +13,7 @@
     margin-top: 3rem;
 }
 
-.divTitleArtistDesc p{
+.divTitleArtistDesc p {
     display: flex;
     flex-direction: column;
     text-align: left;
@@ -32,7 +32,7 @@
     position: relative;
 }
 
-.cont0{
+.cont0 {
     padding-top: 110px;
     width: 100vw;
     left: 0px;
@@ -47,14 +47,15 @@
 }
 
 .imgSlrVsr {
-    display: flex; 
-    width: 50%; 
+    display: flex;
+    width: 50%;
     justify-content: space-around;
     border-color: #171717;
     border-width: 1px;
     text-align: center;
 }
-.inputBtn:hover{
+
+.inputBtn:hover {
     cursor: pointer;
 }
 
@@ -62,7 +63,7 @@ textarea {
     resize: none;
 }
 
-.btnVolver{
+.btnVolver {
     position: fixed;
     top: 3rem;
     left: 50px;
@@ -75,7 +76,7 @@ textarea {
     box-shadow: 0px 0px 20px black;
 }
 
-.btnContinuar{
+.btnContinuar {
     position: fixed;
     bottom: 150px;
     right: 50px;
@@ -87,22 +88,32 @@ textarea {
     border: none;
     box-shadow: 0px 0px 20px black;
 }
-.btnContinuar:hover, .btnVolver:hover{
+
+.btnContinuar:hover,
+.btnVolver:hover {
     background: linear-gradient(to bottom, #171717, rgba(0, 0, 0, 0.679));
     background-color: #171717;
     color: #ffffff;
     transition-duration: 0.2s;
 }
-.tipeMedia{
+
+.tipeMedia {
     border: solid;
     border-width: 1px;
     border-radius: 5px;
     background-color: #ffffff;
     width: 200px;
     margin: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    padding-top: .2rem;
+    padding-bottom: .2rem;
 }
 
-.divisor{
+.divisor {
     width: 50vw;
     margin-left: 25vw;
     height: 10px;
@@ -111,4 +122,29 @@ textarea {
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
     filter: drop-shadow(0px 0px 10px black)
+}
+
+.inputCreate {
+    height: 10px;
+}
+
+.submit {
+    margin-top: 20px;
+    padding: 0.6em 0.8em;
+    width: 120px;
+    font-family: Bebas Neue;
+    font-size: 20px;
+    color: white;
+    background-color: rgb(32, 32, 32);
+    border: none;
+    cursor: pointer;
+    border-radius: 40px;
+    margin-bottom: 180px;
+    transition-duration: .2s;
+}
+
+.submit:hover {
+    background-color: #8a8a8a;
+    color: black;
+    box-shadow: 0px 0px 15px white;
 }

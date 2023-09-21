@@ -61,3 +61,7 @@ code {
 ::-webkit-scrollbar-thumb:hover {
   background: #fff4;
 }
+
+button:disabled:hover {
+  cursor: default;
+}

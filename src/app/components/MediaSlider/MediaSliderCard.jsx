@@ -7,7 +7,6 @@ import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { RenderDriveImage } from '../../../functions/RenderDriveImage';
 import { deleteMedia } from '../../../middlewares/redux/actions/admin';
-import { getMedia } from '../../../middlewares/redux/actions/media';
 
 const MediaCard = ({ mediaList, style, keyID }) => {
   const history = useHistory();
@@ -17,7 +16,6 @@ const MediaCard = ({ mediaList, style, keyID }) => {
 
   function handleDeleteMedia(id) {
     dispatch(deleteMedia(id));
-    dispatch(getMedia());
   }
 
   return (
