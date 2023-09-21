@@ -10,8 +10,8 @@ import { InfoCanvas } from '../../components/Utils/InfoCanvas';
 import {
   resetIdYT,
   resetOption,
-  } from "../../../middlewares/redux/actions";
-import { getMedia, resetMedia } from "../../../middlewares/redux/actions/media";
+} from "../../../middlewares/redux/actions";
+import { getCategories, getMedia, resetMedia } from "../../../middlewares/redux/actions/media";
 import { getUserToken } from "../../../middlewares/helpers";
 
 const Browser = () => {
@@ -20,29 +20,30 @@ const Browser = () => {
   const userToken = getUserToken();
   const currentUser = useSelector((state) => state.currentUser);
   const mediaList = useSelector((state) => state.mediaList);
-  const categoryList = useSelector((state) => state.categoryList);
+  const dbCategories = useSelector((state) => state.dbCategories);
 
-  useEffect(()=>{
+  useEffect(() => {
     dispatch(resetOption())
-  },[dispatch])
+  }, [dispatch])
 
-  useEffect(()=>{
-    !(userToken?.length && !currentUser)?? history.push(`/auth?token=${userToken}`);
-  },[dispatch, currentUser, userToken, history])
+  useEffect(() => {
+    !(userToken?.length && !currentUser) ?? history.push(`/auth?token=${userToken}`);
+  }, [dispatch, currentUser, userToken, history])
 
   useEffect(() => {
     dispatch(getMedia());
     dispatch(resetMedia());
     dispatch(resetIdYT());
+    dispatch(getCategories());
     BodyCss();
   }, [dispatch]);
 
   return (
-    <div className="browserBody"> 
+    <div className="browserBody">
       {/* ---------------------VISOR--------------------- */}
 
-        <Visor/>
-        <InfoCanvas/>
+      <Visor />
+      <InfoCanvas />
 
       {/* --------------------SLIDERS-------------------- */}
       {mediaList?.length && (
@@ -56,23 +57,23 @@ const Browser = () => {
       )}
 
       {
-        categoryList.map((category, index) => {
-            const filteredList = mediaList?.filter(card => card.categories?.includes(category));
-            return filteredList?.length? (
-                <Slider
-                  title={category}
-                  mediaList={filteredList}
-                  style={s}
-                  id={`s${index}`}
-                  key={category}
-                />
-            ) : null;
+        dbCategories?.map((category, index) => {
+          const filteredList = mediaList?.filter(card => card.categories?.includes(category.id));
+          return filteredList?.length ? (
+            <Slider
+              title={category}
+              mediaList={filteredList}
+              style={s}
+              id={`s${index}`}
+              key={category}
+            />
+          ) : null;
         })
       }
 
       {/* ---------------------FOOTER--------------------- */}
 
-      {mediaList?.length > 1 && <Footer/>}
+      {mediaList?.length > 1 && <Footer />}
     </div>
   );
 };

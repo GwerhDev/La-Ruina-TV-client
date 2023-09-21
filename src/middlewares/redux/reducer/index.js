@@ -112,8 +112,8 @@ const initialState = {
         idLinkYT: "",
         mediaType: ""
     }],
-    categoryList: ["Sello Arruinados", 'Música', 'Estudio "La Ruina Records"', "En vivo", "App y descargables", "Literatura", "Series"],
-
+/*     categoryList: ["Sello Arruinados", 'Música', 'Estudio "La Ruina Records"', "En vivo", "App y descargables", "Literatura", "Series"],
+ */
     /*------------Filter&Search------------*/
     filteredMedia: [],
     searchedMedia: [],
