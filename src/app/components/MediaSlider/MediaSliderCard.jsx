@@ -12,7 +12,7 @@ const MediaCard = ({ mediaList, style, keyID }) => {
   const history = useHistory();
   const dispatch = useDispatch();
   const currentUser = useSelector(state => state.currentUser);
-  const favs = useSelector(state => state.allUserLikes);
+  const favs = useSelector(state => state.favorites);
 
   function handleDeleteMedia(id) {
     dispatch(deleteMedia(id));

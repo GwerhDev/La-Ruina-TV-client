@@ -12,7 +12,7 @@ import userIcon from '../../../assets/images/user-icon.png';
 import likeIcon from '../../../assets/images/like-icon.png';
 import OptionCanvas,  { $d } from '../../../functions';
 import { ContentMagementButtons } from '../../admin/Buttons/ContentMagementButtons';
-import { getOption, addLike, getYtSubs } from '../../../middlewares/redux/actions';
+import { getOption, addLike } from '../../../middlewares/redux/actions';
 import { getMediaById } from '../../../middlewares/redux/actions/media';
 import { RenderDriveImage } from '../../../functions/RenderDriveImage';
 
@@ -20,8 +20,8 @@ const MediaViewer = () => {
     const params = useParams();
     const { id } = params;
     const dispatch = useDispatch();
-    const YTSub = useSelector(state=>state.YTSub);
-    const favs = useSelector(state=>state.allUserLikes);
+    const favorites = useSelector(state=>state.favorites);
+    const subscriber = useSelector(state=>state.subscriber);
     const currentUser = useSelector(state=>state.currentUser);
     const infoDetailViewer = useSelector(state=>state.infoDetailViewer);
     const [color, setColor] = useState(1);
@@ -30,9 +30,9 @@ const MediaViewer = () => {
 
     function onClickValue(e){ return ( dispatch(getOption(e.target.id)), OptionCanvas(e.target.id) )};
 
-    useEffect(() => { (favs?.filter(fav => fav.id === id).length > 0) ? setColor(0) : setColor(1) },[favs, id]);
+    useEffect(() => { (favorites?.filter(fav => fav.id === id).length > 0) ? setColor(0) : setColor(1) },[favorites, id]);
 
-    function colorLike(color){ if(favs?.length>1 && currentUser) return $d('#favViewIcon').style.filter = `grayscale(${color})`};
+    function colorLike(color){ if(favorites?.length>1 && currentUser) return $d('#favViewIcon').style.filter = `grayscale(${color})`};
 
     colorLike(color);
 
@@ -87,8 +87,8 @@ const MediaViewer = () => {
                                     className='buttonVer'
                                     onClick={() => {
                                         return (
-                                            dispatch(getYtSubs(currentUser?.email)),
-                                            (YTSub? $d('#canvasYtSubBtn').style.display='none' : $d('#canvasYtSubBtn').style.display='flex'),
+                                            dispatch(subscriber(currentUser?.email)),
+                                            (subscriber? $d('#canvasYtSubBtn').style.display='none' : $d('#canvasYtSubBtn').style.display='flex'),
                                             $d('.playerBackGroundEffect').style.opacity='1',
                                             $d('.playerLi').style.display='block',
                                             $d('.playUl').style.opacity='1'

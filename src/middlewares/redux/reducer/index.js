@@ -6,10 +6,7 @@ import {
     RESET_VISOR,
     OPTION,
     RESET_OPTION,
-    GET_IDYT,
-    __GOD_MODE__,
-    RESET_IDYT,
-    GET_ALL_LIKES,
+    GET_FAVORITES,
     GET_YT_SUBSCRIBERS,
     CURRENT_USER,
     GET_USER_DATA,
@@ -17,12 +14,6 @@ import {
     GET_GENRES,
     GET_MEDIATYPES
 } from "../../misc";
-
-import iconYT from '../../../assets/images/yt-icon.png'
-import iconSpty from '../../../assets/images/spty-icon.png'
-import iconDrive from '../../../assets/images/drive-icon.png'
-import iconWeb from '../../../assets/images/web-icon.png'
-import iconDescarga from '../../../assets/images/descarga-icon.png'
 
 const initialState = {
 
@@ -36,35 +27,7 @@ const initialState = {
     dbMediatypes: [],
     dbGenres: [],
     dbCategories: [],
-    allUserLikes: [],
-    ytPlayerState: '',
-    typeMediaList:
-    {
-        musica:
-        {
-            idYT: { url: '', img: iconYT },
-            idSpoty: { url: '', img: iconSpty },
-            idDrive: { url: '', img: iconDrive }
-        },
-        serie:
-        {
-            idYT: { url: '', img: iconYT },
-            idSpoty: { url: '', img: iconSpty },
-            idDrive: { url: '', img: iconDrive },
-        },
-        app:
-        {
-            urlWeb: { url: '', img: iconWeb },
-            idDrive: { url: '', img: iconDrive },
-            urlDownload: { url: '', img: iconDescarga },
-        },
-        libro:
-        {
-            urlWeb: { url: '', img: iconWeb },
-            idDrive: { url: '', img: iconDrive },
-            urlDownload: { url: '', img: iconDescarga },
-        }
-    },
+    favorites: [],
     mediaList: [{
         id: '',
         idMedia: [''],
@@ -117,7 +80,6 @@ const initialState = {
     filteredMedia: [],
     searchedMedia: [],
     mediaFound: {},
-    mediaWithConnectionId: [],
 }
 
 export default function rootReducer(state = initialState, action) {
@@ -136,12 +98,6 @@ export default function rootReducer(state = initialState, action) {
             return {
                 ...state,
                 dbMediatypes: action.payload
-            };
-        /*----------------Admin----------------*/
-        case __GOD_MODE__:
-            window.location.reload()
-            return {
-                ...state,
             };
         /*----------------YT----------------*/
         case GET_YT_SUBSCRIBERS:
@@ -171,20 +127,10 @@ export default function rootReducer(state = initialState, action) {
                 option: ''
             };
         /*----------------Media----------------*/
-        case GET_ALL_LIKES:
+        case GET_FAVORITES:
             return {
                 ...state,
-                allUserLikes: action.payload
-            };
-        case GET_IDYT:
-            return {
-                ...state,
-                ytPlayerState: action.payload
-            };
-        case RESET_IDYT:
-            return {
-                ...state,
-                ytPlayerState: ''
+                favorites: action.payload
             };
 
         case GET_MEDIA:

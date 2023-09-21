@@ -3,18 +3,18 @@ import React, { useEffect } from 'react';
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import RequestProfile from '../../admin/RequestProfile/RequestProfile';
-import { getAllLikes, resetOption } from '../../../middlewares/redux/actions';
+import { getFavorites, resetOption } from '../../../middlewares/redux/actions';
 import { $d } from '../../../functions';
 
 export const Favorites = () => {
 
   const auth = localStorage.getItem('auth');
   const userId = auth ? JSON.parse(auth).userId : null;
-  const userLikes = useSelector(state => state.allUserLikes)
+  const favorites = useSelector(state => state.favorites)
 
   const dispatch = useDispatch()
   useEffect(() => {
-    dispatch(getAllLikes(userId))
+    dispatch(getFavorites(userId))
   }, [dispatch, userId])
   
   return (
@@ -24,7 +24,7 @@ export const Favorites = () => {
           <div className={s.divContLikes}>
             <div className={s.divHeader}>
               <div className="header-container">
-                { userLikes.length>0
+                { favorites.length>0
                   ? <><h1>Tus favoritos</h1>
                     <h3>Encuentra tu contenido favorito aquí</h3></>
                   : <><h1>Nada por aquí...</h1>
@@ -34,7 +34,7 @@ export const Favorites = () => {
             </div>
             <ul className={s.contLikes}>
               {
-                userLikes?.map((e,index)=>{
+                favorites?.map((e,index)=>{
                   return(
                     <li className={s.liLikes} key={index}>
                       <Link to={`/view/v=${e.at(0).idLinkYT}=_type_=${e.at(0).mediaType}=_id_=${e.at(0).id}`}>
