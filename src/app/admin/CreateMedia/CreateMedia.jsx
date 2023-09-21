@@ -193,8 +193,8 @@ const CreateMedia = () => {
                     </Link>
                     <button className='button2' onClick={resetForm}>Crear más contenido</button>
                   </div>
-                : <div>
-                    Espere...
+                : <div className={s.loaderContainer}>
+                    Espere un momento...
                     <div className='loader'/>
                   </div>
               }
