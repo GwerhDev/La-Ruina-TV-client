@@ -20,7 +20,7 @@ const CreateMedia = () => {
     dispatch(getCategories());
     dispatch(getGenres());
     dispatch(getMediatypes());
-  }, [])
+  }, [dispatch])
   
   const handleInputChange = (e) => {
     if (
