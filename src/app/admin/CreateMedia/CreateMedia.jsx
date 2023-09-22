@@ -78,10 +78,8 @@ const CreateMedia = () => {
   };
 
   function checkboxCategories(e) {
-    if (data.category.includes(e.target.value)) {
-      data.category = data.category.filter(
-        (name) => name !== e.target.value
-      );
+    if (data.category.includes(e)) {
+      data.category = data.category.filter(id => id !== e);
       setData({
         ...data,
         category: data.category,
@@ -89,14 +87,14 @@ const CreateMedia = () => {
     } else {
       setData({
         ...data,
-        category: [...data.category, e.target.value],
+        category: [...data.category, e],
       });
     }
   };
 
   function checkboxGenres(e) {
     if (data.genre.includes(e.target.value)) {
-      data.genre = data.genre.filter((name) => name !== e.target.value);
+      data.genre = data.genre.filter(id => id !== e);
       setData({
         ...data,
         genre: data.genre,
@@ -104,14 +102,14 @@ const CreateMedia = () => {
     } else {
       setData({
         ...data,
-        genre: [...data.genre, e.target.value],
+        genre: [...data.genre, e],
       });
     }
   };
 
   function checkboxMediatype(e) {
-    if (data.mediatype.includes(e.target.value)) {
-      data.mediatype = data.mediatype.filter((name) => name !== e.target.value);
+    if (data.mediatype.includes(e)) {
+      data.mediatype = data.mediatype.filter(id => id !== e);
       setData({
         ...data,
         mediatype: data.mediatype,
@@ -119,7 +117,7 @@ const CreateMedia = () => {
     } else {
       setData({
         ...data,
-        mediatype: [...data.mediatype, e.target.value],
+        mediatype: [...data.mediatype, e],
       });
     }
   };
@@ -347,7 +345,7 @@ const CreateMedia = () => {
                           type="checkbox"
                           name={t.name}
                           value={t.name}
-                          onChange={(e) => checkboxMediatype(e)} />
+                          onChange={() => checkboxMediatype(t.id)} />
                         <label htmlFor={t.name}>{t.name}</label>
                         {
                           editMediatype &&
@@ -382,7 +380,7 @@ const CreateMedia = () => {
                           type="checkbox"
                           name={t.name}
                           value={t.name}
-                          onChange={(e) => checkboxGenres(e)}
+                          onChange={() => checkboxGenres(t.id)}
                         />
                         <label htmlFor={t.name}>{t.name}</label>
                         {
@@ -418,7 +416,7 @@ const CreateMedia = () => {
                           type="checkbox"
                           name={t.name}
                           value={t.name}
-                          onChange={(e) => checkboxCategories(e)}
+                          onChange={() => checkboxCategories(t.id)}
                         />
                         <label htmlFor={t.name}>{t.name}</label>
                         {
