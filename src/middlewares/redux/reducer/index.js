@@ -27,6 +27,7 @@ const initialState = {
     dbMediatypes: [],
     dbGenres: [],
     dbCategories: [],
+    mediaByCategory: [],
     favorites: [],
     mediaList: [{
         id: '',
@@ -87,7 +88,8 @@ export default function rootReducer(state = initialState, action) {
         case GET_CATEGORIES:
             return {
                 ...state,
-                dbCategories: action.payload
+                dbCategories: action.payload.categories,
+                mediaByCategory: action.payload.mediaByCategory
             };
         case GET_GENRES:
             return {

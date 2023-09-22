@@ -42,7 +42,7 @@ export function getCategories() {
             const response = await axios.get(`${URL_API}/category/`);
             dispatch({
                 type: GET_CATEGORIES,
-                payload: response.data?.categories
+                payload: response.data
             })
         } catch (e) {
             console.error(e)

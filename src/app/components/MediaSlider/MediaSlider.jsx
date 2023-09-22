@@ -3,18 +3,15 @@ import MediaSliderButtons from "./MediaSliderButtons"
 import { $d } from "../../../functions"
 
 const MediaSlider = (props) => {
-    const sliderTitle = (props.title);
-    const mediaList = (props.mediaList);
-    const s = (props.style);
-    const id = (props.id);
+    const { title, data, s, id } = props;
 
     return (
         <div className={s.sliderCont}>
-            <h3>{sliderTitle}</h3>
+            <h3>{title}</h3>
             <div 
                 className={s.slidercategories}
                 onMouseEnter={() => {
-                    if(mediaList?.length <= 1) {
+                    if(data?.length <= 1) {
                         return(
                             $d(`#${id}PostBtn`).style.display="none",
                             $d(`#${id}PostBtn`).style.transitionDuration='1s'
@@ -38,14 +35,14 @@ const MediaSlider = (props) => {
                 }>
                 <div className={s.sliderContItems}>
                     <MediaSliderButtons
-                        name = {sliderTitle}
+                        name = {title}
                         keyID = {id}
-                        categories = {mediaList}
+                        categories = {data}
                         style = {s} />
                     <MediaCard
-                        mediaList = {mediaList}
+                        data = {data}
                         keyID = {id}
-                        key = {`${sliderTitle}Sldr`}
+                        key = {`${title}Sldr`}
                         style = {s} />
                 </div>
             </div>

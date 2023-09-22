@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RenderDriveImage } from '../../../functions/RenderDriveImage';
 import { deleteMedia } from '../../../middlewares/redux/actions/admin';
 
-const MediaCard = ({ mediaList, style, keyID }) => {
+const MediaCard = ({ data, style, keyID }) => {
   const history = useHistory();
   const dispatch = useDispatch();
   const currentUser = useSelector(state => state.currentUser);
@@ -27,11 +27,12 @@ const MediaCard = ({ mediaList, style, keyID }) => {
     <div className={style.sliderItems}>
       <ul className={style.sliderListaItems} id={`${keyID}ListaItems`}>
         {
-          mediaList?.map((e, i) => {
+          data?.map((e, i) => {
             return (
-              <li value={e.id} key={i} onClick={() => handleRedirect(e.id)}>
+              <li value={e.id} key={i}>
                 <div className={style.sliderItem}>
                   <div
+                    onClick={() => handleRedirect(e.id)}
                     className={style.media}
                     style={{ backgroundImage: `url(${RenderDriveImage(e.imageSlider)})` }}
                   >
@@ -49,7 +50,7 @@ const MediaCard = ({ mediaList, style, keyID }) => {
                     : null
                   }
                   <div className={style.mydiv}>
-                    <div className={style.ulTitlesItems}>
+                    <div className={style.ulTitlesItems} onClick={() => handleRedirect(e.id)}> 
                       <div style={{ display: 'flex', alignItems: 'center', margin: '5px' }}>
                         <img
                           className={style.sliderItemIconPlayN}
