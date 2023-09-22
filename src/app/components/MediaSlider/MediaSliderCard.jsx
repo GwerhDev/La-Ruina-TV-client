@@ -14,6 +14,11 @@ const MediaCard = ({ mediaList, style, keyID }) => {
   const currentUser = useSelector(state => state.currentUser);
   const favs = useSelector(state => state.favorites);
 
+  function handleRedirect(id) {
+    history.push(`/view/v=${id}`); 
+    window.scrollTo(0, 0);
+  }
+
   function handleDeleteMedia(id) {
     dispatch(deleteMedia(id));
   }
@@ -24,21 +29,17 @@ const MediaCard = ({ mediaList, style, keyID }) => {
         {
           mediaList?.map((e, i) => {
             return (
-              <li value={e.id} key={i} >
+              <li value={e.id} key={i} onClick={() => handleRedirect(e.id)}>
                 <div className={style.sliderItem}>
                   <div
                     className={style.media}
                     style={{ backgroundImage: `url(${RenderDriveImage(e.imageSlider)})` }}
-                    onClick={() => {
-                      history.push(`/view/v=${e.id}`)
-                      window.scrollTo(0, 0);
-                    }}
                   >
                   </div>
                   {
                     currentUser?.role === 'admin' 
                     ? <ul className={s.adminRequest}>
-                        <li className={s.adminBtn} onClick={() => { history.push(`/media/edit/${e.id}`) }}>
+                        <li className={s.adminBtn}>
                           <img src={editIcon} className={s.editImg} alt='edit' width='15px' />
                         </li>
                         <li className={s.adminBtn} onClick={() => { handleDeleteMedia(e.id) }} >
