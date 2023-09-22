@@ -51,7 +51,7 @@ export const VisorFunction = () => {
         icon, 
         actionButton, 
         info 
-    } = nextVisor?.length ? nextVisor[0] : defaultVisor;
+    } = nextVisor?.length > 0 ? nextVisor[0] : defaultVisor;
 
     useEffect(() => {
         let inf = 99999 + counter;
