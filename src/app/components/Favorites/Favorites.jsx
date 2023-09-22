@@ -6,6 +6,7 @@ import RequestProfile from '../../admin/RequestProfile/RequestProfile';
 import { resetOption } from '../../../middlewares/redux/actions';
 import { $d } from '../../../functions';
 import { getFavorites } from '../../../middlewares/redux/actions/account';
+import { RenderDriveImage } from '../../../functions/RenderDriveImage';
 
 export const Favorites = () => {
   const dispatch = useDispatch();
@@ -52,7 +53,7 @@ export const Favorites = () => {
                             $d('#slideCanvasCont').style.overflowY="scroll"
                         )}}   
                         className={s.likeImg}
-                        src={e.imageSlider} 
+                        src={RenderDriveImage(e.imageSlider)} 
                         alt='img' 
                         height='100px' />
                       <div className={s.divH3}>
