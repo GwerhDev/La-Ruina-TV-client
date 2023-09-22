@@ -3,19 +3,19 @@ import React, { useEffect } from 'react';
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import RequestProfile from '../../admin/RequestProfile/RequestProfile';
-import { getFavorites, resetOption } from '../../../middlewares/redux/actions';
+import { resetOption } from '../../../middlewares/redux/actions';
 import { $d } from '../../../functions';
+import { getFavorites } from '../../../middlewares/redux/actions/account';
 
 export const Favorites = () => {
+  const dispatch = useDispatch();
+  const currentUser = useSelector(state => state.currentUser);
+  const favorites = useSelector(state => state.favorites);
+  const userId = currentUser?.id;
 
-  const auth = localStorage.getItem('auth');
-  const userId = auth ? JSON.parse(auth).userId : null;
-  const favorites = useSelector(state => state.favorites)
-
-  const dispatch = useDispatch()
   useEffect(() => {
     dispatch(getFavorites(userId))
-  }, [dispatch, userId])
+  }, [dispatch, userId]);
   
   return (
     <div>
@@ -24,7 +24,7 @@ export const Favorites = () => {
           <div className={s.divContLikes}>
             <div className={s.divHeader}>
               <div className="header-container">
-                { favorites.length>0
+                { favorites?.length
                   ? <><h1>Tus favoritos</h1>
                     <h3>Encuentra tu contenido favorito aquí</h3></>
                   : <><h1>Nada por aquí...</h1>
@@ -37,7 +37,7 @@ export const Favorites = () => {
                 favorites?.map((e,index)=>{
                   return(
                     <li className={s.liLikes} key={index}>
-                      <Link to={`/view/v=${e.at(0).idLinkYT}=_type_=${e.at(0).mediaType}=_id_=${e.at(0).id}`}>
+                      <Link to={`/view/v=${e.id}`}>
                         <img 
                         onClick={()=>{
                           return (
@@ -52,15 +52,15 @@ export const Favorites = () => {
                             $d('#slideCanvasCont').style.overflowY="scroll"
                         )}}   
                         className={s.likeImg}
-                        src={e.at(0).linkimg} 
+                        src={e.imageSlider} 
                         alt='img' 
                         height='100px' />
                       <div className={s.divH3}>
                         <h3 style={{marginTop: '0px', fontSize: '10px', marginBottom: '-4px'}}>
-                            {e.at(0).artist}
+                            {e.artist}
                         </h3>
                         <h3 style={{marginTop: '0px', fontSize: '17px'}}>
-                            {e.at(0).title}
+                            {e.title}
                         </h3>
                       </div>
                       </Link>

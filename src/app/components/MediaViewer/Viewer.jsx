@@ -1,7 +1,7 @@
 import s from './Viewer.module.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
@@ -12,29 +12,27 @@ import userIcon from '../../../assets/images/user-icon.png';
 import likeIcon from '../../../assets/images/like-icon.png';
 import OptionCanvas,  { $d } from '../../../functions';
 import { ContentMagementButtons } from '../../admin/Buttons/ContentMagementButtons';
-import { getOption, addLike } from '../../../middlewares/redux/actions';
+import { getOption } from '../../../middlewares/redux/actions';
 import { getMediaById } from '../../../middlewares/redux/actions/media';
 import { RenderDriveImage } from '../../../functions/RenderDriveImage';
+import { addFavorites, deleteFavorites, getFavorites } from '../../../middlewares/redux/actions/account';
 
 const MediaViewer = () => {
     const params = useParams();
     const { id } = params;
     const dispatch = useDispatch();
-    const favorites = useSelector(state=>state.favorites);
-    const subscriber = useSelector(state=>state.subscriber);
-    const currentUser = useSelector(state=>state.currentUser);
-    const infoDetailViewer = useSelector(state=>state.infoDetailViewer);
-    const [color, setColor] = useState(1);
-
-    useEffect(()=>{ dispatch(getMediaById(id)) },[dispatch, id]);
+    const favorites = useSelector(state => state.favorites);
+    const subscriber = useSelector(state => state.subscriber);
+    const currentUser = useSelector(state => state.currentUser);
+    const infoDetailViewer = useSelector(state => state.infoDetailViewer);
 
     function onClickValue(e){ return ( dispatch(getOption(e.target.id)), OptionCanvas(e.target.id) )};
+    
+    useEffect(()=>{ 
+        dispatch(getMediaById(id));
+        dispatch(getFavorites());
+    }, [dispatch, id]);
 
-    useEffect(() => { (favorites?.filter(fav => fav.id === id).length > 0) ? setColor(0) : setColor(1) },[favorites, id]);
-
-    function colorLike(color){ if(favorites?.length>1 && currentUser) return $d('#favViewIcon').style.filter = `grayscale(${color})`};
-
-    colorLike(color);
 
     const {
         imageSlider,
@@ -71,13 +69,14 @@ const MediaViewer = () => {
                         <div className={s.viewMediaTypesCont}>
                             <ul className={s.viewMediaTypesList}>
                             {   currentUser &&   
-                                <button className='buttonAddToFavorites' onClick={() => { dispatch(addLike(currentUser?.id, id)) }}>
+                                <button className='buttonAddToFavorites' onClick={() => { dispatch(favorites.find(e => e.id === id)? deleteFavorites(id) : addFavorites(currentUser.id, id)) }}>
                                     <img 
                                         className={s.favIcon}
                                         id="favViewIcon"
                                         src={likeIcon} 
                                         alt='add favorites' 
-                                        width='25px' 
+                                        width='25px'
+                                        style={{ filter: `grayscale(${favorites.find(e => e.id === id)? 0 : 1} )` }}
                                     />
                                 </button>
                             }
