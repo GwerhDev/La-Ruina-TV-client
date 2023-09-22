@@ -62,7 +62,6 @@
 .ulList1>li{
     min-width: 300px;
     width: 90%;
-    height: 50px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -82,18 +81,17 @@
     text-align: left;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.739);
-    position: relative;
     color: rgba(255, 255, 255, 0.854);
     border-radius: 15px;
     box-shadow: 0px 0px 4px #171717;
     margin-top: -10px;
     transition-duration: .4s;
 }
+
 .ulList2>li{
     width: 20%;
     text-align: center;
 }
-
 
 .ulList2:hover{
     box-shadow: 0px 0px 4px rgb(255, 255, 255);
