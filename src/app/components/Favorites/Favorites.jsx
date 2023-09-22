@@ -41,6 +41,7 @@ export const Favorites = () => {
                 favorites?.map((e, index) => {
                   return (
                     <li className={s.liLikes} key={index}>
+                      <div className={s.itemContainer}>
                         <Link to={`/view/v=${e.id}`}>
                           <div className={s.imageContainer} 
                                style={{ backgroundImage: `url(${RenderDriveImage(e.imageSlider)})` }}
@@ -67,6 +68,7 @@ export const Favorites = () => {
                             </div>
                           </div>
                         </Link>
+                      </div>
                     </li>
                   )
                 })
