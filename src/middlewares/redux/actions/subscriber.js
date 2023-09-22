@@ -2,7 +2,7 @@ import axios from "axios"
 import { URL_API } from "../../config"
 import { GET_YT_SUBSCRIBERS } from "../../misc"
 
-export const getYtSubs = (email) => {
+export const subscriberVerification = (email) => {
   return async function (dispatch) {
     await axios.post(`${URL_API}/subscribers`, email)
       .then(res => {

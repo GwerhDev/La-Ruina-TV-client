@@ -1,7 +1,7 @@
 import React from "react";
 import s from "./Fav.module.css"
 
-const Fav = ({ urlID, color }) => {
+const Fav = ({ color }) => {
     return (
         <button className={s.CardFav} id="CardFav">
             <span role="img" style={{color: color}}>❤</span>
