@@ -13,6 +13,7 @@ import {
 } from "../../../middlewares/redux/actions";
 import { getCategories, getMedia, resetMedia } from "../../../middlewares/redux/actions/media";
 import { getUserToken } from "../../../middlewares/helpers";
+import { getFavorites } from "../../../middlewares/redux/actions/account";
 
 const Browser = () => {
   const dispatch = useDispatch();
@@ -32,8 +33,9 @@ const Browser = () => {
 
   useEffect(() => {
     dispatch(getMedia());
-    dispatch(resetMedia());
     dispatch(resetIdYT());
+    dispatch(resetMedia());
+    dispatch(getFavorites());
     dispatch(getCategories());
     BodyCss();
   }, [dispatch]);
