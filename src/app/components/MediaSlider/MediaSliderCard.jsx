@@ -42,7 +42,7 @@ const MediaCard = ({ mediaList, style, keyID }) => {
                         <li className={s.adminBtn}>
                           <img src={editIcon} className={s.editImg} alt='edit' width='15px' />
                         </li>
-                        <li className={s.adminBtn} onClick={() => { handleDeleteMedia(e.id) }} >
+                        <li className={s.adminBtn} onClick={() => handleDeleteMedia(e.id)} >
                           <img src={deleteIcon} className={s.deleteImg} alt='delete' width='15px' />
                         </li>
                       </ul>
