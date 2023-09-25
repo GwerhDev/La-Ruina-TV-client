@@ -3,7 +3,6 @@ import {
     RESET_VISOR,
     OPTION,
     RESET_OPTION,
-    GET_IDYT,
     RESET_IDYT,
 } from '../../misc'
 
@@ -21,12 +20,6 @@ export function resetOption() {
 }
 
 /*----------------Media----------------*/
-export function getIdYT(idYT) {
-    return {
-        type: GET_IDYT,
-        payload: idYT
-    }
-}
 
 export function resetIdYT() {
     return {

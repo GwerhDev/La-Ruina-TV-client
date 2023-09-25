@@ -12,10 +12,11 @@ export function auth(history) {
           type: CURRENT_USER,
           payload: res.data.userData
         })
-        res.data.logged && history.push(`/browser`);
+        return res.data.logged && history.push(`/browser`);
       })
       .catch((e) => {
         console.error(e);
+        return;
       })
   }
 };
@@ -37,6 +38,7 @@ export function loginInner(email, password, history) {
       })
       .catch((e) => {
         console.error(e);
+        return;
       })
   }
 };
@@ -52,10 +54,11 @@ export function signupInner(email, password, history) {
   return async function () {
     await axios.post(`${URL_API}/signup-inner`, { email, password })
       .then(res => {
-        res.data.logged && history.push(`/auth?token=${res.data.token}`);
+        return res.data.logged && history.push(`/auth?token=${res.data.token}`);
       })
       .catch((e) => {
         console.error(e);
+        return;
       })
   }
 };
@@ -64,10 +67,11 @@ export function signupGoogle(history) {
   return async function () {
     await axios.get(`${URL_API}/signup-google`)
       .then(res => {
-        res.data.logged && history.push(`/auth?token=${res.data.token}`)
+        return res.data.logged && history.push(`/auth?token=${res.data.token}`);
       })
       .catch((e) => {
         console.error(e);
+        return;
       })
   }
 };

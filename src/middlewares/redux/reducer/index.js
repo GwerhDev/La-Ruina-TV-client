@@ -76,11 +76,8 @@ const initialState = {
         idLinkYT: "",
         mediaType: ""
     }],
-/*     categoryList: ["Sello Arruinados", 'Música', 'Estudio "La Ruina Records"', "En vivo", "App y descargables", "Literatura", "Series"],
- */
     /*------------Filter&Search------------*/
     searchedMedia: [],
-    mediaFound: {},
 }
 
 export default function rootReducer(state = initialState, action) {

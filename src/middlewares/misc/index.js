@@ -12,7 +12,6 @@ export const RESET_VISOR = 'RESET_VISOR';
 export const RESET_MEDIA = 'RESET_MEDIA';
 export const GET_MEDIA = 'GET_MEDIA';
 export const GET_INFO = 'GET_INFO';
-export const GET_IDYT = 'GET_IDYT';
 export const RESET_IDYT = 'RESET_IDYT';
 export const GET_CATEGORIES = 'GET_CATEGORIES';
 export const GET_GENRES = 'GET_GENRES';
