@@ -51,11 +51,11 @@ export const VisorFunction = () => {
         icon, 
         actionButton, 
         info 
-    } = nextVisor?.length? visorList?.at(counter) : defaultVisor;
+    } = nextVisor?.length? nextVisor?.at(0) : defaultVisor;
 
     useEffect(() => {
         let inf = 99999 + counter;
-        const max = visorList?.length - 1 !== 0 || 0;
+        const max = visorList?.length || 0;
         let timeInterval = 20;
         let interval = null;
         dispatch(getNextVisor(counter % max));
