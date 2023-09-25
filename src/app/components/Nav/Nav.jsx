@@ -13,7 +13,6 @@ import { getUserData } from '../../../middlewares/redux/actions/account';
 const Nav = () => {
     const location = useLocation()
     const currentPath = location.pathname;
-    const userToken = localStorage.getItem('userToken')
 
     const [posNav, setPosNav] = useState()
     window.onscroll = function() {navBack(setPosNav, posNav)};
@@ -21,8 +20,8 @@ const Nav = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        !userToken?? dispatch(getUserData())
-    }, [dispatch, userToken]);
+        dispatch(getUserData())
+    }, [dispatch]);
 
     return (
         <div className='navCont'>
