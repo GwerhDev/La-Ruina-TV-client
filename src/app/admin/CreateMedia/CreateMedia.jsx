@@ -349,9 +349,11 @@ const CreateMedia = () => {
                         <label htmlFor={t.name}>{t.name}</label>
                         {
                           editMediatype &&
-                          <button type='button' onClick={() => dispatch(deleteMediatype(t.id))} className="" disabled={!t.name?.length}>
-                            x
-                          </button>
+                          <div className={s.deleteButtonContainer}>
+                            <button type='button' onClick={() => dispatch(deleteMediatype(t.id))} className="" disabled={!t.name?.length}>
+                              x
+                            </button>
+                          </div>
                         }
                       </div>
                     ))
@@ -385,9 +387,11 @@ const CreateMedia = () => {
                         <label htmlFor={t.name}>{t.name}</label>
                         {
                           editGenres &&
-                          <button type='button' onClick={() => dispatch(deleteGenre(t.id))} className="" disabled={!t.name?.length}>
-                            x
-                          </button>
+                          <div className={s.deleteButtonContainer}>
+                            <button type='button' onClick={() => dispatch(deleteGenre(t.id))} className="" disabled={!t.name?.length}>
+                              x
+                            </button>
+                          </div>
                         }
                       </div>
                     ))
@@ -421,9 +425,11 @@ const CreateMedia = () => {
                         <label htmlFor={t.name}>{t.name}</label>
                         {
                           editCategories &&
-                          <button type='button' onClick={() => dispatch(deleteCategory(t.id))} className="" disabled={!t.name?.length}>
-                            x
-                          </button>
+                          <div className={s.deleteButtonContainer}>
+                            <button type='button' onClick={() => dispatch(deleteCategory(t.id))} className="" disabled={!t.name?.length}>
+                              x
+                            </button>
+                          </div>
                         }
                       </div>
                     ))
