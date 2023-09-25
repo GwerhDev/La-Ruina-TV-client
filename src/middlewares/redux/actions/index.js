@@ -45,16 +45,3 @@ export function getResetVisor() {
         type: RESET_VISOR
     }
 }
-
-/*------------Filter&Search------------*/
-export function loadingSearchSet() {
-
-}
-
-export function searchStateChange() {
-
-}
-
-export function totalMedia() {
-
-}

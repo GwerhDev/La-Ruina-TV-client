@@ -65,7 +65,7 @@ function Router() {
             <Route exact path='/users/edit'>
               <EditUsersList />
             </Route>
-            <Route path='/search'>
+            <Route path='/search/:search'>
               <Search />
             </Route>
             <Route path='/checkout/:type'>

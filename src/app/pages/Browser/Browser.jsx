@@ -29,13 +29,13 @@ const Browser = () => {
   }, [dispatch, currentUser, userToken, history])
 
   useEffect(() => {
+    BodyCss();
     dispatch(getMedia());
     dispatch(resetIdYT());
     dispatch(resetMedia());
-    dispatch(getFavorites());
     dispatch(getCategories());
-    BodyCss();
-  }, [dispatch]);
+    !currentUser?? dispatch(getFavorites());
+  }, [dispatch, currentUser]);
 
   return (
     <div className="browserBody">

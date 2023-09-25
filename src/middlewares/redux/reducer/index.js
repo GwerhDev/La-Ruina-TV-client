@@ -12,7 +12,8 @@ import {
     GET_USER_DATA,
     GET_CATEGORIES,
     GET_GENRES,
-    GET_MEDIATYPES
+    GET_MEDIATYPES,
+    GET_SEARCH
 } from "../../misc";
 
 const initialState = {
@@ -78,13 +79,17 @@ const initialState = {
 /*     categoryList: ["Sello Arruinados", 'Música', 'Estudio "La Ruina Records"', "En vivo", "App y descargables", "Literatura", "Series"],
  */
     /*------------Filter&Search------------*/
-    filteredMedia: [],
     searchedMedia: [],
     mediaFound: {},
 }
 
 export default function rootReducer(state = initialState, action) {
     switch (action.type) {
+        case GET_SEARCH:
+            return {
+                ...state,
+                searchedMedia: action.payload
+            }
         case GET_CATEGORIES:
             return {
                 ...state,
@@ -140,7 +145,6 @@ export default function rootReducer(state = initialState, action) {
                 ...state,
                 mediaList: action.payload,
                 visorList: action.payload,
-                searchedMedia: action.payload
             };
         case GET_INFO:
             return {
