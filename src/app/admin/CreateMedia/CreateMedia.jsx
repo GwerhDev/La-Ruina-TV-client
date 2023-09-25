@@ -93,7 +93,7 @@ const CreateMedia = () => {
   };
 
   function checkboxGenres(e) {
-    if (data.genre.includes(e.target.value)) {
+    if (data.genre.includes(e)) {
       data.genre = data.genre.filter(id => id !== e);
       setData({
         ...data,
@@ -381,7 +381,7 @@ const CreateMedia = () => {
                           name={t.name}
                           value={t.name}
                           onChange={() => checkboxGenres(t.id)}
-                        />
+                          />
                         <label htmlFor={t.name}>{t.name}</label>
                         {
                           editGenres &&
