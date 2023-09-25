@@ -1,7 +1,6 @@
 import s from './SearchBar.module.css';
 import React, { useState } from "react";
 import { resetOption } from "../../../middlewares/redux/actions";
-import { getSearch } from '../../../middlewares/redux/actions/search';
 import { searchBarFunction } from './js/SearchBar';
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -31,7 +30,6 @@ export default function SearchBar() {
         $d(`.browserBody`).style.overflowY = 'scroll',
         $d(`.visor`).style.transform = 'translateX(0)',
         $d('#slideCanvasCont').style.overflowY = "scroll",
-        dispatch(getSearch(search)),
         history.push(`/search/${search}`)
       );
     }
