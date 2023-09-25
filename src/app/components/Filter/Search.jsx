@@ -8,7 +8,7 @@ import { useEffect } from 'react'
 import { getSearch } from '../../../middlewares/redux/actions/search'
 
 export const Search = () => {
-  const { rows, count } = useSelector(state => state.searchedMedia);
+  const { artistResult, titleResult, infoResult } = useSelector(state => state.searchedMedia);
   const dispatch = useDispatch();
   const { search } = useParams();
   useEffect(() => {
@@ -21,9 +21,58 @@ export const Search = () => {
       <div className={s.searchFormat} >
         <h1>Estos son los resultados de tu búsqueda</h1>
         <ul className={s.ulSearchedItem}>
+          Coincidencias por título
           {
-            count
-              ? rows.map((e, index) => {
+            titleResult?.count
+              ? titleResult?.rows.map((e, index) => {
+                return (
+                  <li key={index}>
+                    <SearchedMedia
+                      id={e.id}
+                      title={e.title}
+                      img={RenderDriveImage(e.imageSlider)}
+                      categories={e.categories}
+                      artist={e.artist}
+                      idLinkYT={e.idLinkYT}
+                      mediaType={e.mediaType} />
+                  </li>
+                )
+              }
+              )
+              : <div className={s.notFound} >
+                  <h2>No se han encontrado resultados que coincidan con tu búsqueda</h2>
+                </div>
+          }
+        </ul>
+        <ul className={s.ulSearchedItem}>
+          Coincidencias por artista
+          {
+            artistResult?.count
+              ? artistResult?.rows.map((e, index) => {
+                return (
+                  <li key={index}>
+                    <SearchedMedia
+                      id={e.id}
+                      title={e.title}
+                      img={RenderDriveImage(e.imageSlider)}
+                      categories={e.categories}
+                      artist={e.artist}
+                      idLinkYT={e.idLinkYT}
+                      mediaType={e.mediaType} />
+                  </li>
+                )
+              }
+              )
+              : <div className={s.notFound} >
+                  <h2>No se han encontrado resultados que coincidan con tu búsqueda</h2>
+                </div>
+          }
+        </ul>
+        <ul className={s.ulSearchedItem}>
+          Coincidencias por información
+          {
+            infoResult?.count
+              ? infoResult?.rows.map((e, index) => {
                 return (
                   <li key={index}>
                     <SearchedMedia
