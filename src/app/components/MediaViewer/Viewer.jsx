@@ -58,7 +58,7 @@ const MediaViewer = () => {
                     <section className={s.visorPostInfo}>
                         <div className={s.infoContainer}>
                             <div className={s.visorPostArtista}>
-                            { currentUser?.role==='admin' && <ContentMagementButtons id={id}/> }
+                            { currentUser?.role==='admin' && <ContentMagementButtons/> }
                                 <p>{artist}</p>
                             </div>
                             <div className={s.visorPostTitulo}>

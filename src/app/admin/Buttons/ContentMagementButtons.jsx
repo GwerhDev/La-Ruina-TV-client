@@ -5,11 +5,12 @@ import { useHistory } from "react-router-dom";
 import editIcon from '../../../assets/images/edit-icon.png';
 import deleteIcon from '../../../assets/images/delete-icon.png';
 import { deleteMedia } from '../../../middlewares/redux/actions/admin';
+import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 
-export const ContentMagementButtons = (props) => {
-    const { id } = props
-    const dispatch = useDispatch()
-    const history = useHistory()
+export const ContentMagementButtons = () => {
+    const { id } = useParams();
+    const dispatch = useDispatch();
+    const history = useHistory();
 
     return (
         <div className={s.container}>

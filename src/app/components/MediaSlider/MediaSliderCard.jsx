@@ -17,11 +17,16 @@ const MediaCard = ({ data, style, keyID }) => {
   function handleRedirect(id) {
     history.push(`/view/v=${id}`); 
     window.scrollTo(0, 0);
-  }
+  };
+
+  function handleEditMedia(id) {
+    history.push(`/media/edit/${id}`); 
+    window.scrollTo(0, 0);
+  };
 
   function handleDeleteMedia(id) {
     dispatch(deleteMedia(id));
-  }
+  };
 
   return (
     <div className={style.sliderItems}>
@@ -41,7 +46,7 @@ const MediaCard = ({ data, style, keyID }) => {
                     currentUser?.role === 'admin' 
                     ? <ul className={s.adminRequest}>
                         <li className={s.adminBtn}>
-                          <img src={editIcon} className={s.editImg} alt='edit' width='15px' />
+                          <img src={editIcon} className={s.editImg} onClick={() => handleEditMedia(e.id)} alt='edit' width='15px' />
                         </li>
                         <li className={s.adminBtn} onClick={() => handleDeleteMedia(e.id)} >
                           <img src={deleteIcon} className={s.deleteImg} alt='delete' width='15px' />
