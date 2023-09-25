@@ -55,7 +55,7 @@ export const VisorFunction = () => {
 
     useEffect(() => {
         let inf = 99999 + counter;
-        const max = visorList?.length - 1 || 0;
+        const max = visorList?.length - 1 !== 0 || 0;
         let timeInterval = 20;
         let interval = null;
         dispatch(getNextVisor(counter % max));
