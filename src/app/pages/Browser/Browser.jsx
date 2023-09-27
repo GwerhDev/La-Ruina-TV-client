@@ -76,7 +76,7 @@ const Browser = () => {
 
       {/* ---------------------FOOTER--------------------- */}
 
-      {mediaList?.length > 1 && <Footer />}
+      { mediaList?.length && <Footer /> }
     </div>
   );
 };

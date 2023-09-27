@@ -1,7 +1,7 @@
 import s from './Profile.module.css';
 import RequestProfile from '../../admin/RequestProfile/RequestProfile';
 import userIcon from '../../../assets/images/user-icon.png';
-import { DeleteAccount } from '../../components/DeleteAccount/DeleteAccount';
+import { DeleteAccount } from '../DeleteAccount/DeleteAccount';
 import { $d } from '../../../functions';
 import { useSelector } from 'react-redux';
 

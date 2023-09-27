@@ -3,7 +3,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 import Enter from '../Login/Enter';
-import Profile from '../../pages/Profile/Profile';
+import Profile from '../Profile/Profile';
 import Dashboard from '../../admin/Dashboard/Dashboard';
 
 import { Favorites } from '../Favorites/Favorites';
