@@ -7,7 +7,7 @@ import Profile from '../Profile/Profile';
 import Dashboard from '../../admin/Dashboard/Dashboard';
 
 import { Favorites } from '../Favorites/Favorites';
-import { BackButton } from '../Nav/BackButton';
+import { BackButton } from '../Navigator/BackButton';
 import { Subscription } from '../Subscription/Subscription';
 import { Notifications } from '../Notifications/Notifications';
 import { Configurations } from '../Configurations/Configurations';

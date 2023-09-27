@@ -2,7 +2,7 @@ import s from './NavProfileMenu.module.css';
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import navBack from './js/Nav';
+import navBack from './js/Navigator';
 import { EnterBtn } from './EnterButton';
 import { BackButton } from './BackButton';
 import { ProfileMenu } from './ProfileMenu';

@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { resetOption } from '../../../middlewares/redux/actions';
 import CanvasMenuFunction from './js/CanvasMenuFunction';
-import navBack from './js/Nav';
+import navBack from './js/Navigator';
 import { $d } from '../../../functions';
 
 export const CanvasMenu = () => {

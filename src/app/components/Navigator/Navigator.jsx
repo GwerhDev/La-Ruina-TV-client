@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import navBack from './js/Nav';
-import NavMenu from './NavMenu'
+import navBack from './js/Navigator';
+import NavMenu from './NavMenu';
 import Logo from './Logo';
 import NavSearchBar from './NavSearchBar';
 import { NavBurgerMenuTablet } from './NavBurgerMenuTablet';
@@ -10,7 +10,7 @@ import { useEffect } from 'react';
 import { getUserData } from '../../../middlewares/redux/actions/account';
 
 
-const Nav = () => {
+const Navigator = () => {
     const location = useLocation()
     const currentPath = location.pathname;
 
@@ -39,4 +39,4 @@ const Nav = () => {
     )
 }
 
-export default Nav
+export default Navigator

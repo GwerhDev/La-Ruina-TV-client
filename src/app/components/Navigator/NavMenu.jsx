@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import navBack from './js/Nav';
+import navBack from './js/Navigator';
 import { resetOption } from '../../../middlewares/redux/actions';
 import { $d } from '../../../functions';
 

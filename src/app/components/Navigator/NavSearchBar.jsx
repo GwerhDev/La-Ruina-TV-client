@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import navBack from './js/Nav';
+import navBack from './js/Navigator';
 import SearchBar from './SearchBar';
 import NavProfileMenu from './NavProfileMenu';
 

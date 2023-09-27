@@ -1,11 +1,11 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
-import Nav from '../components/Nav/Nav';
 import Auth from '../components/Auth/Auth';
 import Verify from '../components/Auth/Verify';
 import Browser from '../pages/Browser/Browser';
 import EditMedia from '../admin/EditMedia/EditMedia';
+import Navigator from '../components/Navigator/Navigator';
 import CreateMedia from '../admin/CreateMedia/CreateMedia';
 import MediaViewer from '../components/MediaViewer/Viewer';
 
@@ -14,7 +14,7 @@ import { BackAmp } from '../components/Back&Amp/BackAmp';
 import { Checkout } from '../components/Checkout/Checkout';
 import { Colaborar } from '../components/Colaborar/Colaborar';
 import { Novedades } from '../components/Novedades/Novedades';
-import { CanvasMenu } from '../components/Nav/CanvasMenu';
+import { CanvasMenu } from '../components/Navigator/CanvasMenu';
 import { OptionsCanvas } from '../components/Utils/SlideCanvas';
 import { EditMediaList } from '../admin/EditMediaList/EditMediaList';
 import { EditUsersList } from '../admin/EditUserList/EditUsersList';
@@ -24,7 +24,7 @@ function Router() {
     <div className="App">
       <Switch>
         <>
-          <Nav/>
+          <Navigator/>
             <CanvasMenu/>
           <div className='bodyApp'>
             <OptionsCanvas/>

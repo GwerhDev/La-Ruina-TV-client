@@ -16,7 +16,7 @@ import { getOption } from '../../../middlewares/redux/actions';
 import { getMediaById } from '../../../middlewares/redux/actions/media';
 import { RenderDriveImage } from '../../../functions/RenderDriveImage';
 import { addFavorites, deleteFavorites, getFavorites } from '../../../middlewares/redux/actions/account';
-import { subscriberVerification } from '../../../middlewares/redux/actions/subscriber';
+import { subscriberYoutubeVerification } from '../../../middlewares/redux/actions/subscriber';
 
 const MediaViewer = () => {
     const params = useParams();
@@ -87,7 +87,7 @@ const MediaViewer = () => {
                                     className='buttonVer'
                                     onClick={() => {
                                         return (
-                                            dispatch(subscriberVerification(currentUser?.email)),
+                                            dispatch(subscriberYoutubeVerification(currentUser?.email)),
                                             (subscriber? $d('#canvasYtSubBtn').style.display='none' : $d('#canvasYtSubBtn').style.display='flex'),
                                             $d('.playerBackGroundEffect').style.opacity='1',
                                             $d('.playerLi').style.display='block',
