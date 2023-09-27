@@ -2,11 +2,10 @@ import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 import Nav from '../components/Nav/Nav';
+import Auth from '../components/Auth/Auth';
 import Verify from '../components/Auth/Verify';
-import PlanMP from '../components/MercadopagoPlan/PlanMP';
 import Browser from '../pages/Browser/Browser';
 import EditMedia from '../admin/EditMedia/EditMedia';
-import Auth from '../components/Auth/Auth';
 import CreateMedia from '../admin/CreateMedia/CreateMedia';
 import MediaViewer from '../components/MediaViewer/Viewer';
 
@@ -50,7 +49,7 @@ function Router() {
             <Route exact path='/colaborar'>
               <Colaborar />
             </Route>
-            <Route path={'/view/v=:id'}>
+            <Route path='/view/v=:id'>
               <MediaViewer/>
             </Route>
             <Route exact path='/media/create'>
@@ -70,9 +69,6 @@ function Router() {
             </Route>
             <Route path='/checkout/:type'>
               <Checkout />
-            </Route>
-            <Route path='/mercadopago/plan'>
-              <PlanMP/>
             </Route>
           </div>
         </>
