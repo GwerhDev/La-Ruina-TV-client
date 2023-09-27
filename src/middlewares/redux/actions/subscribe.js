@@ -1,5 +1,5 @@
-import axios from "axios"
-import { URL_API } from "../../config"
+import axios from "axios";
+import { URL_API } from "../../config";
 
 export const subscribePlanMercadopago = (formData) => {
   return async function (dispatch) {

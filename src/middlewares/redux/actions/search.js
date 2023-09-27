@@ -1,6 +1,6 @@
-import axios from "axios"
-import { URL_API } from "../../config"
-import { GET_SEARCH } from "../../misc"
+import axios from "axios";
+import { URL_API } from "../../config";
+import { GET_SEARCH } from "../../misc";
 
 export const getSearch = (search) => {
   return async function (dispatch) {

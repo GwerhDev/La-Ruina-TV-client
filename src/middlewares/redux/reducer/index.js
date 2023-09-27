@@ -17,9 +17,9 @@ import {
 } from "../../misc";
 
 const initialState = {
-
     /*----------------Admin----------------*/
     YTSub: false,
+
     /*----------------Auth----------------*/
     currentUser: null,
     option: '',
@@ -45,6 +45,7 @@ const initialState = {
         info: [''],
         genre: ['']
     }],
+
     visorList: [{
         id: '',
         idMedia: [''],
@@ -60,7 +61,9 @@ const initialState = {
         info: [''],
         genre: ['']
     }],
+
     nextVisor: false,
+
     infoDetailViewer: [{
         linkimg: "",
         idLinkSPOTY: "",
@@ -76,6 +79,7 @@ const initialState = {
         idLinkYT: "",
         mediaType: ""
     }],
+
     /*------------Filter&Search------------*/
     searchedMedia: [],
 }
@@ -86,13 +90,15 @@ export default function rootReducer(state = initialState, action) {
             return {
                 ...state,
                 searchedMedia: action.payload
-            }
+            };
+
         case GET_CATEGORIES:
             return {
                 ...state,
                 dbCategories: action.payload.categories,
                 mediaByCategory: action.payload.mediaByCategory
             };
+
         case GET_GENRES:
             return {
                 ...state,
@@ -103,33 +109,39 @@ export default function rootReducer(state = initialState, action) {
                 ...state,
                 dbMediatypes: action.payload
             };
+
         /*----------------YT----------------*/
         case GET_YT_SUBSCRIBERS:
             return {
                 ...state,
                 YTSub: action.payload
             };
+
         /*----------------Auth----------------*/
         case CURRENT_USER:
             return {
                 ...state,
                 currentUser: action.payload
             };
+
         case GET_USER_DATA:
             return {
                 ...state,
                 currentUser: action.payload
             };
+
         case OPTION:
             return {
                 ...state,
                 option: action.payload
             };
+
         case RESET_OPTION:
             return {
                 ...state,
                 option: ''
             };
+
         /*----------------Media----------------*/
         case GET_FAVORITES:
             return {
@@ -143,11 +155,13 @@ export default function rootReducer(state = initialState, action) {
                 mediaList: action.payload,
                 visorList: action.payload,
             };
+
         case GET_INFO:
             return {
                 ...state,
                 infoDetailViewer: action.payload
             };
+
         case RESET_MEDIA:
             return {
                 ...state,
@@ -167,11 +181,13 @@ export default function rootReducer(state = initialState, action) {
                     mediaType: ""
                 }],
             };
+
         case NEXT_VISOR:
             return {
                 ...state,
                 nextVisor: state.visorList.length > 1 ? [state.visorList[action.payload]] : false
             };
+            
         case RESET_VISOR:
             return {
                 ...state,

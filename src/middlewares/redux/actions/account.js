@@ -1,5 +1,5 @@
-import axios from "axios"
-import { URL_API } from "../../config"
+import axios from "axios";
+import { URL_API } from "../../config";
 import { GET_FAVORITES, GET_USER_DATA } from "../../misc";
 import { options } from "../../helpers";
 

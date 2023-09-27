@@ -1,6 +1,6 @@
-import axios from "axios"
-import { URL_API } from "../../config"
-import { GET_YT_SUBSCRIBERS } from "../../misc"
+import axios from "axios";
+import { URL_API } from "../../config";
+import { GET_YT_SUBSCRIBERS } from "../../misc";
 
 export const subscriberYoutubeVerification = (email) => {
   return async function (dispatch) {

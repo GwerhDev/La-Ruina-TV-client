@@ -1,6 +1,6 @@
-import axios from "axios"
-import { URL_API } from "../../config"
-import { GET_CATEGORIES, GET_GENRES, GET_INFO, GET_MEDIA, GET_MEDIATYPES, RESET_MEDIA } from "../../misc"
+import axios from "axios";
+import { URL_API } from "../../config";
+import { GET_CATEGORIES, GET_GENRES, GET_INFO, GET_MEDIA, GET_MEDIATYPES, RESET_MEDIA } from "../../misc";
 
 export function getMedia() {
     return async function (dispatch) {
@@ -34,7 +34,7 @@ export function resetMedia() {
     return {
         type: RESET_MEDIA
     }
-}
+};
 
 export function getCategories() {
     return async function (dispatch) {
@@ -48,7 +48,7 @@ export function getCategories() {
             console.error(e)
         }
     }
-}
+};
 
 export function getGenres() {
     return async function (dispatch) {
@@ -62,7 +62,7 @@ export function getGenres() {
             console.error(e)
         }
     }
-}
+};
 
 export function getMediatypes() {
     return async function (dispatch) {
@@ -76,4 +76,4 @@ export function getMediatypes() {
             console.error(e)
         }
     }
-}
+};
