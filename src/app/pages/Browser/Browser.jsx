@@ -62,7 +62,6 @@ const Browser = () => {
       {
         dbCategories?.map((category, index) => {
           return (
-            category &&
             <Slider
               title={category.name}
               data={mediaByCategory[index]}
