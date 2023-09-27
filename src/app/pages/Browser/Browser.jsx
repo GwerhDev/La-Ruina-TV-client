@@ -19,6 +19,7 @@ const Browser = () => {
   const mediaList = useSelector((state) => state.mediaList);
   const currentUser = useSelector((state) => state.currentUser);
   const dbCategories = useSelector((state) => state.dbCategories);
+  const mediaByCategory = useSelector((state) => state.mediaByCategory);
 
   useEffect(() => {
     dispatch(resetOption())
@@ -51,6 +52,7 @@ const Browser = () => {
         <Slider
           title={"Contenido"}
           data={mediaList}
+          idCategory={-1}
           s={s}
           id={`s${-1}`}
           key={`s${-1}`}
@@ -59,15 +61,17 @@ const Browser = () => {
 
       {
         dbCategories?.map((category, index) => {
-          return category.length &&
-          <Slider
-            title={category.name}
-            data={category}
-            s={s}
-            id={`s${index}`}
-            key={category}
-          />
-        })
+          return (
+            category &&
+            <Slider
+              title={category.name}
+              data={mediaByCategory[index]}
+              idCategory={category.id}
+              s={s}
+              id={`s${category.id}${index}`}
+              key={category.id}
+            />
+        )})
       }
 
       {/* ---------------------FOOTER--------------------- */}
