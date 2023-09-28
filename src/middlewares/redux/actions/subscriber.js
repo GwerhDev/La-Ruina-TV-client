@@ -4,7 +4,7 @@ import { GET_YT_SUBSCRIBERS } from "../../misc";
 
 export const subscriberYoutubeVerification = (email) => {
   return async function (dispatch) {
-    await axios.post(`${URL_API}/subscribers/youtube`, email)
+    await axios.post(`${URL_API}/subscriber/youtube`, email)
       .then(res => {
         dispatch({
           type: GET_YT_SUBSCRIBERS,
@@ -16,7 +16,7 @@ export const subscriberYoutubeVerification = (email) => {
 
 export const subscriberPlanVerification = (email) => {
   return async function (dispatch) {
-    await axios.post(`${URL_API}/subscribers/plan`, email)
+    await axios.post(`${URL_API}/subscriber/plan`, email)
       .then(res => {
         dispatch({
           type: GET_YT_SUBSCRIBERS,
