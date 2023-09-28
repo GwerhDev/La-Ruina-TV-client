@@ -43,16 +43,16 @@ const MediaSliderButtons = (props) => {
 
                     if (n>=0){
                         return (
-                            $d(`#${key}ListaItems`).style.transform=`translate(${(n)}px`,
-                            $d(`#${key}ListaItems`).style.transitionDuration='1s',
+                            $d(`#${key}-itemlist`).style.transform=`translate(${(n)}px`,
+                            $d(`#${key}-itemlist`).style.transitionDuration='1s',
                             $d(`#${key}PrevBtn`).style.transform='translate(-65px)',
                             $d(`#${key}PrevBtn`).style.transitionDuration='0.1s'
                             )}
                             
                     else{
                         return (
-                            $d(`#${key}ListaItems`).style.transform=`translate(${(n)}px`,
-                            $d(`#${key}ListaItems`).style.transitionDuration='1s',
+                            $d(`#${key}-itemlist`).style.transform=`translate(${(n)}px`,
+                            $d(`#${key}-itemlist`).style.transitionDuration='1s',
                             $d(`#${key}PostBtn`).style.display='block'
                         )}
                     }
@@ -70,8 +70,8 @@ const MediaSliderButtons = (props) => {
                 setPosn(n+k)
                 if (i<0 && i>(props.categories?.length-1)*k){
                 return (
-                    $d(`#${key}ListaItems`).style.transform=`translate(${i}px)`,
-                    $d(`#${key}ListaItems`).style.transitionDuration='1s',
+                    $d(`#${key}-itemlist`).style.transform=`translate(${i}px)`,
+                    $d(`#${key}-itemlist`).style.transitionDuration='1s',
                     $d(`#${key}PrevBtn`).style.transform='translate(0)',
                     $d(`#${key}PrevBtn`).style.transitionDuration='1s'
                     
@@ -80,8 +80,8 @@ const MediaSliderButtons = (props) => {
                 if (i===(props.categories?.length-1)*k){
                 return (
                     $d(`#${key}PostBtn`).style.display="none",
-                    $d(`#${key}ListaItems`).style.transform=`translate(${i}px)`,
-                    $d(`#${key}ListaItems`).style.transitionDuration='1s',
+                    $d(`#${key}-itemlist`).style.transform=`translate(${i}px)`,
+                    $d(`#${key}-itemlist`).style.transitionDuration='1s',
                     $d(`#${key}PrevBtn`).style.transform='translate(0)',
                     $d(`#${key}PrevBtn`).style.transitionDuration='1s'
 

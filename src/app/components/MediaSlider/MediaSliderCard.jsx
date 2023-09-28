@@ -1,5 +1,5 @@
 import s from './MediaSliderCard.module.css';
-import Fav from "../Fav/Fav";
+import FavIcon from "../Favorites/FavIcon";
 import editIcon from '../../../assets/images/edit-icon.png';
 import playIconn from "../../../assets/images/ruinatv-icon-play-n.png";
 import deleteIcon from '../../../assets/images/delete-icon.png';
@@ -7,6 +7,7 @@ import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { RenderDriveImage } from '../../../functions/RenderDriveImage';
 import { deleteMedia } from '../../../middlewares/redux/actions/admin';
+import defaultBackground from '../../../assets/images/default-background.png'
 
 const MediaCard = ({ data, style, keyID }) => {
   const history = useHistory();
@@ -30,7 +31,7 @@ const MediaCard = ({ data, style, keyID }) => {
 
   return (
     <div className={style.sliderItems}>
-      <ul className={style.sliderListaItems} id={`${keyID}ListaItems`}>
+      <ul className={style.sliderListaItems} id={`${keyID}-itemlist`}>
         {
           data?.map((e, i) => {
             return (
@@ -39,7 +40,7 @@ const MediaCard = ({ data, style, keyID }) => {
                   <div
                     onClick={() => handleRedirect(e.id)}
                     className={style.media}
-                    style={{ backgroundImage: `url(${RenderDriveImage(e.imageSlider)})` }}
+                    style={{ backgroundImage: `url(${RenderDriveImage(e.imageSlider)?? defaultBackground})` }}
                   >
                   </div>
                   {
@@ -65,7 +66,7 @@ const MediaCard = ({ data, style, keyID }) => {
                       </div>
                       {
                         currentUser && favs?.filter(fav => fav.id === e.id).length > 0
-                          ? <Fav urlID={e.id} color={'red'} style={{ marginTop: '-10px' }} />
+                          ? <FavIcon urlID={e.id} color={'red'} style={{ marginTop: '-10px' }} />
                           : null
                       }
                     </div>

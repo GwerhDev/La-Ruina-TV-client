@@ -1,7 +1,7 @@
 import React from "react";
-import s from "./Fav.module.css"
+import s from "./FavIcon.module.css"
 
-const Fav = ({ color }) => {
+const FavIcon = ({ color }) => {
     return (
         <button className={s.CardFav} id="CardFav">
             <span role="img" style={{color: color}}>❤</span>
@@ -9,4 +9,4 @@ const Fav = ({ color }) => {
     )
 }
 
-export default Fav
+export default FavIcon
