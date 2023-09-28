@@ -1,5 +1,5 @@
 import React from 'react';
-import RequestProfile from '../../admin/RequestProfile/RequestProfile';
+import RequestProfile from '../../components/RequestProfile/RequestProfile';
 
 export const Notifications = () => {
   return (

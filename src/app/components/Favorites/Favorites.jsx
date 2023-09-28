@@ -2,7 +2,7 @@ import s from './Favorites.module.css';
 import React, { useEffect } from 'react';
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
-import RequestProfile from '../../admin/RequestProfile/RequestProfile';
+import RequestProfile from '../../components/RequestProfile/RequestProfile';
 import { resetOption } from '../../../middlewares/redux/actions';
 import { $d } from '../../../functions';
 import { getFavorites } from '../../../middlewares/redux/actions/account';

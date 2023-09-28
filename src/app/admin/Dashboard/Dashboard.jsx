@@ -1,6 +1,6 @@
 import s from './Dashboard.module.css';
 import Requests from '../Requests/Requests';
-import RequestProfile from '../RequestProfile/RequestProfile';
+import RequestProfile from '../../components/RequestProfile/RequestProfile';
 
 const Dashboard = () => {
   return (

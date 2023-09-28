@@ -18,7 +18,7 @@ const Auth = () => {
       setUserToken(authToken);
       dispatch(auth(history));
     }
-  }, [currentUser, authToken, dispatch, history]);
+  }, [dispatch, currentUser, authToken, history]);
 
   return (
     <div className={s.loaderContainer}>

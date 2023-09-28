@@ -1,5 +1,5 @@
 import s from './Profile.module.css';
-import RequestProfile from '../../admin/RequestProfile/RequestProfile';
+import RequestProfile from '../../components/RequestProfile/RequestProfile';
 import userIcon from '../../../assets/images/user-icon.png';
 import { DeleteAccount } from '../DeleteAccount/DeleteAccount';
 import { $d } from '../../../functions';

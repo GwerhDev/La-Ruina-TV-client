@@ -1,5 +1,5 @@
 import s from './Configurations.module.css';
-import RequestProfile from '../../admin/RequestProfile/RequestProfile';
+import RequestProfile from '../../components/RequestProfile/RequestProfile';
 
 export const Configurations = () => {
   return (
