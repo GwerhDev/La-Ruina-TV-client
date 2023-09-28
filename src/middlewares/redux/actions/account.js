@@ -20,7 +20,7 @@ export function getUserData() {
 
 export function getFavorites() {
   return async function (dispatch) {
-    await axios.get(`${URL_API}/account/my-favorites/`, options())
+    !options()?? await axios.get(`${URL_API}/account/my-favorites/`, options())
       .then(res => {
         dispatch({
           type: GET_FAVORITES,
