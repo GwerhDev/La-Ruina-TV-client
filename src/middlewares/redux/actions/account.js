@@ -1,12 +1,12 @@
 import axios from "axios";
 import { URL_API } from "../../config";
 import { GET_FAVORITES, GET_USER_DATA } from "../../misc";
-import { getUserToken, options } from "../../helpers";
+import { options } from "../../helpers";
 
 export function getUserData() {
   return async function (dispatch) {
     try {
-      const response = !getUserToken()?? await axios.get(`${URL_API}/account/my-data`, options());
+      const response = await axios.get(`${URL_API}/account/my-data`, options());
       dispatch({
         type: GET_USER_DATA,
         payload: response.data?.userData
@@ -20,7 +20,7 @@ export function getUserData() {
 
 export function getFavorites() {
   return async function (dispatch) {
-    !getUserToken()?? await axios.get(`${URL_API}/account/my-favorites/`, options())
+    await axios.get(`${URL_API}/account/my-favorites/`, options())
       .then(res => {
         dispatch({
           type: GET_FAVORITES,
