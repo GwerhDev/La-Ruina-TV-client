@@ -27,7 +27,7 @@ const EditMediaList = () => {
                 <div className={s.divList}>
                     <div className={s.ulList1}>
                         <ul className={s.ulList0}>
-                            <li>Visor</li> - <li>Slider</li> - <li>Título</li> - <li>Artista</li> - <li>Editar</li> - <li>Eliminar</li>
+                            <li>Visor</li> - <li>Slider</li> - <li>Title</li> - <li>Artist</li> - <li>Edit</li> - <li>Delete</li>
                         </ul>
                         {
                             mediaList?.map((e, index)=>{

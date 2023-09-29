@@ -11,7 +11,7 @@ import Releases from '../pages/Releases/Releases';
 import Checkout from '../pages/Checkout/Checkout';
 import EditMedia from '../admin/EditMedia/EditMedia';
 import CreateMedia from '../admin/CreateMedia/CreateMedia';
-import EditUsersList from '../admin/EditUserList/EditUsersList';
+import EditUserList from '../admin/EditUserList/EditUserList';
 import EditMediaList from '../admin/EditMediaList/EditMediaList';
 
 import { Navigator } from '../components/Navigator/Navigator';
@@ -77,7 +77,7 @@ function Router() {
             </Route>    
 
             <Route exact path='/users/edit'>
-              <EditUsersList/>
+              <EditUserList/>
             </Route>
 
           </div>

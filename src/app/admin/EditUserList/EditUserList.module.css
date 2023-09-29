@@ -1,40 +1,40 @@
 .editListCont{
-  width: 100vw;
+  position: absolute;
+  width: 100%;
   height: auto;
-  min-height: 100vh;
-  background: linear-gradient(to bottom, #ffffffcf, rgb(137, 137, 137));
+  height: 100vh;
   margin: 0px;
-  overflow: scroll;
-  top: 0px;
-  left: 0px;
+  overflow: hidden;
+  overflow-y: auto;
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .editListFormat{
-  margin-top: 100px
-}
-.divFixed{
-  margin-left: 40px;
-}
-.divList{
-  top: 200px;
-  width: 90vw;
-  margin-left: 50px;
-  margin-top: -50px;
-  height: 70%;
-  margin-bottom: 110px;
+  background: linear-gradient(to bottom, #ffffffcf, rgb(137, 137, 137));
+  margin-top: 80px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: absolute;
+}
+
+.divList{
+  top: 200px;
+  width: 90vw;
+  margin-top: -50px;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .ulList0{
   width: 90vw;
   height: 20px;
   display: flex;
-  justify-content: space-around;
-  text-align: left;
+  justify-content: space-evenly;
   align-items: center;
   background-color: rgb(1, 1, 1);
   color: rgba(255, 255, 255, 0.854);
@@ -58,10 +58,10 @@
   align-items: center;
   position: relative;
 }
+
 .ulList1>li{
   min-width: 300px;
   width: 90%;
-  height: 50px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -69,26 +69,29 @@
   align-items: center;
   position: relative;
 }
+
 .ulList2{
   width: 90vw;
-  height: 50px;
+  height: auto;
+  padding-top: 10px;
+  padding-bottom: 5px;
   display: flex;
   justify-content: space-around;
+  align-items: center;
   text-align: left;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.739);
-  position: relative;
   color: rgba(255, 255, 255, 0.854);
   border-radius: 15px;
   box-shadow: 0px 0px 4px #171717;
   margin-top: -10px;
   transition-duration: .4s;
 }
+
 .ulList2>li{
   width: 20%;
   text-align: center;
 }
-
 
 .ulList2:hover{
   box-shadow: 0px 0px 4px rgb(255, 255, 255);
@@ -127,4 +130,8 @@
 
 .btnDelete:hover, .btnEdit:hover{
   scale: 1;
+}
+
+.btnDelete:disabled {
+  opacity: .2;
 }
