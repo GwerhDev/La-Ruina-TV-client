@@ -35,7 +35,7 @@ const Browser = () => {
     dispatch(resetIdYT());
     dispatch(resetMedia());
     dispatch(getCategories());
-    !currentUser?? dispatch(getFavorites());
+    !currentUser ?? dispatch(getFavorites());
   }, [dispatch, currentUser]);
 
   return (
@@ -46,9 +46,9 @@ const Browser = () => {
       <InfoCanvas />
 
       {/* --------------------SLIDERS-------------------- */}
-      
+
       {
-        mediaList?.length && 
+        mediaList?.length &&
         <Slider
           title={"Contenido"}
           data={mediaList}
@@ -71,12 +71,13 @@ const Browser = () => {
               id={`s${category.id}${index}`}
               key={category.id}
             />
-        )})
+          )
+        })
       }
 
       {/* ---------------------FOOTER--------------------- */}
 
-      { mediaList?.length && <Footer /> }
+      {mediaList?.length && <Footer />}
     </div>
   );
 };
