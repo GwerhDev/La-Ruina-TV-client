@@ -6,7 +6,7 @@ import RequestProfile from '../../components/RequestProfile/RequestProfile';
 import { resetOption } from '../../../middlewares/redux/actions';
 import { $d } from '../../../functions';
 import { getFavorites } from '../../../middlewares/redux/actions/account';
-import { renderDriveImage } from '../../../functions/renderDriveImage';
+import { RenderDriveImage } from '../../../functions/RenderDriveImage';
 
 export const Favorites = () => {
   const dispatch = useDispatch();
@@ -44,7 +44,7 @@ export const Favorites = () => {
                       <div className={s.itemContainer}>
                         <Link to={`/view/v=${e.id}`}>
                           <div className={s.imageContainer} 
-                               style={{ backgroundImage: `url(${renderDriveImage(e.imageSlider)})` }}
+                               style={{ backgroundImage: `url(${RenderDriveImage(e.imageSlider)})` }}
                                onClick={() => {
                                 return (
                                   dispatch(resetOption()),

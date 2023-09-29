@@ -5,7 +5,7 @@ import playIconN from "../../../assets/images/ruinatv-icon-play-n.png";
 import deleteIcon from '../../../assets/images/delete-icon.png';
 import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { renderDriveImage } from '../../../functions/renderDriveImage';
+import { RenderDriveImage } from '../../../functions/RenderDriveImage';
 import { deleteMedia } from '../../../middlewares/redux/actions/admin';
 import defaultBackground from '../../../assets/images/default-background.png'
 import { DeleteCanvas } from '../Utils/DeleteCanvas';
@@ -41,7 +41,7 @@ const MediaCard = ({ data, style, keyID }) => {
                   <div
                     onClick={() => handleRedirect(e.id)}
                     className={style.media}
-                    style={{ backgroundImage: `url(${renderDriveImage(e.imageSlider) ?? defaultBackground})` }}
+                    style={{ backgroundImage: `url(${RenderDriveImage(e.imageSlider) ?? defaultBackground})` }}
                   />
                   <div className={style.sliderInfoCanvas}>
                     <div className={style.ulTitlesItems} onClick={() => handleRedirect(e.id)}>

@@ -8,7 +8,7 @@ import {
   } from "../../../middlewares/redux/actions";
 import { getMedia, resetMedia } from '../../../middlewares/redux/actions/media';
 import { deleteMedia } from '../../../middlewares/redux/actions/admin';
-import { renderDriveImage } from '../../../functions/renderDriveImage';
+import { RenderDriveImage } from '../../../functions/RenderDriveImage';
 
 const EditMediaList = () => {
     const history = useHistory()
@@ -34,8 +34,8 @@ const EditMediaList = () => {
                                 return(
                                     <li key={index}>
                                         <ul className={s.ulList2}>
-                                            <li><img src={renderDriveImage(e.imageVisor)} height={80} alt="" /></li> - 
-                                            <li><img src={renderDriveImage(e.imageSlider)} height={80} alt="" /></li> - 
+                                            <li><img src={RenderDriveImage(e.imageVisor)} height={80} alt="" /></li> - 
+                                            <li><img src={RenderDriveImage(e.imageSlider)} height={80} alt="" /></li> - 
                                             <li>{e.title}</li> - 
                                             <li>{e.artist}</li> -
                                             <li>

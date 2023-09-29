@@ -5,7 +5,7 @@ import playIconn from '../../../assets/images/ruinatv-icon-play-n.png';
 import visorIntroVideo from '../../../assets/videos/laruina-intro.mp4';
 import { VisorFunction } from './MediaVisor.functions';
 import { $d } from "../../../functions";
-import { renderDriveImage } from "../../../functions/renderDriveImage";
+import { RenderDriveImage } from "../../../functions/RenderDriveImage";
 
 const MediaVisor = () => {
     const { 
@@ -24,7 +24,7 @@ const MediaVisor = () => {
         <div className='visor'>
             <video className='visorVideoIntro' src={visorIntroVideo} autoPlay muted loop type="video/mp4"/>
             <div className='visorBGCanvas'>
-                <img className='visorBG' src={renderDriveImage(visorImg)} alt='' />
+                <img className='visorBG' src={RenderDriveImage(visorImg)} alt='' />
             </div>
             <div className='visorCanvas'/>
             { visorList?.length
