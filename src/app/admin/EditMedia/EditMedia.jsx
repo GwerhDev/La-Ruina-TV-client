@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updateMedia } from "../../../middlewares/redux/actions/admin";
 import { getMediaById } from "../../../middlewares/redux/actions/media";
-import { RenderDriveImage } from "../../../functions/RenderDriveImage";
+import { renderDriveImage } from "../../../functions/renderDriveImage";
 
 const EditMedia = () => {
   const dispatch = useDispatch();
@@ -235,7 +235,7 @@ const EditMedia = () => {
                 <p>
                   <label>Imagen del Slider</label>
                   <br></br>
-                  <img src={RenderDriveImage(imageSlider)} alt="slider" width="200px" height="100px" />
+                  <img src={renderDriveImage(imageSlider)} alt="slider" width="200px" height="100px" />
                   <br></br>
                   <input
                     type="file"
@@ -252,7 +252,7 @@ const EditMedia = () => {
                 <p>
                   <label>Imagen del Visor</label>
                   <br></br>
-                  <img src={RenderDriveImage(imageVisor)} alt="visor" width="200px" height="100px" />
+                  <img src={renderDriveImage(imageVisor)} alt="visor" width="200px" height="100px" />
                   <br></br>
                   <input
                     type="file"

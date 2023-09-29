@@ -1,26 +1,25 @@
-import axios from 'axios'
-import { URL_API } from '../middlewares/config'
+import { donateFlow, donateMercadopago } from "../middlewares/redux/actions/donate";
+import { subscribePlanFlow, subscribePlanMercadopago } from "../middlewares/redux/actions/subscribe";
+import { PAYMENT_FLOW, PAYMENT_MERCADOPAGO } from "./consts";
 
-export const handleCheckout = async (userId) => { 
-  try {
-    await axios.post(`${URL_API}/mercadopago/create-checkout`, {userId})
-    .then(data => {
-      window.location.href = data.data
-    })
-  } catch (error) {
-      console.error(error);
-      alert("Hubo un error, intenta de nuevo más tarde.");
+export const handleCheckout = async (way, dispatch, type, formData) => {
+  if(way === PAYMENT_MERCADOPAGO) {
+    switch (type) {
+      case "donation":
+        return dispatch(donateMercadopago(formData));
+      case "subscription":
+        return dispatch(subscribePlanMercadopago(formData));
+      default:
+        return;
+    }
+  } else if(way === PAYMENT_FLOW) {
+    switch (type) {
+      case "donation":
+        return dispatch(donateFlow(formData));
+      case "subscription":
+        return dispatch(subscribePlanFlow(formData));
+      default:
+        return;
+    }
   }
 }
-
-export const handleCheckout2 = async () => {
-    try {
-      await axios.post(`${URL_API}/mercadopago/create-payment`)
-      .then(data => 
-        window.location.href = data.data
-      )
-  } catch (error) {
-      console.error(error);
-      alert("Hubo un error, intenta de nuevo más tarde.");
-  }
-  }
