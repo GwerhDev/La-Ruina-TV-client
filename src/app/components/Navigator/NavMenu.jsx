@@ -1,13 +1,19 @@
+import { useSelector } from 'react-redux';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import navBack from './js/Navigator';
-import { resetOption } from '../../../middlewares/redux/actions';
 import { $d } from '../../../functions';
+import { resetOption } from '../../../middlewares/redux/actions';
+import { getUserToken } from '../../../middlewares/helpers';
 
 const NavMenu = () => {
-    const dispatch = useDispatch()
-    const [posNav, setPosNav] = useState()
+    const dispatch = useDispatch();
+    const currentUser = useSelector((state) => state.currentUser);
+    const [posNav, setPosNav] = useState();
+    const urlMerch = 'https://merch.laruinarecords.cl/';
+    const urlPlay = 'https://play.laruinarecords.cl/';
+    const urlHub = currentUser? 'https://hub.laruinarecords.cl/#/account/settings/' + getUserToken() : 'https://hub.laruinarecords.cl/';
     window.onscroll = function() {navBack(setPosNav, posNav)};
 
     return (
@@ -60,13 +66,13 @@ const NavMenu = () => {
                 <Link to='/donate'>Colaborar</Link>
             </li>
             <li>
-                <a href='https://play.laruinarecords.cl/'> Play </a>
+                <a href={urlPlay}> Play </a>
             </li>
             <li>
-                <a href='https://merch.laruinarecords.cl'> Merch </a>
+                <a href={urlMerch}> Merch </a>
             </li>
             <li>
-                <a href='https://hub.laruinarecords.cl/'> Hub </a>
+                <a href={urlHub}> Hub </a>
             </li>
         </ul>
     )
