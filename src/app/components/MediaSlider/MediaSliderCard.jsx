@@ -26,12 +26,12 @@ const MediaCard = ({ data, style, keyID }) => {
     window.scrollTo(0, 0);
   };
 
-  function handleDeleteMedia(id) {
-    $d(`#deleteCanvas${id}`).style.display = 'flex';
+  function handleDeleteMedia(keyID, id) {
+    $d(`#deleteCanvas${keyID}${id}`).style.display = 'flex';
   };
 
-  function opacityCanvas(opacity, id) {
-    $d(`#deleteCanvas${id}`).style.opacity = opacity;
+  function opacityCanvas(opacity, keyID, id) {
+    $d(`#deleteCanvas${keyID}${id}`).style.opacity = opacity;
   }
 
 
@@ -71,12 +71,12 @@ const MediaCard = ({ data, style, keyID }) => {
                           <li className={s.adminBtn}>
                             <img src={editIcon} className={s.editImg} onClick={() => handleEditMedia(e.id)} alt='edit' width='15px' />
                           </li>
-                          <li className={s.adminBtn} onClick={() => handleDeleteMedia(e.id)} >
+                          <li className={s.adminBtn} onClick={() => handleDeleteMedia(keyID, e.id)} >
                             <img src={deleteIcon} className={s.deleteImg} alt='delete' width='15px' />
                           </li>
                         </ul>
-                        <div className={s.deleteCanvasContainer} onMouseEnter={() => opacityCanvas(1, e.id)} onMouseLeave={() => opacityCanvas(0, e.id)}>
-                          <DeleteCanvas id={e.id} deleteFunction={deleteMedia} />
+                        <div className={s.deleteCanvasContainer} onMouseEnter={() => opacityCanvas(1, keyID, e.id)} onMouseLeave={() => opacityCanvas(0, keyID, e.id)}>
+                          <DeleteCanvas id={e.id} keyId={keyID} deleteFunction={ deleteMedia }/>
                         </div>
                       </>
                       : null

@@ -121,7 +121,7 @@ const MediaViewer = () => {
                         </div>
                     </div>
                 </section>
-                <DeleteCanvas id={id} deleteFunction={deleteMedia}/>
+                <DeleteCanvas keyId={'Viewer'} id={id} deleteFunction={deleteMedia}/>
             </div>
         </div>
     </div>

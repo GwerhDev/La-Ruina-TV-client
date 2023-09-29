@@ -4,18 +4,18 @@ import { useDispatch } from "react-redux";
 
 export const DeleteCanvas = (props) => {
   const dispatch = useDispatch();
-  const { id, deleteFunction } = props;
+  const { keyId, id, deleteFunction } = props;
 
   function handleDelete() {
     dispatch(deleteFunction(id));
   };
 
   function handleCancelDelete() {
-    $d(`#deleteCanvas${id}`).style.display='none';
+    $d(`#deleteCanvas${keyId}${id}`).style.display='none';
   }
 
   return (
-    <div className={s.container} id={`deleteCanvas${id}`} style={{display:'none'}}>
+    <div className={s.container} id={`deleteCanvas${keyId}${id}`} style={{ display:'none' }}>
       <div className={s.canvasContainer}>
         ¿Eliminar?
         <button className={s.secundaryButton} onClick={handleDelete}>Sí</button>
