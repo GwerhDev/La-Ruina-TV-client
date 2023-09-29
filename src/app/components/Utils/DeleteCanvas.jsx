@@ -1,13 +1,18 @@
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { $d } from "../../../functions";
 import s from "./DeleteCanvas.module.css";
 import { useDispatch } from "react-redux";
 
 export const DeleteCanvas = (props) => {
   const dispatch = useDispatch();
+  const history = useHistory();
   const { keyId, id, deleteFunction } = props;
 
   function handleDelete() {
     dispatch(deleteFunction(id));
+    if (history.location.pathname !== '/browser') {
+      history.push('/browser');
+    }
   };
 
   function handleCancelDelete() {

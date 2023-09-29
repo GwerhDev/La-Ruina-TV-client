@@ -24,6 +24,7 @@ export const deleteMedia = (id) => {
   return async function (dispatch) {
     const response = await axios.delete(`${URL_API}/admin/media/delete/${id}`, options());
     dispatch(getMedia());
+    dispatch(getCategories());
     return response;
   }
 };

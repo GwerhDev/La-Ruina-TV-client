@@ -28,7 +28,7 @@ const Requests = () => {
             $d('#slideCanvasCont').style.overflowY="scroll"
             )}}>
           <img src={createIcon} alt="" />
-          Crear Media
+          Crear Contenido
         </button>
       </Link>
       <Link to='/media/edit'>
