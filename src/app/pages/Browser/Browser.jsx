@@ -26,7 +26,7 @@ const Browser = () => {
   }, [dispatch])
 
   useEffect(() => {
-    !(userToken?.length && !currentUser) ?? history.push(`/auth?token=${userToken}`);
+    !(userToken?.length && !currentUser)?? history.push(`/auth?token=${userToken}`);
   }, [dispatch, currentUser, userToken, history])
 
   useEffect(() => {
@@ -35,7 +35,7 @@ const Browser = () => {
     dispatch(resetIdYT());
     dispatch(resetMedia());
     dispatch(getCategories());
-    !currentUser ?? dispatch(getFavorites());
+    dispatch(getFavorites());
   }, [dispatch, currentUser]);
 
   return (

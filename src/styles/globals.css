@@ -983,3 +983,7 @@ button:hover{
   }
 
 }
+
+#deleteCanvas {
+  display: none;
+}

@@ -74,6 +74,8 @@ button:hover {
 .sliderItem {
     background: linear-gradient(to top, #ffffff, rgb(0, 0, 0));
     background-color: #ffffff;
+    padding: 0;
+    margin: 0;
     height: 0px;
     width: 205px;
     color: #000000;
@@ -100,7 +102,7 @@ button:hover {
     opacity: 0.9;
 }
 
-.mydiv {
+.sliderInfoCanvas {
     align-items: center;
     position: absolute;
     bottom: -10px;
@@ -118,7 +120,7 @@ button:hover {
     align-items: center;
 }
 
-.sliderItem:hover .mydiv {
+.sliderItem:hover .sliderInfoCanvas {
     position: absolute;
     bottom: -10px;
     opacity: 1;

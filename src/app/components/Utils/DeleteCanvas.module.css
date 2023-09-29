@@ -1,0 +1,59 @@
+.container {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.432);
+  backdrop-filter: blur(10px);
+  top: 0;
+}
+
+.canvasContainer {
+  padding: 0;
+  margin: 0;
+  color: white;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.primaryButton,
+.secundaryButton {
+  height: 25px;
+  width: 90%;
+  font-family: bebas neue;
+  font-size: 20px;
+  border: none;
+  border-radius: 2%;
+  margin-bottom: 10px;
+}
+
+.primaryButton {
+  background: linear-gradient(to bottom, #ffffff, rgba(0, 0, 0, 0.679));
+  background-color: #ffffff;
+}
+
+.secundaryButton{
+  background-color: #84848446;
+  color: #ffffff;
+  font-weight: 100;
+}
+
+.primaryButton:hover {
+  background: linear-gradient(to bottom, #171717, rgba(0, 0, 0, 0.679));
+  background-color: #171717;
+  color: #ffffff;
+  transition-duration: 0.2s;
+}
+
+.secundaryButton:hover{
+  background-color: #171717;
+  transition-duration: 0.5s;
+}
