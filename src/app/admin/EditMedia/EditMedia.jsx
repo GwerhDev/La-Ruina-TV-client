@@ -9,6 +9,7 @@ import { updateMedia } from "../../../middlewares/redux/actions/admin";
 import { getMediaById } from "../../../middlewares/redux/actions/media";
 import { renderDriveImage } from "../../../functions/renderDriveImage";
 
+
 const EditMedia = () => {
   const dispatch = useDispatch();
   const infoDetailViewer = useSelector(state => state.infoDetailViewer);
