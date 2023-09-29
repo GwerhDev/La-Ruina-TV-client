@@ -1,15 +1,15 @@
 import s from './Enter.module.css';
-import LoginGoogle from './LoginGoogle';
-import LoginInner from './LoginInner';
+import LoginGoogle from '../../components/Login/LoginGoogle';
+import LoginInner from '../../components/Login/LoginInner';
 import { EnterCss } from './js/EnterCss';
 import { URL_LARUINAHUB_REGISTER } from '../../../middlewares/config';
-import LoginLaRuinaHub from './LoginLaRuinaHub';
+import LoginLaRuinaHub from '../../components/Login/LoginLaRuinaHub';
 
 const Enter = () => {
-  EnterCss()
+  EnterCss();
   return (
     <div className={s.enterBody}>
-      <div className='navFixed'></div>
+      <div className='navFixed'/>
       <div className={s.welcomeCont} id='welcomeCont'>
         <h1>ENTRÁ BOBO, VENÍ PARA ACÁ</h1>
         <LoginInner/>
@@ -19,7 +19,8 @@ const Enter = () => {
           <div className='separator'/>
         </div>
         <h4 className='family-poppins'>puedes ingresar con:</h4>
-        <LoginGoogle/><br />
+        <LoginGoogle/>
+        <br/>
         <LoginLaRuinaHub/>
         <p className='family-poppins'>¿No tienes una cuenta? <a className={s.linkHub} href={URL_LARUINAHUB_REGISTER}>Regístrate</a></p>
       </div>
@@ -27,4 +28,4 @@ const Enter = () => {
   )
 }
 
-export default Enter
+export default Enter;

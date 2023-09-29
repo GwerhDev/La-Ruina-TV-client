@@ -1,19 +1,18 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
+import View from '../pages/View/View';
 import Auth from '../components/Auth/Auth';
+import Search from '../pages/Search/Search';
+import Donate from '../pages/Donate/Donate';
 import Verify from '../components/Auth/Verify';
 import Browser from '../pages/Browser/Browser';
+import Releases from '../pages/Releases/Releases';
 import EditMedia from '../admin/EditMedia/EditMedia';
 import Navigator from '../components/Navigator/Navigator';
 import CreateMedia from '../admin/CreateMedia/CreateMedia';
-import MediaViewer from '../components/MediaViewer/Viewer';
 
-import { Search } from '../components/Filter/Search';
-import { BackAmp } from '../components/Back&Amp/BackAmp';
 import { Checkout } from '../components/Checkout/Checkout';
-import { Colaborar } from '../components/Colaborar/Colaborar';
-import { Novedades } from '../components/Novedades/Novedades';
 import { CanvasMenu } from '../components/Navigator/CanvasMenu';
 import { OptionsCanvas } from '../components/Utils/SlideCanvas';
 import { EditMediaList } from '../admin/EditMediaList/EditMediaList';
@@ -25,51 +24,62 @@ function Router() {
       <Switch>
         <>
           <Navigator/>
-            <CanvasMenu/>
+          <CanvasMenu/>
           <div className='bodyApp'>
             <OptionsCanvas/>
+
+            <Route exact path='/'>
+              <Redirect to='/browser'/>
+            </Route>
+
             <Route path='/auth'>
               <Auth/>
             </Route>
-            <Route exact path='/'>
-              <Redirect to='/browser' />
-            </Route>
-            <Route exact path='/browser'>
-              <Browser />
-            </Route>
+
             <Route path='/verify'>
-              <Verify />
+              <Verify/>
             </Route>
-            <Route exact path='/novedades'>
-              <Novedades />
+            
+            <Route exact path='/browser'>
+              <Browser/>
             </Route>
-            <Route exact path='/lanzamientos'>
-              <BackAmp />
+
+            <Route exact path='/releases'>
+              <Releases/>
             </Route>
-            <Route exact path='/colaborar'>
-              <Colaborar />
+
+            <Route exact path='/donate'>
+              <Donate/>
             </Route>
+
             <Route path='/view/v=:id'>
-              <MediaViewer/>
+              <View/>
             </Route>
-            <Route exact path='/media/create'>
-              <CreateMedia />
-            </Route>
-            <Route exact path='/media/edit/:id'>
-              <EditMedia />
-            </Route>
-            <Route exact path='/media/edit'>
-              <EditMediaList />
-            </Route>            
-            <Route exact path='/users/edit'>
-              <EditUsersList />
-            </Route>
+
             <Route path='/search/:search'>
-              <Search />
+              <Search/>
             </Route>
+
             <Route path='/checkout/:type'>
-              <Checkout />
+              <Checkout/>
             </Route>
+
+            <Route exact path='/media/create'>
+              <CreateMedia/>
+            </Route>
+
+            <Route exact path='/media/edit/:id'>
+              <EditMedia/>
+            </Route>
+
+            <Route exact path='/media/edit'>
+              <EditMediaList/>
+            </Route>    
+
+            <Route exact path='/users/edit'>
+              <EditUsersList/>
+            </Route>
+
           </div>
         </>
       </Switch>

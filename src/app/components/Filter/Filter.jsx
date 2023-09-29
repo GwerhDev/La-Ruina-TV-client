@@ -1,13 +1,12 @@
-import React from 'react'
-import s from './Search.module.css'
+import s from './Filter.module.css'
 import { useDispatch, useSelector } from 'react-redux'
-import { SearchedMedia } from './SearchedMedia'
+import { FilteredCard } from './FilteredCard'
 import { RenderDriveImage } from '../../../functions/RenderDriveImage'
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min'
 import { useEffect } from 'react'
 import { getSearch } from '../../../middlewares/redux/actions/search'
 
-export const Search = () => {
+export const Filter = () => {
   const { artistResult, titleResult, infoResult } = useSelector(state => state.searchedMedia);
   const dispatch = useDispatch();
   const { search } = useParams();
@@ -27,7 +26,7 @@ export const Search = () => {
               ? titleResult?.rows.map((e, index) => {
                 return (
                   <li key={index}>
-                    <SearchedMedia
+                    <FilteredCard
                       id={e.id}
                       title={e.title}
                       img={RenderDriveImage(e.imageSlider)}
@@ -51,7 +50,7 @@ export const Search = () => {
               ? artistResult?.rows.map((e, index) => {
                 return (
                   <li key={index}>
-                    <SearchedMedia
+                    <FilteredCard
                       id={e.id}
                       title={e.title}
                       img={RenderDriveImage(e.imageSlider)}
@@ -75,7 +74,7 @@ export const Search = () => {
               ? infoResult?.rows.map((e, index) => {
                 return (
                   <li key={index}>
-                    <SearchedMedia
+                    <FilteredCard
                       id={e.id}
                       title={e.title}
                       img={RenderDriveImage(e.imageSlider)}

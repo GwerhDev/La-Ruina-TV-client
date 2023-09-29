@@ -33,8 +33,8 @@ export const ProfileMenu = () => {
         <ul className={s.profileBtnCont}>
           <li 
             className={s.profileBtnMenu} 
-            onClick={() => {return profileMenuCss('enter')}}
-            onMouseLeave={() => {return profileMenuCss('leave')}}
+            onClick={() => { return profileMenuCss('enter') }}
+            onMouseLeave={() => { return profileMenuCss('leave') }}
             >
               <span className={s.buttonProfile}>
                 <img className={s.userIcon} referrerPolicy="no-referrer" src={profilePic ? profilePic : userIcon} alt='userIcon' width='25px' />
@@ -48,13 +48,13 @@ export const ProfileMenu = () => {
                 id='optionProfileBtn0' 
                 className={s.optionProfileBtn} 
                 value='profile' 
-                onClick={(e)=>{return onClickValue(e)}}
-                onMouseEnter={() => {return profileMenuCss('enter')}}>
+                onClick={(e)=>{ return onClickValue(e) }}
+                onMouseEnter={() => { return profileMenuCss('enter') }}>
                 <img 
                   className={s.imgIconProf}
                   referrerPolicy="no-referrer" 
                   src={profilePic ? profilePic : userIcon}
-                  onClick={(e) => {return e.target.value='profile'}}
+                  onClick={(e) => { return e.target.value='profile' }}
                   alt="" /> <br></br>
                     PERFIL
                 </button>
@@ -64,11 +64,11 @@ export const ProfileMenu = () => {
                 id='optionProfileBtn2' 
                 className={s.optionProfileBtn} 
                 value='favorites' 
-                onClick={(e)=>{return onClickValue(e)}}
-                onMouseEnter={() => {return profileMenuCss('enter')}}>
+                onClick={(e)=>{ return onClickValue(e) }}
+                onMouseEnter={() => { return profileMenuCss('enter') }}>
               <img 
                 className={s.imgIcon}
-                onClick={(e) => {return e.target.value='favorites'}}
+                onClick={(e) => { return e.target.value='favorites'} }
                 src={likeIcon} 
                 alt="" /><br></br>
                 MIS FAVORITOS
@@ -80,10 +80,10 @@ export const ProfileMenu = () => {
                 className={s.optionProfileBtn} 
                 value='config' 
                 onClick={(e)=>{return onClickValue(e)}}
-                onMouseEnter={() => {return profileMenuCss('enter')}}>
+                onMouseEnter={() => { return profileMenuCss('enter') }}>
               <img 
                 className={s.imgIcon}
-                onClick={(e) => {return e.target.value='config'}}
+                onClick={(e) => { return e.target.value='config' }}
                 src={configIcon} 
                 alt="" /><br></br>
                   CONFIGURACIÓN
@@ -94,8 +94,8 @@ export const ProfileMenu = () => {
                 id='optionProfileBtn5' 
                 className={s.optionProfileBtn} 
                 value={role==='admin'? 'dashboard' : 'subscription'}
-                onClick={(e)=>{return onClickValue(e)}}
-                onMouseEnter={() => {return profileMenuCss('enter')}}>
+                onClick={(e)=>{ return onClickValue(e) }}
+                onMouseEnter={() => { return profileMenuCss('enter') }}>
               <img 
                 className={s.imgIcon}
                 onClick={(e) => {return e.target.value=((role==='admin')? ('dashboard') : ('subscription'))}}
@@ -115,7 +115,7 @@ export const ProfileMenu = () => {
                     window.location.reload()
                   )
                 }}
-                onMouseEnter={() => {return profileMenuCss('enter')}}>
+                onMouseEnter={() => { return profileMenuCss('enter') }}>
               <img 
                 className={s.imgIcon}
                 src={logoutIcon} 

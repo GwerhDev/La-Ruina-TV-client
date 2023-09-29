@@ -1,17 +1,17 @@
 import s from './CanvasMenu.module.css';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { resetOption } from '../../../middlewares/redux/actions';
-import CanvasMenuFunction from './js/CanvasMenuFunction';
 import navBack from './js/Navigator';
 import { $d } from '../../../functions';
+import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { resetOption } from '../../../middlewares/redux/actions';
+import CanvasMenuFunction from './js/CanvasMenuFunction';
 
 export const CanvasMenu = () => {
-    const dispatch = useDispatch()
-    const [posNav, setPosNav] = useState()
+    const dispatch = useDispatch();
+    const [posNav, setPosNav] = useState();
     window.onscroll = function() {navBack(setPosNav, posNav)};
-    CanvasMenuFunction()
+    CanvasMenuFunction();
     return(
         <div className="contCanvasMenu">
             <div className={s.contMenu}>
@@ -48,7 +48,8 @@ export const CanvasMenu = () => {
                     $d('.contCanvasMenu').style.display='none',
                     $d('#slideCanvasCont').style.overflowY="scroll"
                     )}}>
-                <Link to='/novedades'>Novedades</Link></li>
+                <Link to='/releases'>Novedades</Link>
+            </li>
             <li
                 onClick={()=>{
                     window.scrollTo(0, 0)
@@ -64,23 +65,7 @@ export const CanvasMenu = () => {
                     $d('.contCanvasMenu').style.display='none',
                     $d('#slideCanvasCont').style.overflowY="scroll"
                     )}}>
-                <Link to='/lanzamientos'>Back&Amp</Link></li>
-            <li
-                onClick={()=>{
-                    window.scrollTo(0, 0)
-                    return(
-                    dispatch(resetOption()),
-                    $d(`.bodyApp`).style.transform='translateX(0)',
-                    $d(`.navCont`).style.transitionDuration='.2s',
-                    $d(`.bodyApp`).style.transitionDuration='2s',
-                    $d(`.navCont`).style.width='100vw',
-                    $d(`.browserBody`).style.height='auto',
-                    $d(`.browserBody`).style.overflowY='scroll',
-                    $d(`.visor`).style.transform='translateX(0)',
-                    $d('.contCanvasMenu').style.display='none',
-                    $d('#slideCanvasCont').style.overflowY="scroll"
-                    )}}>
-                    <Link to='/checkout/donation'>Colaborar</Link></li>
+                    <Link to='/donate'>Colaborar</Link></li>
                     <li
                         onClick={()=>{
                             window.scrollTo(0, 0)

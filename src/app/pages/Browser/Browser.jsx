@@ -10,7 +10,7 @@ import { getUserToken } from "../../../middlewares/helpers";
 import { getFavorites } from "../../../middlewares/redux/actions/account";
 import Slider from "../../components/MediaSlider/MediaSlider";
 import Visor from "../../components/MediaVisor/MediaVisor";
-import Footer from "../../components/Footer/Footer";
+import Footer from "../../components/Utils/Footer";
 
 const Browser = () => {
   const dispatch = useDispatch();

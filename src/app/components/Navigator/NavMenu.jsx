@@ -41,7 +41,7 @@ const NavMenu = () => {
                     $d(`.visor`).style.transform='translateX(0)',
                     $d('#slideCanvasCont').style.overflowY="scroll"
                     )}}>
-                <Link to='/novedades'>Novedades</Link>
+                <Link to='/releases'>Novedades</Link>
             </li>
             <li
                 onClick={()=>{
@@ -57,7 +57,7 @@ const NavMenu = () => {
                     $d(`.visor`).style.transform='translateX(0)',
                     $d('#slideCanvasCont').style.overflowY="scroll"
                     )}}>
-                <Link to='/colaborar'>Colaborar</Link>
+                <Link to='/donate'>Colaborar</Link>
             </li>
             <li>
                 <a href='https://play.laruinarecords.cl/'> Play </a>

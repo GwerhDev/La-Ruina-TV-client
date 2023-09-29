@@ -1,10 +1,10 @@
-import s from './Colaborar.module.css';
+import s from './Colaborate.module.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { BodyCss } from '../../../functions';
 import laruinaLogo from '../../../assets/images/ruina-records-logo.png'
 
-export const Colaborar = () => {
+export const Colaborate = () => {
   BodyCss()
   return (
     <div className={s.donateCont}>

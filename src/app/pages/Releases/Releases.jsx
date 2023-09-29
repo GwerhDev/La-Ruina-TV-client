@@ -1,10 +1,12 @@
 import React from 'react';
 import { BodyCss } from '../../../functions';
 
-export const Novedades = () => {
+const Releases = () => {
   BodyCss()
   return (
     <div className='browserBody'>
     </div>
   )
 }
+
+export default Releases;

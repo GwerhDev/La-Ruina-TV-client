@@ -1,8 +1,8 @@
-import s from './SearchedMedia.module.css'
+import s from './FilteredCard.module.css'
 import { Link } from "react-router-dom";
 
 
-export const SearchedMedia = (props) => {
+export const FilteredCard = (props) => {
     const {id, title, img, artist } = props
     return(
         <div className={s.searchedCont1}>

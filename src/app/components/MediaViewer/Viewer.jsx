@@ -116,7 +116,6 @@ const MediaViewer = () => {
                                 </button>)
                             }
                             <Link to='/browser'><button className='buttonVolver'>Volver al inicio</button></Link>
-                            
                         </div>
                     </div>
                 </section>
