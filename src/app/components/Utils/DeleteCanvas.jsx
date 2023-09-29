@@ -14,12 +14,8 @@ export const DeleteCanvas = (props) => {
     $d(`#deleteCanvas${id}`).style.display='none';
   }
 
-  function opacityCanvas(opacity) {
-    $d(`#deleteCanvas${id}`).style.opacity=opacity;
-  }
-
   return (
-    <div className={s.container} onMouseEnter={() => opacityCanvas(1)} onMouseLeave={() => opacityCanvas(0)} id={`deleteCanvas${id}`} style={{display:'none'}}>
+    <div className={s.container} id={`deleteCanvas${id}`} style={{display:'none'}}>
       <div className={s.canvasContainer}>
         ¿Eliminar?
         <button className={s.secundaryButton} onClick={handleDelete}>Sí</button>

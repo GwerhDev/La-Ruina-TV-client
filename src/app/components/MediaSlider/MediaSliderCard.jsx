@@ -30,13 +30,18 @@ const MediaCard = ({ data, style, keyID }) => {
     $d(`#deleteCanvas${id}`).style.display = 'flex';
   };
 
+  function opacityCanvas(opacity, id) {
+    $d(`#deleteCanvas${id}`).style.opacity = opacity;
+  }
+
+
   return (
     <div className={style.sliderItems}>
       <ul className={style.sliderListaItems} id={`${keyID}-itemlist`}>
         {
           data?.map((e, i) => {
             return (
-              <li value={e.id} key={i}>                
+              <li value={e.id} key={i}>
                 <div className={style.sliderItem}>
                   <div
                     onClick={() => handleRedirect(e.id)}
@@ -54,14 +59,14 @@ const MediaCard = ({ data, style, keyID }) => {
                       </div>
                       {
                         currentUser && favorites?.filter(fav => fav.id === e.id).length
-                          ? <FavIcon urlID={e.id} color={'red'} style={{ marginTop: '-10px' }}/>
+                          ? <FavIcon urlID={e.id} color={'red'} style={{ marginTop: '-10px' }} />
                           : null
                       }
                     </div>
                   </div>
                   {
                     currentUser?.role === 'admin'
-                    ? <>
+                      ? <>
                         <ul className={s.adminRequest}>
                           <li className={s.adminBtn}>
                             <img src={editIcon} className={s.editImg} onClick={() => handleEditMedia(e.id)} alt='edit' width='15px' />
@@ -70,9 +75,11 @@ const MediaCard = ({ data, style, keyID }) => {
                             <img src={deleteIcon} className={s.deleteImg} alt='delete' width='15px' />
                           </li>
                         </ul>
-                        <DeleteCanvas id={e.id} deleteFunction={deleteMedia}/>
-                      </> 
-                    : null
+                        <div className={s.deleteCanvasContainer} onMouseEnter={() => opacityCanvas(1, e.id)} onMouseLeave={() => opacityCanvas(0, e.id)}>
+                          <DeleteCanvas id={e.id} deleteFunction={deleteMedia} />
+                        </div>
+                      </>
+                      : null
                   }
                 </div>
               </li>

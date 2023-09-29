@@ -17,6 +17,8 @@ import { getMediaById } from '../../../middlewares/redux/actions/media';
 import { RenderDriveImage } from '../../../functions/RenderDriveImage';
 import { addFavorites, deleteFavorites, getFavorites } from '../../../middlewares/redux/actions/account';
 import { subscriberYoutubeVerification } from '../../../middlewares/redux/actions/subscriber';
+import { DeleteCanvas } from '../Utils/DeleteCanvas';
+import { deleteMedia } from '../../../middlewares/redux/actions/admin';
 
 const MediaViewer = () => {
     const params = useParams();
@@ -33,7 +35,6 @@ const MediaViewer = () => {
         dispatch(getMediaById(id));
         dispatch(getFavorites());
     }, [dispatch, id]);
-
 
     const {
         imageSlider,
@@ -100,7 +101,8 @@ const MediaViewer = () => {
                                     onMouseLeave={()=>{
                                         $d('.visorButtonPlay').src=playIconn
                                     }}>
-                                        <img className='visorButtonPlay' src={playIconn} alt='visorbtn' />Ver ahora
+                                        <img className='visorButtonPlay' src={playIconn} alt='visorbtn' />
+                                        Ver ahora
                                 </button>)
                             :   (<button 
                                     className='buttonVer'
@@ -119,6 +121,7 @@ const MediaViewer = () => {
                         </div>
                     </div>
                 </section>
+                <DeleteCanvas id={id} deleteFunction={deleteMedia}/>
             </div>
         </div>
     </div>

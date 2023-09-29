@@ -28,11 +28,13 @@
 .secundaryButton {
   height: 25px;
   width: 90%;
+  max-width: 300px;
   font-family: bebas neue;
   font-size: 20px;
   border: none;
   border-radius: 2%;
-  margin-bottom: 10px;
+  margin-top: 6px;
+  margin-bottom: 6px;
 }
 
 .primaryButton {
