@@ -1,10 +1,10 @@
 import s from './Checkout.module.css';
 import React from 'react';
 import { BodyCss } from '../../../functions';
-import { handleCheckout, handleCheckout2 } from '../Checkout/js/CheckoutFunction';
+import { handleCheckout, handleCheckout2 } from '../../../handlers/checkout';
 import { Link, useParams } from 'react-router-dom';
 
-export const Checkout = () => {
+const Checkout = () => {
   BodyCss()
   const {type} = useParams()
   const urlFlow = "https://www.flow.cl/btn.php?token=kljrekt"
@@ -39,3 +39,5 @@ export const Checkout = () => {
     </div>
   )
 }
+
+export default Checkout;

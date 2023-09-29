@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { resetOption } from "../../../middlewares/redux/actions";
 import { getUsers } from '../../../middlewares/redux/actions/admin';
 
-export const EditUsersList = () => {
+const EditUsersList = () => {
     const dispatch = useDispatch();
     const usersList = useSelector(state => state.usersList);
     
@@ -40,3 +40,5 @@ export const EditUsersList = () => {
         </div>
     )
 }
+
+export default EditUsersList;

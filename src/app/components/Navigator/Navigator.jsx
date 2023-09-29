@@ -10,7 +10,7 @@ import { useEffect } from 'react';
 import { getUserData } from '../../../middlewares/redux/actions/account';
 
 
-const Navigator = () => {
+export const Navigator = () => {
     const location = useLocation()
     const currentPath = location.pathname;
 
@@ -38,5 +38,3 @@ const Navigator = () => {
         </div>
     )
 }
-
-export default Navigator

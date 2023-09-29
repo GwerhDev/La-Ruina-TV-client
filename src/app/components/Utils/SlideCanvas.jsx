@@ -9,7 +9,6 @@ import Dashboard from '../../admin/Dashboard/Dashboard';
 import { Favorites } from '../Favorites/Favorites';
 import { BackButton } from '../Navigator/BackButton';
 import { Subscription } from '../Subscription/Subscription';
-import { Notifications } from '../Notifications/Notifications';
 import { Configurations } from '../Configurations/Configurations';
 
 export const OptionsCanvas = () => {
@@ -30,8 +29,6 @@ export const OptionsCanvas = () => {
                     (option === 'dashboard')?       <><Dashboard/></> 
                     :
                     (option === 'subscription')?    <><Subscription/></>
-                    :
-                    (option === 'notifications')?   <><Notifications/></>
                     :
                     (option === 'configuration')?   <><BackButton/></>
                     :null

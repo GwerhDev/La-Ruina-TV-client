@@ -1,7 +1,7 @@
 import s from './Verify.module.css';
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import LoginInner from '../Login/LoginInner';
+import LoginInner from '../../components/Login/LoginInner';
 import { $d } from '../../../functions';
 
 function Verify() {

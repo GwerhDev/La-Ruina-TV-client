@@ -10,7 +10,7 @@ import { getMedia, resetMedia } from '../../../middlewares/redux/actions/media';
 import { deleteMedia } from '../../../middlewares/redux/actions/admin';
 import { RenderDriveImage } from '../../../functions/RenderDriveImage';
 
-export const EditMediaList = () => {
+const EditMediaList = () => {
     const history = useHistory()
     const dispatch = useDispatch()
     const mediaList = useSelector(state=>state.mediaList)
@@ -54,3 +54,5 @@ export const EditMediaList = () => {
         </div>
     )
 }
+
+export default EditMediaList;

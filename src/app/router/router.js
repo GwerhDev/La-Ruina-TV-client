@@ -2,21 +2,21 @@ import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 import View from '../pages/View/View';
-import Auth from '../components/Auth/Auth';
+import Auth from '../pages/Auth/Auth';
 import Search from '../pages/Search/Search';
 import Donate from '../pages/Donate/Donate';
-import Verify from '../components/Auth/Verify';
+import Verify from '../pages/Verify/Verify';
 import Browser from '../pages/Browser/Browser';
 import Releases from '../pages/Releases/Releases';
+import Checkout from '../pages/Checkout/Checkout';
 import EditMedia from '../admin/EditMedia/EditMedia';
-import Navigator from '../components/Navigator/Navigator';
 import CreateMedia from '../admin/CreateMedia/CreateMedia';
+import EditUsersList from '../admin/EditUserList/EditUsersList';
+import EditMediaList from '../admin/EditMediaList/EditMediaList';
 
-import { Checkout } from '../components/Checkout/Checkout';
+import { Navigator } from '../components/Navigator/Navigator';
 import { CanvasMenu } from '../components/Navigator/CanvasMenu';
 import { OptionsCanvas } from '../components/Utils/SlideCanvas';
-import { EditMediaList } from '../admin/EditMediaList/EditMediaList';
-import { EditUsersList } from '../admin/EditUserList/EditUsersList';
 
 function Router() {
   return (
