@@ -79,7 +79,7 @@ export const Subscription = () => {
                           </li>
                         </h5>
                       </ul>
-                    </div>
+                    </div> 
                     <button 
                       className={!disabled? s.btnSubmitEnabled : s.btnSubmitDisabled }
                       disabled={disabled}
