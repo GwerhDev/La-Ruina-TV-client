@@ -88,22 +88,22 @@ const ContentUpdate = () => {
   };
 
   function checkboxCategories(e) {
-    if (data.category.includes(e)) {
-      data.category = data.category.filter(id => id !== e);
+    if (data.category?.includes(e)) {
+      data.category = data.category?.filter(id => id !== e);
       setData({
         ...data,
-        category: data.category,
+        category: data?.category,
       });
     } else {
       setData({
         ...data,
-        category: [...data.category, e],
+        category: [...data?.category, e],
       });
     }
   };
 
   function checkboxGenres(e) {
-    if (data.genre.includes(e)) {
+    if (data.genre?.includes(e)) {
       data.genre = data.genre.filter(id => id !== e);
       setData({
         ...data,
@@ -118,7 +118,7 @@ const ContentUpdate = () => {
   };
 
   function checkboxMediatype(e) {
-    if (data.mediatype.includes(e)) {
+    if (data.mediatype?.includes(e)) {
       data.mediatype = data.mediatype.filter(id => id !== e);
       setData({
         ...data,

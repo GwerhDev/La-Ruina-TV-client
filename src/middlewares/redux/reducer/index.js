@@ -67,18 +67,18 @@ const initialState = {
     nextVisor: false,
 
     infoDetailViewer: [{
+        title: "",
+        artist: "",
+        info: "",
         linkimg: "",
         idLinkSPOTY: "",
         idLinkDRIVE: "",
         urlLinkWEB: "",
         urlLinkDOWNLOAD: "",
         categories: "",
-        info: "",
         connectionId: "",
-        title: "",
-        genre: "",
-        artist: "",
         idLinkYT: "",
+        genre: "",
         mediaType: ""
     }],
 
@@ -178,14 +178,13 @@ export default function rootReducer(state = initialState, action) {
                     idLinkDRIVE: "",
                     urlLinkWEB: "",
                     urlLinkDOWNLOAD: "",
-                    categories: "",
                     info: "",
-                    connectionId: "",
                     title: "",
-                    genre: "",
                     artist: "",
                     idLinkYT: "",
-                    mediaType: ""
+                    genre: "",
+                    category: "",
+                    mediatype: ""
                 }],
             };
 
