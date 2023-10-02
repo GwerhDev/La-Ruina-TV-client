@@ -151,15 +151,16 @@ const ContentUpdate = () => {
       newImageSlider: imgSlider,
       newImageVisor: imgVisor,
     };
-
-    await dispatch(updateMedia(id, formData));
+    
+    dispatch(getMediaById(id));
+    dispatch(updateMedia(id, formData));
     return setRedirectRoute('/view/v=' + id);
   };
 
   function resetForm() {
     setSubmitted(false);
     dispatch(getMediaById(id));
-  }
+  };
 
   useEffect(() => {
     setData(infoDetailViewer);
