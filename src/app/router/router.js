@@ -9,10 +9,10 @@ import Verify from '../pages/Verify/Verify';
 import Browser from '../pages/Browser/Browser';
 import Releases from '../pages/Releases/Releases';
 import Checkout from '../pages/Checkout/Checkout';
-import EditMedia from '../admin/EditMedia/EditMedia';
-import CreateMedia from '../admin/CreateMedia/CreateMedia';
+import ContentCreate from '../admin/ContentCreate/ContentCreate';
 import EditUserList from '../admin/EditUserList/EditUserList';
-import EditMediaList from '../admin/EditMediaList/EditMediaList';
+import ContentUpdate from '../admin/ContentUpdate/ContentUpdate';
+import ContentList from '../admin/ContentList/ContentList';
 
 import { Navigator } from '../components/Navigator/Navigator';
 import { CanvasMenu } from '../components/Navigator/CanvasMenu';
@@ -65,15 +65,15 @@ function Router() {
             </Route>
 
             <Route exact path='/media/create'>
-              <CreateMedia/>
+              <ContentCreate/>
             </Route>
 
             <Route exact path='/media/edit/:id'>
-              <EditMedia/>
+              <ContentUpdate/>
             </Route>
 
             <Route exact path='/media/edit'>
-              <EditMediaList/>
+              <ContentList/>
             </Route>    
 
             <Route exact path='/users/edit'>

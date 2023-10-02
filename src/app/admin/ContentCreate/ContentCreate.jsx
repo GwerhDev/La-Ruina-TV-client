@@ -1,14 +1,21 @@
-import s from './CreateMedia.module.css';
+import s from './ContentCreate.module.css';
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
-import defaultPreview from '../../../assets/images/ruina-records-logo.png';
-import { createCategory, createGenre, createMedia, createMediatype, deleteCategory, deleteGenre, deleteMediatype } from '../../../middlewares/redux/actions/admin';
-import { getCategories, getGenres, getMediatypes } from '../../../middlewares/redux/actions/media';
+import defaultPreview from '../../../assets/images/default-background.png';
 import { Link } from 'react-router-dom';
 import { toTop } from '../../../functions/toTop';
+import { getCategories, getGenres, getMediatypes } from '../../../middlewares/redux/actions/media';
+import {
+  createCategory,
+  createGenre,
+  createMedia, 
+  createMediatype, 
+  deleteCategory, 
+  deleteGenre, 
+  deleteMediatype
+} from '../../../middlewares/redux/actions/admin';
 
-const CreateMedia = () => {
+const ContentCreate = () => {
   const dispatch = useDispatch();
   const dbGenres = useSelector(state => state.dbGenres);
   const dbCategories = useSelector(state => state.dbCategories);
@@ -18,7 +25,7 @@ const CreateMedia = () => {
   const [editMediatype, setEditMediatype] = useState(false);
   const [editCategories, setEditCategories] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const [redirectRoute, setRedirectRoute] = useState("")
+  const [redirectRoute, setRedirectRoute] = useState("");
 
   const [newGenre, setNewGenre] = useState("");
   const [newCategory, setNewCategory] = useState("");
@@ -141,7 +148,7 @@ const CreateMedia = () => {
       imageSlider: imgSlider,
       imageVisor: imgVisor,
     };
-    
+
     const { id } = await dispatch(createMedia(formData));
     setRedirectRoute('/view/v=' + id);
   };
@@ -180,23 +187,23 @@ const CreateMedia = () => {
       {
         submitted
           ? <div className={s.container}>
-              <h1>{redirectRoute? "¡Contenido creado!" : "Creando contenido..."}</h1>
-              {
-                redirectRoute
+            <h1>{redirectRoute ? "¡Contenido creado!" : "Creando contenido..."}</h1>
+            {
+              redirectRoute
                 ? <div>
-                    <Link to={redirectRoute}>
-                      <button className='button1'>
-                        Ver contenido
-                      </button>
-                    </Link>
-                    <button className='button2' onClick={resetForm}>Crear más contenido</button>
-                  </div>
+                  <Link to={redirectRoute}>
+                    <button className='button1'>
+                      Ver contenido
+                    </button>
+                  </Link>
+                  <button className='button2' onClick={resetForm}>Crear más contenido</button>
+                </div>
                 : <div className={s.loaderContainer}>
-                    Espere un momento...
-                    <div className='loader'/>
-                  </div>
-              }
-            </div>
+                  Espere un momento...
+                  <div className='loader' />
+                </div>
+            }
+          </div>
           : <div className={s.createBody}>
             <form onSubmit={handleSubmit}>
               <div className='navFixed' />
@@ -335,7 +342,7 @@ const CreateMedia = () => {
 
                 <label>Tipo de contenido</label>
                 <button type='button' onClick={() => setEditMediatype(!editMediatype)}>{!editMediatype ? "Editar" : "Cancelar"}</button>
-                <br/>
+                <br />
 
                 <div className={s.types}>
                   {
@@ -369,10 +376,10 @@ const CreateMedia = () => {
                   }
                 </div>
 
-                <br/>
+                <br />
                 <label>Género</label>
                 <button type='button' onClick={() => setEditGenres(!editGenres)}>{!editGenres ? "Editar" : "Cancelar"}</button>
-                <br/>
+                <br />
 
                 <div className={s.types}>
                   {
@@ -383,7 +390,7 @@ const CreateMedia = () => {
                           name={t.name}
                           value={t.name}
                           onChange={() => checkboxGenres(t.id)}
-                          />
+                        />
                         <label htmlFor={t.name}>{t.name}</label>
                         {
                           editGenres &&
@@ -407,10 +414,10 @@ const CreateMedia = () => {
                   }
                 </div>
 
-                <br/>
+                <br />
                 <label>Categoria</label>
                 <button type='button' onClick={() => setEditCategories(!editCategories)}>{!editCategories ? "Editar" : "Cancelar"}</button>
-                <br/>
+                <br />
 
                 <div className={s.types}>
                   {
@@ -455,4 +462,4 @@ const CreateMedia = () => {
   );
 };
 
-export default CreateMedia;
+export default ContentCreate;

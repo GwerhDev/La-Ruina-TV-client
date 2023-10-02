@@ -1,16 +1,13 @@
-import s from './EditMediaList.module.css'  
+import s from './ContentList.module.css'  
 import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux'
-import {
-    resetIdYT,
-    resetOption,
-  } from "../../../middlewares/redux/actions";
+import { resetIdYT, resetOption } from "../../../middlewares/redux/actions";
 import { getMedia, resetMedia } from '../../../middlewares/redux/actions/media';
 import { deleteMedia } from '../../../middlewares/redux/actions/admin';
 import { RenderDriveImage } from '../../../functions/RenderDriveImage';
 
-const EditMediaList = () => {
+const ContentList = () => {
     const history = useHistory()
     const dispatch = useDispatch()
     const mediaList = useSelector(state=>state.mediaList)
@@ -55,4 +52,4 @@ const EditMediaList = () => {
     )
 }
 
-export default EditMediaList;
+export default ContentList;

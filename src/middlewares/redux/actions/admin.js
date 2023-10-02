@@ -12,9 +12,9 @@ export const createMedia = (formData) => {
   }
 };
 
-export const updateMedia = (id) => {
+export const updateMedia = (id, formData) => {
   return async function (dispatch) {
-    const response = await axios.patch(`${URL_API}/admin/media/update/${id}`, options());
+    const response = await axios.patch(`${URL_API}/admin/media/update/${id}`, formData, options());
     dispatch(getMedia());
     return response.data;
   }
