@@ -38,7 +38,7 @@ export const ProfileMenu = () => {
             >
               <span className={s.buttonProfile}>
                 <img className={s.userIcon} referrerPolicy="no-referrer" src={profilePic ? profilePic : userIcon} alt='userIcon' width='25px' />
-                  <p>Hola, <span>{username? username.substring(0, 7) + "..." : "Usuario"}</span></p>
+                  <p>Hola, <span>{username? username.substring(0, 5) + "..." : "Usuario"}</span></p>
                 <img className={s.btnMenuTv} src={btnMenuTv} alt='btnMenuTv' width='8px' />
               </span>
           </li>

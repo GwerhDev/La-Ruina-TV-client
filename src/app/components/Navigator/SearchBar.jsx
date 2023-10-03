@@ -39,11 +39,12 @@ export function SearchBar() {
           onChange={handleInputChange}
           onMouseEnter={() => searchBarFunction('enter')}
         />
-        <button
+        <button 
           className={s.liSearchBtn}
           type="submit"
           disabled={false}
-          onMouseEnter={() => searchBarFunction('enter')}>
+          onMouseEnter={() => searchBarFunction('enter')}
+        >
           <img className={s.mediaSearch} src={searchIcon} height='20' alt="search" />
         </button>
       </form>
