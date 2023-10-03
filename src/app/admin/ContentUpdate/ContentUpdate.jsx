@@ -164,8 +164,16 @@ const ContentUpdate = () => {
   };
 
   function resetForm() {
-    setSubmitted(false);
+    dispatch(getGenres());
+    dispatch(getCategories());
+    dispatch(getMediatypes());
     dispatch(getMediaById(id));
+    setData(infoDetailViewer);
+    setImgVisor(infoDetailViewer?.imageVisor);
+    setImgSlider(infoDetailViewer?.imageSlider);
+    setPreviewVisor(RenderDriveImage(infoDetailViewer?.imageVisor));
+    setPreviewSlider(RenderDriveImage(infoDetailViewer?.imageSlider));
+    setSubmitted(false);
   };
 
   useEffect(() => {
@@ -197,7 +205,7 @@ const ContentUpdate = () => {
                         Ver contenido
                       </button>
                     </Link>
-                    <button className='button2' onClick={resetForm}>Crear más contenido</button>
+                    <button className='button2' onClick={resetForm}>Volver a editar</button>
                   </div>
                 : <div className={s.loaderContainer}>
                     Espere un momento...
