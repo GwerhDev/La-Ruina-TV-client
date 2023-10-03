@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import navBack from './js/Navigator';
-import { $d } from '../../../functions';
 import { resetOption } from '../../../middlewares/redux/actions';
 import { getUserToken } from '../../../middlewares/helpers';
+import { reset } from './js/Reset';
 
 export const NavMenu = () => {
     const dispatch = useDispatch();
@@ -23,14 +23,7 @@ export const NavMenu = () => {
                     window.scrollTo(0, 0)
                     return(
                     dispatch(resetOption()),
-                    $d(`.bodyApp`).style.transform='translateX(0)',
-                    $d(`.navCont`).style.transitionDuration='.2s',
-                    $d(`.bodyApp`).style.transitionDuration='2s',
-                    $d(`.navCont`).style.width='100%',
-                    $d(`.browserBody`).style.height='auto',
-                    $d(`.browserBody`).style.overflowY='scroll',
-                    $d(`.visor`).style.transform='translateX(0)',
-                    $d('#slideCanvasCont').style.overflowY="scroll"
+                    reset()
                     )}}>
                 <Link to='/browser'>Inicio</Link></li>
             <li
@@ -38,14 +31,7 @@ export const NavMenu = () => {
                     window.scrollTo(0, 0)
                     return(
                     dispatch(resetOption()),
-                    $d(`.bodyApp`).style.transform='translateX(0)',
-                    $d(`.navCont`).style.transitionDuration='.2s',
-                    $d(`.bodyApp`).style.transitionDuration='2s',
-                    $d(`.navCont`).style.width='100%',
-                    $d(`.browserBody`).style.height='auto',
-                    $d(`.browserBody`).style.overflowY='scroll',
-                    $d(`.visor`).style.transform='translateX(0)',
-                    $d('#slideCanvasCont').style.overflowY="scroll"
+                    reset()
                     )}}>
                 <Link to='/releases'>Novedades</Link>
             </li>
@@ -54,14 +40,7 @@ export const NavMenu = () => {
                     window.scrollTo(0, 0)
                     return(
                     dispatch(resetOption()),
-                    $d(`.bodyApp`).style.transform='translateX(0)',
-                    $d(`.navCont`).style.transitionDuration='.2s',
-                    $d(`.bodyApp`).style.transitionDuration='2s',
-                    $d(`.navCont`).style.width='100%',
-                    $d(`.browserBody`).style.height='auto',
-                    $d(`.browserBody`).style.overflowY='scroll',
-                    $d(`.visor`).style.transform='translateX(0)',
-                    $d('#slideCanvasCont').style.overflowY="scroll"
+                    reset()
                     )}}>
                 <Link to='/donate'>Colaborar</Link>
             </li>

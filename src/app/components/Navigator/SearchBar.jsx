@@ -4,8 +4,8 @@ import { resetOption } from "../../../middlewares/redux/actions";
 import { searchBarFunction } from './js/SearchBar';
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { $d } from "../../../functions";
 import searchIcon from '../../../assets/images/search-icon.png';
+import { reset } from './js/Reset';
 
 export function SearchBar() {
   const history = useHistory();
@@ -22,14 +22,7 @@ export function SearchBar() {
     if (search.length > 0) {
       return (
         dispatch(resetOption()),
-        $d(`.bodyApp`).style.transform = 'translateX(0)',
-        $d(`.navCont`).style.transitionDuration = '.2s',
-        $d(`.bodyApp`).style.transitionDuration = '2s',
-        $d(`.navCont`).style.width = '100vw',
-        $d(`.browserBody`).style.height = 'auto',
-        $d(`.browserBody`).style.overflowY = 'scroll',
-        $d(`.visor`).style.transform = 'translateX(0)',
-        $d('#slideCanvasCont').style.overflowY = "scroll",
+        reset(),
         history.push(`/search/${search}`)
       );
     }
