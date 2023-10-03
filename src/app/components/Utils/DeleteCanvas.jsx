@@ -10,6 +10,7 @@ export const DeleteCanvas = (props) => {
 
   function handleDelete() {
     dispatch(deleteFunction(id));
+    $d(`#deleteCanvas${keyId}${id}`).style.display='none';
     if (history.location.pathname !== '/browser') {
       history.push('/browser');
     }

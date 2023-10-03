@@ -67,18 +67,18 @@ const MediaCard = ({ data, style, keyID }) => {
                   {
                     currentUser?.role === 'admin'
                       ? <>
-                        <ul className={s.adminRequest}>
-                          <li className={s.adminBtn}>
-                            <img src={editIcon} className={s.editImg} onClick={() => handleEditMedia(e.id)} alt='edit' width='15px' />
-                          </li>
-                          <li className={s.adminBtn} onClick={() => handleDeleteMedia(keyID, e.id)} >
-                            <img src={deleteIcon} className={s.deleteImg} alt='delete' width='15px' />
-                          </li>
-                        </ul>
-                        <div className={s.deleteCanvasContainer} onMouseEnter={() => opacityCanvas(1, keyID, e.id)} onMouseLeave={() => opacityCanvas(0, keyID, e.id)}>
-                          <DeleteCanvas id={e.id} keyId={keyID} deleteFunction={ deleteMedia }/>
-                        </div>
-                      </>
+                          <ul className={s.adminRequest}>
+                            <li className={s.adminBtn}>
+                              <img src={editIcon} className={s.editImg} onClick={() => handleEditMedia(e.id)} alt='edit' width='15px' />
+                            </li>
+                            <li className={s.adminBtn} onClick={() => handleDeleteMedia(keyID, e.id)} >
+                              <img src={deleteIcon} className={s.deleteImg} alt='delete' width='15px' />
+                            </li>
+                          </ul>
+                          <div className={s.deleteCanvasContainer} onMouseEnter={() => opacityCanvas(1, keyID, e.id)} onMouseLeave={() => opacityCanvas(0, keyID, e.id)}>
+                            <DeleteCanvas id={e.id} keyId={keyID} deleteFunction={ deleteMedia }/>
+                          </div>
+                        </>
                       : null
                   }
                 </div>
