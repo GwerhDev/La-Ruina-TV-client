@@ -1,4 +1,4 @@
-import { $d, $gId } from "../../../../functions";
+import { $d, $gId } from ".";
 
 export default function profileMenuCss(e){
     document.addEventListener('mouseup', function(e) {

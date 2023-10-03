@@ -1,12 +1,12 @@
 import s from './CanvasMenu.module.css';
 import { useState } from 'react';
-import navBack from './js/Navigator';
+import navBack from '../../../functions/Navigator';
 import { $d } from '../../../functions';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { resetOption } from '../../../middlewares/redux/actions';
-import CanvasMenuFunction from './js/CanvasMenuFunction';
-import { reset } from './js/Reset';
+import { reset } from '../../../functions/Reset';
+import CanvasMenuFunction from '../../../functions';
 
 export const CanvasMenu = () => {
     const dispatch = useDispatch();

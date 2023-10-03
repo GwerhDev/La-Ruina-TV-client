@@ -1,4 +1,4 @@
-import { $d } from "../../../../functions"
+import { $d } from "."
 
 export function reset() {
   $d(`.bodyApp`).style.transform = 'translateX(0)';

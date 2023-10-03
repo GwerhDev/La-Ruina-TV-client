@@ -4,7 +4,7 @@ import backIcon from '../../../assets/images/ruinatv-icon-play-b.png';
 import { useDispatch } from 'react-redux';
 import { resetOption } from '../../../middlewares/redux/actions';
 import { BodyCss } from '../../../functions';
-import { reset } from './js/Reset';
+import { reset } from '../../../functions/Reset';
 
 export const BackButton = () => {
     const dispatch = useDispatch()

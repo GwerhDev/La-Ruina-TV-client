@@ -1,6 +1,6 @@
 import s from './ProfileMenu.module.css';
 
-import profileMenuCss from './js/ProfileMenu';
+import profileMenuCss from '../../../functions/ProfileMenu';
 import OptionCanvas from '../../../functions';
 
 import { getOption } from '../../../middlewares/redux/actions';

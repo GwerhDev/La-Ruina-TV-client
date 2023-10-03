@@ -1,3 +1,4 @@
+import { Content } from "../../../interfaces/Content";
 import {
     NEXT_VISOR,
     GET_INFO,
@@ -17,6 +18,7 @@ import {
     GET_USERS
 } from "../../misc";
 
+
 const initialState = {
     /*----------------Admin----------------*/
     YTSub: false,
@@ -29,58 +31,15 @@ const initialState = {
     dbMediatypes: [],
     dbGenres: [],
     dbCategories: [],
-    mediaByCategory: [],
     favorites: [],
     userList: [],
-    mediaList: [{
-        id: '',
-        idMedia: [''],
-        mediaType: [''],
-        title: [''],
-        artist: [''],
-        tag: [''],
-        visorImage: [''],
-        sliderImage: [''],
-        icon: [''],
-        categories: [''],
-        actionButton: [''],
-        info: [''],
-        genre: ['']
-    }],
-
-    visorList: [{
-        id: '',
-        idMedia: [''],
-        mediaType: [''],
-        title: [''],
-        artist: [''],
-        tag: [''],
-        visorImage: [''],
-        sliderImage: [''],
-        icon: [''],
-        categories: [''],
-        actionButton: [''],
-        info: [''],
-        genre: ['']
-    }],
+    mediaByCategory: [],
+    mediaList: [new Content()],
+    visorList: [new Content()],
+    infoDetailViewer: new Content(),
 
     nextVisor: false,
 
-    infoDetailViewer: {
-        title: "",
-        artist: "",
-        info: "",
-        linkimg: "",
-        idLinkSPOTY: "",
-        idLinkDRIVE: "",
-        urlLinkWEB: "",
-        urlLinkDOWNLOAD: "",
-        connectionId: "",
-        idLinkYT: "",
-        genre: [],
-        category: [],
-        mediatype: [],
-    },
 
     /*------------Filter&Search------------*/
     searchedMedia: [],

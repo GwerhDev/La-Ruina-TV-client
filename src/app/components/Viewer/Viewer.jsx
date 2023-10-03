@@ -20,7 +20,7 @@ import { subscriberYoutubeVerification } from '../../../middlewares/redux/action
 import { DeleteCanvas } from '../Utils/DeleteCanvas';
 import { deleteMedia } from '../../../middlewares/redux/actions/admin';
 
-const MediaViewer = () => {
+export const Viewer = () => {
     const params = useParams();
     const { id } = params;
     const dispatch = useDispatch();
@@ -127,5 +127,3 @@ const MediaViewer = () => {
     </div>
     )
 }
-
-export default MediaViewer;

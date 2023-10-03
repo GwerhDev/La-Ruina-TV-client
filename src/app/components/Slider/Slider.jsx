@@ -1,8 +1,8 @@
-import MediaCard from "./MediaSliderCard"
-import MediaSliderButtons from "./MediaSliderButtons"
-import { $d } from "../../../functions"
+import { SliderCard } from "./SliderCard";
+import { SliderButtons } from "./SliderButtons";
+import { $d } from "../../../functions";
 
-const MediaSlider = (props) => {
+export const Slider = (props) => {
     const { title, data, s, id } = props;
 
     return (
@@ -34,12 +34,12 @@ const MediaSlider = (props) => {
                     )}
                 }>
                 <div className={s.sliderContItems}>
-                    <MediaSliderButtons
+                    <SliderButtons
                         name = {title}
                         keyID = {id}
                         categories = {data}
                         style = {s} />
-                    <MediaCard
+                    <SliderCard
                         data = {data}
                         keyID = {id}
                         key = {`${title}Sldr`}
@@ -49,4 +49,3 @@ const MediaSlider = (props) => {
         </div>
     )
 }
-export default MediaSlider;

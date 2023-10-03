@@ -2,10 +2,10 @@ import { useSelector } from 'react-redux';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import navBack from './js/Navigator';
 import { resetOption } from '../../../middlewares/redux/actions';
 import { getUserToken } from '../../../middlewares/helpers';
-import { reset } from './js/Reset';
+import { reset } from '../../../functions/Reset';
+import navBack from '../../../functions/Navigator';
 
 export const NavMenu = () => {
     const dispatch = useDispatch();

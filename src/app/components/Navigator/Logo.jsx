@@ -2,14 +2,21 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { resetOption } from '../../../middlewares/redux/actions';
-import navBack from './js/Navigator';
+import { reset } from '../../../functions/Reset';
+import navBack from '../../../functions/Navigator';
 import ruinaLogo from '../../../assets/images/ruina-logo.png';
-import { reset } from './js/Reset';
 
 export const Logo = () => {
     const dispatch = useDispatch();
     const [posNav, setPosNav] = useState();
     window.onscroll = function () { navBack(setPosNav, posNav) };
+    const handleLogoClick = () => {
+        window.scrollTo(0, 0)
+        return (
+            dispatch(resetOption()),
+            reset()
+        )
+    }
 
     return (
         <div className='ruinaLogoCont'>
@@ -19,13 +26,7 @@ export const Logo = () => {
                     src={ruinaLogo}
                     alt="La Ruina TV"
                     width='120'
-                    onClick={() => {
-                        window.scrollTo(0, 0)
-                        return (
-                            dispatch(resetOption()),
-                            reset()
-                        )
-                    }}
+                    onClick={handleLogoClick}
                 />
             </Link>
         </div>

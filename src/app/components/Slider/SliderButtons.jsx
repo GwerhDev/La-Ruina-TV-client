@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import playIconb from '../../../assets/images/ruinatv-icon-play-b.png';
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { $d } from '../../../functions';
 import { getMedia } from '../../../middlewares/redux/actions/media';
+import { $d } from '../../../functions';
+import playIconb from '../../../assets/images/ruinatv-icon-play-b.png';
 
-const MediaSliderButtons = (props) => {
+export const SliderButtons = (props) => {
     const dispatch = useDispatch();
     const k = -210;
     const [i, setPosi] = useState(k);
@@ -118,5 +118,3 @@ const MediaSliderButtons = (props) => {
             </button>}
     </>)
 }
-
-export default MediaSliderButtons;

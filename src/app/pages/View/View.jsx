@@ -1,8 +1,8 @@
-import MediaViewer from '../../components/MediaViewer/Viewer'
+import { Viewer } from '../../components/Viewer/Viewer'
 
 const View = () => {
   return (
-    <MediaViewer/>
+    <Viewer/>
   )
 }
 

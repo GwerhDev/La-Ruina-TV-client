@@ -1,17 +1,17 @@
-import s from './MediaSliderCard.module.css';
+import s from './SliderCard.module.css';
 import FavIcon from "../Favorites/FavIcon";
 import editIcon from '../../../assets/images/edit-icon.png';
 import playIconN from "../../../assets/images/ruinatv-icon-play-n.png";
 import deleteIcon from '../../../assets/images/delete-icon.png';
+import defaultBackground from '../../../assets/images/default-background.png'
 import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { RenderDriveImage } from '../../../functions/RenderDriveImage';
 import { deleteMedia } from '../../../middlewares/redux/actions/admin';
-import defaultBackground from '../../../assets/images/default-background.png'
+import { RenderDriveImage } from '../../../functions/RenderDriveImage';
 import { DeleteCanvas } from '../Utils/DeleteCanvas';
 import { $d } from '../../../functions';
 
-const MediaCard = ({ data, style, keyID }) => {
+export const SliderCard = ({ data, style, keyID }) => {
   const history = useHistory();
   const currentUser = useSelector(state => state.currentUser);
   const favorites = useSelector(state => state.favorites);
@@ -32,8 +32,7 @@ const MediaCard = ({ data, style, keyID }) => {
 
   function opacityCanvas(opacity, keyID, id) {
     $d(`#deleteCanvas${keyID}${id}`).style.opacity = opacity;
-  }
-
+  };
 
   return (
     <div className={style.sliderItems}>
@@ -90,4 +89,3 @@ const MediaCard = ({ data, style, keyID }) => {
     </div>
   );
 };
-export default MediaCard;

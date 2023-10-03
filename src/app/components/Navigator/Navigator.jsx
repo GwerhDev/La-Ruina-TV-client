@@ -7,7 +7,7 @@ import { NavSearchBar } from './NavSearchBar';
 import { NavProfileMenu } from './NavProfileMenu';
 import { NavBurgerMenuTablet } from './NavBurgerMenuTablet';
 import { getUserData } from '../../../middlewares/redux/actions/account';
-import navBack from './js/Navigator';
+import navBack from '../../../functions/Navigator';
 
 
 export const Navigator = () => {

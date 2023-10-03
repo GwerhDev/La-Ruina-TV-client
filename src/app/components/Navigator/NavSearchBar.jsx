@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { SearchBar } from './SearchBar';
-import navBack from './js/Navigator';
+import navBack from '../../../functions/Navigator';
 
 export const NavSearchBar = () => {
     const [posNav, setPosNav] = useState()

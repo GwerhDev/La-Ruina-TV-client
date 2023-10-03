@@ -8,9 +8,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { getCategories, getMedia, resetMedia } from "../../../middlewares/redux/actions/media";
 import { getUserToken } from "../../../middlewares/helpers";
 import { getFavorites } from "../../../middlewares/redux/actions/account";
-import Slider from "../../components/MediaSlider/MediaSlider";
-import Visor from "../../components/MediaVisor/MediaVisor";
-import Footer from "../../components/Utils/Footer";
+import { Slider } from "../../components/Slider/Slider";
+import { Visor } from "../../components/Visor/Visor";
+import { Footer } from "../../components/Utils/Footer";
 
 const Browser = () => {
   const dispatch = useDispatch();
@@ -26,7 +26,7 @@ const Browser = () => {
   }, [dispatch])
 
   useEffect(() => {
-    !(userToken?.length && !currentUser)?? history.push(`/auth?token=${userToken}`);
+    !(userToken?.length && !currentUser) ?? history.push(`/auth?token=${userToken}`);
   }, [dispatch, currentUser, userToken, history])
 
   useEffect(() => {
@@ -40,13 +40,8 @@ const Browser = () => {
 
   return (
     <div className="browserBody">
-      {/* ---------------------VISOR--------------------- */}
-
       <Visor />
       <InfoCanvas />
-
-      {/* --------------------SLIDERS-------------------- */}
-
       {
         mediaList?.length &&
         <Slider
@@ -75,9 +70,10 @@ const Browser = () => {
         })
       }
 
-      {/* ---------------------FOOTER--------------------- */}
-
-      {mediaList?.length && <Footer />}
+      {
+        mediaList?.length &&
+        <Footer/>
+      }
     </div>
   );
 };

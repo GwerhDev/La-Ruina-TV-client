@@ -1,11 +1,11 @@
 import s from './SearchBar.module.css';
 import { useState } from "react";
 import { resetOption } from "../../../middlewares/redux/actions";
-import { searchBarFunction } from './js/SearchBar';
+import { searchBarFunction } from '../../../functions/SearchBar';
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import searchIcon from '../../../assets/images/search-icon.png';
-import { reset } from './js/Reset';
+import { reset } from '../../../functions/Reset';
 
 export function SearchBar() {
   const history = useHistory();
