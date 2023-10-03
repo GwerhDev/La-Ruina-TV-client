@@ -7,20 +7,21 @@ import { BodyCss } from '../../../functions';
 import { reset } from '../../../functions/Reset';
 
 export const BackButton = () => {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
+    function handleButton() {
+        dispatch(resetOption());
+        BodyCss();
+        reset();
+    };
+
     return (
-        <div className={s.BackButton}>      
+        <div className={s.BackButton}>
             <button
-                className={s.BackButton} 
-                onClick={()=>{
-                    return(
-                        dispatch(resetOption()),
-                        BodyCss(),
-                        reset()
-                    )
-                }
-            }><img className={s.backIcon} src={backIcon} alt='backIcon' width='15px' />Volver
-        </button>
-    </div>
-  )
+                className={s.BackButton}
+                onClick={handleButton}>
+                <img className={s.backIcon} src={backIcon} alt='backIcon' width='15px' />
+                Volver
+            </button>
+        </div>
+    )
 }

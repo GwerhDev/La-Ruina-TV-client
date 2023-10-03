@@ -1,7 +1,7 @@
 import s from './EnterButton.module.css';
 import { useDispatch } from 'react-redux';
 import userIcon from '../../../assets/images/user-icon.png';
-import OptionCanvas, { $d } from '../../../functions';
+import { $d, OptionCanvas } from '../../../functions';
 import { getOption } from '../../../middlewares/redux/actions';
 
 export const EnterBtn = () => {
@@ -16,9 +16,9 @@ export const EnterBtn = () => {
   };
 
   return (
-    <div className={s.enterBtn} id='login' onClick={(e) => onClickValue(e) }>
+    <div className={s.enterBtn} id='login' onClick={onClickValue}>
       <img className={s.userIconEnter} src={userIcon} alt='userIcon' width='15px'/>
       Ingresar
     </div>
   )
-}
+};

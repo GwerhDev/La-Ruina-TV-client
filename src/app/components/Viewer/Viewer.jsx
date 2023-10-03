@@ -10,7 +10,7 @@ import playIconn from '../../../assets/images/ruinatv-icon-play-n.png';
 import playIconb from '../../../assets/images/ruinatv-icon-play-b.png';
 import userIcon from '../../../assets/images/user-icon.png';
 import likeIcon from '../../../assets/images/like-icon.png';
-import OptionCanvas,  { $d } from '../../../functions';
+import { $d, OptionCanvas } from '../../../functions';
 import { ContentMagementButtons } from '../../admin/Buttons/ContentMagementButtons';
 import { getOption } from '../../../middlewares/redux/actions';
 import { getMediaById } from '../../../middlewares/redux/actions/media';

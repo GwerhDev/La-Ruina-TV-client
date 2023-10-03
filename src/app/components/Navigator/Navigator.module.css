@@ -1,12 +1,13 @@
 .leftSection,
-.middleSection,
 .rightSection {
-  width: calc(100%/3);
+  width: 200px;
+  display: flex;
+  align-items: center;
 }
 
 .rightSection {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding-right: 20px;
+  height: 65px;
 }

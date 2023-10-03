@@ -14,4 +14,4 @@ export class Content {
     this.imageSlider = "";
     this.imageVisor = "";
   }
-}
+};

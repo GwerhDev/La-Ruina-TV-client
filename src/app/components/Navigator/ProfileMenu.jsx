@@ -1,7 +1,7 @@
 import s from './ProfileMenu.module.css';
 
 import profileMenuCss from '../../../functions/ProfileMenu';
-import OptionCanvas from '../../../functions';
+import { OptionCanvas } from '../../../functions';
 
 import { getOption } from '../../../middlewares/redux/actions';
 import { useHistory } from 'react-router-dom';
@@ -38,7 +38,7 @@ export const ProfileMenu = () => {
             >
               <span className={s.buttonProfile}>
                 <img className={s.userIcon} referrerPolicy="no-referrer" src={profilePic ? profilePic : userIcon} alt='userIcon' width='25px' />
-                Hola, {username? username : "Usuario"}
+                  <p>Hola, <span>{username? username.substring(0, 7) + "..." : "Usuario"}</span></p>
                 <img className={s.btnMenuTv} src={btnMenuTv} alt='btnMenuTv' width='8px' />
               </span>
           </li>

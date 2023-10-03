@@ -1,4 +1,4 @@
-.BackButton{
+.BackButton {
     font-family: Bebas Neue;
     font-size: 20px;
     color: aliceblue;
@@ -6,16 +6,24 @@
     border: none;
     opacity: .8;
     height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.backIcon{
+.backIcon {
     rotate: 180deg;
     margin-right: 5px;
+    margin-top: -3px;
     opacity: .8;
 }
-.BackButton,.backIcon{
+
+.BackButton,
+.backIcon {
     transition-duration: 1s;
 }
-.BackButton:hover,.backIcon:hover{
+
+.BackButton:hover,
+.backIcon:hover {
     opacity: 1;
 }

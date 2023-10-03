@@ -14,43 +14,35 @@ export const NavMenu = () => {
     const urlMerch = 'https://merch.laruinarecords.cl/';
     const urlPlay = 'https://play.laruinarecords.cl/';
     const urlHub = currentUser? 'https://hub.laruinarecords.cl/#/account/settings/' + getUserToken() : 'https://hub.laruinarecords.cl/';
+    
     window.onscroll = function() {navBack(setPosNav, posNav)};
+
+    function handleClick() {
+        window.scrollTo(0, 0)
+        return (
+            dispatch(resetOption()),
+            reset()
+        )
+    };
 
     return (
         <ul className='navMenu'>
-            <li
-                onClick={()=>{
-                    window.scrollTo(0, 0)
-                    return(
-                    dispatch(resetOption()),
-                    reset()
-                    )}}>
-                <Link to='/browser'>Inicio</Link></li>
-            <li
-                onClick={()=>{
-                    window.scrollTo(0, 0)
-                    return(
-                    dispatch(resetOption()),
-                    reset()
-                    )}}>
+            <li onClick={handleClick}>
+                <Link to='/browser'>Inicio</Link>
+            </li>
+            <li onClick={handleClick}>
                 <Link to='/releases'>Novedades</Link>
             </li>
-            <li
-                onClick={()=>{
-                    window.scrollTo(0, 0)
-                    return(
-                    dispatch(resetOption()),
-                    reset()
-                    )}}>
+            <li onClick={handleClick}>
                 <Link to='/donate'>Colaborar</Link>
             </li>
-            <li>
+            <li onClick={handleClick}>
                 <a href={urlPlay}> Play </a>
             </li>
-            <li>
+            <li onClick={handleClick}>
                 <a href={urlMerch}> Merch </a>
             </li>
-            <li>
+            <li onClick={handleClick}>
                 <a href={urlHub}> Hub </a>
             </li>
         </ul>

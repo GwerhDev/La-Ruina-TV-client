@@ -7,4 +7,4 @@ export class User {
     this.role = null;
     this.profilePic = null;
   }
-}
+};

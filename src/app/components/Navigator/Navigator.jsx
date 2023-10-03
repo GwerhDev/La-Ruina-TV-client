@@ -9,7 +9,6 @@ import { NavBurgerMenuTablet } from './NavBurgerMenuTablet';
 import { getUserData } from '../../../middlewares/redux/actions/account';
 import navBack from '../../../functions/Navigator';
 
-
 export const Navigator = () => {
     const dispatch = useDispatch();
     const [posNav, setPosNav] = useState();

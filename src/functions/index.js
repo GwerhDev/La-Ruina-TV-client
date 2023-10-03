@@ -36,7 +36,7 @@ export const BodyCss= () => {
     )
 }
 
-export default function OptionCanvas(){
+export function OptionCanvas(){
     $d('body').style.overflowY="auto"
     $d(`.bodyApp`).style.transitionDuration='2s'
     $d(`.bodyApp`).style.transform='translateX(-100vw)'

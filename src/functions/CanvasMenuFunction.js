@@ -1,8 +1,9 @@
 import { $d } from ".";
 
-export default function CanvasMenuFunction() {
+export function CanvasMenuFunction() {
     document.addEventListener('mouseup', function (e) {
         var container = $d('.contCanvasMenu');
-        if (!container?.contains(e.target)) $d('.contCanvasMenu').style.display = 'none';
+        if (!container?.contains(e.target)) return $d('.contCanvasMenu').style.display='none';
+        return;
     });
 };

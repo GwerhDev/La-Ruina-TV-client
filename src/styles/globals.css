@@ -171,6 +171,7 @@ button:hover {
   justify-content: center;
   filter: drop-shadow(2px 5px 8px black);
   display: none;
+  transition-duration: 1s;
 }
 
 .menuIcon {
@@ -230,19 +231,6 @@ button:hover {
   justify-content: center;
   align-items: center;
   margin-right: 30px;
-}
-
-.ruinaLogo {
-  top: 15px;
-  left: 50px;
-  position: absolute;
-  opacity: 0.7;
-}
-
-.ruinaLogo:hover {
-  cursor: pointer;
-  opacity: 1;
-  transition-duration: 1s;
 }
 
 /* -------------Auth-------------- */
@@ -1050,7 +1038,7 @@ button:hover {
 }
 
 /* Extra big screen devices (1200px and above) */
-@media only screen and (min-width: 1320px) {
+@media only screen and (min-width: 1380px) {
   .navBurgerTabletCont {
     display: none;
   }
