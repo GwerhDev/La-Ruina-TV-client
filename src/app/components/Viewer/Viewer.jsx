@@ -17,7 +17,7 @@ import { getMediaById } from '../../../middlewares/redux/actions/media';
 import { RenderDriveImage } from '../../../functions/RenderDriveImage';
 import { addFavorites, deleteFavorites, getFavorites } from '../../../middlewares/redux/actions/account';
 import { subscriberYoutubeVerification } from '../../../middlewares/redux/actions/subscriber';
-import { DeleteCanvas } from '../Utils/DeleteCanvas';
+import { DeleteCanvas } from '../../utils/DeleteCanvas';
 import { deleteMedia } from '../../../middlewares/redux/actions/admin';
 
 export const Viewer = () => {

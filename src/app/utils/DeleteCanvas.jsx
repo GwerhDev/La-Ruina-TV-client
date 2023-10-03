@@ -1,5 +1,5 @@
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
-import { $d } from "../../../functions";
+import { $d } from "../../functions";
 import s from "./DeleteCanvas.module.css";
 import { useDispatch } from "react-redux";
 

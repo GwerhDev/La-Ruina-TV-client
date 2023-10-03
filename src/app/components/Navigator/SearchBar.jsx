@@ -30,20 +30,20 @@ export function SearchBar() {
 
   return (
     <div className={s.barCont}>
-      <form className={s.form_search_bar} onSubmit={(e) => handleSubmit(e)}>
+      <form className={s.form_search_bar} onSubmit={handleSubmit}>
         <input
           className={s.liSearchBar}
           id="liSearchBar"
           type="text"
           placeholder="Buscar..."
           onChange={handleInputChange}
-          onMouseEnter={() => { return searchBarFunction('enter') }}
+          onMouseEnter={() => searchBarFunction('enter')}
         />
         <button
           className={s.liSearchBtn}
           type="submit"
           disabled={false}
-          onMouseEnter={() => { return searchBarFunction('enter') }}>
+          onMouseEnter={() => searchBarFunction('enter')}>
           <img className={s.mediaSearch} src={searchIcon} height='20' alt="search" />
         </button>
       </form>

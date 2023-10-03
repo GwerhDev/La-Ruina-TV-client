@@ -2,14 +2,14 @@ import s from './SlideCanvas.module.css';
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import Enter from '../../pages/Enter/Enter';
+import Enter from '../pages/Enter/Enter';
 
-import { Profile } from '../Profile/Profile';
-import { Dashboard } from '../../admin/Dashboard/Dashboard';
-import { Favorites } from '../Favorites/Favorites';
-import { BackButton } from '../Navigator/BackButton';
-import { Subscription } from '../Subscription/Subscription';
-import { Configurations } from '../Configurations/Configurations';
+import { Profile } from '../components/Profile/Profile';
+import { Dashboard } from '../admin/Dashboard/Dashboard';
+import { Favorites } from '../components/Favorites/Favorites';
+import { BackButton } from '../components/Navigator/BackButton';
+import { Subscription } from '../components/Subscription/Subscription';
+import { Configurations } from '../components/Configurations/Configurations';
 
 export const OptionsCanvas = () => {
     const option = useSelector(state => state.option)

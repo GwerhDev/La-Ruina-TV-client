@@ -1,7 +1,7 @@
 import s from "./Browser.module.css";
 import { useEffect } from "react";
 import { useHistory } from 'react-router-dom';
-import { InfoCanvas } from '../../components/Utils/InfoCanvas';
+import { InfoCanvas } from '../../utils/InfoCanvas';
 import { BodyCss } from "../../../functions";
 import { resetIdYT, resetOption } from "../../../middlewares/redux/actions";
 import { useDispatch, useSelector } from "react-redux";
@@ -10,7 +10,7 @@ import { getUserToken } from "../../../middlewares/helpers";
 import { getFavorites } from "../../../middlewares/redux/actions/account";
 import { Slider } from "../../components/Slider/Slider";
 import { Visor } from "../../components/Visor/Visor";
-import { Footer } from "../../components/Utils/Footer";
+import { Footer } from "../../utils/Footer";
 
 const Browser = () => {
   const dispatch = useDispatch();

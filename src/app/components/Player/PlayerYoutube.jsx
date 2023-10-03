@@ -1,5 +1,5 @@
 import React from 'react';
-import { YtSubscribeButton } from '../Utils/YtSubscribeButton';
+import { YtSubscribeButton } from '../../utils/YtSubscribeButton';
 
 const PlayerYoutube = (props) => {
   const { idLinkYT } = props;

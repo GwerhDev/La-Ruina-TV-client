@@ -8,7 +8,7 @@ import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { deleteMedia } from '../../../middlewares/redux/actions/admin';
 import { RenderDriveImage } from '../../../functions/RenderDriveImage';
-import { DeleteCanvas } from '../Utils/DeleteCanvas';
+import { DeleteCanvas } from '../../utils/DeleteCanvas';
 import { $d } from '../../../functions';
 
 export const SliderCard = ({ data, style, keyID }) => {

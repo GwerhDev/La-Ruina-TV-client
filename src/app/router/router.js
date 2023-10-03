@@ -16,7 +16,7 @@ import ContentUpdate from '../admin/ContentUpdate/ContentUpdate';
 
 import { Navigator } from '../components/Navigator/Navigator';
 import { CanvasMenu } from '../components/Navigator/CanvasMenu';
-import { OptionsCanvas } from '../components/Utils/SlideCanvas';
+import { OptionsCanvas } from '../utils/SlideCanvas';
 
 function Router() {
   return (
