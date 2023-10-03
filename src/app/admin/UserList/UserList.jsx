@@ -1,4 +1,4 @@
-import s from './EditUserList.module.css'
+import s from './UserList.module.css'
 import { useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux'
 import { resetIdYT, resetOption } from "../../../middlewares/redux/actions";
@@ -19,7 +19,11 @@ const EditUserList = () => {
                 <div className={s.divList}>
                     <div className={s.ulList1}>
                         <ul className={s.ulList0}>
-                            <li>Profile Pic</li> - <li>Username</li> - <li>Email</li> - <li>Role</li>  - <li>Delete</li>
+                            <li>Profile Pic</li> -
+                            <li>Username</li>    -
+                            <li>Email</li>       -
+                            <li>Role</li>        -
+                            <li>Delete</li>
                         </ul>
                         {
                             mediaList?.map((e, index) => {
@@ -32,7 +36,7 @@ const EditUserList = () => {
                                             <li>{e.role}</li> -
                                             <li>
                                                 <button
-                                                    className={s.btnDelete} 
+                                                    className={s.btnDelete}
                                                     disabled={e.role === 'admin'}
                                                     onClick={() => {
                                                         dispatch(deleteUser(e.id))

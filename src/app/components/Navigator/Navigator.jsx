@@ -1,40 +1,38 @@
-import React, { useState } from 'react';
-import navBack from './js/Navigator';
-import NavMenu from './NavMenu';
-import Logo from './Logo';
-import NavSearchBar from './NavSearchBar';
-import { NavBurgerMenuTablet } from './NavBurgerMenuTablet';
-import { useLocation } from 'react-router-dom';
+import s from './Navigator.module.css';
+import { useState, useEffect } from 'react';
+import { Logo } from './Logo';
+import { NavMenu } from './NavMenu';
 import { useDispatch } from 'react-redux';
-import { useEffect } from 'react';
+import { NavSearchBar } from './NavSearchBar';
+import { NavProfileMenu } from './NavProfileMenu';
+import { NavBurgerMenuTablet } from './NavBurgerMenuTablet';
 import { getUserData } from '../../../middlewares/redux/actions/account';
+import navBack from './js/Navigator';
 
 
 export const Navigator = () => {
-    const location = useLocation()
-    const currentPath = location.pathname;
-
-    const [posNav, setPosNav] = useState()
-    window.onscroll = function() {navBack(setPosNav, posNav)};
-
     const dispatch = useDispatch();
+    const [posNav, setPosNav] = useState();
 
     useEffect(() => {
-        dispatch(getUserData())
+        dispatch(getUserData());
     }, [dispatch]);
+    
+    window.onscroll = function () { navBack(setPosNav, posNav) };
 
     return (
         <div className='navCont'>
-            <Logo/>
-            {
-                !(currentPath === '/admin')
-                ?<>
-                    <NavMenu/>
-                    <NavBurgerMenuTablet/>
-                    <NavSearchBar/>
-                </>
-                : null
-            }
+            <section className={s.leftSection}>
+                <Logo/>
+            </section>
+            <section className={s.middleSection}>
+                <NavMenu/>
+                <NavBurgerMenuTablet/>
+            </section>
+            <section className={s.rightSection}>
+                <NavSearchBar/>
+                <NavProfileMenu/>
+            </section>
         </div>
     )
 }

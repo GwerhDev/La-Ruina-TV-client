@@ -1,23 +1,16 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { SearchBar } from './SearchBar';
 import navBack from './js/Navigator';
-import SearchBar from './SearchBar';
-import NavProfileMenu from './NavProfileMenu';
 
-
-const NavSearchBar = () => {
+export const NavSearchBar = () => {
     const [posNav, setPosNav] = useState()
-    window.onscroll = function() {navBack(setPosNav, posNav)};
+    window.onscroll = function () { navBack(setPosNav, posNav) };
 
     return (
         <ul className='navSearchBar'>
-            <li>
-                <div className='divSearchBarResponsive'>
-                    <SearchBar/>
-                </div>
-            </li>
-            <NavProfileMenu/>
+            <div className='divSearchBarResponsive'>
+                <SearchBar/>
+            </div>
         </ul>
     )
-}
-
-export default NavSearchBar
+};

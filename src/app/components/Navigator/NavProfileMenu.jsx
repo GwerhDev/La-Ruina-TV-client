@@ -8,7 +8,7 @@ import { BackButton } from './BackButton';
 import { ProfileMenu } from './ProfileMenu';
 
 
-const NavProfileMenu = () => {
+export const NavProfileMenu = () => {
     const [posNav, setPosNav] = useState()
     const option = useSelector(state=>state.option)
     const currentUser = useSelector(state=>state.currentUser)
@@ -16,11 +16,11 @@ const NavProfileMenu = () => {
 
     return (
         <ul className={s.profileMenuBtn}>
-            {!currentUser? 
-            (option==='login'? <li><BackButton /></li> : <li><EnterBtn /></li>)
-            : (option === '' || option==='login' )? <li><ProfileMenu/></li> : <li><BackButton /></li> }
+            {
+                !currentUser
+                ? option==='login'? <li><BackButton /></li> : <li><EnterBtn /></li>
+                : option === '' || option==='login'? <li><ProfileMenu/></li> : <li><BackButton /></li> 
+            }
         </ul>
     )
 }
-
-export default NavProfileMenu

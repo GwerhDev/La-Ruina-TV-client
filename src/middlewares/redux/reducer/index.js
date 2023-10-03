@@ -66,7 +66,7 @@ const initialState = {
 
     nextVisor: false,
 
-    infoDetailViewer: [{
+    infoDetailViewer: {
         title: "",
         artist: "",
         info: "",
@@ -75,12 +75,12 @@ const initialState = {
         idLinkDRIVE: "",
         urlLinkWEB: "",
         urlLinkDOWNLOAD: "",
-        categories: "",
         connectionId: "",
         idLinkYT: "",
-        genre: "",
-        mediaType: ""
-    }],
+        genre: [],
+        category: [],
+        mediatype: [],
+    },
 
     /*------------Filter&Search------------*/
     searchedMedia: [],
@@ -172,7 +172,7 @@ export default function rootReducer(state = initialState, action) {
         case RESET_MEDIA:
             return {
                 ...state,
-                infoDetailViewer: [{
+                infoDetailViewer: {
                     linkimg: "",
                     idLinkSPOTY: "",
                     idLinkDRIVE: "",
@@ -182,10 +182,10 @@ export default function rootReducer(state = initialState, action) {
                     title: "",
                     artist: "",
                     idLinkYT: "",
-                    genre: "",
-                    category: "",
-                    mediatype: ""
-                }],
+                    genre: [],
+                    category: [],
+                    mediatype: [],
+                },
             };
 
         case NEXT_VISOR:

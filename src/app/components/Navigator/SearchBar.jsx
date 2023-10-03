@@ -1,5 +1,5 @@
 import s from './SearchBar.module.css';
-import React, { useState } from "react";
+import { useState } from "react";
 import { resetOption } from "../../../middlewares/redux/actions";
 import { searchBarFunction } from './js/SearchBar';
 import { useHistory } from "react-router-dom";
@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux";
 import { $d } from "../../../functions";
 import searchIcon from '../../../assets/images/search-icon.png';
 
-export default function SearchBar() {
+export function SearchBar() {
   const history = useHistory();
   const dispatch = useDispatch();
   const [search, setSearch] = useState("");

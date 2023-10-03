@@ -1,8 +1,11 @@
 .liSearchBtn{
     background: transparent;
     border: none;
-    margin-left: -35px;
+    margin: 0;
+    padding: 0;
+    margin-left: -25px;
 }
+
 .liSearchBar{
     background: transparent;
     border-top: none;
@@ -16,25 +19,29 @@
     width: 40px;
     transition-duration: .5s;
 }
+
 .liSearchBar:hover, .liSearchBar:active,.liSearchBar:focus {
     border-radius: 5px;
     width: 200px;
     opacity: .9;
     background-color: transparent;
 }
+
 .mediaSearch{
     opacity: .8;
     transition-duration: .5;
-    position: relative;
 }
+
 .mediaSearch:hover{
     opacity: 1;
 }
+
 .barCont{
-    margin-right: 30px;
+    margin-right: 25px;
     display: flex;
     align-items: center;
 }
+
 .form_search_bar {
     display: flex;
 }

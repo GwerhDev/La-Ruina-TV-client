@@ -9,10 +9,10 @@ import Verify from '../pages/Verify/Verify';
 import Browser from '../pages/Browser/Browser';
 import Releases from '../pages/Releases/Releases';
 import Checkout from '../pages/Checkout/Checkout';
-import ContentCreate from '../admin/ContentCreate/ContentCreate';
-import EditUserList from '../admin/EditUserList/EditUserList';
-import ContentUpdate from '../admin/ContentUpdate/ContentUpdate';
+import UserList from '../admin/UserList/UserList';
 import ContentList from '../admin/ContentList/ContentList';
+import ContentCreate from '../admin/ContentCreate/ContentCreate';
+import ContentUpdate from '../admin/ContentUpdate/ContentUpdate';
 
 import { Navigator } from '../components/Navigator/Navigator';
 import { CanvasMenu } from '../components/Navigator/CanvasMenu';
@@ -77,7 +77,7 @@ function Router() {
             </Route>    
 
             <Route exact path='/users/edit'>
-              <EditUserList/>
+              <UserList/>
             </Route>
 
           </div>

@@ -4,7 +4,13 @@ import { useDispatch, useSelector } from "react-redux";
 import defaultPreview from '../../../assets/images/default-background.png';
 import { Link, useParams } from 'react-router-dom';
 import { toTop } from '../../../functions/toTop';
-import { getCategories, getGenres, getMediaById, getMediatypes } from '../../../middlewares/redux/actions/media';
+import { RenderDriveImage } from '../../../functions/RenderDriveImage';
+import { 
+  getGenres, 
+  getMediaById, 
+  getCategories, 
+  getMediatypes, 
+} from '../../../middlewares/redux/actions/media';
 import {
   createCategory,
   createGenre,
@@ -12,9 +18,8 @@ import {
   deleteCategory, 
   deleteGenre, 
   deleteMediatype,
-  updateMedia
+  updateMedia,
 } from '../../../middlewares/redux/actions/admin';
-import { RenderDriveImage } from '../../../functions/RenderDriveImage';
 
 const ContentUpdate = () => {
   const { id } = useParams();
@@ -24,19 +29,19 @@ const ContentUpdate = () => {
   const dbMediatypes = useSelector(state => state.dbMediatypes);
   const infoDetailViewer = useSelector(state => state.infoDetailViewer);
 
+  const [submitted, setSubmitted] = useState(false);
   const [editGenres, setEditGenres] = useState(false);
   const [editMediatype, setEditMediatype] = useState(false);
   const [editCategories, setEditCategories] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
   const [redirectRoute, setRedirectRoute] = useState("");
 
+  const [imgVisor, setImgVisor] = useState("");
   const [newGenre, setNewGenre] = useState("");
+  const [imgSlider, setImgSlider] = useState("");
   const [newCategory, setNewCategory] = useState("");
   const [newMediatype, setNewMediatype] = useState("");
-  const [imgVisor, setImgVisor] = useState(null);
-  const [imgSlider, setImgSlider] = useState(null);
-  const [previewVisor, setPreviewVisor] = useState(null);
-  const [previewSlider, setPreviewSlider] = useState(null);
+  const [previewVisor, setPreviewVisor] = useState("");
+  const [previewSlider, setPreviewSlider] = useState("");
   const [data, setData] = useState({
     title: "",
     artist: "",
@@ -104,30 +109,30 @@ const ContentUpdate = () => {
 
   function checkboxGenres(e) {
     if (data.genre?.includes(e)) {
-      data.genre = data.genre.filter(id => id !== e);
+      data.genre = data.genre?.filter(id => id !== e);
       setData({
         ...data,
-        genre: data.genre,
+        genre: data?.genre,
       });
     } else {
       setData({
         ...data,
-        genre: [...data.genre, e],
+        genre: [...data?.genre, e],
       });
     }
   };
 
   function checkboxMediatype(e) {
     if (data.mediatype?.includes(e)) {
-      data.mediatype = data.mediatype.filter(id => id !== e);
+      data.mediatype = data.mediatype?.filter(id => id !== e);
       setData({
         ...data,
-        mediatype: data.mediatype,
+        mediatype: data?.mediatype,
       });
     } else {
       setData({
         ...data,
-        mediatype: [...data.mediatype, e],
+        mediatype: [...data?.mediatype, e],
       });
     }
   };
@@ -152,9 +157,10 @@ const ContentUpdate = () => {
       newImageVisor: imgVisor,
     };
     
+    await dispatch(updateMedia(id, formData));
     dispatch(getMediaById(id));
-    dispatch(updateMedia(id, formData));
-    return setRedirectRoute('/view/v=' + id);
+    setRedirectRoute('/view/v=' + id);
+    return;
   };
 
   function resetForm() {
@@ -164,8 +170,8 @@ const ContentUpdate = () => {
 
   useEffect(() => {
     setData(infoDetailViewer);
-    setImgVisor(RenderDriveImage(infoDetailViewer?.imageVisor));
-    setImgSlider(RenderDriveImage(infoDetailViewer?.imageSlider));
+    setImgVisor(infoDetailViewer?.imageVisor);
+    setImgSlider(infoDetailViewer?.imageSlider);
     setPreviewVisor(RenderDriveImage(infoDetailViewer?.imageVisor));
     setPreviewSlider(RenderDriveImage(infoDetailViewer?.imageSlider));
   },[infoDetailViewer]);
@@ -212,7 +218,7 @@ const ContentUpdate = () => {
                         type="text"
                         name="title"
                         placeholder="Título de la publicación"
-                        value={data.title}
+                        value={data?.title || ''}
                         onChange={handleInputChange}
                       />
                     </p>
@@ -222,7 +228,7 @@ const ContentUpdate = () => {
                         type="text"
                         name="artist"
                         placeholder="Nombre del intérprete"
-                        value={data.artist}
+                        value={data?.artist || ''}
                         onChange={handleInputChange}
                       />
                     </p>
@@ -232,7 +238,7 @@ const ContentUpdate = () => {
                         placeholder="Escribe una breve reseña..."
                         type="text"
                         name="info"
-                        value={data.info}
+                        value={data?.info || ''}
                         onChange={handleInputChange}
                       />
                     </p>
@@ -242,7 +248,7 @@ const ContentUpdate = () => {
                   <p>
                     <label>Imagen del Slider</label>
                     <br></br>
-                    <img src={previewSlider ? previewSlider : defaultPreview} alt="visor" height="120px" />
+                    <img src={ previewSlider || defaultPreview } alt="visor" height="120px" />
                     <br></br>
                     <input
                       className={s.inputBtn}
@@ -264,7 +270,7 @@ const ContentUpdate = () => {
                   <p>
                     <label>Imagen del Visor</label>
                     <br></br>
-                    <img src={previewVisor ? previewVisor : defaultPreview} alt="visor" height="120px" />
+                    <img src={ previewVisor || defaultPreview } alt="visor" height="120px" />
                     <br></br>
                     <input
                       className={s.inputBtn}
@@ -293,22 +299,19 @@ const ContentUpdate = () => {
                       <input
                         type="text"
                         name="idLinkYT"
-                        value={data.idLinkYT}
+                        value={data?.idLinkYT || ''}
                         placeholder='ejemplo: hMS8RtYVouc'
-                        onChange={(e) =>
-                          setData({ ...data, idLinkYT: e.target.value })
-                        } />
+                        onChange={(e) => setData({ ...data, idLinkYT: e.target.value })} 
+                      />
                     </p>
                     <p>
                       <label>Id del link de Spotify</label>
                       <input
                         type="text"
                         name="idLinkSPOTY"
-                        value={data.idLinkSPOTY}
+                        value={data?.idLinkSPOTY || ''}
                         placeholder='ejemplo: hMS8RtYVouc'
-                        onChange={(e) =>
-                          setData({ ...data, idLinkSPOTY: e.target.value })
-                        }
+                        onChange={(e) => setData({ ...data, idLinkSPOTY: e.target.value })}
                       />
                     </p>
                     <p>
@@ -316,11 +319,9 @@ const ContentUpdate = () => {
                       <input
                         type="text"
                         name="urlLinkWEB"
-                        value={data.urlLinkWEB}
+                        value={data?.urlLinkWEB || ''}
                         placeholder='ejemplo: http://2girls1cup.com'
-                        onChange={(e) =>
-                          setData({ ...data, urlLinkWEB: e.target.value })
-                        }
+                        onChange={(e) => setData({ ...data, urlLinkWEB: e.target.value })}
                       />
                     </p>
                     <p>
@@ -328,7 +329,7 @@ const ContentUpdate = () => {
                       <input
                         type="text"
                         name="urlLinkDOWNLOAD"
-                        value={data.urlLinkDOWNLOAD}
+                        value={data?.urlLinkDOWNLOAD || ''}
                         placeholder='ejemplo: http://2girls1cup.com'
                         onChange={(e) => setData({ ...data, urlLinkDOWNLOAD: e.target.value })} />
                     </p>
@@ -346,7 +347,8 @@ const ContentUpdate = () => {
                         <input
                           type="checkbox"
                           name={t.name}
-                          value={t.name}
+                          value={t.name || ''}
+                          checked={data?.mediatype?.find((e) => e.mediatypeId === t.id)}
                           onChange={() => checkboxMediatype(t.id)} />
                         <label htmlFor={t.name}>{t.name}</label>
                         {
@@ -363,7 +365,7 @@ const ContentUpdate = () => {
                   {
                     editMediatype &&
                     <div>
-                      <input value={newMediatype} className={s.inputCreate} onInput={(e) => setNewMediatype(e.target.value)} type="text" />
+                      <input value={newMediatype || ''} className={s.inputCreate} onInput={(e) => setNewMediatype(e.target.value)} type="text" />
                       <button type='button' onClick={handleNewMediatype} className="" disabled={!newMediatype?.length}>
                         Agregar
                       </button>
@@ -383,7 +385,8 @@ const ContentUpdate = () => {
                         <input
                           type="checkbox"
                           name={t.name}
-                          value={t.name}
+                          value={t.name || ''}
+                          checked={data?.genre?.find((e) => e.genreId === t.id)}
                           onChange={() => checkboxGenres(t.id)}
                         />
                         <label htmlFor={t.name}>{t.name}</label>
@@ -401,7 +404,7 @@ const ContentUpdate = () => {
                   {
                     editGenres &&
                     <div>
-                      <input value={newGenre} className={s.inputCreate} onInput={(e) => setNewGenre(e.target.value)} type="text" />
+                      <input value={newGenre || ''} className={s.inputCreate} onInput={(e) => setNewGenre(e.target.value)} type="text" />
                       <button type='button' onClick={handleNewGenre} className="" disabled={!newGenre?.length}>
                         Agregar
                       </button>
@@ -421,7 +424,8 @@ const ContentUpdate = () => {
                         <input
                           type="checkbox"
                           name={t.name}
-                          value={t.name}
+                          value={t.name || ''}
+                          checked={data?.category?.find((e) => e.categoryId === t.id)}
                           onChange={() => checkboxCategories(t.id)}
                         />
                         <label htmlFor={t.name}>{t.name}</label>
@@ -439,7 +443,7 @@ const ContentUpdate = () => {
                   {
                     editCategories &&
                     <div>
-                      <input value={newCategory} className={s.inputCreate} onInput={(e) => setNewCategory(e.target.value)} type="text" />
+                      <input value={newCategory || ''} className={s.inputCreate} onInput={(e) => setNewCategory(e.target.value)} type="text" />
                       <button type='button' onClick={handleNewCategory} className="" disabled={!newCategory?.length}>
                         Agregar
                       </button>

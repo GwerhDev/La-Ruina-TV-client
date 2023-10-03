@@ -1,9 +1,7 @@
-.profileCont{
+.profileCont {
     width: 200px;
     height: 65px;
     background-color: transparent;
-    margin-top: -10px;
-    margin-right: 0px;
     transition-duration: 1s;
     border-radius: 5px;
     position: relative;
@@ -11,14 +9,15 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    right: 30px;
 }
-.btnMenuTv{
+
+.btnMenuTv {
     margin-left: 5px;
     opacity: .8;
     rotate: 90deg;
 }
-.userIcon{
+
+.userIcon {
     margin-right: 5px;
     opacity: .8;
     border-radius: 100%;
@@ -26,7 +25,8 @@
     border-width: 2px;
     filter: drop-shadow(0px 0px 4px black);
 }
-.userIconEnter{
+
+.userIconEnter {
     position: relative;
     top: 3px;
     margin-right: 5px;
@@ -37,7 +37,8 @@
     border-width: 2px;
     filter: drop-shadow(0px 0px 4px black)
 }
-.profileBtnCont{
+
+.profileBtnCont {
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -48,7 +49,8 @@
     justify-content: center;
     align-items: center;
 }
-.enterBtn{
+
+.enterBtn {
     font-family: Bebas Neue;
     color: rgba(255, 255, 255, 0.781);
     transition-duration: .5s;
@@ -56,7 +58,8 @@
     font-size: 20px;
     margin-top: -3px;
 }
-.imgIconProf{
+
+.imgIconProf {
     border-radius: 100%;
     border: solid;
     border-width: 2px;
@@ -87,12 +90,14 @@
     text-align: center;
     width: 200px;
 }
-.profileBtnMenu:hover, .enterBtn:hover{
+
+.profileBtnMenu:hover,
+.enterBtn:hover {
     cursor: pointer;
     color: white;
 }
 
-.optionProfileBtn{
+.optionProfileBtn {
     background: linear-gradient(to top, #171717, #171717 99%);
     box-shadow: 0px 0px 4px rgb(130, 128, 128);
     margin-top: 10px;
@@ -116,7 +121,7 @@
     margin-top: 15px;
 }
 
-.ulProfileOptions{
+.ulProfileOptions {
     padding: 0;
     margin-right: 25px;
     height: 0;
@@ -127,10 +132,11 @@
     align-items: center;
 }
 
-.optionProfileBtn>img{
+.optionProfileBtn>img {
     margin-right: 0px;
 }
-.optionProfileBtn:hover{
+
+.optionProfileBtn:hover {
     cursor: pointer;
     border-color: white;
     background: linear-gradient(to top, rgb(255, 255, 255), #171717 99%);
@@ -142,18 +148,22 @@
 }
 
 
-.imgIcon:hover, .imgIconProf:hover{
+.imgIcon:hover,
+.imgIconProf:hover {
     filter: grayscale(0);
 }
-.imgIcon{
+
+.imgIcon {
     filter: grayscale(1);
     height: 30px;
 }
-.ulSalirBtn{
+
+.ulSalirBtn {
     position: fixed;
     top: 300px;
 }
-.optionSalirBtn{
+
+.optionSalirBtn {
     position: fixed;
     top: 300px;
 }
