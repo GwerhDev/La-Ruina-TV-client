@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { useHistory } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 
-import RequestProfile from '../../components/RequestProfile/RequestProfile';
+import { RequestProfile } from '../../components/RequestProfile/RequestProfile';
 
 import { URL_API } from '../../../middlewares/config';
 import { $d, BodyCss } from '../../../functions';

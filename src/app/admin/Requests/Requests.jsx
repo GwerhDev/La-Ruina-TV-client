@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 import { resetOption } from '../../../middlewares/redux/actions';
 import { $d } from '../../../functions';
 import editIcon from '../../../assets/images/svg/edit-icon.svg';
-import createIcon from '../../../assets/images/png/create-icon.png';
 import userIcon from '../../../assets/images/png/user-icon.png';
+import createIcon from '../../../assets/images/png/create-icon.png';
 
-const Requests = () => {
+export const Requests = () => {
   const dispatch = useDispatch()
   return (
     <div className={s.reqContainer}>
@@ -74,5 +74,3 @@ const Requests = () => {
     </div>
   )
 }
-
-export default Requests

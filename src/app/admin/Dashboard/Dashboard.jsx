@@ -1,8 +1,8 @@
 import s from './Dashboard.module.css';
-import Requests from '../Requests/Requests';
-import RequestProfile from '../../components/RequestProfile/RequestProfile';
+import { Requests } from '../Requests/Requests';
+import { RequestProfile } from '../../components/RequestProfile/RequestProfile';
 
-const Dashboard = () => {
+export const Dashboard = () => {
   return (
     <div className={s.bodyContainer}>
       <div className='navFixed'/>
@@ -23,5 +23,3 @@ const Dashboard = () => {
     </div>
   )
 }
-
-export default Dashboard

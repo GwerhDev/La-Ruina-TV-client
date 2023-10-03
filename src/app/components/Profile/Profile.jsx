@@ -1,11 +1,11 @@
 import s from './Profile.module.css';
-import RequestProfile from '../../components/RequestProfile/RequestProfile';
 import userIcon from '../../../assets/images/user-icon.png';
+import { RequestProfile } from '../../components/RequestProfile/RequestProfile';
 import { DeleteAccount } from '../DeleteAccount/DeleteAccount';
-import { $d } from '../../../functions';
 import { useSelector } from 'react-redux';
+import { $d } from '../../../functions';
 
-const Profile = () => {
+export const Profile = () => {
   const currentUser = useSelector(state => state.currentUser)
   const { username, profilePic, role } = currentUser
 
@@ -50,5 +50,3 @@ const Profile = () => {
   </div>
   )
 }
-
-export default Profile

@@ -3,36 +3,36 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 import Enter from '../../pages/Enter/Enter';
-import Profile from '../Profile/Profile';
-import Dashboard from '../../admin/Dashboard/Dashboard';
 
+import { Profile } from '../Profile/Profile';
+import { Dashboard } from '../../admin/Dashboard/Dashboard';
 import { Favorites } from '../Favorites/Favorites';
 import { BackButton } from '../Navigator/BackButton';
 import { Subscription } from '../Subscription/Subscription';
 import { Configurations } from '../Configurations/Configurations';
 
 export const OptionsCanvas = () => {
-    const option = useSelector(state=>state.option)
+    const option = useSelector(state => state.option)
     return (
         <div className={s.slideCanvasCont} id='slideCanvasCont'>
             <ul>
-                {   
-                    (option?
-                    (option === 'login')?           <><Enter/></> 
-                    :
-                    (option === 'config')?          <><Configurations/></>
-                    :
-                    (option === 'profile')?         <><Profile/></>
-                    :
-                    (option === 'favorites')?       <><Favorites/></>
-                    :
-                    (option === 'dashboard')?       <><Dashboard/></> 
-                    :
-                    (option === 'subscription')?    <><Subscription/></>
-                    :
-                    (option === 'configuration')?   <><BackButton/></>
-                    :null
-                :null)
+                {
+                    (option ?
+                        (option === 'login') ? <><Enter /></>
+                            :
+                            (option === 'config') ? <><Configurations /></>
+                                :
+                                (option === 'profile') ? <><Profile /></>
+                                    :
+                                    (option === 'favorites') ? <><Favorites /></>
+                                        :
+                                        (option === 'dashboard') ? <><Dashboard /></>
+                                            :
+                                            (option === 'subscription') ? <><Subscription /></>
+                                                :
+                                                (option === 'configuration') ? <><BackButton /></>
+                                                    : null
+                        : null)
                 }
             </ul>
         </div>
