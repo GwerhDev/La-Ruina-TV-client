@@ -14,6 +14,20 @@ export const Favorites = () => {
   const favorites = useSelector(state => state.favorites);
   const userId = currentUser?.id;
 
+  function handleClick() {
+    return (
+      dispatch(resetOption()),
+      $d(`.bodyApp`).style.transform = 'translateX(0)',
+      $d(`.navCont`).style.transitionDuration = '.2s',
+      $d(`.bodyApp`).style.transitionDuration = '2s',
+      $d(`.navCont`).style.width = '100vw',
+      $d(`.browserBody`).style.height = 'auto',
+      $d(`.browserBody`).style.overflowY = 'scroll',
+      $d(`.visor`).style.transform = 'translateX(0)',
+      $d('#slideCanvasCont').style.overflowY = "scroll"
+    )
+  }
+
   useEffect(() => {
     dispatch(getFavorites(userId))
   }, [dispatch, userId]);
@@ -43,21 +57,11 @@ export const Favorites = () => {
                     <li className={s.liLikes} key={index}>
                       <div className={s.itemContainer}>
                         <Link to={`/view/v=${e.id}`}>
-                          <div className={s.imageContainer} 
-                               style={{ backgroundImage: `url(${RenderDriveImage(e.imageSlider)})` }}
-                               onClick={() => {
-                                return (
-                                  dispatch(resetOption()),
-                                  $d(`.bodyApp`).style.transform = 'translateX(0)',
-                                  $d(`.navCont`).style.transitionDuration = '.2s',
-                                  $d(`.bodyApp`).style.transitionDuration = '2s',
-                                  $d(`.navCont`).style.width = '100vw',
-                                  $d(`.browserBody`).style.height = 'auto',
-                                  $d(`.browserBody`).style.overflowY = 'scroll',
-                                  $d(`.visor`).style.transform = 'translateX(0)',
-                                  $d('#slideCanvasCont').style.overflowY = "scroll"
-                                )
-                              }}>
+                          <div
+                            className={s.imageContainer}
+                            style={{ backgroundImage: `url(${RenderDriveImage(e.imageSlider)})` }}
+                            onClick={handleClick}
+                          >
                             <div className={s.divH3}>
                               <h3>
                                 {e.artist}
