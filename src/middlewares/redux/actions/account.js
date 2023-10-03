@@ -10,7 +10,7 @@ export function getUserData() {
       dispatch({
         type: GET_USER_DATA,
         payload: response.data?.userData
-      })
+      });
     } catch (e) {
       console.error(e);
       localStorage.removeItem('userToken');
@@ -25,7 +25,7 @@ export function getFavorites() {
         dispatch({
           type: GET_FAVORITES,
           payload: res.data
-        })
+        });
       })
       .catch(e => console.error(e));
   }
@@ -39,7 +39,7 @@ export function addFavorites(userId, mediaId) {
         dispatch({
           type: GET_FAVORITES,
           payload: res.data.favorites
-        })
+        });
       })
       .catch(e => console.error(e));
   }
@@ -52,7 +52,7 @@ export function deleteFavorites(userId) {
         dispatch({
           type: GET_FAVORITES,
           payload: res.data.favorites
-        })
+        });
       })
       .catch(e => console.error(e));
   }
