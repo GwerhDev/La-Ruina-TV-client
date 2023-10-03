@@ -21,7 +21,7 @@ export const ProfileMenu = () => {
   function onClickValue(e) {
     return (
       dispatch(getOption(e.target.value || e)),
-      OptionCanvas(e.target.value || e)
+      OptionCanvas()
     )
   };
 

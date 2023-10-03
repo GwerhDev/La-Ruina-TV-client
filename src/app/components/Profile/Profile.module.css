@@ -58,6 +58,10 @@
 .buttons{
     position: relative;
     margin-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 .buttons>button{
     margin-bottom: 10px;

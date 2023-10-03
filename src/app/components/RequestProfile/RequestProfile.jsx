@@ -20,13 +20,21 @@ export const RequestProfile = () => {
     useEffect(() => {
         OptionProfile(option)
     }, [option]);
+
     return (
         <div className={s.divProfileMenu}>
             <ul
                 className={s.ulProfileMenu}>
                 <ul className={s.ulRequestProfile}>
                     <li>
-                        <img referrerPolicy="no-referrer" src={profilePic ?? userIcon} className={s.userIcon} id='profileIcon' onClick={() => { return dispatch(getOption('profile')) }} alt="perfil" />
+                        <img 
+                            referrerPolicy="no-referrer" 
+                            src={profilePic ?? userIcon} 
+                            className={s.userIcon} 
+                            id='profileIcon' 
+                            alt="perfil" 
+                            onClick={() => dispatch(getOption('profile'))} 
+                        />
                         <span id='spanProfile' className={s.spanProfile}>Perfil</span>
                     </li>
                     <li>
