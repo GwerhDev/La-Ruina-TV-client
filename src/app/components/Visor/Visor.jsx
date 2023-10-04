@@ -30,7 +30,7 @@ export const Visor = () => {
         setId(visorID);
         setTitle(visorTitle);
         setArtist(visorArtist);
-    }
+    };
 
     return (
         <div className='visor'>

@@ -9,7 +9,7 @@ export const InfoCanvas = (props) => {
   const fullDetail = useSelector(state => state.fullDetail);
 
   useEffect(() => {
-    dispatch(getFullDetail(id))
+    !id?? dispatch(getFullDetail(id))
   },[dispatch, id]);
 
   return (
