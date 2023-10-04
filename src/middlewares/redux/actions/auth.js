@@ -17,7 +17,8 @@ export function auth(history) {
       .catch((e) => {
         console.error(e);
         return;
-      })
+      }
+    )
   }
 };
 
@@ -30,10 +31,14 @@ export function loginInner(email, password, history) {
         reset();
       })
       .catch((e) => {
-        dispatch({ type: ERROR, payload: e.response.data.message });
+        dispatch({ 
+          type: ERROR, 
+          payload: e.response.data.message 
+        });
         console.error(e.code);
         return;
-      })
+      }
+    )
   }
 };
 
@@ -53,7 +58,8 @@ export function signupInner(email, password, history) {
       .catch((e) => {
         console.error(e);
         return;
-      })
+      }
+    )
   }
 };
 
@@ -66,7 +72,8 @@ export function signupGoogle(history) {
       .catch((e) => {
         console.error(e);
         return;
-      })
+      }
+    )
   }
 };
 

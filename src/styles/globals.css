@@ -557,6 +557,10 @@ button:disabled {
   height: 155px;
 }
 
+#infoCont {
+  display: none;
+}
+
 .visorBtn {
   width: fit-content;
   height: fit-content;

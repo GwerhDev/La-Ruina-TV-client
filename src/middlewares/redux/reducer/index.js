@@ -16,7 +16,8 @@ import {
     GET_MEDIATYPES,
     GET_SEARCH,
     GET_USERS,
-    ERROR
+    ERROR,
+    GET_FULL_DETAIL
 } from "../../misc";
 
 
@@ -38,6 +39,7 @@ const initialState = {
     mediaList: [new Content()],
     visorList: [new Content()],
     infoDetailViewer: new Content(),
+    fullDetail: {},
     error: "",
     nextVisor: false,
 
@@ -52,6 +54,11 @@ export default function rootReducer(state = initialState, action) {
             return {
                 ...state,
                 error: action.payload
+            }
+        case GET_FULL_DETAIL: 
+            return {
+                ...state,
+                fullDetail: action.payload
             }
         case GET_USERS:
             return {

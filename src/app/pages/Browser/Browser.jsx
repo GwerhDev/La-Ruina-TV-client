@@ -1,7 +1,6 @@
 import s from "./Browser.module.css";
 import { useEffect } from "react";
 import { useHistory } from 'react-router-dom';
-import { InfoCanvas } from '../../utils/InfoCanvas';
 import { BodyCss } from "../../../functions";
 import { resetIdYT, resetOption } from "../../../middlewares/redux/actions";
 import { useDispatch, useSelector } from "react-redux";
@@ -41,7 +40,6 @@ const Browser = () => {
   return (
     <div className="browserBody">
       <Visor />
-      <InfoCanvas />
       {
         mediaList?.length &&
         <Slider

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { URL_API } from "../../config";
-import { GET_CATEGORIES, GET_GENRES, GET_INFO, GET_MEDIA, GET_MEDIATYPES, RESET_MEDIA } from "../../misc";
+import { GET_CATEGORIES, GET_FULL_DETAIL, GET_GENRES, GET_INFO, GET_MEDIA, GET_MEDIATYPES, RESET_MEDIA } from "../../misc";
 
 export function getMedia() {
     return async function (dispatch) {
@@ -10,8 +10,8 @@ export function getMedia() {
                 type: GET_MEDIA,
                 payload: response.data
             })
-        } catch (e) {
-            console.error(e)
+        } catch (error) {
+            console.error(error)
         }
     }
 };
@@ -24,8 +24,8 @@ export function getMediaById(id) {
                 type: GET_INFO,
                 payload: response.data
             })
-        } catch (e) {
-            console.error(e)
+        } catch (error) {
+            console.error(error)
         }
     }
 };
@@ -44,8 +44,8 @@ export function getCategories() {
                 type: GET_CATEGORIES,
                 payload: response.data
             })
-        } catch (e) {
-            console.error(e)
+        } catch (error) {
+            console.error(error)
         }
     }
 };
@@ -58,8 +58,8 @@ export function getGenres() {
                 type: GET_GENRES,
                 payload: response.data?.genres
             })
-        } catch (e) {
-            console.error(e)
+        } catch (error) {
+            console.error(error)
         }
     }
 };
@@ -72,8 +72,22 @@ export function getMediatypes() {
                 type: GET_MEDIATYPES,
                 payload: response.data?.mediatypes
             })
-        } catch (e) {
-            console.error(e)
+        } catch (error) {
+            console.error(error)
         }
     }
 };
+
+export function getFullDetail(id) {
+    return async function (dispatch) {
+        try {
+            const response = await axios.get(`${URL_API}/media/full-detail/${id}`);
+            dispatch({
+                type: GET_FULL_DETAIL,
+                payload: response.data
+            })
+        } catch (error) {
+            console.error(error)
+        }
+    }
+}

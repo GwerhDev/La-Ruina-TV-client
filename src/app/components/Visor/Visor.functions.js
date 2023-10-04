@@ -7,7 +7,7 @@ export const VisorFunction = () => {
     document.addEventListener('mouseup', function (e) {
         var container0 = $gId('infoCont');
         if (!container0?.contains(e.target)) {
-            $d('#infoCont').style.scale = '0'
+            $d('#infoCont').style.display='none'
         }
     });
 

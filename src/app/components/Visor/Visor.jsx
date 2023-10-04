@@ -6,8 +6,13 @@ import visorIntroVideo from '../../../assets/videos/laruina-intro.mp4';
 import { VisorFunction } from './Visor.functions';
 import { $d } from "../../../functions";
 import { RenderDriveImage } from "../../../functions/RenderDriveImage";
+import { InfoCanvas } from "../../utils/InfoCanvas";
+import { useState } from "react";
 
 export const Visor = () => {
+    const [id, setId] = useState(null);
+    const [title, setTitle] = useState(null);
+    const [artist, setArtist] = useState(null);
     const {
         visorID,
         visorImg,
@@ -20,6 +25,13 @@ export const Visor = () => {
         currentUser,
     } = VisorFunction();
 
+    function handleInfoButton() {
+        $d('#infoCont').style.display='flex';
+        setId(visorID);
+        setTitle(visorTitle);
+        setArtist(visorArtist);
+    }
+
     return (
         <div className='visor'>
             <video className='visorVideoIntro' src={visorIntroVideo} autoPlay muted loop type="video/mp4" />
@@ -27,6 +39,7 @@ export const Visor = () => {
                 <img className='visorBG' src={RenderDriveImage(visorImg)} alt='' />
             </div>
             <div className='visorCanvas' />
+            <InfoCanvas title={title} artist={artist} id={id} />
             {visorList?.length
                 ? <div className='visorPostInfo'>
                     <div className='visorPostArtista'>
@@ -60,7 +73,7 @@ export const Visor = () => {
                             <li>
                                 <button
                                     className='button2'
-                                    onClick={() => { return $d('#infoCont').style.scale = '1' }} >
+                                    onClick={handleInfoButton} >
                                     Más información
                                 </button>
                             </li>
