@@ -1,7 +1,7 @@
 import axios from "axios";
 import { URL_API } from "../../config";
 import { options } from "../../helpers";
-import { getCategories, getGenres, getMedia, getMediatypes } from "./media";
+import { getCategories, getGenres, getMedia, getMediatypes, getProducers } from "./media";
 import { GET_USERS } from "../../misc";
 
 export const createMedia = (formData) => {
@@ -103,6 +103,31 @@ export function deleteCategory(id) {
     }
   }
 };
+
+export function createProducer(name) {
+  return async function (dispatch) {
+    const producer = { name }
+    try {
+      const response = await axios.post(`${URL_API}/admin/producer/create`, producer, options());
+      dispatch(getProducers());
+      return response;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+};
+
+export function deleteProducer(id) {
+  return async function (dispatch) {
+    try {
+      const response = await axios.delete(`${URL_API}/admin/producer/delete/${id}`, options());
+      dispatch(getProducers());
+      return response;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+}
 
 export function getUsers() {
   return async function (dispatch) {

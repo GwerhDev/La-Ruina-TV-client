@@ -3,7 +3,6 @@ import s from './Footer.module.css';
 export const Footer = () => {
     return (
         <div className={s.ruinaContFooter}>
-            <p>© {new Date().getFullYear()} LA RUINA</p>
             <div className={s.columnsContainer}>
                 <div className={s.column}>
                     <p>Contáctanos</p>
@@ -25,6 +24,7 @@ export const Footer = () => {
                     <p>Soporte técnico</p>
                 </div>
             </div>
+            <p>© {new Date().getFullYear()} LA RUINA</p>
         </div>
     )
 }

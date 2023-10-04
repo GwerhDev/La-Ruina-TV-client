@@ -4,31 +4,36 @@ import { useDispatch, useSelector } from "react-redux";
 import defaultPreview from '../../../assets/images/default-background.png';
 import { Link } from 'react-router-dom';
 import { toTop } from '../../../functions/toTop';
-import { getCategories, getGenres, getMediatypes } from '../../../middlewares/redux/actions/media';
+import { getCategories, getGenres, getMediatypes, getProducers } from '../../../middlewares/redux/actions/media';
 import {
   createCategory,
   createGenre,
   createMedia, 
   createMediatype, 
+  createProducer, 
   deleteCategory, 
   deleteGenre, 
-  deleteMediatype
+  deleteMediatype,
+  deleteProducer
 } from '../../../middlewares/redux/actions/admin';
 
 const ContentCreate = () => {
   const dispatch = useDispatch();
   const dbGenres = useSelector(state => state.dbGenres);
+  const dbProducers = useSelector(state => state.dbProducers);
   const dbCategories = useSelector(state => state.dbCategories);
   const dbMediatypes = useSelector(state => state.dbMediatypes);
 
   const [editGenres, setEditGenres] = useState(false);
   const [editMediatype, setEditMediatype] = useState(false);
+  const [editProducers, setEditProducers] = useState(false);
   const [editCategories, setEditCategories] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [redirectRoute, setRedirectRoute] = useState("");
 
   const [newGenre, setNewGenre] = useState("");
   const [newCategory, setNewCategory] = useState("");
+  const [newProducer, setNewProducer] = useState("");
   const [newMediatype, setNewMediatype] = useState("");
   const [imgVisor, setImgVisor] = useState(null);
   const [imgSlider, setImgSlider] = useState(null);
@@ -40,6 +45,7 @@ const ContentCreate = () => {
     info: "",
     genre: [],
     category: [],
+    producer: [],
     mediatype: [],
     idLinkYT: "",
     idLinkSPOTY: "",
@@ -63,6 +69,12 @@ const ContentCreate = () => {
     e.preventDefault();
     dispatch(createCategory(newCategory));
     setNewCategory("");
+  }
+
+  function handleNewProducer(e) {
+    e.preventDefault();
+    dispatch(createProducer(newProducer));
+    setNewProducer("");
   }
 
   function handleInputChange(e) {
@@ -129,6 +141,17 @@ const ContentCreate = () => {
     }
   };
 
+  function checkboxProducer(e) {
+    if (data.producer.includes(e)) {
+      data.producer = data.producer.filter(id => id !== e);
+      setData({
+        ...data,
+        producer: data.producer,
+      });
+    }
+  };
+  
+
   async function handleSubmit(e) {
     e.preventDefault();
     toTop();
@@ -139,6 +162,7 @@ const ContentCreate = () => {
       info: data.info,
       genre: data.genre,
       category: data.category,
+      producer: data.producer,
       mediatype: data.mediatype,
       idLinkYT: data.idLinkYT,
       idLinkSPOTY: data.idLinkSPOTY,
@@ -180,6 +204,7 @@ const ContentCreate = () => {
     dispatch(getGenres());
     dispatch(getCategories());
     dispatch(getMediatypes());
+    dispatch(getProducers());
   }, [dispatch]);
 
   return (
@@ -451,6 +476,45 @@ const ContentCreate = () => {
                     </div>
                   }
                 </div>
+
+                <br />
+                <label>Productor</label>
+                <button type='button' onClick={() => setEditProducers(!editProducers)}>{!editProducers ? "Editar" : "Cancelar"}</button>
+                <br />
+
+                <div className={s.types}>
+                  {
+                    dbProducers?.map((t, index) => (
+                      <div className={s.typemedia} key={`${t.name}-${index}`}>
+                        <input
+                          type="checkbox"
+                          name={t.name}
+                          value={t.name}
+                          onChange={() => checkboxProducer(t.id)}
+                        />
+                        <label htmlFor={t.name}>{t.name}</label>
+                        {
+                          editProducers &&
+                          <div className={s.deleteButtonContainer}>
+                            <button type='button' onClick={() => dispatch(deleteProducer(t.id))} className="" disabled={!t.name?.length}>
+                              x
+                            </button>
+                          </div>
+                        }
+                      </div>
+                    ))
+                  }
+                  {
+                    editProducers &&
+                    <div>
+                      <input value={newProducer} className={s.inputCreate} onInput={(e) => setNewProducer(e.target.value)} type="text" />
+                      <button type='button' onClick={handleNewProducer} className="" disabled={!newProducer?.length}>
+                        Agregar
+                      </button>
+                    </div>
+                  }
+                </div>
+
                 <div>
                   <input type="submit" value="Publicar" className={s.submit} />
                 </div>

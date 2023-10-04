@@ -16,6 +16,7 @@ export const RESET_IDYT = 'RESET_IDYT';
 export const GET_CATEGORIES = 'GET_CATEGORIES';
 export const GET_GENRES = 'GET_GENRES';
 export const GET_MEDIATYPES = 'GET_MEDIATYPES';
+export const GET_PRODUCERS = 'GET_PRODUCERS';
 export const GET_USERS = 'GET_USERS';
 export const GET_FAVORITES = 'GET_FAVORITES';
 export const GET_SEARCH = 'GET_SEARCH';

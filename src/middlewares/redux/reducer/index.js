@@ -17,7 +17,8 @@ import {
     GET_SEARCH,
     GET_USERS,
     ERROR,
-    GET_FULL_DETAIL
+    GET_FULL_DETAIL,
+    GET_PRODUCERS
 } from "../../misc";
 
 
@@ -33,6 +34,7 @@ const initialState = {
     dbMediatypes: [],
     dbGenres: [],
     dbCategories: [],
+    dbProducers: [],
     favorites: [],
     userList: [],
     mediaByCategory: [],
@@ -64,6 +66,11 @@ export default function rootReducer(state = initialState, action) {
             return {
                 ...state,
                 userList: action.payload
+            }
+        case GET_PRODUCERS:
+            return {
+                ...state,
+                dbProducers: action.payload
             }
         case GET_SEARCH:
             return {

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { URL_API } from "../../config";
-import { GET_CATEGORIES, GET_FULL_DETAIL, GET_GENRES, GET_INFO, GET_MEDIA, GET_MEDIATYPES, RESET_MEDIA } from "../../misc";
+import { GET_CATEGORIES, GET_FULL_DETAIL, GET_GENRES, GET_INFO, GET_MEDIA, GET_MEDIATYPES, GET_PRODUCERS, RESET_MEDIA } from "../../misc";
 
 export function getMedia() {
     return async function (dispatch) {
@@ -77,6 +77,20 @@ export function getMediatypes() {
         }
     }
 };
+
+export function getProducers() {
+    return async function (dispatch) {
+        try {
+            const response = await axios.get(`${URL_API}/producer`);
+            dispatch({
+                type: GET_PRODUCERS,
+                payload: response.data
+            })
+        } catch (error) {
+            console.error(error)
+        }
+    }
+}
 
 export function getFullDetail(id) {
     return async function (dispatch) {
