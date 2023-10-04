@@ -35,7 +35,6 @@ export default function profileMenuCss(e){
                 $d(`#optionProfileBtn5`).style.scale='0'
                 $d(`#optionProfileBtn6`).style.scale='0'
                 $d(`.liProfileMenuDisplay`).style.display='0'
-
             }
         })
     if(e==='enter'){

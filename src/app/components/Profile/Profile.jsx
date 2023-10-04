@@ -21,10 +21,10 @@ export const Profile = () => {
   };
 
   return (
-    <div >
+    <div>
       <div className={s.dashControlCont}>
         <div className='divProfile'>
-        <div className='navFixed'></div>
+        <div className='navFixed'/>
         <div className={s.profileFather}>
           <div className={s.profileCont}>
             <ul className={s.ulListProfile}>

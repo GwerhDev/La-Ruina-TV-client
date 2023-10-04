@@ -21,7 +21,7 @@ export const Requests = () => {
       $d(`.browserBody`).style.height = 'auto',
       $d(`.browserBody`).style.overflowY = 'scroll',
       $d(`.visor`).style.transform = 'translateX(0)',
-      $d('#slideCanvasCont').style.overflowY = "scroll"
+      $d('#slideCanvasCont').style.overflowY = "hidden"
     )
   }
 
