@@ -941,13 +941,6 @@ button:disabled {
   justify-content: end;
 }
 
-/* ----------------FOOTER----------------- */
-.ruinaContFooter {
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
-}
-
 /* ----------------DONATE----------------- */
 
 .donateBtn {
