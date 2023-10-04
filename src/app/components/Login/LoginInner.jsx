@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { loginInner } from "../../../middlewares/redux/actions/auth";
 import { resetError } from "../../../middlewares/redux/actions/error";
+import { errorMessages } from "../../errors";
 
 const LoginInner = () => {
   const dispatch = useDispatch();
@@ -33,7 +34,7 @@ const LoginInner = () => {
     e.preventDefault();
 
     if(!email.includes("@")) {
-      return setErrorMessage("Email inválido. Por favor, intente nuevamente");
+      return setErrorMessage(errorMessages.login.email);
     }
 
     return (
