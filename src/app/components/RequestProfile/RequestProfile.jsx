@@ -42,7 +42,7 @@ export const RequestProfile = () => {
                             <span id='spanFavs' className={s.spanFavs}>Favs</span>
                         </li>
                         <li>
-                            <img src={configIcon} className={s.configIcon} id='configIcon' alt="config" onClick={() => { return dispatch(getOption('config')) }} />
+                            <img src={configIcon} className={s.configIcon} id='configIcon' alt="configuration" onClick={() => { return dispatch(getOption('configuration')) }} />
                             <span id='spanList' className={s.spanLists}>Config</span>
                         </li>
                         {

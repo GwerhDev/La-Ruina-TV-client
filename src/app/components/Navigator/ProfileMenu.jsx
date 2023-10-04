@@ -73,12 +73,12 @@ export const ProfileMenu = () => {
             <button
               id='optionProfileBtn3'
               className={s.optionProfileBtn}
-              value='config'
+              value='configuration'
               onClick={(e) => onClickValue(e)}
               onMouseEnter={() => profileMenuCss('enter')}>
               <img
                 className={s.imgIcon}
-                onClick={(e) => e.target.value = 'config'}
+                onClick={(e) => e.target.value = 'configuration'}
                 src={configIcon}
                 alt="" /><br></br>
               CONFIGURACIÓN

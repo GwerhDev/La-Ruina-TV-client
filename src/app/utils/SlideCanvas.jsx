@@ -7,7 +7,6 @@ import Enter from '../pages/Enter/Enter';
 import { Profile } from '../components/Profile/Profile';
 import { Dashboard } from '../admin/Dashboard/Dashboard';
 import { Favorites } from '../components/Favorites/Favorites';
-import { BackButton } from '../components/Navigator/BackButton';
 import { Subscription } from '../components/Subscription/Subscription';
 import { Configurations } from '../components/Configurations/Configurations';
 
@@ -20,7 +19,7 @@ export const OptionsCanvas = () => {
                     (option ?
                         (option === 'login') ? <><Enter /></>
                             :
-                            (option === 'config') ? <><Configurations /></>
+                            (option === 'configuration') ? <><Configurations /></>
                                 :
                                 (option === 'profile') ? <><Profile /></>
                                     :
@@ -29,9 +28,7 @@ export const OptionsCanvas = () => {
                                         (option === 'dashboard') ? <><Dashboard /></>
                                             :
                                             (option === 'subscription') ? <><Subscription /></>
-                                                :
-                                                (option === 'configuration') ? <><BackButton /></>
-                                                    : null
+                                                : null
                         : null)
                 }
             </ul>
