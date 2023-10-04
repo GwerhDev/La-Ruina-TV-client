@@ -48,8 +48,8 @@ const ContentCreate = () => {
     producer: [],
     mediatype: [],
     idLinkYT: "",
-    idLinkSPOTY: "",
     urlLinkWEB: "",
+    idLinkSPOTY: "",
     urlLinkDOWNLOAD: "",
   });
 

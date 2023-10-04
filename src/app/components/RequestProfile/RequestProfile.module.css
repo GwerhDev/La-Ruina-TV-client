@@ -1,36 +1,55 @@
+
+.divProfileMenu {
+	padding-top: 80px;
+	padding-bottom: 80px;
+	width: 50px;
+	height: 100vh;
+	left: 0px;
+	top: 0px;
+	position: fixed;
+	filter: drop-shadow(0px 0px 10px black);
+}
+
 .ulProfileMenu{
+	padding: 0;
 	color: aliceblue;
 	background-color: rgb(42, 42, 42);
-	margin-top: 80px;
-	width: 100%;
+	width: 50px;
 	height: 100%;
 	border-top-right-radius: 5px;
 	font-family: Bebas Neue;
 	font-size: 15px;
-	position: relative;
 	opacity: .8;
 	transition-duration: 1s;
-}
-
-.spanOpt {
-	margin-left: 3px;
-}
-
-.spanFavs {
-	margin-left: 5px;
+	overflow-x: hidden;
+	display: flex;
 }
 
 .ulRequestProfile {
+	padding: 0;
 	text-decoration: none;
 	width: 100%;
-	height: 100px;
-	margin-left: -70px;
-	top: 20px;
-	position: relative;
+	height: 100%;
 	display: flex;
 	flex-direction: column;
-	justify-content: left;
-	text-align: left;
+	justify-content: space-around;
+	align-items: center;
+	text-align: center;
+}
+
+.userRequestsContainer {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 50%;
+}
+
+.exitContainer {
+	width: 100%;
+	height: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .likeIcon, 
@@ -80,7 +99,6 @@
 .logoutIcon {
 	width: 30px;
 	filter: grayscale(1);
-	margin-top: 80px;
 	transition-duration: 1s;
 	opacity: .9;
 }
@@ -98,14 +116,4 @@
 	opacity: 1;
 	filter: drop-shadow(0px 0px 8px rgb(255, 255, 255));
 	transition-duration: 1s;
-}
-
-.divProfileMenu {
-	width: 50px;
-	height: 100vh;
-	left: 0px;
-	top: 0px;
-	position: fixed;
-	overflow-y: hidden;
-	filter: drop-shadow(0px 0px 10px black);
 }
