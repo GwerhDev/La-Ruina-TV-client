@@ -116,6 +116,10 @@ button:hover {
   cursor: pointer;
 }
 
+button:disabled {
+  cursor: default;
+}
+
 .navCont {
   height: 80px;
   width: 100%;
@@ -597,6 +601,11 @@ button:hover {
   background-color: #171717;
   color: #ffffff;
   transition-duration: 0.2s;
+}
+
+.button1:disabled {
+  background: #9b9b9b;
+  color: #747474;
 }
 
 .button2:hover {

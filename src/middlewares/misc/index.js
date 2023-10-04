@@ -19,3 +19,4 @@ export const GET_MEDIATYPES = 'GET_MEDIATYPES';
 export const GET_USERS = 'GET_USERS';
 export const GET_FAVORITES = 'GET_FAVORITES';
 export const GET_SEARCH = 'GET_SEARCH';
+export const ERROR = 'ERROR';
