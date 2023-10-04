@@ -3,7 +3,7 @@ import s from './Footer.module.css';
 export const Footer = () => {
     return (
         <div className={s.ruinaContFooter}>
-            <p>© 2022 LA RUINA</p>
+            <p>© {new Date().getFullYear()} LA RUINA</p>
             <div className={s.columnsContainer}>
                 <div className={s.column}>
                     <p>Contáctanos</p>
