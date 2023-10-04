@@ -7,10 +7,11 @@ import { useDispatch } from 'react-redux';
 import { RequestProfile } from '../../components/RequestProfile/RequestProfile';
 
 import { URL_API } from '../../../middlewares/config';
-import { $d, BodyCss } from '../../../functions';
+import { BodyCss } from '../../../functions';
 import { resetOption } from '../../../middlewares/redux/actions';
 
 import checkedIcon from '../../../assets/images/checked-icon.png';
+import { reset } from '../../../functions/Reset';
 
 export const Subscription = () => {
   const dispatch = useDispatch()
@@ -24,14 +25,7 @@ export const Subscription = () => {
       dispatch(resetOption()),
       BodyCss(),
       history.push('/checkout/subscription'),
-      $d(`.bodyApp`).style.transform = 'translateX(0)',
-      $d(`.navCont`).style.transitionDuration = '.2s',
-      $d(`.bodyApp`).style.transitionDuration = '2s',
-      $d(`.navCont`).style.width = '100vw',
-      $d(`.browserBody`).style.height = 'auto',
-      $d(`.browserBody`).style.overflowY = 'scroll',
-      $d(`.visor`).style.transform = 'translateX(0)',
-      $d('#slideCanvasCont').style.overflowY = "hidden"
+      reset()
     )
   }
 
