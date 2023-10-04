@@ -9,9 +9,9 @@
         display: flex;
         list-style: none;
         text-align: center;
-        justify-content: center;
+        justify-content: flex-start;
         flex-direction: column;
-        margin-top: 0px;
+        margin-top: 100px;
     }
     .checkoutFormat{
         position: relative;
