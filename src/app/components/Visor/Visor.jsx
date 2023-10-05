@@ -11,6 +11,7 @@ import { useState } from "react";
 
 export const Visor = () => {
     const [id, setId] = useState(null);
+    const [image, setImage] = useState(null);
     const [title, setTitle] = useState(null);
     const [artist, setArtist] = useState(null);
     const {
@@ -28,6 +29,7 @@ export const Visor = () => {
     function handleInfoButton() {
         $d('#infoCont').style.display='flex';
         setId(visorID);
+        setImage(visorImg);
         setTitle(visorTitle);
         setArtist(visorArtist);
     };
@@ -39,7 +41,7 @@ export const Visor = () => {
                 <img className='visorBG' src={RenderDriveImage(visorImg)} alt='' />
             </div>
             <div className='visorCanvas' />
-            <InfoCanvas title={title} artist={artist} id={id} />
+            <InfoCanvas title={title} artist={artist} id={id} image={RenderDriveImage(image)}/>
             {visorList?.length
                 ? <div className='visorPostInfo'>
                     <div className='visorPostArtista'>

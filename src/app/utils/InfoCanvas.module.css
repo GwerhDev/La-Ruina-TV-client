@@ -11,13 +11,23 @@
     filter: drop-shadow(0px 0px 10px black);
     color: white;
     padding: 2rem;
-
+    background-position: center;
+    background-size: cover;
 }
 
 .infoContText {
     width: 100%;
     overflow-x: hidden;
     overflow-y: auto;
+}
+
+.blackCanvas {
+    background: linear-gradient(to left, rgba(105, 105, 105, 0.267), #171717);
+    backdrop-filter: blur(10px);
+    height: 100%;
+    padding-left: 10px;
+    padding-right: 15px;
+    border-radius: 15px;
 }
 
 
