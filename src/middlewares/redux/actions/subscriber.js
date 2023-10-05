@@ -1,6 +1,6 @@
 import axios from "axios";
 import { URL_API } from "../../config";
-import { GET_YT_SUBSCRIBERS } from "../../misc";
+import { GET_USER_PLAN, GET_YT_SUBSCRIBERS } from "../../misc";
 
 export const subscriberYoutubeVerification = (email) => {
   return async function (dispatch) {
@@ -11,17 +11,19 @@ export const subscriberYoutubeVerification = (email) => {
           payload: res.data
         })
       })
+      .catch(error => console.log(error));
   }
 };
 
-export const subscriberPlanVerification = (email) => {
+export const subscriberPlanVerification = (userId) => {
   return async function (dispatch) {
-    await axios.post(`${URL_API}/subscriber/plan`, email)
-      .then(res => {
-        dispatch({
-          type: GET_YT_SUBSCRIBERS,
-          payload: res.data
-        })
+    await axios.post(`${URL_API}/subscriber/plan`, userId)
+    .then(res => {
+      dispatch({
+        type: GET_USER_PLAN,
+        payload: res.data
       })
+    })      
+    .catch(error => console.log(error));
   }
 };

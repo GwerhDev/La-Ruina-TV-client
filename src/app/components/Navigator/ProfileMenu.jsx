@@ -11,6 +11,7 @@ import adminIcon from '../../../assets/images/admin-icon.png';
 import logoutIcon from '../../../assets/images/logout-icon.png';
 import configIcon from '../../../assets/images/config-icon.png';
 import subscriptionIcon from '../../../assets/images/subscription-icon.png';
+import { logout } from '../../../functions/Logout';
 
 export const ProfileMenu = () => {
   const currentUser = useSelector(state => state.currentUser);
@@ -86,35 +87,49 @@ export const ProfileMenu = () => {
           </li>
           <li>
             <button
-              id='optionProfileBtn5'
+              id='optionProfileBtn4'
               className={s.optionProfileBtn}
-              value={role === 'admin' ? 'dashboard' : 'subscription'}
+              value='subscription'
               onClick={(e) => onClickValue(e)}
               onMouseEnter={() => profileMenuCss('enter')}>
               <img
                 className={s.imgIcon}
-                onClick={(e) => e.target.value = role === 'admin' ? 'dashboard' : 'subscription'}
-                src={role === 'admin' ? adminIcon : subscriptionIcon}
+                onClick={(e) => e.target.value = 'subscription'}
+                src={subscriptionIcon}
                 alt="" /><br></br>
-              {role === 'admin' ? 'DASHBOARD' : 'SUSCRIPCIÓN'}
+              SUSCRIPCIÓN
             </button>
           </li>
+          {
+            role === 'admin' 
+            ? <li>
+                <button
+                  id='optionProfileBtn5'
+                  className={s.optionProfileBtn}
+                  value={role === 'admin' ? 'dashboard' : 'subscription'}
+                  onClick={(e) => onClickValue(e)}
+                  onMouseEnter={() => profileMenuCss('enter')}>
+                  <img
+                    className={s.imgIcon}
+                    onClick={(e) => e.target.value = 'dashboard'}
+                    src={adminIcon}
+                    alt="" /><br></br>
+                  DASHBOARD
+                </button>
+              </li>
+            : null
+          }
           <li className={s.ulSalirBtn}>
-            <button
+            <button 
               id='optionProfileBtn6'
               className={s.optionProfileBtn}
-              onClick={() => {
-                return (
-                  localStorage.clear(),
-                  history.push('/browser'),
-                  window.location.reload()
-                )
-              }}
+              onClick={() => logout(history)}
               onMouseEnter={() => profileMenuCss('enter')}>
               <img
                 className={s.imgIcon}
                 src={logoutIcon}
-                alt="" /><br></br>
+                alt="" />
+                <br/>
               SALIR
             </button>
           </li>

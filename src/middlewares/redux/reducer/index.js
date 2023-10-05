@@ -18,13 +18,15 @@ import {
     GET_USERS,
     ERROR,
     GET_FULL_DETAIL,
-    GET_PRODUCERS
+    GET_PRODUCERS,
+    GET_USER_PLAN
 } from "../../misc";
 
 
 const initialState = {
     /*----------------Admin----------------*/
     YTSub: false,
+    activePlan: false,
 
     /*----------------Auth----------------*/
     currentUser: null,
@@ -56,6 +58,11 @@ export default function rootReducer(state = initialState, action) {
             return {
                 ...state,
                 error: action.payload
+            }
+        case GET_USER_PLAN:
+            return {
+                ...state,
+                activePlan: action.payload
             }
         case GET_FULL_DETAIL: 
             return {

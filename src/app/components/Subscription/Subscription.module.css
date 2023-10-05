@@ -1,19 +1,60 @@
 .checkoutFormat {
-    margin-top: -80px;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+    display: flex;
+
 }
+
+.headerContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 110px;
+    margin-bottom: 50px;
+}
+
+.subCont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.divProfile {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    list-style: none;
+    background: linear-gradient(to bottom, #ffffffcf, rgb(137, 137, 137));
+    left: 0px;
+    bottom: 0px;
+    position: fixed;
+}
+
+.ulCheck {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 110px;
+}
+
+
 @media only screen and (max-width: 800px) {
-    .title{
+    .title {
         margin-top: 100px;
     }
+
     .ulCheck {
         display: flex;
         list-style: none;
         text-align: center;
-        justify-content: flex-start;
+        justify-content: center;
         flex-direction: column;
         margin-top: 0px;
     }
-    .checkoutFormat{
+
+    .checkoutFormat {
         position: relative;
         height: 100vh;
         width: 100vw;
@@ -25,24 +66,25 @@
         text-align: center;
         align-items: center;
     }
-    .subCont{
+
+    .subCont {
         width: 100vw;
         height: 100vh;
         text-align: center;
     }
-    .divCheckCont{
+
+    .divCheckCont {
         margin-bottom: 200px;
     }
-    .liCheck{
+
+    .liCheck {
         margin-bottom: -150px;
     }
-    .ulCheck{
-        margin-left: -40px;
-    }
-    
+
 }
+
 @media only screen and (min-width: 800px) {
-    .checkoutFormat{
+    .checkoutFormat {
         position: relative;
         top: 100px;
         margin-bottom: 100px;
@@ -51,6 +93,7 @@
         text-align: center;
         align-items: center;
     }
+
     .ulCheck {
         display: flex;
         flex-direction: row;
@@ -58,19 +101,22 @@
         text-align: center;
         justify-content: center;
     }
-    .title{
+
+    .title {
         margin-left: 40px;
     }
 }
+
 .liCheck {
     list-style: none;
     text-align: center;
 }
-.divCheckCont{
+
+.divCheckCont {
     list-style: none;
     width: 300px;
     height: 400px;
-    background-color: rgb(255, 255, 255);
+    background: linear-gradient(to bottom, #ffffff, rgb(197, 197, 197));
     margin-right: 20px;
     margin-left: 20px;
     border-radius: 15px;
@@ -82,12 +128,12 @@
     filter: drop-shadow(0px 0px 3px black);
 }
 
-.divCheckCont>h2{
+.divCheckCont>h2 {
     margin-top: 15px;
     position: absolute;
 }
 
-.divDescription{
+.divDescription {
     width: 250px;
     height: 300px;
     margin-top: 100px;
@@ -98,7 +144,8 @@
     font-weight: thin;
     list-style: none;
 }
-.btnSubmitEnabled{
+
+.btnSubmitEnabled {
     height: 40px;
     width: 200px;
     bottom: 30px;
@@ -112,7 +159,9 @@
     font-size: 20px;
     transition-duration: .3s;
 }
-.btnSubmitFree, .btnSubmitDisabled{
+
+.btnSubmitFree,
+.btnSubmitDisabled {
     height: 40px;
     width: 200px;
     bottom: 30px;
@@ -127,17 +176,20 @@
     justify-content: center;
     align-items: center;
 }
-.btnSubmitFree, .btnSubmitDisabled:hover{
+
+.btnSubmitFree,
+.btnSubmitDisabled:hover {
     cursor: not-allowed;
 }
-.btnSubmitEnabled:hover{
+
+.btnSubmitEnabled:hover {
     background-color: aliceblue;
     color: #171717;
 }
-.divPrice{
+
+.divPrice {
     width: 250px;
     height: 40px;
-    /* background-color: blueviolet; */
     position: absolute;
     margin-top: 50px;
 }

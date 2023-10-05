@@ -14,7 +14,7 @@ export const Profile = () => {
       case 'edit':
         return;
       case 'delete':
-        return $d('#deleteAccount').style.display='flex';
+        return $d('#deleteAccount').style.display = 'flex';
       default:
         return;
     }
@@ -24,43 +24,39 @@ export const Profile = () => {
     <div>
       <div className={s.dashControlCont}>
         <div className='divProfile'>
-        <div className='navFixed'/>
-        <div className={s.profileFather}>
-          <div className={s.profileCont}>
-            <ul className={s.ulListProfile}>
-              <li className={s.liProfile1}>
-                Perfil de
-              </li>
-              <li className={s.liProfile2}>
-                <h1>{username ? username : "Usuario"}</h1>
-              </li>
-              <li>
-                <img 
-                  className={s.userIcon} 
-                  referrerPolicy="no-referrer" 
-                  src={profilePic ? profilePic : userIcon} 
-                  height='100px' 
-                  alt="foto de perfil"
-                />
-              </li>
-              <li className={s.liProfile3}>{role}</li>
-            </ul>
-          </div>
-              <div className={s.buttons}>
-                <button className='button1' onClick={() => handleClick('edit')}>Editar cuenta</button>
-                <button className='button2' onClick={() => handleClick('delete')}>Eliminar cuenta</button>
-              </div>
-          <ul>
-            <li>
-              <RequestProfile/>
-            </li>
-          </ul>
-          <div className={s.deleteAccount} id={'deleteAccount'}>
-            <DeleteAccount/>
+          <div className='navFixed' />
+          <div className={s.profileFather}>
+            <div className={s.profileCont}>
+              <ul className={s.ulListProfile}>
+                <li className={s.liProfile1}>
+                  Perfil de
+                </li>
+                <li className={s.liProfile2}>
+                  <h1>{username ? username : "Usuario"}</h1>
+                </li>
+                <li>
+                  <img
+                    className={s.userIcon}
+                    referrerPolicy="no-referrer"
+                    src={profilePic ? profilePic : userIcon}
+                    height='100px'
+                    alt="foto de perfil"
+                  />
+                </li>
+                <li className={s.liProfile3}>{role}</li>
+              </ul>
+            </div>
+            <div className={s.buttons}>
+              <button className='button1' onClick={() => handleClick('edit')}>Editar cuenta</button>
+              <button className='button2' onClick={() => handleClick('delete')}>Eliminar cuenta</button>
+            </div>
+            <RequestProfile />
+            <div className={s.deleteAccount} id={'deleteAccount'}>
+              <DeleteAccount />
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
   )
 }

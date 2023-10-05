@@ -10,6 +10,7 @@ import adminIcon from '../../../assets/images/admin-icon.png';
 import logoutIcon from '../../../assets/images/logout-icon.png';
 import subscriptionIcon from '../../../assets/images/subscription-icon.png';
 import { OptionProfile } from '../../../functions';
+import { logout } from '../../../functions/Logout';
 
 export const RequestProfile = () => {
     const dispatch = useDispatch();
@@ -45,18 +46,18 @@ export const RequestProfile = () => {
                             <img src={configIcon} className={s.configIcon} id='configIcon' alt="configuration" onClick={() => { return dispatch(getOption('configuration')) }} />
                             <span id='spanList' className={s.spanLists}>Config</span>
                         </li>
+                        <li>
+                            <img src={subscriptionIcon} className={s.subscriptionIcon} id='subscriptionIcon' onClick={() => { return dispatch(getOption('subscription')) }} alt="lista" />
+                            <span id='spaSubs' className={s.spanOpt}>Subs</span>
+                        </li>
                         {
-                            role === 'admin' ?
-                                <li>
+                            role === 'admin' 
+                            ?   <li>
                                     <img src={adminIcon} className={s.adminIcon} id='dashboardIcon' onClick={() => { return dispatch(getOption('dashboard')) }} alt="lista" />
                                     <span id='spanAdmin' className={s.spanOpt}>Dash</span>
 
                                 </li>
-                                :
-                                <li>
-                                    <img src={subscriptionIcon} className={s.subscriptionIcon} id='subscriptionIcon' onClick={() => { return dispatch(getOption('subscription')) }} alt="lista" />
-                                    <span id='spaSubs' className={s.spanOpt}>Subs</span>
-                                </li>
+                            :   null
                         }
                     </div>
                     <div className={s.exitContainer}>
@@ -65,13 +66,7 @@ export const RequestProfile = () => {
                                 src={logoutIcon}
                                 className={s.logoutIcon}
                                 alt="salir"
-                                onClick={() => {
-                                    return (
-                                        localStorage.removeItem('userToken'),
-                                        history.push('/browser'),
-                                        window.location.reload()
-                                    )
-                                }} />
+                                onClick={() => logout(history)}/>
                         </li>
                     </div>
                 </ul>

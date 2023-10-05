@@ -1,24 +1,19 @@
 import s from './Subscription.module.css';
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useHistory } from "react-router-dom";
-import { useDispatch } from 'react-redux';
-
+import { useDispatch, useSelector } from 'react-redux';
 import { RequestProfile } from '../../components/RequestProfile/RequestProfile';
-
-import { URL_API } from '../../../middlewares/config';
 import { BodyCss } from '../../../functions';
-import { resetOption } from '../../../middlewares/redux/actions';
-
-import checkedIcon from '../../../assets/images/checked-icon.png';
 import { reset } from '../../../functions/Reset';
+import { resetOption } from '../../../middlewares/redux/actions';
+import checkedIcon from '../../../assets/images/checked-icon.png';
+import { subscriberPlanVerification } from '../../../middlewares/redux/actions/subscriber';
 
 export const Subscription = () => {
   const dispatch = useDispatch()
   const history = useHistory()
-  const auth = localStorage.getItem('auth');
-  const userId = auth ? JSON.parse(auth).userId : null;
-  const [disabled, setDisabled] = useState(false);
+  const { id } = useSelector(state => state.currentUser);
+  const activePlan = useSelector(state => state.activePlan);
 
   function handleClick() {
     return (
@@ -27,26 +22,23 @@ export const Subscription = () => {
       history.push('/checkout/subscription'),
       reset()
     )
-  }
+  };
 
   useEffect(() => {
-    axios.post(`${URL_API}/mercadopago/getplan`, { userId })
-      .then(res => {
-        if (res.data === 'Plan Subscriptor') {
-          setDisabled(true);
-        } else {
-          setDisabled(false)
-        }
-      })
-      .catch(err => console.error(err))
-  }, [userId])
+    dispatch(subscriberPlanVerification(id));
+  }, [dispatch, id]);
 
   return (
     <div className={s.subCont}>
-      <div className='divProfile'>
-        <div className='navFixed' ></div>
-        <div className={s.checkoutFormat} >
-          <h1 className={s.title}>Elegí tu plan</h1>
+      <div className={s.divProfile}>
+        <div className='navFixed'/>
+        <div className={s.checkoutFormat}>
+          <div className={s.headerContainer}>
+            <div className="header-container">
+              <h1>Suscripción</h1>
+              <h3>Elegí tu plan</h3>
+            </div>
+          </div>
           <ul className={s.ulCheck}>
             <li className={s.liCheck}>
               <div className={s.divCheckCont}>
@@ -66,7 +58,7 @@ export const Subscription = () => {
                     </h5>
                   </ul>
                 </div>
-                <div className={s.btnSubmitFree} >Activo</div>
+                <div className={s.btnSubmitFree}>Activo</div>
               </div>
             </li>
             <li className={s.liCheck}>
@@ -90,8 +82,8 @@ export const Subscription = () => {
                     </h5>
                   </ul>
                 </div>
-                <button className={!disabled ? s.btnSubmitEnabled : s.btnSubmitDisabled} disabled={disabled} onClick={handleClick}>
-                  {!disabled ? 'Comenzar' : 'Activo'}
+                <button className={!activePlan ? s.btnSubmitEnabled : s.btnSubmitDisabled} disabled={activePlan} onClick={handleClick}>
+                  {!activePlan ? 'Comenzar' : 'Activo'}
                 </button>
               </div>
             </li>
