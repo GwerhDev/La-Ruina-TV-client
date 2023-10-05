@@ -1,19 +1,14 @@
 import s from './InfoCanvas.module.css';
 import { useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { getFullDetail } from '../../middlewares/redux/actions/media';
 import playIcon from '../../assets/images/play-icon.png';
+import { Link } from 'react-router-dom/cjs/react-router-dom';
 
 export const InfoCanvas = (props) => {
   const dispatch = useDispatch();
-  const history = useHistory();
   const { title, artist, id, image } = props;
   const fullDetail = useSelector(state => state.fullDetail);
-
-  function handleClick() {
-    history.push(`/view/v=${id}`);
-  };
 
   useEffect(() => {
     !id ?? dispatch(getFullDetail(id))
@@ -32,7 +27,9 @@ export const InfoCanvas = (props) => {
       </section>
       <section className={s.buttonsContainer}>
         <ul className={s.buttonsList}>
-          <li onClick={() => handleClick()}><img src={playIcon} alt="" width={"40px"} /></li>
+          <Link className={s.buttons}  to={`/view/v=${id}`}>
+            <img src={playIcon} alt="" width={"40px"}/>
+          </Link>
         </ul>
       </section>
     </div>
