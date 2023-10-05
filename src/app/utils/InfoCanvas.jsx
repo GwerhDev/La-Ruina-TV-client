@@ -27,7 +27,7 @@ export const InfoCanvas = (props) => {
       </section>
       <section className={s.buttonsContainer}>
         <ul className={s.buttonsList}>
-          <Link className={s.buttons}  to={`/view/v=${id}`}>
+          <Link className={s.buttons} to={`/view/v=${id}`}>
             <img src={playIcon} alt="" width={"40px"}/>
           </Link>
         </ul>
