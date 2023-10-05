@@ -43,7 +43,7 @@ export const RequestProfile = () => {
                             <span id='spanFavs' className={s.spanFavs}>Favs</span>
                         </li>
                         <li>
-                            <img src={configIcon} className={s.configIcon} id='configIcon' alt="configuration" onClick={() => { return dispatch(getOption('configuration')) }} />
+                            <img src={configIcon} className={s.configurationIcon} id='configurationIcon' alt="configuration" onClick={() => { return dispatch(getOption('configuration')) }} />
                             <span id='spanList' className={s.spanLists}>Config</span>
                         </li>
                         <li>
@@ -55,7 +55,6 @@ export const RequestProfile = () => {
                             ?   <li>
                                     <img src={adminIcon} className={s.adminIcon} id='dashboardIcon' onClick={() => { return dispatch(getOption('dashboard')) }} alt="lista" />
                                     <span id='spanAdmin' className={s.spanOpt}>Dash</span>
-
                                 </li>
                             :   null
                         }

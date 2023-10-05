@@ -56,7 +56,7 @@
 .likeIcon, 
 .listIcon, 
 .userIcon, 
-.configIcon {
+.configurationIcon {
 	width: 30px;
 	filter: grayscale(1);
 	transition-duration: 1s;
@@ -109,7 +109,7 @@
 .adminIcon:hover, 
 .logoutIcon:hover, 
 .userIcon:hover, 
-.configIcon:hover, 
+.configurationIcon:hover, 
 .subscriptionIcon:hover, 
 .notificationIcon:hover {
 	cursor: pointer;
