@@ -34,7 +34,7 @@ export default function profileMenuCss(e){
                 $d(`#optionProfileBtn4`).style.scale='0'
                 $d(`#optionProfileBtn5`).style.scale='0'
                 $d(`#optionProfileBtn6`).style.scale='0'
-                $d(`.liProfileMenuDisplay`).style.display='0'
+                $d(`.liProfileMenuDisplay`).style.display='none'
             }
         })
     if(e==='enter'){
@@ -53,6 +53,6 @@ export default function profileMenuCss(e){
         $d(`#optionProfileBtn4`).style.scale='1'
         $d(`#optionProfileBtn5`).style.scale='1'
         $d(`#optionProfileBtn6`).style.scale='1'
-        $d(`.liProfileMenuDisplay`).style.scale='1'
+        $d(`.liProfileMenuDisplay`).style.display='block'
     }
 }
