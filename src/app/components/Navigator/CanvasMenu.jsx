@@ -13,7 +13,7 @@ export const CanvasMenu = () => {
     const [posNav, setPosNav] = useState();
     const currentUser = useSelector((state) => state.currentUser);
     const urlMerch = 'https://merch.laruinarecords.cl/';
-    const urlPlay = currentUser? 'https://play.laruinarecords.cl/#/account/settings/' + getUserToken() : 'https://play.laruinarecords.cl/';
+    const urlPlay = currentUser? 'https://play.laruinarecords.cl/#/auth?token=' + getUserToken() : 'https://play.laruinarecords.cl/';
     const urlHub = currentUser? 'https://hub.laruinarecords.cl/#/account/settings/' + getUserToken() : 'https://hub.laruinarecords.cl/';
 
 

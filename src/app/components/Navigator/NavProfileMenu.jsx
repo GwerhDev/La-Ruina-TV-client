@@ -17,8 +17,8 @@ export const NavProfileMenu = () => {
         <ul className={s.profileMenuBtn}>
             {
                 !currentUser
-                ? option==='login'? <li><BackButton /></li> : <li><EnterBtn /></li>
-                : option === '' || option==='login'? <li><ProfileMenu/></li> : <li><BackButton /></li> 
+                ? option==='login'? <li><BackButton/></li> : <li><EnterBtn/></li>
+                : option === '' || option==='login'? <li><ProfileMenu/></li> : <li><BackButton/></li> 
             }
         </ul>
     )
