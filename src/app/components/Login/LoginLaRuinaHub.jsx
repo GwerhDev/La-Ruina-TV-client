@@ -12,7 +12,7 @@ export default function LoginLaRuinaHub() {
             src={laruinahubIcon}
             height="20px"
             className={s.img}
-            alt="Sign Up with Google"
+            alt=""
           />
         </span>
         <span className={s.spanText}>
