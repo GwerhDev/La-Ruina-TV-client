@@ -7,7 +7,7 @@ import { environment } from '../../../environment';
 
 
 var store = {};
-const composeEnhancer = window.REDUX_DEVTOOLS_EXTENSIONS_COMPOSE || compose;
+const composeEnhancer = compose;
 
 if(environment === DEVELOPMENT){
     store = createStore(
