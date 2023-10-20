@@ -13,7 +13,6 @@ export function getUserData() {
       });
     } catch (e) {
       console.error(e);
-      localStorage.removeItem('userToken');
     }
   }
 };

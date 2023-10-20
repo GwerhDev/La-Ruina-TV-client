@@ -11,7 +11,8 @@ import { Subscription } from '../components/Subscription/Subscription';
 import { Configurations } from '../components/Configurations/Configurations';
 
 export const OptionsCanvas = () => {
-    const option = useSelector(state => state.option)
+    const option = useSelector(state => state.option);
+
     return (
         <div className={s.slideCanvasCont} id='slideCanvasCont'>
             <ul>
