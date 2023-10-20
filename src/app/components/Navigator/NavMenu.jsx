@@ -13,7 +13,7 @@ export const NavMenu = () => {
     const [posNav, setPosNav] = useState();
     const urlMerch = 'https://merch.laruinarecords.cl/';
     const urlPlay = currentUser? 'https://play.laruinarecords.cl/#/auth?token=' + getUserToken() : 'https://play.laruinarecords.cl/';
-    const urlHub = currentUser? 'https://hub.laruinarecords.cl/#/account/settings/' + getUserToken() : 'https://hub.laruinarecords.cl/';
+    const urlHub = currentUser? 'https://hub.laruinarecords.cl/#/auth/' + getUserToken() : 'https://hub.laruinarecords.cl/';
     
     window.onscroll = function() {navBack(setPosNav, posNav)};
 
