@@ -4,20 +4,15 @@ import { RequestProfile } from '../../components/RequestProfile/RequestProfile';
 import { DeleteAccount } from '../DeleteAccount/DeleteAccount';
 import { useSelector } from 'react-redux';
 import { $d } from '../../../functions';
+import { getUserToken } from '../../../middlewares/helpers';
 
 export const Profile = () => {
   const currentUser = useSelector(state => state.currentUser);
   const { username, profilePic, role } = currentUser;
+  const urlHub = currentUser? 'https://hub.laruinarecords.cl/#/account/settings/' + getUserToken() : 'https://hub.laruinarecords.cl/';
 
-  function handleClick(option) {
-    switch (option) {
-      case 'edit':
-        return;
-      case 'delete':
-        return $d('#deleteAccount').style.display = 'flex';
-      default:
-        return;
-    }
+  function handleClick() {
+    return $d('#deleteAccount').style.display = 'flex';
   };
 
   return (
@@ -47,8 +42,8 @@ export const Profile = () => {
               </ul>
             </div>
             <div className={s.buttons}>
-              <button className='button1' onClick={() => handleClick('edit')}>Editar cuenta</button>
-              <button className='button2' onClick={() => handleClick('delete')}>Eliminar cuenta</button>
+              <a href={urlHub}><button className='button1'>Editar cuenta</button></a>
+              <button className='button2' onClick={handleClick}>Eliminar cuenta</button>
             </div>
             <RequestProfile />
             <div className={s.deleteAccount} id={'deleteAccount'}>
