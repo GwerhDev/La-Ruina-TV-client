@@ -12,9 +12,9 @@ export const CanvasMenu = () => {
     const dispatch = useDispatch();
     const [posNav, setPosNav] = useState();
     const currentUser = useSelector((state) => state.currentUser);
-    const urlMerch = 'https://merch.laruinarecords.cl/';
-    const urlPlay = currentUser? 'https://play.laruinarecords.cl/#/auth?token=' + getUserToken() : 'https://play.laruinarecords.cl/';
-    const urlHub = currentUser? 'https://hub.laruinarecords.cl/#/account/settings/' + getUserToken() : 'https://hub.laruinarecords.cl/';
+    const urlMerch = 'https://merch.laruina.cl/';
+    const urlPlay = currentUser? 'https://play.laruina.cl/#/auth?token=' + getUserToken() : 'https://play.laruina.cl/';
+    const urlHub = currentUser? 'https://hub.laruina.cl/#/account/settings/' + getUserToken() : 'https://hub.laruina.cl/';
 
 
     function handleClick() {

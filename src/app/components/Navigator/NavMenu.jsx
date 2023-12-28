@@ -11,9 +11,9 @@ export const NavMenu = () => {
     const dispatch = useDispatch();
     const currentUser = useSelector((state) => state.currentUser);
     const [posNav, setPosNav] = useState();
-    const urlMerch = 'https://merch.laruinarecords.cl/';
-    const urlPlay = currentUser? 'https://play.laruinarecords.cl/#/auth?token=' + getUserToken() : 'https://play.laruinarecords.cl/';
-    const urlHub = currentUser? 'https://hub.laruinarecords.cl/#/auth/' + getUserToken() : 'https://hub.laruinarecords.cl/';
+    const urlMerch = 'https://merch.laruina.cl/';
+    const urlPlay = currentUser? 'https://play.laruina.cl/#/auth?token=' + getUserToken() : 'https://play.laruina.cl/';
+    const urlHub = currentUser? 'https://hub.laruina.cl/#/auth/' + getUserToken() : 'https://hub.laruina.cl/';
     
     window.onscroll = function() {navBack(setPosNav, posNav)};
 

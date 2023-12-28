@@ -10,7 +10,7 @@ export const Colaborate = () => {
     <div className={s.donateCont}>
       <div className='navFixed' />
       <div className={s.donateFormat} >
-        <img src={laruinaLogo} alt='laruinarecords.cl' width='300px' className={s.laruinaLogo} /> <br/>
+        <img src={laruinaLogo} alt='laruina.cl' width='300px' className={s.laruinaLogo} /> <br/>
         DONAR A ESTE PROYECTO
         <ul className={s.ulContBtn}>
           <li className={s.donateBtn}>

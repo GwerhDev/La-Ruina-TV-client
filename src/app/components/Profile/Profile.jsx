@@ -9,7 +9,7 @@ import { getUserToken } from '../../../middlewares/helpers';
 export const Profile = () => {
   const currentUser = useSelector(state => state.currentUser);
   const { username, profilePic, role } = currentUser;
-  const urlHub = currentUser? 'https://hub.laruinarecords.cl/#/account/settings/' + getUserToken() : 'https://hub.laruinarecords.cl/';
+  const urlHub = currentUser? 'https://hub.laruina.cl/#/account/settings/' + getUserToken() : 'https://hub.laruina.cl/';
 
   function handleClick() {
     return $d('#deleteAccount').style.display = 'flex';
