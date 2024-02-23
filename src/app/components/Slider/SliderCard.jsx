@@ -41,10 +41,11 @@ export const SliderCard = ({ data, style, keyID }) => {
             return (
               <li value={e.id} key={i}>
                 <div className={style.sliderItem}>
-                  <div
+                  <img
+                    alt=''
                     onClick={() => handleRedirect(e.id)}
                     className={style.media}
-                    style={{ backgroundImage: `url(${e.imageSlider ?? defaultBackground})` }}
+                    src={e.imageSlider || defaultBackground}
                   />
                   <div className={style.sliderInfoCanvas}>
                     <div className={style.ulTitlesItems} onClick={() => handleRedirect(e.id)}>
