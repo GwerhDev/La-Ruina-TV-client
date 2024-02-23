@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import defaultPreview from '../../../assets/images/default-background.png';
 import { Link, useParams } from 'react-router-dom';
 import { toTop } from '../../../functions/toTop';
-import { RenderDriveImage } from '../../../functions/RenderDriveImage';
 import { 
   getGenres, 
   getMediaById, 
@@ -171,8 +170,8 @@ const ContentUpdate = () => {
     setData(infoDetailViewer);
     setImgVisor(infoDetailViewer?.imageVisor);
     setImgSlider(infoDetailViewer?.imageSlider);
-    setPreviewVisor(RenderDriveImage(infoDetailViewer?.imageVisor));
-    setPreviewSlider(RenderDriveImage(infoDetailViewer?.imageSlider));
+    setPreviewVisor(infoDetailViewer?.imageVisor);
+    setPreviewSlider(infoDetailViewer?.imageSlider);
     setSubmitted(false);
   };
 
@@ -180,8 +179,8 @@ const ContentUpdate = () => {
     setData(infoDetailViewer);
     setImgVisor(infoDetailViewer?.imageVisor);
     setImgSlider(infoDetailViewer?.imageSlider);
-    setPreviewVisor(RenderDriveImage(infoDetailViewer?.imageVisor));
-    setPreviewSlider(RenderDriveImage(infoDetailViewer?.imageSlider));
+    setPreviewVisor(infoDetailViewer?.imageVisor);
+    setPreviewSlider(infoDetailViewer?.imageSlider);
   },[infoDetailViewer]);
 
   useEffect(() => {

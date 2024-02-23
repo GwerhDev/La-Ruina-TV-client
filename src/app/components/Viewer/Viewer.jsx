@@ -14,7 +14,6 @@ import { $d, OptionCanvas } from '../../../functions';
 import { ContentMagementButtons } from '../../admin/Buttons/ContentMagementButtons';
 import { getOption } from '../../../middlewares/redux/actions';
 import { getMediaById } from '../../../middlewares/redux/actions/media';
-import { RenderDriveImage } from '../../../functions/RenderDriveImage';
 import { addFavorites, deleteFavorites, getFavorites } from '../../../middlewares/redux/actions/account';
 import { subscriberYoutubeVerification } from '../../../middlewares/redux/actions/subscriber';
 import { DeleteCanvas } from '../../utils/DeleteCanvas';
@@ -48,7 +47,7 @@ export const Viewer = () => {
         <div className={s.browserBody}>
             <div className={s.visor}>
                 <div className={s.visorBGCanvas}>
-                    <img className={s.visorBG} src={RenderDriveImage(imageSlider)} alt='' />
+                    <img className={s.visorBG} src={imageSlider} alt='' />
                 </div>
                 <div className='visorCanvas'></div>
                 <div className='playerBackGroundEffect'></div>

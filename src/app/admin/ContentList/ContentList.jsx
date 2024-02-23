@@ -5,7 +5,6 @@ import { useSelector, useDispatch } from 'react-redux'
 import { resetIdYT, resetOption } from "../../../middlewares/redux/actions";
 import { getMedia, resetMedia } from '../../../middlewares/redux/actions/media';
 import { deleteMedia } from '../../../middlewares/redux/actions/admin';
-import { RenderDriveImage } from '../../../functions/RenderDriveImage';
 
 const ContentList = () => {
     const history = useHistory()
@@ -36,8 +35,8 @@ const ContentList = () => {
                                 return (
                                     <li key={index}>
                                         <ul className={s.ulList2}>
-                                            <li><img src={RenderDriveImage(e.imageVisor)} height={80} alt="" /></li> -
-                                            <li><img src={RenderDriveImage(e.imageSlider)} height={80} alt="" /></li> -
+                                            <li><img src={e.imageVisor} height={80} alt="" /></li> -
+                                            <li><img src={e.imageSlider} height={80} alt="" /></li> -
                                             <li>{e.title}</li> -
                                             <li>{e.artist}</li> -
                                             <li>

@@ -5,7 +5,6 @@ import playIconn from '../../../assets/images/ruinatv-icon-play-n.png';
 import visorIntroVideo from '../../../assets/videos/laruina-intro.mp4';
 import { VisorFunction } from './Visor.functions';
 import { $d } from "../../../functions";
-import { RenderDriveImage } from "../../../functions/RenderDriveImage";
 import { InfoCanvas } from "../../utils/InfoCanvas";
 import { useState } from "react";
 
@@ -38,10 +37,10 @@ export const Visor = () => {
         <div className='visor'>
             <video className='visorVideoIntro' src={visorIntroVideo} autoPlay muted loop type="video/mp4" />
             <div className='visorBGCanvas'>
-                <img className='visorBG' src={RenderDriveImage(visorImg)} alt='' />
+                <img className='visorBG' src={visorImg} alt='' />
             </div>
             <div className='visorCanvas' />
-            <InfoCanvas title={title} artist={artist} id={id} image={RenderDriveImage(image)}/>
+            <InfoCanvas title={title} artist={artist} id={id} image={image}/>
             {visorList?.length
                 ? <div className='visorPostInfo'>
                     <div className='visorPostArtista'>

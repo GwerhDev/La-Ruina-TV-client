@@ -6,7 +6,6 @@ import { RequestProfile } from '../../components/RequestProfile/RequestProfile';
 import { resetOption } from '../../../middlewares/redux/actions';
 import { $d } from '../../../functions';
 import { getFavorites } from '../../../middlewares/redux/actions/account';
-import { RenderDriveImage } from '../../../functions/RenderDriveImage';
 
 export const Favorites = () => {
   const dispatch = useDispatch();
@@ -59,7 +58,7 @@ export const Favorites = () => {
                         <Link to={`/view/v=${e.id}`}>
                           <div
                             className={s.imageContainer}
-                            style={{ backgroundImage: `url(${RenderDriveImage(e.imageSlider)})` }}
+                            style={{ backgroundImage: `url(${e.imageSlider})` }}
                             onClick={handleClick}
                           >
                             <div className={s.divH3}>

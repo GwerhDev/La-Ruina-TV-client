@@ -7,7 +7,6 @@ import defaultBackground from '../../../assets/images/default-background.png'
 import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { deleteMedia } from '../../../middlewares/redux/actions/admin';
-import { RenderDriveImage } from '../../../functions/RenderDriveImage';
 import { DeleteCanvas } from '../../utils/DeleteCanvas';
 import { $d } from '../../../functions';
 
@@ -45,7 +44,7 @@ export const SliderCard = ({ data, style, keyID }) => {
                   <div
                     onClick={() => handleRedirect(e.id)}
                     className={style.media}
-                    style={{ backgroundImage: `url(${RenderDriveImage(e.imageSlider) ?? defaultBackground})` }}
+                    style={{ backgroundImage: `url(${e.imageSlider ?? defaultBackground})` }}
                   />
                   <div className={style.sliderInfoCanvas}>
                     <div className={style.ulTitlesItems} onClick={() => handleRedirect(e.id)}>
