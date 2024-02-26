@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import defaultPreview from '../../../assets/images/default-background.png';
 import { Link } from 'react-router-dom';
 import { toTop } from '../../../functions/toTop';
-import { getCategories, getGenres, getMediatypes, getProducers } from '../../../middlewares/redux/actions/media';
+import { getGenres, getMediatypes, getProducers } from '../../../middlewares/redux/actions/media';
 import {
   createCategory,
   createGenre,
@@ -14,7 +14,8 @@ import {
   deleteCategory, 
   deleteGenre, 
   deleteMediatype,
-  deleteProducer
+  deleteProducer,
+  getAdminCategories
 } from '../../../middlewares/redux/actions/admin';
 
 const ContentCreate = () => {
@@ -202,7 +203,7 @@ const ContentCreate = () => {
 
   useEffect(() => {
     dispatch(getGenres());
-    dispatch(getCategories());
+    dispatch(getAdminCategories());
     dispatch(getMediatypes());
     dispatch(getProducers());
   }, [dispatch]);

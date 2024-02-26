@@ -356,7 +356,7 @@ const ContentUpdate = () => {
                           type="checkbox"
                           name={t.name}
                           value={t.name || ''}
-                          checked={data?.mediatype?.find((e) => e.mediatypeId === t.id)}
+                          checked={() => data?.mediatype?.find((e) => e.mediatypeId === t.id)}
                           onChange={() => checkboxMediatype(t.id)} />
                         <label htmlFor={t.name}>{t.name}</label>
                         {
@@ -394,7 +394,7 @@ const ContentUpdate = () => {
                           type="checkbox"
                           name={t.name}
                           value={t.name || ''}
-                          checked={data?.genre?.find((e) => e.genreId === t.id)}
+                          checked={() => data?.genre?.find((e) => e.genreId === t.id)}
                           onChange={() => checkboxGenres(t.id)}
                         />
                         <label htmlFor={t.name}>{t.name}</label>
@@ -433,7 +433,7 @@ const ContentUpdate = () => {
                           type="checkbox"
                           name={t.name}
                           value={t.name || ''}
-                          checked={data?.category?.find((e) => e.categoryId === t.id)}
+                          checked={() => data?.category?.find((e) => e.categoryId === t.id)}
                           onChange={() => checkboxCategories(t.id)}
                         />
                         <label htmlFor={t.name}>{t.name}</label>

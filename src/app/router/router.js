@@ -11,8 +11,8 @@ import Releases from '../pages/Releases/Releases';
 import Checkout from '../pages/Checkout/Checkout';
 import UserList from '../admin/UserList/UserList';
 import ContentList from '../admin/ContentList/ContentList';
-import ContentCreate from '../admin/ContentCreate/ContentCreate';
-import ContentUpdate from '../admin/ContentUpdate/ContentUpdate';
+import ContentCreatePage from '../pages/Admin/ContentCreatePage';
+import ContentUpdatePage from '../pages/Admin/ContentUpdatePage';
 
 import { Navigator } from '../components/Navigator/Navigator';
 import { CanvasMenu } from '../components/Navigator/CanvasMenu';
@@ -65,11 +65,11 @@ function Router() {
             </Route>
 
             <Route exact path='/media/create'>
-              <ContentCreate/>
+              <ContentCreatePage/>
             </Route>
 
             <Route exact path='/media/edit/:id'>
-              <ContentUpdate/>
+              <ContentUpdatePage/>
             </Route>
 
             <Route exact path='/media/edit'>
