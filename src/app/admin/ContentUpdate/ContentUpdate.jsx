@@ -5,6 +5,7 @@ import defaultPreview from '../../../assets/images/default-background.png';
 import { Link, useParams } from 'react-router-dom';
 import { toTop } from '../../../functions/toTop';
 import { 
+  getCategories,
   getGenres, 
   getMediaById, 
   getMediatypes, 
@@ -16,7 +17,6 @@ import {
   deleteCategory, 
   deleteGenre, 
   deleteMediatype,
-  getAdminCategories,
   updateMedia,
 } from '../../../middlewares/redux/actions/admin';
 
@@ -165,9 +165,9 @@ const ContentUpdate = () => {
   function resetForm() {
     dispatch(getGenres());
     dispatch(getMediatypes());
+    dispatch(getCategories());
     dispatch(getMediaById(id));
     setData(infoDetailViewer);
-    dispatch(getAdminCategories());
     setImgVisor(infoDetailViewer?.imageVisor);
     setImgSlider(infoDetailViewer?.imageSlider);
     setPreviewVisor(infoDetailViewer?.imageVisor);
@@ -187,7 +187,7 @@ const ContentUpdate = () => {
     dispatch(getGenres());
     dispatch(getMediatypes());
     dispatch(getMediaById(id));
-    dispatch(getAdminCategories());
+    dispatch(getCategories());
   }, [dispatch, id]);
 
   return (
@@ -356,7 +356,6 @@ const ContentUpdate = () => {
                           type="checkbox"
                           name={t.name}
                           value={t.name || ''}
-                          checked={() => data?.mediatype?.find((e) => e.mediatypeId === t.id)}
                           onChange={() => checkboxMediatype(t.id)} />
                         <label htmlFor={t.name}>{t.name}</label>
                         {
@@ -394,7 +393,6 @@ const ContentUpdate = () => {
                           type="checkbox"
                           name={t.name}
                           value={t.name || ''}
-                          checked={() => data?.genre?.find((e) => e.genreId === t.id)}
                           onChange={() => checkboxGenres(t.id)}
                         />
                         <label htmlFor={t.name}>{t.name}</label>
@@ -433,7 +431,6 @@ const ContentUpdate = () => {
                           type="checkbox"
                           name={t.name}
                           value={t.name || ''}
-                          checked={() => data?.category?.find((e) => e.categoryId === t.id)}
                           onChange={() => checkboxCategories(t.id)}
                         />
                         <label htmlFor={t.name}>{t.name}</label>

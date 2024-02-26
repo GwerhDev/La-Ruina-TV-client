@@ -1,22 +1,8 @@
 import axios from "axios";
 import { URL_API } from "../../config";
 import { options } from "../../helpers";
-import { getGenres, getMedia, getMediatypes, getProducers } from "./media";
-import { GET_CATEGORIES, GET_USERS } from "../../misc";
-
-export const getAdminCategories = () => {
-  return async function (dispatch) {
-    try {
-        const response = await axios.get(`${URL_API}/admin/category/`);
-        dispatch({
-            type: GET_CATEGORIES,
-            payload: response.data
-        })
-    } catch (error) {
-        console.error(error)
-    }
-  }
-};
+import { getCategories, getGenres, getMedia, getMediatypes, getProducers } from "./media";
+import { GET_USERS } from "../../misc";
 
 export const createMedia = (formData) => {
   return async function (dispatch) {
@@ -84,7 +70,7 @@ export function deleteGenre(id) {
   return async function (dispatch) {
     try {
       const response = await axios.delete(`${URL_API}/admin/genre/delete/${id}`, options());
-      dispatch(getAdminCategories());
+      dispatch(getCategories());
       return response;
     } catch (error) {
       console.error(error);
@@ -97,7 +83,7 @@ export function createCategory(name) {
     const category = { name }
     try {
       const response = await axios.post(`${URL_API}/admin/category/create`, category, options());
-      dispatch(getAdminCategories());
+      dispatch(getCategories());
       return response;
     } catch (error) {
       console.error(error);
@@ -109,7 +95,7 @@ export function deleteCategory(id) {
   return async function (dispatch) {
     try {
       const response = await axios.delete(`${URL_API}/admin/category/delete/${id}`, options());
-      dispatch(getAdminCategories());
+      dispatch(getCategories());
       return response;
     } catch (error) {
       console.error(error);

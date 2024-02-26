@@ -47,7 +47,6 @@ const initialState = {
     error: "",
     nextVisor: false,
 
-
     /*------------Filter&Search------------*/
     searchedMedia: [],
 }

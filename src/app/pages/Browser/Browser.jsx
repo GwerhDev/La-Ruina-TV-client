@@ -26,15 +26,15 @@ const Browser = () => {
 
   useEffect(() => {
     !(userToken?.length && !currentUser) ?? history.push(`/auth?token=${userToken}`);
-  }, [dispatch, currentUser, userToken, history])
+  }, [currentUser, userToken, history])
 
   useEffect(() => {
     BodyCss();
     dispatch(getMedia());
     dispatch(resetIdYT());
     dispatch(resetMedia());
-    dispatch(getCategories());
     dispatch(getFavorites());
+    dispatch(getCategories());
   }, [dispatch, currentUser]);
 
   return (
