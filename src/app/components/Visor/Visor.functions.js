@@ -12,18 +12,9 @@ export const VisorFunction = () => {
 
     const currentUser = useSelector(state => state.currentUser);
     const mediaList = useSelector(state => state.mediaList);
-    const [counter, setCounter] = useState(0);
-    const [visorID, setVisorID] = useState();
-    const [visorTag, setVisorTag] = useState();
-    const [visorBtn1, setVisorBtn1] = useState();
-    const [visorInfo, setVisorInfo] = useState();
-    const [visorIcon, setVisorIcon] = useState();
-    const [visorImg, setVisorImage] = useState();
-    const [visorIdYT, setVisorIdYT] = useState();
-    const [visorTitle, setVisorTitulo] = useState();
-    const [visorArtist, setVisorArtista] = useState();
-    const [visorTypeMedia, setVisorTypeMedia] = useState();
     const max = mediaList?.length || 0;
+    const [counter, setCounter] = useState(0);
+    const [image, setImage] = useState(null);
 
     const defaultVisor = {
         id: null,
@@ -39,16 +30,16 @@ export const VisorFunction = () => {
     };
 
     const { 
-        id, 
-        idLinkYT, 
-        imageVisor, 
-        artist, 
-        title, 
-        mediaType, 
-        tag, 
-        icon, 
-        actionButton, 
-        info 
+        id,
+        tag,
+        info,
+        icon,
+        title,
+        artist,
+        idLinkYT,
+        mediaType,
+        imageVisor,
+        actionButton,
     } = mediaList?.length? mediaList?.at(counter % max) : defaultVisor;
 
     useEffect(() => {
@@ -57,16 +48,7 @@ export const VisorFunction = () => {
         let interval = null;
         interval = setInterval(() => {
             setCounter(k => k + 1)
-            setVisorID(id)
-            setVisorTag(tag)
-            setVisorInfo(info)
-            setVisorIcon(icon)
-            setVisorTitulo(title)
-            setVisorIdYT(idLinkYT)
-            setVisorArtista(artist)
-            setVisorImage(imageVisor)
-            setVisorBtn1(actionButton)
-            setVisorTypeMedia(mediaType)
+            setImage(imageVisor)       
             $d('.visorPostInfo').style.animationName = 'infoScale'
             $d('.visorPostInfo').style.animationIterationCount = inf
             $d('.visorPostInfo').style.animationDuration = `${timeInterval}s`
@@ -79,34 +61,32 @@ export const VisorFunction = () => {
         return () => (clearInterval(interval, timeInterval));
     }, [
         mediaList,
-        actionButton,
-        visorIdYT,
+        counter,
         id,
-        imageVisor,
+        tag,
+        info,
+        icon,
+        title,
+        artist,
         idLinkYT,
-        visorImg, 
-        artist, 
-        title, 
-        mediaType, 
-        tag, 
-        icon, 
-        info, 
-        counter, 
+        mediaType,
+        imageVisor,
+        actionButton,
     ]);
 
     return {
         mediaList,
-        visorID,
-        visorImg,
-        visorTag,
-        visorBtn1,
-        visorInfo,
-        visorIcon,
-        visorIdYT,
-        visorTitle,
-        visorArtist,
-        visorTypeMedia,
         currentUser,
+        id,
+        tag,
+        info,
+        icon,
+        image,
+        title,
+        artist,
+        idLinkYT,
+        mediaType,
+        actionButton,
     };
 }
 
