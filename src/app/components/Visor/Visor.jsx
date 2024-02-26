@@ -19,7 +19,7 @@ export const Visor = () => {
         visorTag,
         visorInfo,
         visorIcon,
-        visorList,
+        mediaList,
         visorTitle,
         visorArtist,
         currentUser,
@@ -41,7 +41,7 @@ export const Visor = () => {
             </div>
             <div className='visorCanvas' />
             <InfoCanvas title={title} artist={artist} id={id} image={image}/>
-            {visorList?.length
+            {mediaList?.length
                 ? <div className='visorPostInfo'>
                     <div className='visorPostArtista'>
                         <p>{visorArtist}</p>

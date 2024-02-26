@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { getNextVisor, getResetVisor } from '../../../middlewares/redux/actions';
+import { useSelector } from 'react-redux';
 import { $d, $gId } from '../../../functions';
 
 export const VisorFunction = () => {
@@ -11,10 +10,8 @@ export const VisorFunction = () => {
         }
     });
 
-    const dispatch = useDispatch();
     const currentUser = useSelector(state => state.currentUser);
-    const visorList = useSelector(state => state.visorList);
-    const nextVisor = useSelector(state => state.nextVisor);
+    const mediaList = useSelector(state => state.mediaList);
     const [counter, setCounter] = useState(0);
     const [visorID, setVisorID] = useState();
     const [visorTag, setVisorTag] = useState();
@@ -22,10 +19,11 @@ export const VisorFunction = () => {
     const [visorInfo, setVisorInfo] = useState();
     const [visorIcon, setVisorIcon] = useState();
     const [visorImg, setVisorImage] = useState();
+    const [visorIdYT, setVisorIdYT] = useState();
     const [visorTitle, setVisorTitulo] = useState();
     const [visorArtist, setVisorArtista] = useState();
     const [visorTypeMedia, setVisorTypeMedia] = useState();
-    const [visorIdYT, setVisorIdYT] = useState();
+    const max = mediaList?.length || 0;
 
     const defaultVisor = {
         id: null,
@@ -51,16 +49,13 @@ export const VisorFunction = () => {
         icon, 
         actionButton, 
         info 
-    } = nextVisor?.length? nextVisor?.at(0) : defaultVisor;
+    } = mediaList?.length? mediaList?.at(counter % max) : defaultVisor;
 
     useEffect(() => {
         let inf = 99999 + counter;
-        const max = visorList?.length || 0;
         let timeInterval = 20;
         let interval = null;
-        dispatch(getNextVisor(counter % max));
         interval = setInterval(() => {
-            dispatch(getResetVisor())
             setCounter(k => k + 1)
             setVisorID(id)
             setVisorTag(tag)
@@ -83,6 +78,7 @@ export const VisorFunction = () => {
         }, timeInterval * 1000);
         return () => (clearInterval(interval, timeInterval));
     }, [
+        mediaList,
         actionButton,
         visorIdYT,
         id,
@@ -96,20 +92,17 @@ export const VisorFunction = () => {
         icon, 
         info, 
         counter, 
-        visorList, 
-        dispatch
     ]);
 
     return {
-        visorList,
-        nextVisor,
-        visorIdYT,
+        mediaList,
         visorID,
+        visorImg,
         visorTag,
         visorBtn1,
         visorInfo,
         visorIcon,
-        visorImg,
+        visorIdYT,
         visorTitle,
         visorArtist,
         visorTypeMedia,

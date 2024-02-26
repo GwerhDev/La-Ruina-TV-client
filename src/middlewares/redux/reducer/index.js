@@ -1,6 +1,5 @@
 import { Content } from "../../../interfaces/Content";
 import {
-    NEXT_VISOR,
     GET_INFO,
     GET_MEDIA,
     RESET_MEDIA,
@@ -41,12 +40,9 @@ const initialState = {
     userList: [],
     mediaByCategory: [],
     mediaList: [new Content()],
-    visorList: [new Content()],
     infoDetailViewer: new Content(),
     fullDetail: {},
     error: "",
-    nextVisor: false,
-
     /*------------Filter&Search------------*/
     searchedMedia: [],
 }
@@ -151,7 +147,6 @@ export default function rootReducer(state = initialState, action) {
             return {
                 ...state,
                 mediaList: action.payload,
-                visorList: action.payload,
             };
 
         case GET_INFO:
@@ -179,12 +174,6 @@ export default function rootReducer(state = initialState, action) {
                 },
             };
 
-        case NEXT_VISOR:
-            return {
-                ...state,
-                nextVisor: state.visorList.length > 1 ? [state.visorList[action.payload]] : false
-            };
-            
         case RESET_VISOR:
             return {
                 ...state,
