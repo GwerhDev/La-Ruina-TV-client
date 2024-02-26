@@ -7,7 +7,6 @@ import { toTop } from '../../../functions/toTop';
 import { 
   getGenres, 
   getMediaById, 
-  getCategories, 
   getMediatypes, 
 } from '../../../middlewares/redux/actions/media';
 import {
@@ -17,6 +16,7 @@ import {
   deleteCategory, 
   deleteGenre, 
   deleteMediatype,
+  getAdminCategories,
   updateMedia,
 } from '../../../middlewares/redux/actions/admin';
 
@@ -156,7 +156,7 @@ const ContentUpdate = () => {
       newImageVisor: imgVisor,
     };
     
-    await dispatch(updateMedia(id, formData));
+    dispatch(updateMedia(id, formData));
     dispatch(getMediaById(id));
     setRedirectRoute('/view/v=' + id);
     return;
@@ -164,10 +164,10 @@ const ContentUpdate = () => {
 
   function resetForm() {
     dispatch(getGenres());
-    dispatch(getCategories());
     dispatch(getMediatypes());
     dispatch(getMediaById(id));
     setData(infoDetailViewer);
+    dispatch(getAdminCategories());
     setImgVisor(infoDetailViewer?.imageVisor);
     setImgSlider(infoDetailViewer?.imageSlider);
     setPreviewVisor(infoDetailViewer?.imageVisor);
@@ -185,12 +185,13 @@ const ContentUpdate = () => {
 
   useEffect(() => {
     dispatch(getGenres());
-    dispatch(getCategories());
     dispatch(getMediatypes());
     dispatch(getMediaById(id));
+    dispatch(getAdminCategories());
   }, [dispatch, id]);
 
   return (
+
     <div className={s.mainContainer}>
       {
         submitted

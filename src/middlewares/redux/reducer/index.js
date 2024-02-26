@@ -58,27 +58,32 @@ export default function rootReducer(state = initialState, action) {
             return {
                 ...state,
                 error: action.payload
-            }
+            };
+            
         case GET_USER_PLAN:
             return {
                 ...state,
                 activePlan: action.payload
-            }
+            };
+            
         case GET_FULL_DETAIL: 
             return {
                 ...state,
                 fullDetail: action.payload
-            }
+            };
+            
         case GET_USERS:
             return {
                 ...state,
                 userList: action.payload
-            }
+            };
+            
         case GET_PRODUCERS:
             return {
                 ...state,
                 dbProducers: action.payload
-            }
+            };
+            
         case GET_SEARCH:
             return {
                 ...state,
@@ -96,7 +101,8 @@ export default function rootReducer(state = initialState, action) {
             return {
                 ...state,
                 dbGenres: action.payload
-            }
+            };
+
         case GET_MEDIATYPES:
             return {
                 ...state,
