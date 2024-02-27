@@ -1,4 +1,4 @@
-import { SliderCard } from "./SliderCard";
+import { SliderList } from "./SliderList";
 import { SliderButtons } from "./SliderButtons";
 import { $d } from "../../../functions";
 
@@ -39,7 +39,7 @@ export const Slider = (props) => {
                         keyID = {id}
                         categories = {data}
                         style = {s} />
-                    <SliderCard
+                    <SliderList
                         data = {data}
                         keyID = {id}
                         key = {`${title}Sldr`}

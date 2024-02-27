@@ -10,23 +10,33 @@ export const VisorFunction = () => {
         }
     });
 
-    const currentUser = useSelector(state => state.currentUser);
     const mediaList = useSelector(state => state.mediaList);
+    const imageStore = useSelector(state => state.imageStore);
+    const currentUser = useSelector(state => state.currentUser);
     const max = mediaList?.length || 0;
     const [counter, setCounter] = useState(0);
-    const [image, setImage] = useState(null);
+    const [visorId, setVisorId] = useState(null);
+    const [visorImage, setVisorImage] = useState(null);
+    const [visorTitle, setVisorTitle] = useState(null);
+    const [visorArtist, setVisorArtist] = useState(null);
+    const [visorInfo, setVisorInfo] = useState(null);
+    const [visorIcon, setVisorIcon] = useState(null);
+    const [visorTag, setVisorTag] = useState(null);
+    const [visorMediaType, setVisorMediaType] = useState(null);
+    const [visorIdLinkYT, setVisorIdLinkYT] = useState(null);
+    const [visorActionButton, setVisorActionButton] = useState(null);    
 
     const defaultVisor = {
         id: null,
-        idLinkYT: null,
-        imageVisor: null,
-        artist: null,
-        title: null,
-        mediaType: null,
         tag: null,
+        info: null,
         icon: null,
+        title: null,
+        artist: null,
+        idLinkYT: null,
+        mediaType: null,
+        imageVisor: null,
         actionButton: null,
-        info: null
     };
 
     const { 
@@ -48,45 +58,55 @@ export const VisorFunction = () => {
         let interval = null;
         interval = setInterval(() => {
             setCounter(k => k + 1)
-            setImage(imageVisor)       
-            $d('.visorPostInfo').style.animationName = 'infoScale'
-            $d('.visorPostInfo').style.animationIterationCount = inf
-            $d('.visorPostInfo').style.animationDuration = `${timeInterval}s`
+            setVisorId(id)
+            setVisorTag(tag)
+            setVisorInfo(info)
+            setVisorIcon(icon)
+            setVisorTitle(title)
+            setVisorArtist(artist)
+            setVisorImage(imageVisor)
+            setVisorIdLinkYT(idLinkYT)
+            setVisorMediaType(mediaType)
+            setVisorActionButton(actionButton)
             $d('.visorBtn').style.scale = '1'
             $d('.visorBG').style.animationName = 'aniScale'
-            $d('.visorBG').style.animationIterationCount = inf
             $d('.visorBG').style.animationDuration = `${timeInterval}s`
+            $d('.visorPostInfo').style.animationName = 'infoScale'
+            $d('.visorPostInfo').style.animationDuration = `${timeInterval}s`
+            $d('.visorBG').style.animationIterationCount = inf
+            $d('.visorPostInfo').style.animationIterationCount = inf
             $d(`.visor`).style.transform = 'translateX(0)'
         }, timeInterval * 1000);
         return () => (clearInterval(interval, timeInterval));
     }, [
-        mediaList,
         counter,
+        imageStore,
+        imageVisor,
         id,
-        tag,
+        idLinkYT,
         info,
         icon,
         title,
         artist,
-        idLinkYT,
+        tag,
         mediaType,
-        imageVisor,
         actionButton,
     ]);
 
     return {
         mediaList,
+        imageStore,
         currentUser,
-        id,
-        tag,
-        info,
-        icon,
-        image,
-        title,
-        artist,
-        idLinkYT,
-        mediaType,
-        actionButton,
+        visorId,
+        visorArtist,
+        visorTitle,
+        visorInfo,
+        visorIcon,
+        visorTag,
+        visorMediaType,
+        visorIdLinkYT,
+        visorActionButton,
+        visorImage,
     };
 }
 

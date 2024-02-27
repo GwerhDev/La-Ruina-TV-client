@@ -6,53 +6,55 @@ import visorIntroVideo from '../../../assets/videos/laruina-intro.mp4';
 import { VisorFunction } from './Visor.functions';
 import { $d } from "../../../functions";
 import { InfoCanvas } from "../../utils/InfoCanvas";
+import { RenderVisorImageStore } from "../../../functions/RenderImageStore";
 
 export const Visor = () => {
     const {
+        visorId,
+        visorTag,
+        visorInfo,
         mediaList,
+        visorIcon,
+        imageStore,
+        visorTitle,
+        visorImage,
         currentUser,
-        id,
-        tag,
-        info,
-        icon,
-        title,
-        image,
-        artist, 
-        idLinkYT,
-        mediaType,
-        actionButton,
+        visorArtist,
+        visorMediaType,
+        visorIdLinkYT,
+        visorActionButton,
     } = VisorFunction();
 
     function handleInfoButton() {
-        $d('#infoCont').style.display='flex';
+        $d('#infoCont').style.display = 'flex';
     };
 
     return (
         <div className='visor'>
             <video className='visorVideoIntro' src={visorIntroVideo} autoPlay muted loop type="video/mp4" />
             <div className='visorBGCanvas'>
-                <img className='visorBG' src={image} alt='' />
+                <img className='visorBG' src={RenderVisorImageStore(imageStore, visorImage)} alt='' />
             </div>
             <div className='visorCanvas' />
-            <InfoCanvas title={title} artist={artist} id={id} image={image}/>
+            <InfoCanvas title={visorTitle} artist={visorArtist} id={visorId} image={RenderVisorImageStore(imageStore, visorImage)} />
             {mediaList?.length
                 ? <div className='visorPostInfo'>
                     <div className='visorPostArtista'>
-                        <p>{artist}</p>
+                        <p>{visorArtist}</p>
                     </div>
                     <div className='visorPostTitulo'>
-                        <p>{title}</p>
-                        <div className='visorInfo'><h3>{info}</h3></div>
+                        <p>{visorTitle}</p>
+                        <div className='visorInfo'><h3>{visorInfo}</h3></div>
                         <ul className='visorBtn'>
                             <li>
-                                <Link to={`/view/v=${id}`}>
+                                <Link to={`/view/v=${visorId}`}>
                                     <button
                                         className='button1'
-                                        id={id}
-                                        titulo={title}
-                                        artista={artist}
-                                        img={image}
-                                        tag={tag || null}
+                                        id={visorId}
+                                        titulo={visorTitle}
+                                        artista={visorArtist}
+                                        img={visorImage}
+                                        tag={visorTag || null}
                                         onClick={() => { window.scrollTo(0, 0) }}
                                         onMouseEnter={() => {
                                             $d('.visorButtonPlay').src = playIconb
@@ -61,7 +63,7 @@ export const Visor = () => {
                                             $d('.visorButtonPlay').src = playIconn
                                         }}
                                     >
-                                        <img className='visorButtonPlay' src={playIconn} alt='visorbtn' />{!currentUser ? 'Previsualizar' : 'Ir al contenido'}
+                                        <img className='visorButtonPlay' src={playIconn} alt='' />{!currentUser ? 'Previsualizar' : 'Ir al contenido'}
                                     </button>
                                 </Link>
                             </li>
@@ -75,7 +77,7 @@ export const Visor = () => {
                         </ul>
                         <ul className='visorIcons'>
                             {
-                                icon?.map((e) => {
+                                visorIcon?.map((e) => {
                                     return (
                                         <li key={e}><img className='visorTagIcon' src={e} alt="" /></li>
                                     )
@@ -83,6 +85,7 @@ export const Visor = () => {
                             }
                         </ul>
                     </div>
+
                 </div>
                 : null
             }
