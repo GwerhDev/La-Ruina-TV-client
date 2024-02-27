@@ -20,9 +20,6 @@ export const Visor = () => {
         visorImage,
         currentUser,
         visorArtist,
-        visorMediaType,
-        visorIdLinkYT,
-        visorActionButton,
     } = VisorFunction();
 
     function handleInfoButton() {
