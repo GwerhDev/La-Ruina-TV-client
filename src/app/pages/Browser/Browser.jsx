@@ -1,4 +1,3 @@
-import s from "./Browser.module.css";
 import { useEffect } from "react";
 import { useHistory } from 'react-router-dom';
 import { BodyCss } from "../../../functions";
@@ -47,22 +46,12 @@ const Browser = () => {
         dbCategories?.map((category, index) => {
           return (
             mediaByCategory[index]?.length &&
-            <Slider
-              title={category.name}
-              data={mediaByCategory[index]}
-              idCategory={category.id}
-              s={s}
-              id={`s${category.id}${index}`}
-              key={category.id}
-            />
+            <Slider title={category.name} data={mediaByCategory[index]} idCategory={category.id} id={`s${category.id}${index}`} key={category.id} />
           )
         })
       }
 
-      {
-        mediaList?.length &&
-        <Footer />
-      }
+      <Footer />
     </div>
   );
 };

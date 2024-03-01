@@ -1,6 +1,7 @@
 .visorContainer {
   overflow: hidden;
   height: 100vh;
+  min-height: 600px;
   background-repeat: no-repeat;
   background-size: cover;
   z-index: 1;
@@ -43,16 +44,16 @@
 .visorPostInfo {
   height: 100%;
   width: 50%;
+  min-height: 600px;
   min-width: 400px;
   position: relative;
-  bottom: 1rem;
+  bottom: 8rem;
   padding-left: 50px;
   animation-timing-function: ease-in-out;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  margin-top: 200px;
+  justify-content: flex-end;
 }
 
 .visorPostArtist {
