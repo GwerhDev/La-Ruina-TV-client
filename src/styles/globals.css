@@ -471,8 +471,6 @@ button:disabled {
   }
 }
 
-
-
 #infoCont {
   display: none;
 }
@@ -488,6 +486,7 @@ button:disabled {
   font-size: 20px;
   border: none;
   border-radius: 2%;
+  backdrop-filter: blur(8px);
 }
 
 .button1,
@@ -500,6 +499,7 @@ button:disabled {
   background-color: #84848446;
   color: #ffffff;
   font-weight: 100;
+  backdrop-filter: blur(8px);
 }
 
 .button1:hover,
@@ -563,6 +563,7 @@ button:disabled {
   position: relative;
   width: 420px;
   height: 50px;
+  backdrop-filter: blur(8px);
 }
 
 .viewLiImg {
@@ -610,6 +611,7 @@ button:disabled {
   font-size: 10px;
   transition-duration: .8s;
   margin-bottom: 8px;
+  backdrop-filter: blur(8px);
 }
 
 .buttonAddToPlaylist {
@@ -624,6 +626,7 @@ button:disabled {
   border: none;
   border-radius: 2%;
   font-size: 30px;
+  backdrop-filter: blur(8px);
 }
 
 .buttonCreateNewPlaylist,
@@ -638,18 +641,20 @@ button:disabled {
   border-radius: 2%;
   font-size: 13px;
   font-weight: thin;
+  backdrop-filter: blur(8px);
 }
 
 .buttonAddItem {
   margin-bottom: 0px;
   margin-left: 40px;
   background-color: #353535fd;
-
+  backdrop-filter: blur(8px);
 }
 
 .buttonCreateNewPlaylist {
   margin-bottom: 0px;
   background-color: #292929fd;
+  backdrop-filter: blur(8px);
 }
 
 .divCanvasAddListForm {
@@ -744,6 +749,7 @@ button:disabled {
   color: #ffffff;
   font-weight: 100;
   text-decoration: none;
+  backdrop-filter: blur(8px);
 }
 
 .buttonVolver:hover,
