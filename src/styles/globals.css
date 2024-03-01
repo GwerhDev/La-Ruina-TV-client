@@ -595,6 +595,7 @@ button:disabled {
   color: #ffffff;
   font-weight: 100;
   text-decoration: none;
+  backdrop-filter: blur(8px);
 }
 
 .buttonAddToFavorites {
