@@ -46,7 +46,6 @@ const Browser = () => {
           title={"Contenido"}
           data={mediaList}
           idCategory={-1}
-          s={s}
           id={`s${-1}`}
           key={`s${-1}`}
         />

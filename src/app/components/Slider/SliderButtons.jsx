@@ -1,3 +1,4 @@
+import s from './SliderButtons.module.css';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { getMedia } from '../../../middlewares/redux/actions/media';
@@ -10,7 +11,6 @@ export const SliderButtons = (props) => {
     const [i, setPosi] = useState(k);
     const [n, setPosn] = useState(-k);
     const key = (props.keyID);
-    const s = (props.style);
 
     return (<>
         <button

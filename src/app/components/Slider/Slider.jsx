@@ -1,9 +1,10 @@
+import s from "./Slider.module.css";
 import { SliderList } from "./SliderList";
 import { SliderButtons } from "./SliderButtons";
 import { $d } from "../../../functions";
 
 export const Slider = (props) => {
-    const { title, data, s, id } = props;
+    const { title, data, id } = props;
 
     return (
         <div className={s.sliderCont}>
@@ -38,12 +39,12 @@ export const Slider = (props) => {
                         name = {title}
                         keyID = {id}
                         categories = {data}
-                        style = {s} />
+                        />
                     <SliderList
                         data = {data}
                         keyID = {id}
                         key = {`${title}Sldr`}
-                        style = {s} />
+                         />
                 </div>
             </div>
         </div>

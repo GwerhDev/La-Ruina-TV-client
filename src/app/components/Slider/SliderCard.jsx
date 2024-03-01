@@ -11,7 +11,7 @@ import { DeleteCanvas } from '../../utils/DeleteCanvas';
 import { $d } from '../../../functions';
 import { RenderSliderImageStore } from '../../../functions/RenderImageStore';
 
-export const SliderCard = ({ id, imageSlider, title, style, keyID }) => {
+export const SliderCard = ({ id, imageSlider, title, keyID }) => {
   const history = useHistory();
   const favorites = useSelector(state => state.favorites);
   const imageStore = useSelector(state => state.imageStore);
@@ -38,18 +38,18 @@ export const SliderCard = ({ id, imageSlider, title, style, keyID }) => {
   return (
     <>
       {imageSlider &&
-        <div className={style.sliderItem}>
+        <div className={s.sliderItem}>
           <img
             alt=''
             onClick={handleRedirect}
-            className={style.media}
+            className={s.media}
             src={RenderSliderImageStore(imageStore, imageSlider) || defaultBackground}
           />
-          <div className={style.sliderInfoCanvas}>
-            <div className={style.ulTitlesItems} onClick={handleRedirect}>
+          <div className={s.sliderInfoCanvas}>
+            <div className={s.ulTitlesItems} onClick={handleRedirect}>
               <div style={{ display: 'flex', alignItems: 'center', margin: '5px' }}>
                 <img
-                  className={style.sliderItemIconPlayN}
+                  className={s.sliderItemIconPlayN}
                   src={playIconN}
                   alt="play" />
                 <p style={{ color: 'black' }}>{title}</p>
