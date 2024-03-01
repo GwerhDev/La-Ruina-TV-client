@@ -1,0 +1,121 @@
+.visorContainer {
+  overflow: hidden;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+}
+
+.visorVideoIntro {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 0;
+}
+
+.visorBGCanvas {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+
+.visorBG {
+  min-width: 100%;
+  min-height: 100%;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  animation-timing-function: ease-in-out;
+}
+
+.visorCanvas {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), #000000 97%);
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+}
+
+.visorPostInfo {
+  height: 100%;
+  width: 50%;
+  min-width: 400px;
+  position: relative;
+  bottom: 1rem;
+  padding-left: 50px;
+  animation-timing-function: ease-in-out;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 200px;
+}
+
+.visorPostArtist {
+  width: fit-content;
+  margin: 0;
+}
+
+.visorPostArtist p {
+  color: #ffffff;
+  text-decoration: overline;
+  font-size: 18px;
+  opacity: 0.7;
+  margin: 0;
+}
+
+.visorPostArtist p:hover {
+  opacity: 1;
+  cursor: pointer
+}
+
+.visorPostTitle p {
+  font-size: 50px;
+  color: #ffffff;
+  text-shadow: #000000;
+  filter: drop-shadow(1px 1px 2px #000000);
+  height: fit-content;
+  margin: 0;
+}
+
+.visorPostTitle {
+  height: fit-content;
+}
+
+.visorInfo {
+  width: 410px;
+  height: 100px;
+  color: #ffffffd4;
+  font-family: Product Sans, sans-serif;
+  font-size: 13.5px;
+}
+
+.visorInfo h3 {
+  font-weight: 100;
+}
+
+.visorBtn {
+  scale: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  width: fit-content;
+  height: fit-content;
+  flex-direction: row;
+  align-items: center;
+}
+
+.visorIcons {
+  width: 500px;
+  height: 25px;
+  position: relative;
+  top: 170px;
+  left: -40px;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}

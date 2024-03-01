@@ -68,14 +68,14 @@ export const VisorFunction = () => {
             setVisorIdLinkYT(idLinkYT)
             setVisorMediaType(mediaType)
             setVisorActionButton(actionButton)
-            $d('.visorBtn').style.scale = '1'
-            $d('.visorBG').style.animationName = 'aniScale'
-            $d('.visorBG').style.animationDuration = `${timeInterval}s`
-            $d('.visorPostInfo').style.animationName = 'infoScale'
-            $d('.visorPostInfo').style.animationDuration = `${timeInterval}s`
-            $d('.visorBG').style.animationIterationCount = inf
-            $d('.visorPostInfo').style.animationIterationCount = inf
-            $d(`.visor`).style.transform = 'translateX(0)'
+            $d(`#visor`).style.transform = 'translateX(0)'
+            $d('#visorBtn').style.scale = '1'
+            $d('#visorBG').style.animationName = 'aniScale'
+            $d('#visorBG').style.animationDuration = `${timeInterval}s`
+            $d('#visorBG').style.animationIterationCount = inf
+            $d('#visorPostInfo').style.animationName = 'infoScale'
+            $d('#visorPostInfo').style.animationDuration = `${timeInterval}s`
+            $d('#visorPostInfo').style.animationIterationCount = inf
         }, timeInterval * 1000);
         return () => (clearInterval(interval, timeInterval));
     }, [

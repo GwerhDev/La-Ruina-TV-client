@@ -18,7 +18,7 @@ export const DeleteCanvas = (props) => {
 
   function handleCancelDelete() {
     $d(`#deleteCanvas${keyId}${id}`).style.display='none';
-  }
+  };
 
   return (
     <div className={s.container} id={`deleteCanvas${keyId}${id}`} style={{ display:'none' }}>

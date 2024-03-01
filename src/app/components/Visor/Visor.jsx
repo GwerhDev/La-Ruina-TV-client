@@ -1,4 +1,4 @@
-import React from "react";
+import s from './Visor.module.css';
 import { Link } from 'react-router-dom';
 import playIconb from '../../../assets/images/ruinatv-icon-play-b.png';
 import playIconn from '../../../assets/images/ruinatv-icon-play-n.png';
@@ -27,64 +27,65 @@ export const Visor = () => {
     };
 
     return (
-        <div className='visor'>
-            <video className='visorVideoIntro' src={visorIntroVideo} autoPlay muted loop type="video/mp4" />
-            <div className='visorBGCanvas'>
-                <img className='visorBG' src={RenderVisorImageStore(imageStore, visorImage)} alt='' />
+        <div className={s.visorContainer} id='visor'>
+            <video className={s.visorVideoIntro} src={visorIntroVideo} autoPlay muted loop type="video/mp4" />
+            <div className={s.visorBGCanvas}>
+                <img className={s.visorBG} id='visorBG' src={RenderVisorImageStore(imageStore, visorImage)} alt='' />
             </div>
-            <div className='visorCanvas' />
+            <div className={s.visorCanvas} />
             <InfoCanvas title={visorTitle} artist={visorArtist} id={visorId} image={RenderVisorImageStore(imageStore, visorImage)} />
-            {mediaList?.length
-                ? <div className='visorPostInfo'>
-                    <div className='visorPostArtista'>
-                        <p>{visorArtist}</p>
-                    </div>
-                    <div className='visorPostTitulo'>
-                        <p>{visorTitle}</p>
-                        <div className='visorInfo'><h3>{visorInfo}</h3></div>
-                        <ul className='visorBtn'>
-                            <li>
-                                <Link to={`/view/v=${visorId}`}>
+            {
+                mediaList?.length
+                    ? <div className={s.visorPostInfo} id='visorPostInfo'>
+                        <div className={s.visorPostArtist}>
+                            <p>{visorArtist}</p>
+                        </div>
+                        <div className={s.visorPostTitle}>
+                            <p>{visorTitle}</p>
+                            <div className={s.visorInfo}><h3>{visorInfo}</h3></div>
+                            <ul className={s.visorBtn} id='visorBtn'>
+                                <li>
+                                    <Link to={`/view/v=${visorId}`}>
+                                        <button
+                                            className='button1'
+                                            id={visorId}
+                                            titulo={visorTitle}
+                                            artista={visorArtist}
+                                            img={visorImage}
+                                            tag={visorTag || null}
+                                            onClick={() => { window.scrollTo(0, 0) }}
+                                            onMouseEnter={() => {
+                                                $d('.visorButtonPlay').src = playIconb
+                                            }}
+                                            onMouseLeave={() => {
+                                                $d('.visorButtonPlay').src = playIconn
+                                            }}
+                                        >
+                                            <img className='visorButtonPlay' src={playIconn} alt='' />{!currentUser ? 'Previsualizar' : 'Ir al contenido'}
+                                        </button>
+                                    </Link>
+                                </li>
+                                <li>
                                     <button
-                                        className='button1'
-                                        id={visorId}
-                                        titulo={visorTitle}
-                                        artista={visorArtist}
-                                        img={visorImage}
-                                        tag={visorTag || null}
-                                        onClick={() => { window.scrollTo(0, 0) }}
-                                        onMouseEnter={() => {
-                                            $d('.visorButtonPlay').src = playIconb
-                                        }}
-                                        onMouseLeave={() => {
-                                            $d('.visorButtonPlay').src = playIconn
-                                        }}
-                                    >
-                                        <img className='visorButtonPlay' src={playIconn} alt='' />{!currentUser ? 'Previsualizar' : 'Ir al contenido'}
+                                        className='button2'
+                                        onClick={handleInfoButton} >
+                                        Más información
                                     </button>
-                                </Link>
-                            </li>
-                            <li>
-                                <button
-                                    className='button2'
-                                    onClick={handleInfoButton} >
-                                    Más información
-                                </button>
-                            </li>
-                        </ul>
-                        <ul className='visorIcons'>
-                            {
-                                visorIcon?.map((e) => {
-                                    return (
-                                        <li key={e}><img className='visorTagIcon' src={e} alt="" /></li>
-                                    )
-                                })
-                            }
-                        </ul>
-                    </div>
+                                </li>
+                            </ul>
+                            <ul className={s.visorIcons}>
+                                {
+                                    visorIcon?.map((e) => {
+                                        return (
+                                            <li key={e}><img className='visorTagIcon' src={e} alt="" /></li>
+                                        )
+                                    })
+                                }
+                            </ul>
+                        </div>
 
-                </div>
-                : null
+                    </div>
+                    : null
             }
         </div>
     )
