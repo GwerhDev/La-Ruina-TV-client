@@ -36,55 +36,56 @@ export const Visor = () => {
             <InfoCanvas title={visorTitle} artist={visorArtist} id={visorId} image={RenderVisorImageStore(imageStore, visorImage)} />
             {
                 mediaList?.length
-                    ? <div className={s.visorPostInfo} id='visorPostInfo'>
-                        <div className={s.visorPostArtist}>
-                            <p>{visorArtist}</p>
-                        </div>
-                        <div className={s.visorPostTitle}>
-                            <p>{visorTitle}</p>
-                            <div className={s.visorInfo}><h3>{visorInfo}</h3></div>
-                            <ul className={s.visorBtn} id='visorBtn'>
-                                <li>
-                                    <Link to={`/view/v=${visorId}`}>
+                    ?
+                        <div className={s.visorPostInfo} id='visorPostInfo'>
+                            <div className={s.visorPostArtist}>
+                                <p>{visorArtist}</p>
+                            </div>
+                            <div className={s.visorPostTitle}>
+                                <p>{visorTitle}</p>
+                                <div className={s.visorInfo}><h3>{visorInfo}</h3></div>
+                                <ul className={s.visorBtn} id='visorBtn'>
+                                    <li>
+                                        <Link to={`/view/v=${visorId}`}>
+                                            <button
+                                                className='button1'
+                                                id={visorId}
+                                                titulo={visorTitle}
+                                                artista={visorArtist}
+                                                img={visorImage}
+                                                tag={visorTag || null}
+                                                onClick={() => { window.scrollTo(0, 0) }}
+                                                onMouseEnter={() => {
+                                                    $d('.visorButtonPlay').src = playIconb
+                                                }}
+                                                onMouseLeave={() => {
+                                                    $d('.visorButtonPlay').src = playIconn
+                                                }}
+                                            >
+                                                <img className='visorButtonPlay' src={playIconn} alt='' />{!currentUser ? 'Previsualizar' : 'Ir al contenido'}
+                                            </button>
+                                        </Link>
+                                    </li>
+                                    <li>
                                         <button
-                                            className='button1'
-                                            id={visorId}
-                                            titulo={visorTitle}
-                                            artista={visorArtist}
-                                            img={visorImage}
-                                            tag={visorTag || null}
-                                            onClick={() => { window.scrollTo(0, 0) }}
-                                            onMouseEnter={() => {
-                                                $d('.visorButtonPlay').src = playIconb
-                                            }}
-                                            onMouseLeave={() => {
-                                                $d('.visorButtonPlay').src = playIconn
-                                            }}
-                                        >
-                                            <img className='visorButtonPlay' src={playIconn} alt='' />{!currentUser ? 'Previsualizar' : 'Ir al contenido'}
+                                            className='button2'
+                                            onClick={handleInfoButton} >
+                                            Más información
                                         </button>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <button
-                                        className='button2'
-                                        onClick={handleInfoButton} >
-                                        Más información
-                                    </button>
-                                </li>
-                            </ul>
-                            <ul className={s.visorIcons}>
-                                {
-                                    visorIcon?.map((e) => {
-                                        return (
-                                            <li key={e}><img className='visorTagIcon' src={e} alt="" /></li>
-                                        )
-                                    })
-                                }
-                            </ul>
-                        </div>
+                                    </li>
+                                </ul>
+                                <ul className={s.visorIcons}>
+                                    {
+                                        visorIcon?.map((e) => {
+                                            return (
+                                                <li key={e}><img className='visorTagIcon' src={e} alt="" /></li>
+                                            )
+                                        })
+                                    }
+                                </ul>
+                            </div>
 
-                    </div>
+                        </div>
                     : null
             }
         </div>

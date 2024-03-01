@@ -180,3 +180,50 @@ button:hover {
   margin-left: 5px;
   margin-top: -4px;
 }
+
+.emptySliderContItems {
+  position: relative;
+  top: -80px;
+  width: 100vw;
+  height: 170px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.emptyTitle {
+  background-color: rgb(24, 24, 24);
+  width: 90px;
+  height: 40px;
+  margin-left: 50px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  background-size: 200% 100%; 
+  animation: shine 2s infinite alternate;
+}
+
+.emptySliderList {
+  height: 120px;
+  display: flex;
+  margin-left: 50px;
+  gap: 5px;
+}
+
+.emptySlider {
+  background-color: rgb(24, 24, 24);
+  width: 205px;
+  height: 120px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent); 
+  background-size: 200% 100%;
+  animation: shine 2s infinite alternate;
+}
+
+@keyframes shine {
+  0% {
+    background-position: -100%;
+  }
+  100% {
+    background-position: 200%;
+  }
+}

@@ -40,16 +40,8 @@ const Browser = () => {
   return (
     <div className="browserBody">
       <Visor />
-      {
-        mediaList?.length &&
-        <Slider
-          title={"Contenido"}
-          data={mediaList}
-          idCategory={-1}
-          id={`s${-1}`}
-          key={`s${-1}`}
-        />
-      }
+
+      <Slider title={"Contenido"} data={mediaList} idCategory={-1} id={`s${-1}`} key={`s${-1}`} />
 
       {
         dbCategories?.map((category, index) => {
@@ -69,7 +61,7 @@ const Browser = () => {
 
       {
         mediaList?.length &&
-        <Footer/>
+        <Footer />
       }
     </div>
   );
