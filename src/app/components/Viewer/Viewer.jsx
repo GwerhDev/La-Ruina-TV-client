@@ -49,7 +49,7 @@ export const Viewer = () => {
                 <div className={s.visorBGCanvas}>
                     <img className={s.visorBG} src={imageSlider} alt='' />
                 </div>
-                <div className='visorCanvas'></div>
+                <div className={s.visorCanvas}></div>
                 <div className='playerBackGroundEffect'></div>
                 <div className={s.sectionsContainer}>
                     <section className={s.playerSection}>
