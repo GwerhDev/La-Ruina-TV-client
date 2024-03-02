@@ -9,6 +9,7 @@ import { getFavorites } from "../../../middlewares/redux/actions/account";
 import { Slider } from "../../components/Slider/Slider";
 import { Visor } from "../../components/Visor/Visor";
 import { Footer } from "../../utils/Footer";
+import CategorySlider from "../../components/Slider/CategorySlider";
 
 const Browser = () => {
   const dispatch = useDispatch();
@@ -42,14 +43,7 @@ const Browser = () => {
 
       <Slider title={"Contenido"} data={mediaList} idCategory={-1} id={`s${-1}`} key={`s${-1}`} />
 
-      {
-        dbCategories?.map((category, index) => {
-          return (
-            mediaByCategory[index]?.length &&
-            <Slider title={category.name} data={mediaByCategory[index]} idCategory={category.id} id={`s${category.id}${index}`} key={category.id} />
-          )
-        })
-      }
+      <CategorySlider data={mediaByCategory} dbCategories={dbCategories} />
 
       <Footer />
     </div>

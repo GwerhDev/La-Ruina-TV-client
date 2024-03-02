@@ -11,7 +11,7 @@ export const InfoCanvas = (props) => {
   const fullDetail = useSelector(state => state.fullDetail);
 
   useEffect(() => {
-    !id ?? dispatch(getFullDetail(id))
+    !id ?? dispatch(getFullDetail(id));
   }, [dispatch, id]);
 
   return (
