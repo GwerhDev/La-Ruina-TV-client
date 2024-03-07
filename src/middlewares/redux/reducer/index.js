@@ -41,7 +41,6 @@ const initialState = {
     mediaByCategory: [],
     mediaList: [new Content()],
     infoDetailViewer: new Content(),
-    imageStore: [],
     fullDetail: {},
     error: "",
     /*------------Filter&Search------------*/
@@ -148,7 +147,6 @@ export default function rootReducer(state = initialState, action) {
             return {
                 ...state,
                 mediaList: action.payload.mediaList,
-                imageStore: action.payload.imageStore,
             };
 
         case GET_INFO:

@@ -9,12 +9,11 @@ import { useSelector } from "react-redux";
 import { deleteMedia } from '../../../middlewares/redux/actions/admin';
 import { DeleteCanvas } from '../../utils/DeleteCanvas';
 import { $d } from '../../../functions';
-import { RenderSliderImageStore } from '../../../functions/RenderImageStore';
+import { RenderImageGwerhdinary } from '../../../functions/RenderImageGwerhdinary';
 
 export const SliderCard = ({ id, imageSlider, title, keyID }) => {
   const history = useHistory();
   const favorites = useSelector(state => state.favorites);
-  const imageStore = useSelector(state => state.imageStore);
   const currentUser = useSelector(state => state.currentUser);
 
   function handleRedirect() {
@@ -43,7 +42,7 @@ export const SliderCard = ({ id, imageSlider, title, keyID }) => {
             alt=''
             onClick={handleRedirect}
             className={s.media}
-            src={RenderSliderImageStore(imageStore, imageSlider) || defaultBackground}
+            src={RenderImageGwerhdinary(imageSlider) || defaultBackground}
           />
           <div className={s.sliderInfoCanvas}>
             <div className={s.ulTitlesItems} onClick={handleRedirect}>

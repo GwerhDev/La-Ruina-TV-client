@@ -1,9 +1,9 @@
-import s from './Filter.module.css'
-import { useDispatch, useSelector } from 'react-redux'
-import { FilteredCard } from './FilteredCard'
-import { useParams } from 'react-router-dom/cjs/react-router-dom.min'
-import { useEffect } from 'react'
-import { getSearch } from '../../../middlewares/redux/actions/search'
+import s from './Filter.module.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { FilteredCard } from './FilteredCard';
+import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
+import { useEffect } from 'react';
+import { getSearch } from '../../../middlewares/redux/actions/search';
 
 export const Filter = () => {
   const { artistResult, titleResult, infoResult } = useSelector(state => state.searchedMedia);

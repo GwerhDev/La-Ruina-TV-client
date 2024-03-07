@@ -6,6 +6,7 @@ import { RequestProfile } from '../../components/RequestProfile/RequestProfile';
 import { resetOption } from '../../../middlewares/redux/actions';
 import { $d } from '../../../functions';
 import { getFavorites } from '../../../middlewares/redux/actions/account';
+import { RenderImageGwerhdinary } from '../../../functions/RenderImageGwerhdinary';
 
 export const Favorites = () => {
   const dispatch = useDispatch();
@@ -25,7 +26,7 @@ export const Favorites = () => {
       $d(`.visor`).style.transform = 'translateX(0)',
       $d('#slideCanvasCont').style.overflowY = "hidden"
     )
-  }
+  };
 
   useEffect(() => {
     dispatch(getFavorites(userId))
@@ -58,7 +59,7 @@ export const Favorites = () => {
                         <Link to={`/view/v=${e.id}`}>
                           <div
                             className={s.imageContainer}
-                            style={{ backgroundImage: `url(${e.imageSlider})` }}
+                            style={{ backgroundImage: `url(${RenderImageGwerhdinary(e.imageSlider)})` }}
                             onClick={handleClick}
                           >
                             <div className={s.divH3}>

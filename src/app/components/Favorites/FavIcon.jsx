@@ -1,5 +1,5 @@
 import React from "react";
-import s from "./FavIcon.module.css"
+import s from "./FavIcon.module.css";
 
 const FavIcon = ({ color }) => {
     return (
@@ -7,6 +7,6 @@ const FavIcon = ({ color }) => {
             <span role="img" style={{color: color}}>❤</span>
         </button>
     )
-}
+};
 
-export default FavIcon
+export default FavIcon;

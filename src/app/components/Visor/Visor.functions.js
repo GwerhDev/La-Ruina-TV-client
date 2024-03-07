@@ -11,7 +11,6 @@ export const VisorFunction = () => {
     });
 
     const mediaList = useSelector(state => state.mediaList);
-    const imageStore = useSelector(state => state.imageStore);
     const currentUser = useSelector(state => state.currentUser);
     const max = mediaList?.length || 0;
     const [counter, setCounter] = useState(0);
@@ -80,7 +79,6 @@ export const VisorFunction = () => {
         return () => (clearInterval(interval, timeInterval));
     }, [
         counter,
-        imageStore,
         imageVisor,
         id,
         idLinkYT,
@@ -95,7 +93,6 @@ export const VisorFunction = () => {
 
     return {
         mediaList,
-        imageStore,
         currentUser,
         visorId,
         visorArtist,
