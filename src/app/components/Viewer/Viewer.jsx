@@ -1,9 +1,7 @@
 import s from './Viewer.module.css';
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import YtPlayer from '../Player/PlayerYoutube';
 import playIconn from '../../../assets/images/ruinatv-icon-play-n.png';
@@ -11,8 +9,8 @@ import playIconb from '../../../assets/images/ruinatv-icon-play-b.png';
 import userIcon from '../../../assets/images/user-icon.png';
 import likeIcon from '../../../assets/images/like-icon.png';
 import { $d, OptionCanvas } from '../../../functions';
-import { ContentMagementButtons } from '../../admin/Buttons/ContentMagementButtons';
-import { getOption } from '../../../middlewares/redux/actions';
+import { ContentMagementButtons } from '../../components/Admin/Buttons/ContentMagementButtons';
+import { setOption } from '../../../middlewares/redux/actions';
 import { getMediaById } from '../../../middlewares/redux/actions/media';
 import { addFavorites, deleteFavorites, getFavorites } from '../../../middlewares/redux/actions/account';
 import { subscriberYoutubeVerification } from '../../../middlewares/redux/actions/subscriber';
@@ -28,7 +26,7 @@ export const Viewer = () => {
     const currentUser = useSelector(state => state.currentUser);
     const infoDetailViewer = useSelector(state => state.infoDetailViewer);
 
-    function onClickValue(e){ return ( dispatch(getOption(e.target.id)), OptionCanvas(e.target.id) )};
+    function onClickValue(e){ return ( dispatch(setOption(e.target.id)), OptionCanvas(e.target.id) )};
     
     useEffect(()=>{ 
         dispatch(getMediaById(id));

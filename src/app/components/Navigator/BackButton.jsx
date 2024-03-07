@@ -1,17 +1,18 @@
+import { useHistory } from 'react-router-dom';
 import s from './BackButton.module.css';
 import React from 'react';
 import backIcon from '../../../assets/images/ruinatv-icon-play-b.png';
 import { useDispatch } from 'react-redux';
 import { resetOption } from '../../../middlewares/redux/actions';
-import { BodyCss } from '../../../functions';
-import { reset } from '../../../functions/Reset';
 
-export const BackButton = () => {
+export const BackButton = (props) => {
     const dispatch = useDispatch();
+    const history = useHistory();
+    const { backRoute } = props || null;
+
     function handleButton() {
         dispatch(resetOption());
-        BodyCss();
-        reset();
+        history.push(backRoute || '');
     };
 
     return (

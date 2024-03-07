@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { useHistory } from 'react-router-dom';
-import { BodyCss } from "../../../functions";
 import { resetIdYT, resetOption } from "../../../middlewares/redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { getCategories, getMedia, resetMedia } from "../../../middlewares/redux/actions/media";
@@ -29,7 +28,6 @@ const Browser = () => {
   }, [currentUser, userToken, history])
 
   useEffect(() => {
-    BodyCss();
     dispatch(getMedia());
     dispatch(resetIdYT());
     dispatch(resetMedia());

@@ -52,18 +52,15 @@ input {
 .header-container {
   background: linear-gradient(to bottom, #ffffff, rgb(197, 197, 197));
   filter: drop-shadow(0px 0px 4px black);
-  min-width: 300px;
   height: 200px;
-  margin-left: 60px;
-  margin-right: 60px;
+  min-width: 300px;
   border-radius: 15px;
-  position: relative;
   display: flex;
+  list-style: none;
+  text-align: center;
+  align-items: center;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  text-align: center;
-  list-style: none;
 }
 
 #googleButton {
@@ -263,7 +260,6 @@ button:disabled {
   background: linear-gradient(to bottom, #ffffffcf, rgb(137, 137, 137));
   left: 0px;
   bottom: 0px;
-  position: fixed;
 }
 
 /* --------------------------paylist----------------- */

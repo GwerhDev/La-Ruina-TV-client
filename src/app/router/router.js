@@ -9,75 +9,102 @@ import Verify from '../pages/Verify/Verify';
 import Browser from '../pages/Browser/Browser';
 import Releases from '../pages/Releases/Releases';
 import Checkout from '../pages/Checkout/Checkout';
-import UserList from '../admin/UserList/UserList';
-import ContentList from '../admin/ContentList/ContentList';
+import UserList from '../components/Admin/UserList/UserList';
+import ContentList from '../components/Admin/ContentList/ContentList';
+import Dashboard from '../pages/Admin/Dashboard';
 import ContentCreatePage from '../pages/Admin/ContentCreatePage';
 import ContentUpdatePage from '../pages/Admin/ContentUpdatePage';
 
 import { Navigator } from '../components/Navigator/Navigator';
 import { CanvasMenu } from '../components/Navigator/CanvasMenu';
-import { OptionsCanvas } from '../utils/SlideCanvas';
+import Login from '../pages/Login/Login';
+import Profile from '../pages/Profile/Profile';
+import Favorites from '../pages/Favorites/Favorites';
+import Configurations from '../pages/Configurations/Configurations';
+import Subscription from '../pages/Subscription/Subscription';
 
 function Router() {
   return (
     <div className="App">
       <Switch>
         <>
-          <Navigator/>
-          <CanvasMenu/>
+          <Navigator />
+          <CanvasMenu />
           <div className='bodyApp'>
-            <OptionsCanvas/>
-
             <Route exact path='/'>
-              <Redirect to='/browser'/>
+              <Redirect to='/browser' />
             </Route>
 
             <Route path='/auth'>
-              <Auth/>
+              <Auth />
             </Route>
 
             <Route path='/verify'>
-              <Verify/>
+              <Verify />
             </Route>
-            
+
             <Route exact path='/browser'>
-              <Browser/>
+              <Browser />
+            </Route>
+
+            <Route exact path='/login'>
+              <Login />
+            </Route>
+
+            <Route exact path='/profile'>
+              <Profile />
+            </Route>
+
+            <Route exact path='/favorites'>
+              <Favorites />
+            </Route>
+
+            <Route exact path='/dashboard'>
+              <Dashboard />
+            </Route>
+
+            <Route exact path='/configuration'>
+              <Configurations />
+            </Route>
+
+            <Route exact path='/subscription'>
+              <Subscription />
             </Route>
 
             <Route exact path='/releases'>
-              <Releases/>
+              <Releases />
             </Route>
 
             <Route exact path='/donate'>
-              <Donate/>
+              <Donate />
             </Route>
 
             <Route path='/view/v=:id'>
-              <View/>
+              <View />
             </Route>
 
             <Route path='/search/:search'>
-              <Search/>
+              <Search />
             </Route>
 
             <Route path='/checkout/:type'>
-              <Checkout/>
+              <Checkout />
             </Route>
 
             <Route exact path='/media/create'>
-              <ContentCreatePage/>
+              <ContentCreatePage />
             </Route>
 
             <Route exact path='/media/edit/:id'>
-              <ContentUpdatePage/>
+              <ContentUpdatePage />
             </Route>
 
             <Route exact path='/media/edit'>
-              <ContentList/>
-            </Route>    
+              <ContentList />
+            </Route>
 
             <Route exact path='/users/edit'>
-              <UserList/>
+              <UserList />
             </Route>
 
           </div>

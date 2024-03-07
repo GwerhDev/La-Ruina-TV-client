@@ -1,22 +1,22 @@
-import s from './EnterButton.module.css';
 import { useDispatch } from 'react-redux';
+import s from './EnterButton.module.css';
 import userIcon from '../../../assets/images/user-icon.png';
-import { $d, OptionCanvas } from '../../../functions';
-import { getOption } from '../../../middlewares/redux/actions';
+import { useHistory } from 'react-router-dom';
+import { setOption } from '../../../middlewares/redux/actions';
 
 export const EnterBtn = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
 
-  function onClickValue(e) {
+  function onClickValue() {
     return (
-      dispatch(getOption(e.target.id)),
-      OptionCanvas(e.target.id),
-      $d('#slideCanvasCont').style.overflowY = "hidden"
+      dispatch(setOption('login')),
+      history.push('/login')
     )
   };
 
   return (
-    <div className={s.enterBtn} id='login' onClick={onClickValue}>
+    <div className={s.enterBtn} onClick={onClickValue}>
       <img className={s.userIconEnter} src={userIcon} alt='userIcon' width='15px'/>
       Ingresar
     </div>

@@ -5,16 +5,16 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { loginInner } from "../../../middlewares/redux/actions/auth";
 import { resetError } from "../../../middlewares/redux/actions/error";
-import { errorMessages } from "../../errors";
+import { errorMessages } from "../../utils/errors";
 
 const LoginInner = () => {
   const dispatch = useDispatch();
   const history = useHistory();
+  const error = useSelector(state => state.error);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [disabled, setDisabled] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
-  const error = useSelector((state) => state.error);
 
   function handleEmail(e) {
     setEmail(e.target.value);

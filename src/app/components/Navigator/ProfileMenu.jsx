@@ -1,7 +1,6 @@
 import s from './ProfileMenu.module.css';
 import profileMenuCss from '../../../functions/ProfileMenu';
-import { OptionCanvas } from '../../../functions';
-import { getOption } from '../../../middlewares/redux/actions';
+import { setOption } from '../../../middlewares/redux/actions';
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import btnMenuTv from '../../../assets/images/ruinatv-icon-play-b.png';
@@ -21,8 +20,8 @@ export const ProfileMenu = () => {
 
   function onClickValue(e) {
     return (
-      dispatch(getOption(e.target.value || e)),
-      OptionCanvas()
+      dispatch(setOption(e.target.value || e)),
+      history.push("/" + e.target.value || e)
     )
   };
 

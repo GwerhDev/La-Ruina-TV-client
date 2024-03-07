@@ -1,4 +1,4 @@
-import ContentUpdate from '../../admin/ContentUpdate/ContentUpdate';
+import ContentUpdate from '../../components/Admin/ContentUpdate/ContentUpdate';
 
 const ContentUpdatePage = () => {
   return (

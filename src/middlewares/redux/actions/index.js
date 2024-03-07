@@ -1,7 +1,7 @@
 import { NEXT_VISOR, RESET_VISOR, OPTION, RESET_OPTION, RESET_IDYT } from '../../misc';
 
 /*-----------------Auth----------------*/
-export function getOption(e) {
+export function setOption(e) {
     return ({
         type: OPTION,
         payload: e

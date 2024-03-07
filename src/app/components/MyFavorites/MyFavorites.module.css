@@ -1,0 +1,103 @@
+.favoritesContainer {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row-reverse;
+    overflow: hidden;
+}
+
+.contLikes{
+    text-shadow: 0px 0px 1px black;
+    font-weight: 100;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.divContLikes{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow-y: auto;
+}
+
+.contTitle{
+    top: 75px;
+}
+
+.container {
+    background: linear-gradient(to bottom, #ffffffcf, rgb(137, 137, 137));
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.liLikes{
+    width: 100%;
+    height: 150px;
+    margin-top: 10px;
+    display: flex;
+    overflow: hidden;
+    text-align: center;
+    align-items: center;
+    justify-items: center;
+    flex-direction: column;
+    transition-duration: .4s;
+}
+
+.divH3{
+    color: white;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    padding-left: 1rem;
+    opacity: 0;
+    background: linear-gradient(to right, #000000, rgba(137, 137, 137, 0) 200%);
+    width: 100%;
+}
+
+.likeImg{
+    box-shadow: 0px 0px 10px black;
+    width: 100%;
+}
+
+.divHeader {
+    width: 100%;
+    padding-top: 110px;
+    padding-left: 10px;
+    padding-right: 60px;
+}
+
+.itemContainer {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.imageContainer:hover .divH3{
+    opacity: 1;
+}
+
+.imageContainer {
+    overflow: hidden;
+    border-radius: 10px;
+    height: 150px;
+    width: 100%;
+    display: flex;
+    background-size: cover;
+    transition-duration: .4s;
+}
+
+.imageContainer:hover {
+    background-position: center;
+    box-shadow: 0 0 10px goldenrod;
+}

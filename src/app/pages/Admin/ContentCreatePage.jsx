@@ -1,4 +1,4 @@
-import ContentCreate from '../../admin/ContentCreate/ContentCreate';
+import ContentCreate from '../../components/Admin/ContentCreate/ContentCreate';
 
 const ContentCreatePage = () => {
   return (

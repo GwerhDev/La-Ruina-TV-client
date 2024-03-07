@@ -1,5 +1,5 @@
 import s from './SliderCard.module.css';
-import FavIcon from "../Favorites/FavIcon";
+import FavIcon from "../MyFavorites/FavIcon";
 import editIcon from '../../../assets/images/edit-icon.png';
 import playIconN from "../../../assets/images/ruinatv-icon-play-n.png";
 import deleteIcon from '../../../assets/images/delete-icon.png';
