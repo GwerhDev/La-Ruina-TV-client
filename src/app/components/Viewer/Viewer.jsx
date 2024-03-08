@@ -11,7 +11,7 @@ import playIconb from '../../../assets/images/ruinatv-icon-play-b.png';
 import { $d } from '../../../functions';
 import { ContentMagementButtons } from '../../components/Admin/Buttons/ContentMagementButtons';
 import { resetOption, setOption } from '../../../middlewares/redux/actions';
-import { getMediaById, resetDetailsMedia, resetMedia } from '../../../middlewares/redux/actions/media';
+import { getMediaById, resetDetailsMedia } from '../../../middlewares/redux/actions/media';
 import { addFavorites, deleteFavorites, getFavorites } from '../../../middlewares/redux/actions/account';
 import { subscriberYoutubeVerification } from '../../../middlewares/redux/actions/subscriber';
 import { DeleteCanvas } from '../../utils/DeleteCanvas';
