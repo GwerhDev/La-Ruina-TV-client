@@ -18,7 +18,8 @@ import {
     ERROR,
     GET_FULL_DETAIL,
     GET_PRODUCERS,
-    GET_USER_PLAN
+    GET_USER_PLAN,
+    RESET_DETAILS_MEDIA
 } from "../../misc";
 
 
@@ -153,6 +154,12 @@ export default function rootReducer(state = initialState, action) {
             return {
                 ...state,
                 infoDetailViewer: action.payload
+            };
+        
+        case RESET_DETAILS_MEDIA:
+            return {
+                ...state,
+                infoDetailViewer: new Content()
             };
 
         case RESET_MEDIA:

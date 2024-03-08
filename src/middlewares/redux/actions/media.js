@@ -1,6 +1,6 @@
 import axios from "axios";
 import { URL_API } from "../../config";
-import { GET_CATEGORIES, GET_FULL_DETAIL, GET_GENRES, GET_INFO, GET_MEDIA, GET_MEDIATYPES, GET_PRODUCERS, RESET_MEDIA } from "../../misc";
+import { GET_CATEGORIES, GET_FULL_DETAIL, GET_GENRES, GET_INFO, GET_MEDIA, GET_MEDIATYPES, GET_PRODUCERS, RESET_DETAILS_MEDIA, RESET_MEDIA } from "../../misc";
 
 export async function getImage(id) {
     try {
@@ -43,6 +43,12 @@ export function getMediaById(id) {
 export function resetMedia() {
     return {
         type: RESET_MEDIA
+    }
+};
+
+export function resetDetailsMedia() {
+    return {
+        type: RESET_DETAILS_MEDIA
     }
 };
 

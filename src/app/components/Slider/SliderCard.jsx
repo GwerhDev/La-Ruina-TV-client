@@ -40,8 +40,8 @@ export const SliderCard = ({ id, imageSlider, title, keyID }) => {
         <div className={s.sliderItem}>
           <img
             alt=''
-            onClick={handleRedirect}
             className={s.media}
+            onClick={handleRedirect}
             src={RenderImageGwerhdinary(imageSlider) || defaultBackground}
           />
           <div className={s.sliderInfoCanvas}>

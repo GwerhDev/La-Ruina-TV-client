@@ -10,8 +10,8 @@ import playIconn from '../../../assets/images/ruinatv-icon-play-n.png';
 import playIconb from '../../../assets/images/ruinatv-icon-play-b.png';
 import { $d } from '../../../functions';
 import { ContentMagementButtons } from '../../components/Admin/Buttons/ContentMagementButtons';
-import { setOption } from '../../../middlewares/redux/actions';
-import { getMediaById } from '../../../middlewares/redux/actions/media';
+import { resetOption, setOption } from '../../../middlewares/redux/actions';
+import { getMediaById, resetDetailsMedia, resetMedia } from '../../../middlewares/redux/actions/media';
 import { addFavorites, deleteFavorites, getFavorites } from '../../../middlewares/redux/actions/account';
 import { subscriberYoutubeVerification } from '../../../middlewares/redux/actions/subscriber';
 import { DeleteCanvas } from '../../utils/DeleteCanvas';
@@ -30,7 +30,12 @@ export const Viewer = () => {
 
     function onClickValue(e) {
         dispatch(setOption(e.target.id));
-        history.push('/login')
+        history.push('/login');
+    };
+
+    function handleBackButton() {
+        dispatch(resetOption());
+        dispatch(resetDetailsMedia());
     };
 
     function handleClickBack() {
@@ -38,7 +43,7 @@ export const Viewer = () => {
         $d('.playerBackGroundEffect').style.opacity = '0';
         $d('#visor-post-info').style.display = "flex";
         $d('#player-section').style.display = "none";
-    }
+    };
 
     useEffect(() => {
         dispatch(getMediaById(id));
@@ -130,7 +135,7 @@ export const Viewer = () => {
                                         Ingresar
                                     </button>)
                                 }
-                                <Link to='/browser'><button className='buttonVolver'>Volver al inicio</button></Link>
+                                <Link to='/browser'><button className='buttonVolver' onClick={handleBackButton}>Volver al inicio</button></Link>
                             </div>
                         </div>
                     </section>

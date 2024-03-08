@@ -23,16 +23,14 @@ export const SliderButtons = (props) => {
                     $d(`#${key}PrevBtn`).style.opacity = '1',
                     $d(`#${key}PrevBtn`).style.background = 'linear-gradient(to right, rgb(0, 0, 0), transparent)'
                 )
-            }
-            }
+            }}
             onMouseLeave={() => {
                 return (
                     $d(`#${key}PrevBtn`).style.transitionDuration = '1s',
                     $d(`#${key}PrevBtn`).style.opacity = '0',
                     $d(`#${key}PrevBtn`).style.background = 'linear-gradient(to right, rgb(255, 255, 255), transparent)'
                 )
-            }
-            }
+            }}
             onClick={() => {
                 setPosi(i - k)
                 setPosn(n - k)
@@ -53,8 +51,7 @@ export const SliderButtons = (props) => {
                         $d(`#${key}PostBtn`).style.display = 'block'
                     )
                 }
-            }
-            }
+            }}
         >
             <img className={s.sliderBtnPrevImg} alt='prevBtn' src={playIconb} />
         </button>

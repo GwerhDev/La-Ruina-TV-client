@@ -23,3 +23,4 @@ export const GET_SEARCH = 'GET_SEARCH';
 export const ERROR = 'ERROR';
 export const GET_FULL_DETAIL = 'GET_FULL_DETAIL';
 export const GET_USER_PLAN = 'GET_USER_PLAN';
+export const RESET_DETAILS_MEDIA = 'RESET_DETAILS_MEDIA';
