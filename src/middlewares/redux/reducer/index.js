@@ -40,7 +40,7 @@ const initialState = {
     favorites: [],
     userList: [],
     mediaByCategory: [],
-    mediaList: [new Content()],
+    mediaList: [],
     infoDetailViewer: new Content(),
     fullDetail: {},
     error: "",
