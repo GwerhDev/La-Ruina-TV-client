@@ -35,7 +35,7 @@ export const ProfileMenu = () => {
             <img className={s.btnMenuTv} src={btnMenuTv} alt='btnMenuTv' width='8px' />
           </span>
         </li>
-        <ul className={s.ulProfileOptions}>
+        <ul className={s.ulProfileOptions} id='ul-options-profile-menu'>
           <li className={s.liProfileMenuDisplay}>
             <button
               id='optionProfileBtn0'

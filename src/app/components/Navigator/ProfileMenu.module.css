@@ -116,7 +116,7 @@
 }
 
 .liProfileMenuDisplay {
-    margin-top: 0;
+    margin: 0;
 }
 
 .ulProfileOptions {
@@ -129,6 +129,7 @@
     grid-template-columns: 1fr 1fr;
     justify-items: center;
     align-items: center;
+    display: none;
 }
 
 .optionProfileBtn>img {

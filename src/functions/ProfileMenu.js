@@ -35,6 +35,7 @@ export default function profileMenuCss(e){
                 $d(`#optionProfileBtn5`).style.scale='0'
                 $d(`#optionProfileBtn6`).style.scale='0'
                 $d(`.liProfileMenuDisplay`).style.display='none'
+                $d(`#ul-options-profile-menu`).style.display='none'
             }
         })
     if(e==='enter'){
@@ -54,5 +55,7 @@ export default function profileMenuCss(e){
         $d(`#optionProfileBtn5`).style.scale='1'
         $d(`#optionProfileBtn6`).style.scale='1'
         $d(`.liProfileMenuDisplay`).style.display='block'
+        $d(`#ul-options-profile-menu`).style.display='grid'
+
     }
 }

@@ -10,7 +10,7 @@ export const NavProfileMenu = () => {
     const [posNav, setPosNav] = useState();
     const option = useSelector(state => state.option);
     const currentUser = useSelector(state => state.currentUser);
-    window.onscroll = function () { navBack(setPosNav, posNav) };;
+    window.onscroll = function () { navBack(setPosNav, posNav) };
 
     return (
         <ul className={s.profileMenuBtn}>
