@@ -3,7 +3,7 @@
     align-items: flex-start;
     justify-content: flex-start;
     padding: 0;
-    min-height: 100vh;
+    height: 100vh;
     overflow: hidden;
 }
 
