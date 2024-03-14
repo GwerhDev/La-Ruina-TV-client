@@ -162,8 +162,8 @@ button:disabled {
 }
 
 .contCanvasMenu {
-  width: 210px;
-  height: 100vh;
+  width: 100vw;
+  height: auto;
   text-align: center;
   display: flex;
   background-color: rgba(0, 0, 0, 0.856);
@@ -173,6 +173,8 @@ button:disabled {
   filter: drop-shadow(2px 5px 8px black);
   display: none;
   transition-duration: 1s;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .menuIcon {
