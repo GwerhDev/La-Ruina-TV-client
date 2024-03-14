@@ -1,5 +1,5 @@
 .bodyContainer {
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     left: 0;
     top: 0;
@@ -7,6 +7,8 @@
     margin: 0;
     overflow-y: hidden;
     background: linear-gradient(to bottom, #ffffffcf, rgb(137, 137, 137));
+    padding-bottom: 100px;
+
 }
 
 .crearProducto, .crearPost, .editUsers {
@@ -16,7 +18,6 @@
     width: 250px;
     height: 150px;
     border-radius: 5px;
-    left: -20px;
     font-family: Bebas Neue;
     font-size: 20px;
     opacity: .8;
@@ -29,12 +30,10 @@
 }
 
 .dashControlCont {
-    padding-top: 110px;
+    padding-top: 90px;
     width: 100%;
     height: 100%;
-    overflow: auto;
-    padding-left: 10px;
-    padding-right: 60px;
+    max-width: 1200px;
 }
 
 .container {
@@ -42,6 +41,6 @@
     height: 100%;
     display: flex;
     align-items: flex-start;
-    flex-direction: row-reverse;
+    justify-content: center;
 }
 

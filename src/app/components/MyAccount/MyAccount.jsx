@@ -29,13 +29,10 @@ export const MyAccount = () => {
           <div className='navFixed' />
           <div className={s.profileFather}>
             <div className={s.profileCont}>
-              <ul className={s.ulListProfile}>
-                <li className={s.liProfile1}>
-                  Perfil de
-                </li>
-                <li className={s.liProfile2}>
-                  <h1>{username ? username : "Usuario"}</h1>
-                </li>
+                <p>Perfil de</p>
+                  
+                <h1>{username ? username : "Usuario"}</h1>
+
                 <li>
                   <img
                     className={s.userIcon}
@@ -45,8 +42,8 @@ export const MyAccount = () => {
                     alt="foto de perfil"
                   />
                 </li>
-                <li className={s.liProfile3}>{role}</li>
-              </ul>
+
+                <li>{role}</li>
             </div>
             <div className={s.buttons}>
               <a href={urlHub}><button className='button1'>Editar cuenta</button></a>

@@ -1,25 +1,9 @@
-.checkoutFormat {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    padding-top: 10px;
-    padding-left: 10px;
-    padding-right: 60px;
-    gap: 1rem;
-}
-
-.headerContainer {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
 .subCont {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
     padding: 0;
-    height: 100vh;
+    min-height: 100vh;
     overflow: hidden;
 }
 
@@ -27,12 +11,31 @@
     margin: 0;
     padding: 0;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     text-align: center;
     align-items: flex-start;
+    justify-content: center;
     flex-direction: row-reverse;
     background: linear-gradient(to bottom, #ffffffcf, rgb(137, 137, 137));
+    overflow-y: auto;
+}
+
+.checkoutFormat {
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    margin-top: -10px;
+    gap: 1rem;
+
+}
+
+.headerContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .ulCheck {
@@ -45,7 +48,7 @@
 
 @media only screen and (max-width: 800px) {
     .title {
-        margin-top: 100px;
+        margin-top: 90px;
     }
 
     .ulCheck {
@@ -62,7 +65,6 @@
         height: 100vh;
         width: 100vw;
         bottom: -100px;
-        overflow-y: scroll;
         margin-bottom: 100px;
         display: flex;
         flex-direction: column;
@@ -113,6 +115,10 @@
 .liCheck {
     list-style: none;
     text-align: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .divCheckCont {

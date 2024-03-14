@@ -32,32 +32,32 @@ export const RequestProfile = () => {
             <ul className={s.ulProfileMenu}>
                 <ul className={s.ulRequestProfile}>
                     <div className={s.userRequestsContainer}>
-                        <li>
+                        <li className={s.borderRight}>
                             <img 
                                 src={profilePic ?? userIcon} 
                                 className={s.userIcon} id='profileIcon' alt="perfil" 
                                 onClick={() => handleOption('/profile')} 
                             />
-                            <span id='spanProfile' className={s.spanProfile}>Perfil</span>
+                            <span id='spanProfile' className={s.spanOpt}>Perfil</span>
                         </li>
-                        <li>
+                        <li className={s.borderRight}>
                             <img 
                                 src={likeIcon} 
                                 className={s.likeIcon} 
                                 id='favoritesIcon' alt="favoritos" 
                                 onClick={() => handleOption('/favorites')}
                             />
-                            <span id='spanFavs' className={s.spanFavs}>Favs</span>
+                            <span id='spanFavs' className={s.spanOpt}>Favs</span>
                         </li>
-                        <li>
+                        <li className={s.borderRight}>
                             <img 
                                 src={configIcon} 
                                 className={s.configurationIcon} id='configurationIcon' alt="configuration" 
                                 onClick={() => handleOption('/configuration')} 
                             />
-                            <span id='spanList' className={s.spanLists}>Config</span>
+                            <span id='spanList' className={s.spanOpt}>Config</span>
                         </li>
-                        <li>
+                        <li className={s.borderRight}>
                             <img 
                                 src={subscriptionIcon} 
                                 className={s.subscriptionIcon} id='subscriptionIcon' alt="lista"
@@ -67,7 +67,7 @@ export const RequestProfile = () => {
                         </li>
                         {
                             role === 'admin' 
-                            ?   <li>
+                            ?   <li className={s.borderRight}>
                                     <img 
                                         src={adminIcon} 
                                         className={s.adminIcon} id='dashboardIcon' alt="lista" 
@@ -77,14 +77,13 @@ export const RequestProfile = () => {
                                 </li>
                             :   null
                         }
-                    </div>
-                    <div className={s.exitContainer}>
                         <li>
                             <img
                                 src={logoutIcon}
                                 className={s.logoutIcon}
                                 alt="salir"
                                 onClick={() => logout(history)}/>
+                                <span id='spanExit' className={s.spanOpt}>Salir</span>
                         </li>
                     </div>
                 </ul>
