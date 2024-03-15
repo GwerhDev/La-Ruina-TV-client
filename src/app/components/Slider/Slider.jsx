@@ -1,7 +1,7 @@
 import s from "./Slider.module.css";
+import { $d } from "../../../functions";
 import { SliderList } from "./SliderList";
 import { SliderButtons } from "./SliderButtons";
-import { $d } from "../../../functions";
 
 export const Slider = (props) => {
     const { title, data, id } = props;

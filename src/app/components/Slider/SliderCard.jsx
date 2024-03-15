@@ -4,11 +4,11 @@ import editIcon from '../../../assets/images/edit-icon.png';
 import playIconN from "../../../assets/images/ruinatv-icon-play-n.png";
 import deleteIcon from '../../../assets/images/delete-icon.png';
 import defaultBackground from '../../../assets/images/default-background.png'
+import { $d } from '../../../functions';
 import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { deleteMedia } from '../../../middlewares/redux/actions/admin';
 import { DeleteCanvas } from '../../utils/DeleteCanvas';
-import { $d } from '../../../functions';
 import { RenderImageGwerhdinary } from '../../../functions/RenderImageGwerhdinary';
 
 export const SliderCard = ({ id, imageSlider, title, keyID }) => {
@@ -36,7 +36,8 @@ export const SliderCard = ({ id, imageSlider, title, keyID }) => {
 
   return (
     <>
-      {imageSlider &&
+      {
+        imageSlider &&
         <div className={s.sliderItem}>
           <img
             alt=''
@@ -44,8 +45,8 @@ export const SliderCard = ({ id, imageSlider, title, keyID }) => {
             onClick={handleRedirect}
             src={RenderImageGwerhdinary(imageSlider) || defaultBackground}
           />
-          <div className={s.sliderInfoCanvas}>
-            <div className={s.ulTitlesItems} onClick={handleRedirect}>
+          <div className={s.sliderInfoCanvas} onClick={handleRedirect}>
+            <div className={s.ulTitlesItems}>
               <div style={{ display: 'flex', alignItems: 'center', margin: '5px' }}>
                 <img
                   className={s.sliderItemIconPlayN}
@@ -61,22 +62,20 @@ export const SliderCard = ({ id, imageSlider, title, keyID }) => {
             </div>
           </div>
           {
-            currentUser?.role === 'admin'
-              ?
-              <>
-                <ul className={s.adminRequest}>
-                  <li className={s.adminBtn}>
-                    <img src={editIcon} className={s.editImg} onClick={handleEditMedia} alt='edit' width='15px' />
-                  </li>
-                  <li className={s.adminBtn} onClick={handleDeleteMedia} >
-                    <img src={deleteIcon} className={s.deleteImg} alt='delete' width='15px' />
-                  </li>
-                </ul>
-                <div className={s.deleteCanvasContainer} onMouseEnter={() => opacityCanvas(1)} onMouseLeave={() => opacityCanvas(0)}>
-                  <DeleteCanvas id={id} keyId={keyID} deleteFunction={deleteMedia} />
-                </div>
-              </>
-              : null
+            currentUser?.role === 'admin' &&
+            <>
+              <ul className={s.adminRequest}>
+                <li className={s.adminBtn}>
+                  <img src={editIcon} className={s.editImg} onClick={handleEditMedia} alt='edit' width='15px' />
+                </li>
+                <li className={s.adminBtn} onClick={handleDeleteMedia} >
+                  <img src={deleteIcon} className={s.deleteImg} alt='delete' width='15px' />
+                </li>
+              </ul>
+              <div className={s.deleteCanvasContainer} onMouseEnter={() => opacityCanvas(1)} onMouseLeave={() => opacityCanvas(0)}>
+                <DeleteCanvas id={id} keyId={keyID} deleteFunction={deleteMedia} />
+              </div>
+            </>
           }
         </div>
       }
