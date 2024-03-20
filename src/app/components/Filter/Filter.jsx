@@ -15,7 +15,7 @@ export const Filter = () => {
 
   return (
     <div className={s.searchCont}>
-      <div className={s.nav-fixed} />
+      <div className="nav-fixed" />
       <div className={s.searchFormat} >
         <h1>Estos son los resultados de tu búsqueda</h1>
         <ul className={s.ulSearchedItem}>
