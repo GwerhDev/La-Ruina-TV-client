@@ -848,8 +848,8 @@ button:disabled {
 /* Big screen devices (889px and above) */
 @media only screen and (min-width: 889px) {}
 
-/* Extra big screen devices (1200px and above) */
-@media only screen and (min-width: 1200px) {}
+/* Extra big screen devices (2000px and above) */
+@media only screen and (min-width: 2000px) {}
 
 /* For extremely small screen devices (595px and below) */
 @media only screen and (max-width: 595px) {}
@@ -874,7 +874,7 @@ button:disabled {
   }
 }
 
-/* Extra big screen devices (1200px and above) */
+/* Extra big screen devices (2000px and above) */
 @media only screen and (min-width: 1380px) {
   .navBurgerTabletCont {
     display: none;
