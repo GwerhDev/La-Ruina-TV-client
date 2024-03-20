@@ -38,7 +38,7 @@ export const Filter = () => {
               }
               )
               : <div className={s.notFound} >
-                  <h2>No se han encontrado resultados que coincidan con tu búsqueda</h2>
+                  <h2>No se han encontrado títulos que coincidan con tu búsqueda: "{search}"</h2>
                 </div>
           }
         </ul>
@@ -62,7 +62,7 @@ export const Filter = () => {
               }
               )
               : <div className={s.notFound} >
-                  <h2>No se han encontrado resultados que coincidan con tu búsqueda</h2>
+                  <h2>No se han encontrado artistas que coincidan con tu búsqueda: "{search}"</h2>
                 </div>
           }
         </ul>
@@ -86,7 +86,7 @@ export const Filter = () => {
               }
               )
               : <div className={s.notFound} >
-                  <h2>No se han encontrado resultados que coincidan con tu búsqueda</h2>
+                  <h2>No se ha encontrado información que coincida con tu búsqueda: "{search}"</h2>
                 </div>
           }
         </ul>
