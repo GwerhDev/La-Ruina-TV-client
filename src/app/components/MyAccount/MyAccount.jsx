@@ -12,7 +12,7 @@ export const MyAccount = () => {
   const dispatch = useDispatch();
   const currentUser = useSelector(state => state.currentUser);
   const { username, profilePic, role } = currentUser || null;
-  const urlHub = currentUser? 'https://hub.laruina.cl/#/account/settings/' + getUserToken() : 'https://hub.laruina.cl/';
+  const urlHub = currentUser ? 'https://hub.laruina.cl/#/account/settings/' + getUserToken() : 'https://hub.laruina.cl/';
 
   function handleClick() {
     return $d('#deleteAccount').style.display = 'flex';
@@ -23,39 +23,37 @@ export const MyAccount = () => {
   }, [dispatch]);
 
   return (
-    <div>
-      <div className={s.dashControlCont}>
-        <div className='divProfile'>
-          <div className='navFixed' />
-          <div className={s.profileFather}>
-            <div className={s.profileCont}>
-                <p>Perfil de</p>
-                  
-                <h1>{username ? username : "Usuario"}</h1>
+    <div className={s.container}>
+      <div className='nav-fixed' />
+      <div className='head-container'>
+        <div className={s.profileFather}>
+          <div className={s.profileCont}>
+            <p>Perfil de</p>
 
-                <li>
-                  <img
-                    className={s.userIcon}
-                    referrerPolicy="no-referrer"
-                    src={profilePic ? profilePic : userIcon}
-                    height='100px'
-                    alt="foto de perfil"
-                  />
-                </li>
+            <h1>{username ? username : "Usuario"}</h1>
 
-                <li>{role}</li>
-            </div>
-            <div className={s.buttons}>
-              <a href={urlHub}><button className='button1'>Editar cuenta</button></a>
-              <button className='button2' onClick={handleClick}>Eliminar cuenta</button>
-            </div>
-            <div className={s.deleteAccount} id={'deleteAccount'}>
-              <DeleteAccount />
-            </div>
+            <li>
+              <img
+                className={s.userIcon}
+                referrerPolicy="no-referrer"
+                src={profilePic ? profilePic : userIcon}
+                height='100px'
+                alt="foto de perfil"
+              />
+            </li>
+
+            <li>{role}</li>
+          </div>
+          <div className={s.buttons}>
+            <a href={urlHub}><button className='button1'>Editar cuenta</button></a>
+            <button className='button2' onClick={handleClick}>Eliminar cuenta</button>
+          </div>
+          <div className={s.deleteAccount} id={'deleteAccount'}>
+            <DeleteAccount />
           </div>
         </div>
-        <RequestProfile />
       </div>
+      <RequestProfile />
     </div>
   )
 }

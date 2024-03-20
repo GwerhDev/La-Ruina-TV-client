@@ -8,7 +8,7 @@ export const Colaborate = () => {
   BodyCss()
   return (
     <div className={s.donateCont}>
-      <div className='navFixed' />
+      <div className='nav-fixed' />
       <div className={s.donateFormat} >
         <img src={laruinaLogo} alt='laruina.cl' width='300px' className={s.laruinaLogo} /> <br/>
         DONAR A ESTE PROYECTO

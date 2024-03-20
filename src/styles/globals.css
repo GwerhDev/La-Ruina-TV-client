@@ -93,7 +93,7 @@ input {
   background-color: #000000;
 }
 
-.navFixed {
+.nav-fixed {
   position: fixed;
   top: 0px;
   right: 0px;
@@ -117,7 +117,7 @@ button:disabled {
   cursor: default;
 }
 
-.navCont {
+.nav-container {
   height: 80px;
   width: 100vw;
   position: fixed;
@@ -126,11 +126,11 @@ button:disabled {
   z-index: 99999999999;
   list-style: none;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
-.navCont:hover {
+.nav-container:hover {
   transition-duration: 1s;
   filter: drop-shadow(2px 5px 8px black);
 }
@@ -161,7 +161,7 @@ button:disabled {
   align-items: center;
 }
 
-.contCanvasMenu {
+.canvas-menu-container {
   width: 100vw;
   height: auto;
   text-align: center;
@@ -187,7 +187,7 @@ button:disabled {
   cursor: pointer;
 }
 
-.navCont li {
+.nav-container li {
   display: inline;
   text-align: center;
   color: #dfdfdfbe;
@@ -198,7 +198,7 @@ button:disabled {
   filter: drop-shadow(2px 2px 1px black);
 }
 
-.navCont li:hover {
+.nav-container li:hover {
   color: #ffffff;
   transition-duration: 1s;
 }
@@ -250,7 +250,7 @@ button:disabled {
   top: 0px;
 }
 
-.divProfile {
+.head-container {
   width: 100vw;
   min-height: 100vh;
   display: flex;
@@ -262,6 +262,8 @@ button:disabled {
   background: linear-gradient(to bottom, #ffffffcf, rgb(137, 137, 137));
   left: 0px;
   bottom: 0px;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 /* --------------------------paylist----------------- */
@@ -805,7 +807,7 @@ button:disabled {
 
 /* For extremely small screen devices (595px and below) */
 @media only screen and (max-width: 600px) {
-  .navCont {
+  .nav-container {
     display: flex;
   }
 
@@ -821,7 +823,7 @@ button:disabled {
 
 /* Small screen devices (600px and above) */
 @media only screen and (min-width: 300px) {
-  .navCont {
+  .nav-container {
     display: flex;
   }
 

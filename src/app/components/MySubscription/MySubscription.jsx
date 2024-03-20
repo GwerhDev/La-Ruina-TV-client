@@ -29,8 +29,8 @@ export const MySubscription = () => {
 
   return (
     <div className={s.subCont}>
-      <div className={s.divProfile}>
-        <div className='navFixed'/>
+      <div className='nav-fixed' />
+      <div className="head-container">
         <div className={s.checkoutFormat}>
           <div className={s.headerContainer}>
             <div className="header-container">

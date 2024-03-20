@@ -6,7 +6,7 @@ export const NavBurgerMenuTablet = () => {
         <div className="navBurgerTabletCont">
             <img 
                 className='menuIcon' 
-                onClick={()=>{$d('.contCanvasMenu').style.display='flex'}}
+                onClick={()=>{$d('.canvas-menu-container').style.display='flex'}}
                 src={menuIcon} 
                 alt="menu" 
                 height='30px' />

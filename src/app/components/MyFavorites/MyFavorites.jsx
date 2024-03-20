@@ -26,8 +26,8 @@ export const MyFavorites = () => {
 
   return (
     <div className={s.favoritesContainer}>
-      <div className={s.container}>
-        <div className='navFixed'></div>
+      <div className='nav-fixed'/>
+      <div className="head-container">
         <div className={s.divContLikes}>
           <div className={s.divHeader}>
             <div className="header-container">

@@ -215,7 +215,7 @@ const ContentUpdate = () => {
           </div>
           : <div className={s.createBody}>
             <form onSubmit={handleSubmit}>
-              <div className='navFixed' />
+              <div className='nav-fixed' />
               <div className={s.container}>
                 <h1 className={s.createTitle}>Actualizar Contenido</h1>
                 <div className={s.contTitleArtistDesc}>

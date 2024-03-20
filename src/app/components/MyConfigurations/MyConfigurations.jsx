@@ -12,9 +12,9 @@ export const MyConfigurations = () => {
   }, [dispatch]);
 
   return (
-    <div className={s.configContainer}>
-      <div className='divProfile'>
-        <div className='navFixed' />
+    <div className={s.container}>
+      <div className='nav-fixed' />
+      <div className='head-container'>
         <div className={s.divHeader}>
           <div className={s.headerInner}>
             <div className="header-container">

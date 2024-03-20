@@ -15,7 +15,7 @@ const Checkout = () => {
   BodyCss();
   return (
     <div className={s.donateCont}>
-      <div className='navFixed' ></div>
+      <div className='nav-fixed' ></div>
       <div className={s.donateFormat} >
         Plataforma de pago
         <ul className={s.ulContBtn}>

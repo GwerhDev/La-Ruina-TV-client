@@ -1,8 +1,5 @@
 import s from './Logo.module.css'
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { resetOption } from '../../../middlewares/redux/actions';
-import { reset } from '../../../functions/Reset';
 import navBack from '../../../functions/Navigator';
 import ruinaLogo from '../../../assets/images/ruina-logo.png';
 import { $d, $gId } from '../../../functions';
@@ -10,7 +7,6 @@ import { getUserToken } from '../../../middlewares/helpers';
 import { useSelector } from 'react-redux';
 
 export const Logo = () => {
-    const dispatch = useDispatch();
     const currentUser = useSelector((state) => state.currentUser);
     const [posNav, setPosNav] = useState();
     window.onscroll = function () { navBack(setPosNav, posNav) };
@@ -48,11 +44,6 @@ export const Logo = () => {
         container1.style.scale='1'
         container2.style.scale='1'
         container3.style.scale='1'
-
-        return (
-            dispatch(resetOption()),
-            reset()
-        )
     };
 
     return (

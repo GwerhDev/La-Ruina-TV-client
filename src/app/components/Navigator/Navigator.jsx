@@ -20,18 +20,20 @@ export const Navigator = () => {
     window.onscroll = function () { navBack(setPosNav, posNav) };
 
     return (
-        <div className='navCont'>
-            <section className={s.leftSection}>
-                <Logo/>
-            </section>
-            <section className={s.middleSection}>
-                <NavMenu/>
-                <NavBurgerMenuTablet/>
-            </section>
-            <section className={s.rightSection}>
-                <NavSearchBar/>
-                <NavProfileMenu/>
-            </section>
+        <div className='nav-container'>
+            <div className={s.innerNavContainer}>
+                <section className={s.leftSection}>
+                    <Logo/>
+                </section>
+                <section className={s.middleSection}>
+                    <NavMenu/>
+                    <NavBurgerMenuTablet/>
+                </section>
+                <section className={s.rightSection}>
+                    <NavSearchBar/>
+                    <NavProfileMenu/>
+                </section>
+            </div>
         </div>
     )
 }

@@ -28,66 +28,64 @@ export const RequestProfile = () => {
     };
 
     return (
-        <div className={s.divProfileMenu}>
-            <ul className={s.ulProfileMenu}>
+        <div className={s.outerContainer}>
+            <div className={s.innerContainer}>
                 <ul className={s.ulRequestProfile}>
-                    <div className={s.userRequestsContainer}>
-                        <li className={s.borderRight}>
-                            <img 
-                                src={profilePic ?? userIcon} 
-                                className={s.userIcon} id='profileIcon' alt="perfil" 
-                                onClick={() => handleOption('/profile')} 
-                            />
-                            <span id='spanProfile' className={s.spanOpt}>Perfil</span>
-                        </li>
-                        <li className={s.borderRight}>
-                            <img 
-                                src={likeIcon} 
-                                className={s.likeIcon} 
-                                id='favoritesIcon' alt="favoritos" 
-                                onClick={() => handleOption('/favorites')}
-                            />
-                            <span id='spanFavs' className={s.spanOpt}>Favs</span>
-                        </li>
-                        <li className={s.borderRight}>
-                            <img 
-                                src={configIcon} 
-                                className={s.configurationIcon} id='configurationIcon' alt="configuration" 
-                                onClick={() => handleOption('/configuration')} 
-                            />
-                            <span id='spanList' className={s.spanOpt}>Config</span>
-                        </li>
-                        <li className={s.borderRight}>
-                            <img 
-                                src={subscriptionIcon} 
-                                className={s.subscriptionIcon} id='subscriptionIcon' alt="lista"
-                                onClick={() => handleOption('/subscription')} 
-                            />
-                            <span id='spaSubs' className={s.spanOpt}>Subs</span>
-                        </li>
-                        {
-                            role === 'admin' 
-                            ?   <li className={s.borderRight}>
-                                    <img 
-                                        src={adminIcon} 
-                                        className={s.adminIcon} id='dashboardIcon' alt="lista" 
-                                        onClick={() => handleOption('/dashboard')} 
-                                    />
-                                    <span id='spanAdmin' className={s.spanOpt}>Dash</span>
-                                </li>
-                            :   null
-                        }
-                        <li>
-                            <img
-                                src={logoutIcon}
-                                className={s.logoutIcon}
-                                alt="salir"
-                                onClick={() => logout(history)}/>
-                                <span id='spanExit' className={s.spanOpt}>Salir</span>
-                        </li>
-                    </div>
+                    <li>
+                        <img
+                            src={profilePic ?? userIcon}
+                            className={s.userIcon} id='profileIcon' alt="perfil"
+                            onClick={() => handleOption('/profile')}
+                        />
+                        <span id='spanProfile' className={s.spanOpt}>Perfil</span>
+                    </li>
+                    <li>
+                        <img
+                            src={likeIcon}
+                            className={s.likeIcon}
+                            id='favoritesIcon' alt="favoritos"
+                            onClick={() => handleOption('/favorites')}
+                        />
+                        <span id='spanFavs' className={s.spanOpt}>Favs</span>
+                    </li>
+                    <li>
+                        <img
+                            src={configIcon}
+                            className={s.configurationIcon} id='configurationIcon' alt="configuration"
+                            onClick={() => handleOption('/configuration')}
+                        />
+                        <span id='spanList' className={s.spanOpt}>Config</span>
+                    </li>
+                    <li>
+                        <img
+                            src={subscriptionIcon}
+                            className={s.subscriptionIcon} id='subscriptionIcon' alt="lista"
+                            onClick={() => handleOption('/subscription')}
+                        />
+                        <span id='spaSubs' className={s.spanOpt}>Subs</span>
+                    </li>
+                    {
+                        role === 'admin'
+                            ? <li>
+                                <img
+                                    src={adminIcon}
+                                    className={s.adminIcon} id='dashboardIcon' alt="lista"
+                                    onClick={() => handleOption('/dashboard')}
+                                />
+                                <span id='spanAdmin' className={s.spanOpt}>Dash</span>
+                            </li>
+                            : null
+                    }
+                    <li>
+                        <img
+                            src={logoutIcon}
+                            className={s.logoutIcon}
+                            alt="salir"
+                            onClick={() => logout(history)} />
+                        <span id='spanExit' className={s.spanOpt}>Salir</span>
+                    </li>
                 </ul>
-            </ul>
+            </div>
         </div>
     )
 }

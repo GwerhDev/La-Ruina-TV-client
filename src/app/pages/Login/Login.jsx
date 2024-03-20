@@ -17,7 +17,7 @@ const Enter = () => {
 
   return (
     <div className={s.enterBody}>
-      <div className='navFixed'/>
+      <div className='nav-fixed'/>
       <div className={s.welcomeCont} id='welcomeCont'>
         <h1>ENTRÁ BOBO, VENÍ PARA ACÁ</h1>
         <LoginInner/>

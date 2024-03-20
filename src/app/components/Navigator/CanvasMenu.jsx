@@ -22,7 +22,7 @@ export const CanvasMenu = () => {
     window.onscroll = function () { navBack(setPosNav, posNav) };
     CanvasMenuFunction();
     return (
-        <div className="contCanvasMenu">
+        <div className="canvas-menu-container">
             <div className={s.contMenu}>
                 <ul className={s.navBurgerMenu}>
                     <li onClick={handleClick}>

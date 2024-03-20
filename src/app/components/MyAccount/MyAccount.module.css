@@ -1,4 +1,4 @@
-.dashControlCont {
+.container {
     height: 100vh;
     display: flex;
     overflow: hidden;
@@ -10,18 +10,9 @@
     width: 100%;
     height: 100vh;
     display: flex;
-    overflow-y: auto;
-    flex-direction: column;
     align-items: center;
+    flex-direction: column;
     justify-content: flex-start;
-}
-
-.userIcon {
-    border-radius: 100%;
-    border: solid;
-    border-width: 2px;
-    border-color: white;
-    filter: drop-shadow(0px 0px 4px black)
 }
 
 .profileCont {
@@ -38,10 +29,17 @@
     align-items: center;
     text-align: center;
     list-style: none;
-    background-color: aqua;
     gap: 8px;
     padding-top: 1rem;
     padding-bottom: 1rem;
+}
+
+.userIcon {
+    border-radius: 100%;
+    border: solid;
+    border-width: 2px;
+    border-color: white;
+    filter: drop-shadow(0px 0px 4px black)
 }
 
 .profileCont p {
