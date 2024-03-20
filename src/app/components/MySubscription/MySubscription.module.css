@@ -3,33 +3,14 @@
     align-items: flex-start;
     justify-content: flex-start;
     padding: 0;
-    height: 100vh;
-    overflow: hidden;
-}
-
-.head-container {
-    margin: 0;
-    padding: 0;
-    width: 100vw;
-    min-height: 100vh;
-    display: flex;
-    text-align: center;
-    align-items: flex-start;
-    justify-content: center;
-    flex-direction: row-reverse;
-    background: linear-gradient(to bottom, #ffffffcf, rgb(137, 137, 137));
-    overflow-y: auto;
 }
 
 .checkoutFormat {
     width: 100%;
     max-width: 1200px;
-    height: 100%;
-    min-height: 100vh;
     display: flex;
     margin-top: -10px;
     gap: 1rem;
-
 }
 
 .headerContainer {
@@ -62,9 +43,7 @@
 
     .checkoutFormat {
         position: relative;
-        height: 100vh;
         width: 100vw;
-        bottom: -100px;
         margin-bottom: 100px;
         display: flex;
         flex-direction: column;

@@ -2,9 +2,10 @@
   margin: 0;
   padding: 0;
   width: 100%;
+  max-width: 1200px;
   gap: .5rem;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
 }
 
 .crearProducto, 
@@ -36,8 +37,5 @@
 
 
 @media only screen and (max-width: 900px) {
-  .reqContainer {
-    flex-direction: column;
-    padding-bottom: 100px;
-  }
+
 }
