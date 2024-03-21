@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import s from './EnterButton.module.css';
-import userIcon from '../../../assets/images/user-icon.png';
+import userIcon from '../../../assets/images/svg/profile-icon.svg';
 import { useHistory } from 'react-router-dom';
 import { setOption } from '../../../middlewares/redux/actions';
 
@@ -17,7 +17,7 @@ export const EnterBtn = () => {
 
   return (
     <div className={s.enterBtn} onClick={onClickValue}>
-      <img className={s.userIconEnter} src={userIcon} alt='userIcon' width='15px'/>
+      <img className={s.userIconEnter} src={userIcon} alt='userIcon' width='20px'/>
       Ingresar
     </div>
   )
