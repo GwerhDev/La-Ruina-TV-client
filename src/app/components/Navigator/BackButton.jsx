@@ -4,6 +4,7 @@ import React from 'react';
 import backIcon from '../../../assets/images/ruinatv-icon-play-b.png';
 import { useDispatch } from 'react-redux';
 import { resetOption } from '../../../middlewares/redux/actions';
+import { toTop } from '../../../functions/toTop';
 
 export const BackButton = (props) => {
     const dispatch = useDispatch();
@@ -11,6 +12,7 @@ export const BackButton = (props) => {
     const { backRoute } = props || null;
 
     function handleButton() {
+        toTop();
         dispatch(resetOption());
         history.push(backRoute || '');
     };

@@ -11,6 +11,7 @@ import subscriptionIcon from '../../../assets/images/subscription-icon.png';
 import { OptionProfile } from '../../../functions';
 import { logout } from '../../../functions/Logout';
 import { resetOption } from '../../../middlewares/redux/actions';
+import { toTop } from '../../../functions/toTop';
 
 export const RequestProfile = () => {
     const dispatch = useDispatch();
@@ -23,6 +24,7 @@ export const RequestProfile = () => {
     }, [option]);
 
     function handleOption(e) {
+        toTop();
         history.push(e);
         dispatch(resetOption())
     };

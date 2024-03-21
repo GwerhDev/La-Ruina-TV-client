@@ -4,19 +4,18 @@ import { Link } from 'react-router-dom';
 import { resetOption } from '../../../middlewares/redux/actions';
 import { reset } from '../../../functions/Reset';
 import navBack from '../../../functions/Navigator';
+import { toTop } from '../../../functions/toTop';
 
 export const NavMenu = () => {
     const dispatch = useDispatch();
     const [posNav, setPosNav] = useState();
-    
-    window.onscroll = function() {navBack(setPosNav, posNav)};
+
+    window.onscroll = function () { navBack(setPosNav, posNav) };
 
     function handleClick() {
-        window.scrollTo(0, 0)
-        return (
-            dispatch(resetOption()),
-            reset()
-        )
+        dispatch(resetOption());
+        toTop();
+        reset();
     };
 
     return (

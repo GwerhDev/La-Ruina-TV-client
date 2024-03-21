@@ -11,6 +11,7 @@ import logoutIcon from '../../../assets/images/logout-icon.png';
 import configIcon from '../../../assets/images/config-icon.png';
 import subscriptionIcon from '../../../assets/images/subscription-icon.png';
 import { logout } from '../../../functions/Logout';
+import { toTop } from '../../../functions/toTop';
 
 export const ProfileMenu = () => {
   const currentUser = useSelector(state => state.currentUser);
@@ -19,10 +20,9 @@ export const ProfileMenu = () => {
   const { profilePic, username, role } = currentUser;
 
   function onClickValue(e) {
-    return (
-      dispatch(setOption(e.target.value || e)),
-      history.push("/" + e.target.value || e)
-    )
+    toTop();
+    dispatch(setOption(e.target.value || e));
+    history.push("/" + e.target.value || e);
   };
 
   return (
@@ -30,7 +30,7 @@ export const ProfileMenu = () => {
       <ul className={s.profileBtnCont}>
         <li className={s.profileBtnMenu} onClick={() => profileMenuCss('enter')} onMouseLeave={() => profileMenuCss('leave')}>
           <span className={s.buttonProfile}>
-            <img className={s.userIcon} referrerPolicy="no-referrer" src={profilePic ? profilePic : userIcon} alt='userIcon' width='25px'/>
+            <img className={s.userIcon} referrerPolicy="no-referrer" src={profilePic ? profilePic : userIcon} alt='userIcon' width='25px' />
             <p>Hola, <span>{username ? username.substring(0, 5) + "..." : "Usuario"}</span></p>
             <img className={s.btnMenuTv} src={btnMenuTv} alt='btnMenuTv' width='8px' />
           </span>
@@ -49,8 +49,8 @@ export const ProfileMenu = () => {
                 src={profilePic ? profilePic : userIcon}
                 onClick={(e) => e.target.value = 'profile'}
                 alt=""
-              /> 
-              <br/>
+              />
+              <br />
               PERFIL
             </button>
           </li>
@@ -100,8 +100,8 @@ export const ProfileMenu = () => {
             </button>
           </li>
           {
-            role === 'admin' 
-            ? <li>
+            role === 'admin'
+              ? <li>
                 <button
                   id='optionProfileBtn5'
                   className={s.optionProfileBtn}
@@ -116,10 +116,10 @@ export const ProfileMenu = () => {
                   DASHBOARD
                 </button>
               </li>
-            : null
+              : null
           }
           <li className={s.ulSalirBtn}>
-            <button 
+            <button
               id='optionProfileBtn6'
               className={s.optionProfileBtn}
               onClick={() => logout(history)}
@@ -128,7 +128,7 @@ export const ProfileMenu = () => {
                 className={s.imgIcon}
                 src={logoutIcon}
                 alt="" />
-                <br/>
+              <br />
               SALIR
             </button>
           </li>
