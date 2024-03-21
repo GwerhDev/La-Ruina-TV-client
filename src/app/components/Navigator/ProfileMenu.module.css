@@ -47,6 +47,12 @@
     rotate: 90deg;
 }
 
+.profilePic {
+    border-radius: 100%;
+	border: solid;
+	border-width: 2px;
+}
+
 .userIcon {
     opacity: .8;
     filter: drop-shadow(0px 0px 4px black);

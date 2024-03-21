@@ -29,7 +29,13 @@ export const ProfileMenu = () => {
     <div className={s.profileCont}>
       <div className={s.profileBtnCont}>
         <div className={s.profileBtnMenu} id='profile-button' onClick={() => profileMenuCss('enter')} onMouseLeave={() => profileMenuCss('leave')}>
-          <img className={s.userIcon} referrerPolicy="no-referrer" src={profilePic ? profilePic : userIcon} alt='userIcon' width='25px' />
+          {
+            profilePic
+            ?
+            <img className={s.profilePic} referrerPolicy="no-referrer" src={profilePic} alt='userIcon' width='25px' />
+            :
+            <img className={s.userIcon} referrerPolicy="no-referrer" src={userIcon} alt='userIcon' width='25px' />
+          }
           <p>Hola, <span>{username ? username.substring(0, 5) + "..." : "Usuario"}</span></p>
           <img className={s.btnMenuTv} src={btnMenuTv} alt='menú' width='8px' />
         </div>
