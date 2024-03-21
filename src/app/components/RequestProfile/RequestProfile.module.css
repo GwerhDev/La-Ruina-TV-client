@@ -125,7 +125,8 @@
 .userIcon:hover,
 .configurationIcon:hover,
 .subscriptionIcon:hover,
-.notificationIcon:hover {
+.notificationIcon:hover,
+.profilePic:hover {
 	cursor: pointer;
 	filter: grayscale(.2);
 	opacity: 1;
