@@ -101,44 +101,49 @@ export const Viewer = () => {
                                                 </button>
                                             }
                                         </ul>
-                                        {
-                                            currentUser
-                                                ? (<button
-                                                    className='buttonVer'
-                                                    onClick={() => {
-                                                        return (
-                                                            dispatch(subscriberYoutubeVerification(currentUser?.email)),
-                                                            (subscriber ? $d('#canvasYtSubBtn').style.display = 'none' : $d('#canvasYtSubBtn').style.display = 'flex'),
-                                                            $d('.playerBackGroundEffect').style.opacity = '1',
-                                                            $d('.playerLi').style.display = 'block',
-                                                            $d('.playUl').style.opacity = '1',
-                                                            $d('#visor-post-info').style.display = "none",
-                                                            $d('#player-section').style.display = "flex"
-                                                        )
-                                                    }}
-                                                    onMouseEnter={() => {
-                                                        $d('.visorButtonPlay').src = playIconb
-                                                    }}
-                                                    onMouseLeave={() => {
-                                                        $d('.visorButtonPlay').src = playIconn
-                                                    }}>
-                                                    <img className='visorButtonPlay' src={playIconn} alt='visorbtn' />
-                                                    Ver ahora
-                                                </button>)
-                                                : (<button
-                                                    className='buttonVer'
-                                                    id='login'
-                                                    onClick={(e) => {
-                                                        return (
-                                                            onClickValue(e),
-                                                            $d('#slideCanvasCont').style.overflowY = "hidden"
-                                                        )
-                                                    }}>
-                                                    <img className='visorButtonPlay' src={userIcon} alt='visorbtn' />
-                                                    Ingresar
-                                                </button>)
-                                        }
-                                        <Link to='/browser'><button className='buttonVolver' onClick={handleBackButton}>Volver al inicio</button></Link>
+                                        <div className={s.buttonsContainer}>
+                                            {
+                                                currentUser
+                                                    ?
+                                                    <button
+                                                        className='buttonVer'
+                                                        onClick={() => {
+                                                            return (
+                                                                dispatch(subscriberYoutubeVerification(currentUser?.email)),
+                                                                (subscriber ? $d('#canvasYtSubBtn').style.display = 'none' : $d('#canvasYtSubBtn').style.display = 'flex'),
+                                                                $d('.playerBackGroundEffect').style.opacity = '1',
+                                                                $d('.playerLi').style.display = 'block',
+                                                                $d('.playUl').style.opacity = '1',
+                                                                $d('#visor-post-info').style.display = "none",
+                                                                $d('#player-section').style.display = "flex"
+                                                            )
+                                                        }}
+                                                        onMouseEnter={() => {
+                                                            $d('.visorButtonPlay').src = playIconb
+                                                        }}
+                                                        onMouseLeave={() => {
+                                                            $d('.visorButtonPlay').src = playIconn
+                                                        }}>
+                                                        <img className='visorButtonPlay' src={playIconn} alt='visorbtn' />
+                                                        Ver ahora
+                                                    </button>
+                                                    :
+                                                    <button
+                                                        className='buttonVer'
+                                                        id='login'
+                                                        onClick={(e) => {
+                                                            return (
+                                                                onClickValue(e),
+                                                                $d('#slideCanvasCont').style.overflowY = "hidden"
+                                                            )
+                                                        }}>
+                                                        <img className='visorButtonPlay' src={userIcon} alt='visorbtn' />
+                                                        Ingresar
+                                                    </button>
+                                            }
+                                            <Link to='/browser'><button className='buttonVolver' onClick={handleBackButton}>Volver al inicio</button></Link>
+
+                                        </div>
                                     </div>
                                 </div>
                             </section>

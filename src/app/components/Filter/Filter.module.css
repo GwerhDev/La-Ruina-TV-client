@@ -1,12 +1,13 @@
 .searchCont {
     margin: 0;
     padding: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    min-height: 100vh;
     min-height: 100vh;
     background: linear-gradient(to bottom, #ffffffcf, rgb(137, 137, 137));
     text-align: center;
     padding-top: 90px;
+    padding-bottom: 100px;
 }
 
 .notFound {
