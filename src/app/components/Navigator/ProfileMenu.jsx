@@ -26,15 +26,13 @@ export const ProfileMenu = () => {
   };
 
   return (
-    <div className={s.profileCont} id='profileCont'>
-      <ul className={s.profileBtnCont}>
-        <li className={s.profileBtnMenu} onClick={() => profileMenuCss('enter')} onMouseLeave={() => profileMenuCss('leave')}>
-          <span className={s.buttonProfile}>
-            <img className={s.userIcon} referrerPolicy="no-referrer" src={profilePic ? profilePic : userIcon} alt='userIcon' width='25px' />
-            <p>Hola, <span>{username ? username.substring(0, 5) + "..." : "Usuario"}</span></p>
-            <img className={s.btnMenuTv} src={btnMenuTv} alt='btnMenuTv' width='8px' />
-          </span>
-        </li>
+    <div className={s.profileCont}>
+      <div className={s.profileBtnCont}>
+        <div className={s.profileBtnMenu} id='profile-button' onClick={() => profileMenuCss('enter')} onMouseLeave={() => profileMenuCss('leave')}>
+          <img className={s.userIcon} referrerPolicy="no-referrer" src={profilePic ? profilePic : userIcon} alt='userIcon' width='25px' />
+          <p>Hola, <span>{username ? username.substring(0, 5) + "..." : "Usuario"}</span></p>
+          <img className={s.btnMenuTv} src={btnMenuTv} alt='btnMenuTv' width='8px' />
+        </div>
         <ul className={s.ulProfileOptions} id='ul-options-profile-menu'>
           <li className={s.liProfileMenuDisplay}>
             <button
@@ -50,7 +48,6 @@ export const ProfileMenu = () => {
                 onClick={(e) => e.target.value = 'profile'}
                 alt=""
               />
-              <br />
               PERFIL
             </button>
           </li>
@@ -65,11 +62,11 @@ export const ProfileMenu = () => {
                 className={s.imgIcon}
                 onClick={(e) => e.target.value = 'favorites'}
                 src={likeIcon}
-                alt="" /><br></br>
+                alt="" />
               MIS FAVORITOS
             </button>
           </li>
-          <li>
+          <li className={s.liProfileMenuDisplay}>
             <button
               id='optionProfileBtn3'
               className={s.optionProfileBtn}
@@ -80,11 +77,11 @@ export const ProfileMenu = () => {
                 className={s.imgIcon}
                 onClick={(e) => e.target.value = 'configuration'}
                 src={configIcon}
-                alt="" /><br></br>
+                alt="" />
               CONFIGURACIÓN
             </button>
           </li>
-          <li>
+          <li className={s.liProfileMenuDisplay}>
             <button
               id='optionProfileBtn4'
               className={s.optionProfileBtn}
@@ -95,13 +92,14 @@ export const ProfileMenu = () => {
                 className={s.imgIcon}
                 onClick={(e) => e.target.value = 'subscription'}
                 src={subscriptionIcon}
-                alt="" /><br></br>
+                alt="" />
               SUSCRIPCIÓN
             </button>
           </li>
           {
             role === 'admin'
-              ? <li>
+              ?
+              <li className={s.liProfileMenuDisplay}>
                 <button
                   id='optionProfileBtn5'
                   className={s.optionProfileBtn}
@@ -112,13 +110,13 @@ export const ProfileMenu = () => {
                     className={s.imgIcon}
                     onClick={(e) => e.target.value = 'dashboard'}
                     src={adminIcon}
-                    alt="" /><br></br>
+                    alt="" />
                   DASHBOARD
                 </button>
               </li>
               : null
           }
-          <li className={s.ulSalirBtn}>
+          <li className={s.liProfileMenuDisplay}>
             <button
               id='optionProfileBtn6'
               className={s.optionProfileBtn}
@@ -128,12 +126,11 @@ export const ProfileMenu = () => {
                 className={s.imgIcon}
                 src={logoutIcon}
                 alt="" />
-              <br />
               SALIR
             </button>
           </li>
         </ul>
-      </ul>
+      </div>
     </div>
   )
 }

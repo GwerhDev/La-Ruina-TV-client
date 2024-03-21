@@ -19,7 +19,7 @@ export default function profileMenuCss(e){
                 !container6?.contains(e.target) &&
                 !containerUl?.contains(e.target))
             {   
-                $d(`#profileCont`).style.backgroundColor='transparent'
+                $d(`#profile-button`).style.backgroundColor='transparent'
                 $d(`#optionProfileBtn0`).style.transform='translateX(200px)'
                 $d(`#optionProfileBtn1`).style.transform='translateX(200px)'
                 $d(`#optionProfileBtn2`).style.transform='translateX(200px)'
@@ -39,7 +39,7 @@ export default function profileMenuCss(e){
             }
         })
     if(e==='enter'){
-        $d(`#profileCont`).style.backgroundColor='#171717'
+        $d(`#profile-button`).style.backgroundColor='#171717'
         $d(`#optionProfileBtn0`).style.transform='translateX(0)'
         $d(`#optionProfileBtn1`).style.transform='translateX(0)'
         $d(`#optionProfileBtn2`).style.transform='translateX(0)'
