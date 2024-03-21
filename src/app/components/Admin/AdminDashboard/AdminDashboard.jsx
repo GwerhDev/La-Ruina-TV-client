@@ -1,4 +1,3 @@
-import s from './AdminDashboard.module.css';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Requests } from '../Requests/Requests';
@@ -13,20 +12,16 @@ export const AdminDashboard = () => {
   }, [dispatch]);
 
   return (
-    <div className={s.container}>
+    <main className='main-container'>
       <div className='nav-fixed' />
-      <div className='head-container'>
-        <div className={s.divHeader}>
-          <div className={s.headerInner}>
-            <div className='header-container'>
-              <h1>Bienvenido a tu dashboard</h1>
-              <h3>¿Qué quieres hacer?</h3>
-            </div>
-          </div>
-          <Requests />
+      <div className='section-container'>
+        <div className='header-container'>
+          <h1>Bienvenido a tu dashboard</h1>
+          <h3>¿Qué quieres hacer?</h3>
         </div>
+        <Requests />
       </div>
       <RequestProfile />
-    </div>
+    </main>
   )
 }

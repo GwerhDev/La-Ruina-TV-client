@@ -25,55 +25,54 @@ export const MyFavorites = () => {
   }, [dispatch, userId]);
 
   return (
-    <div className={s.favoritesContainer}>
-      <div className='nav-fixed'/>
-      <div className="head-container">
-        <div className={s.divContLikes}>
-          <div className={s.divHeader}>
-            <div className="header-container">
-              {favorites?.length
-                ? <>
-                  <h1>Tus favoritos</h1>
-                  <h3>Encuentra tu contenido favorito aquí</h3>
-                </>
-                : <>
-                  <h1>Nada por aquí...</h1>
-                  <h3>¡Agrega contenido a tus favoritos!</h3>
-                </>
-              }
-            </div>
-            <ul className={s.contLikes}>
-              {
-                favorites?.map((e, index) => {
-                  return (
-                    <li className={s.liLikes} key={index}>
-                      <div className={s.itemContainer}>
-                        <Link to={`/view/v=${e.id}`} className={s.imageContainer}>
-                          <div
-                            className={s.imageContainer}
-                            style={{ backgroundImage: `url(${RenderImageGwerhdinary(e.imageSlider)})` }}
-                            onClick={handleClick}
-                          >
-                            <div className={s.divH3}>
-                              <h3>
-                                {e.artist}
-                              </h3>
-                              <h2>
-                                {e.title}
-                              </h2>
-                            </div>
-                          </div>
-                        </Link>
-                      </div>
-                    </li>
-                  )
-                })
-              }
-            </ul>
-          </div>
+    <main className='main-container'>
+      <div className='nav-fixed' />
+      <div className='section-container'>
+        <div className='header-container'>
+          {
+            favorites?.length
+            ? 
+            <>
+              <h1>Tus favoritos</h1>
+              <h3>Encuentra tu contenido favorito aquí</h3>
+            </>
+            : 
+            <>
+              <h1>Nada por aquí...</h1>
+              <h3>¡Agrega contenido a tus favoritos!</h3>
+            </>
+          }
         </div>
+        <ul className={s.contLikes}>
+          {
+            favorites?.map((e, index) => {
+              return (
+                <li className={s.liLikes} key={index}>
+                  <div className={s.itemContainer}>
+                    <Link to={`/view/v=${e.id}`} className={s.imageContainer}>
+                      <div
+                        className={s.imageContainer}
+                        style={{ backgroundImage: `url(${RenderImageGwerhdinary(e.imageSlider)})` }}
+                        onClick={handleClick}
+                      >
+                        <div className={s.divH3}>
+                          <h3>
+                            {e.artist}
+                          </h3>
+                          <h2>
+                            {e.title}
+                          </h2>
+                        </div>
+                      </div>
+                    </Link>
+                  </div>
+                </li>
+              )
+            })
+          }
+        </ul>
       </div>
       <RequestProfile />
-    </div>
+    </main>
   )
 }

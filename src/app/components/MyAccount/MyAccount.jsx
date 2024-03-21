@@ -23,34 +23,31 @@ export const MyAccount = () => {
   }, [dispatch]);
 
   return (
-    <div className={s.container}>
+    <div className='main-container'>
       <div className='nav-fixed' />
-      <div className='head-container'>
-        <div className={s.profileFather}>
-          <div className={s.profileCont}>
-            <p>Perfil de</p>
+      <div className='section-container'>
+        <div className='header-container'>
+          <p>Perfil de</p>
 
-            <h1>{username ? username : "Usuario"}</h1>
+          <h1>{username ? username : "Usuario"}</h1>
 
-            <li>
-              <img
-                className={s.userIcon}
-                referrerPolicy="no-referrer"
-                src={profilePic ? profilePic : userIcon}
-                height='100px'
-                alt="foto de perfil"
-              />
-            </li>
-
-            <li>{role}</li>
-          </div>
-          <div className={s.buttons}>
-            <a href={urlHub}><button className='button1'>Editar cuenta</button></a>
-            <button className='button2' onClick={handleClick}>Eliminar cuenta</button>
-          </div>
-          <div className={s.deleteAccount} id={'deleteAccount'}>
-            <DeleteAccount />
-          </div>
+          <li>
+            <img
+              className={s.userIcon}
+              referrerPolicy="no-referrer"
+              src={profilePic ? profilePic : userIcon}
+              height='100px'
+              alt="foto de perfil"
+            />
+          </li>
+          <li>{role}</li>
+        </div>
+        <div className={s.buttons}>
+          <a href={urlHub}><button className='button1'>Editar cuenta</button></a>
+          <button className='button2' onClick={handleClick}>Eliminar cuenta</button>
+        </div>
+        <div className={s.deleteAccount} id={'deleteAccount'}>
+          <DeleteAccount />
         </div>
       </div>
       <RequestProfile />

@@ -1,124 +1,34 @@
-.subCont {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
+.ulCheck {
+    margin: 0;
     padding: 0;
-}
-
-.checkoutFormat {
     width: 100%;
-    max-width: 2000px;
     display: flex;
-    margin-top: -10px;
     gap: 1rem;
 }
 
-.headerContainer {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.ulCheck {
-    width: 100%;
+.liCheck {
     margin: 0;
     padding: 0;
-    margin-bottom: 110px;
-}
-
-
-@media only screen and (max-width: 800px) {
-    .title {
-        margin-top: 90px;
-    }
-
-    .ulCheck {
-        display: flex;
-        list-style: none;
-        text-align: center;
-        justify-content: center;
-        flex-direction: column;
-        margin-top: 0px;
-    }
-
-    .checkoutFormat {
-        position: relative;
-        width: 100vw;
-        margin-bottom: 100px;
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-    }
-
-    .subCont {
-        width: 100vw;
-        height: 100vh;
-        text-align: center;
-    }
-
-    .divCheckCont {
-        margin-bottom: 200px;
-    }
-
-    .liCheck {
-        margin-bottom: -150px;
-    }
-
-}
-
-@media only screen and (min-width: 800px) {
-    .checkoutFormat {
-        position: relative;
-        top: 100px;
-        margin-bottom: 100px;
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-    }
-
-    .ulCheck {
-        display: flex;
-        flex-direction: row;
-        list-style: none;
-        text-align: center;
-        justify-content: center;
-    }
-
-    .title {
-        margin-left: 40px;
-    }
-}
-
-.liCheck {
-    list-style: none;
-    text-align: center;
     width: 100%;
     display: flex;
+    list-style: none;
+    text-align: center;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .divCheckCont {
-    list-style: none;
-    width: 300px;
+    width: 100%;
     height: 400px;
-    background: linear-gradient(to bottom, #ffffff, rgb(197, 197, 197));
-    margin-right: 20px;
-    margin-left: 20px;
+    min-width: 300px;
     border-radius: 15px;
-    position: relative;
-    text-align: center;
     display: flex;
+    list-style: none;
+    text-align: center;
     flex-direction: row;
     justify-content: center;
     filter: drop-shadow(0px 0px 3px black);
-}
-
-.divCheckCont>h2 {
-    margin-top: 15px;
-    position: absolute;
+    background: linear-gradient(to bottom, #ffffff, rgb(197, 197, 197));
 }
 
 .divDescription {
@@ -180,4 +90,10 @@
     height: 40px;
     position: absolute;
     margin-top: 50px;
+}
+
+@media only screen and (max-width: 800px) {
+    .ulCheck {
+        flex-direction: column;
+    }
 }

@@ -1,4 +1,3 @@
-import s from './MyConfigurations.module.css';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { RequestProfile } from '../RequestProfile/RequestProfile';
@@ -12,19 +11,15 @@ export const MyConfigurations = () => {
   }, [dispatch]);
 
   return (
-    <div className={s.container}>
+    <main className='main-container'>
       <div className='nav-fixed' />
-      <div className='head-container'>
-        <div className={s.divHeader}>
-          <div className={s.headerInner}>
-            <div className="header-container">
-              <h1>Configuraciones</h1>
-              <h3>Edita las preferencias de tu aplicación</h3>
-            </div>
-          </div>
+      <div className='section-container'>
+        <div className='header-container'>
+          <h1>Configuraciones</h1>
+          <h3>Edita las preferencias de tu aplicación</h3>
         </div>
       </div>
       <RequestProfile />
-    </div>
+    </main>
   )
 }
