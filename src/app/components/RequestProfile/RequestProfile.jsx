@@ -2,12 +2,12 @@ import s from './RequestProfile.module.css';
 import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import userIcon from '../../../assets/images/user-icon.png';
-import likeIcon from '../../../assets/images/like-icon.png';
-import configIcon from '../../../assets/images/config-icon.png';
-import adminIcon from '../../../assets/images/admin-icon.png';
-import logoutIcon from '../../../assets/images/logout-icon.png';
-import subscriptionIcon from '../../../assets/images/subscription-icon.png';
+import userIcon from '../../../assets/images/svg/profile-icon.svg';
+import likeIcon from '../../../assets/images/svg/like-icon.svg';
+import configIcon from '../../../assets/images/svg/settings-icon.svg';
+import adminIcon from '../../../assets/images/svg/admin-icon.svg';
+import logoutIcon from '../../../assets/images/svg/logout-icon.svg';
+import subscriptionIcon from '../../../assets/images/svg/billing-icon.svg';
 import { OptionProfile } from '../../../functions';
 import { logout } from '../../../functions/Logout';
 import { resetOption } from '../../../middlewares/redux/actions';
@@ -34,11 +34,21 @@ export const RequestProfile = () => {
             <div className={s.innerContainer}>
                 <ul className={s.ulRequestProfile}>
                     <li>
-                        <img
-                            src={profilePic ?? userIcon}
-                            className={s.userIcon} id='profileIcon' alt="perfil"
-                            onClick={() => handleOption('/profile')}
-                        />
+                        {
+                            profilePic
+                                ?
+                                <img
+                                    src={profilePic}
+                                    className={s.profilePic} id='profileIcon' alt="perfil"
+                                    onClick={() => handleOption('/profile')}
+                                />
+                                :
+                                <img
+                                    src={userIcon}
+                                    className={s.userIcon} id='profileIcon' alt="perfil"
+                                    onClick={() => handleOption('/profile')}
+                                />
+                        }
                     </li>
                     <li>
                         <img

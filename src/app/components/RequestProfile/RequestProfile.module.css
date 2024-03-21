@@ -26,7 +26,7 @@
 
 .ulRequestProfile {
 	margin: 0;
-	padding: 0;
+	padding: 2rem;
 	padding-top: .5rem;
 	padding-bottom: .5rem;
 	text-decoration: none;
@@ -73,14 +73,15 @@
 .likeIcon,
 .listIcon,
 .userIcon,
-.configurationIcon {
+.configurationIcon,
+.profilePic {
 	width: 30px;
 	filter: grayscale(1);
 	transition-duration: 1s;
 	opacity: .9;
 }
 
-.userIcon {
+.profilePic {
 	border-radius: 100%;
 	border: solid;
 	border-width: 2px;

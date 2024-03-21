@@ -47,13 +47,11 @@ export const SliderCard = ({ id, imageSlider, title, keyID }) => {
           />
           <div className={s.sliderInfoCanvas} onClick={handleRedirect}>
             <div className={s.ulTitlesItems}>
-              <div style={{ display: 'flex', alignItems: 'center', margin: '5px' }}>
                 <img
                   className={s.sliderItemIconPlayN}
                   src={playIconN}
                   alt="play" />
                 <p style={{ color: 'black' }}>{title}</p>
-              </div>
               {
                 currentUser && favorites?.filter(fav => fav.id === id).length
                   ? <FavIcon urlID={id} color={'red'} style={{ marginTop: '-10px' }} />
@@ -63,7 +61,7 @@ export const SliderCard = ({ id, imageSlider, title, keyID }) => {
           </div>
           {
             currentUser?.role === 'admin' &&
-            <>
+            <div className={s.editionButtons} onClick={handleRedirect}>
               <ul className={s.adminRequest}>
                 <li className={s.adminBtn}>
                   <img src={editIcon} className={s.editImg} onClick={handleEditMedia} alt='edit' width='15px' />
@@ -75,7 +73,7 @@ export const SliderCard = ({ id, imageSlider, title, keyID }) => {
               <div className={s.deleteCanvasContainer} onMouseEnter={() => opacityCanvas(1)} onMouseLeave={() => opacityCanvas(0)}>
                 <DeleteCanvas id={id} keyId={keyID} deleteFunction={deleteMedia} />
               </div>
-            </>
+            </div>
           }
         </div>
       }

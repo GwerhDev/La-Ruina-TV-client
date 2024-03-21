@@ -4,12 +4,12 @@ import { setOption } from '../../../middlewares/redux/actions';
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import btnMenuTv from '../../../assets/images/ruinatv-icon-play-b.png';
-import likeIcon from '../../../assets/images/like-icon.png';
-import userIcon from '../../../assets/images/user-icon.png';
-import adminIcon from '../../../assets/images/admin-icon.png';
-import logoutIcon from '../../../assets/images/logout-icon.png';
-import configIcon from '../../../assets/images/config-icon.png';
-import subscriptionIcon from '../../../assets/images/subscription-icon.png';
+import likeIcon from '../../../assets/images/svg/like-icon.svg';
+import userIcon from '../../../assets/images/svg/profile-icon.svg';
+import configIcon from '../../../assets/images/svg/settings-icon.svg';
+import adminIcon from '../../../assets/images/svg/admin-icon.svg';
+import logoutIcon from '../../../assets/images/svg/logout-icon.svg';
+import subscriptionIcon from '../../../assets/images/svg/billing-icon.svg';
 import { logout } from '../../../functions/Logout';
 import { toTop } from '../../../functions/toTop';
 
@@ -31,7 +31,7 @@ export const ProfileMenu = () => {
         <div className={s.profileBtnMenu} id='profile-button' onClick={() => profileMenuCss('enter')} onMouseLeave={() => profileMenuCss('leave')}>
           <img className={s.userIcon} referrerPolicy="no-referrer" src={profilePic ? profilePic : userIcon} alt='userIcon' width='25px' />
           <p>Hola, <span>{username ? username.substring(0, 5) + "..." : "Usuario"}</span></p>
-          <img className={s.btnMenuTv} src={btnMenuTv} alt='btnMenuTv' width='8px' />
+          <img className={s.btnMenuTv} src={btnMenuTv} alt='menú' width='8px' />
         </div>
         <ul className={s.ulProfileOptions} id='ul-options-profile-menu'>
           <li className={s.liProfileMenuDisplay}>

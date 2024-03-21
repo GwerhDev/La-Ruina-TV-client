@@ -9,13 +9,19 @@
 .leftSection,
 .rightSection {
   width: 200px;
+  height: 80px;
   display: flex;
   align-items: center;
+}
+
+.leftSection {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .rightSection {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  height: 65px;
 }
