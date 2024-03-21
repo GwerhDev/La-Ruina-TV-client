@@ -32,8 +32,10 @@ export const MySubscription = () => {
       <div className='nav-fixed' />
       <div className='section-container'>
         <div className='header-container'>
-          <h1>Suscripción</h1>
-          <h3>Elegí tu plan</h3>
+          <span className='section-description-container'>
+            <h1>Suscripción</h1>
+            <h3>Elegí tu plan</h3>
+          </span>
         </div>
         <ul className={s.ulCheck}>
           <li className={s.liCheck}>

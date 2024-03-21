@@ -29,19 +29,21 @@ export const MyFavorites = () => {
       <div className='nav-fixed' />
       <div className='section-container'>
         <div className='header-container'>
-          {
-            favorites?.length
-            ? 
-            <>
-              <h1>Tus favoritos</h1>
-              <h3>Encuentra tu contenido favorito aquí</h3>
-            </>
-            : 
-            <>
-              <h1>Nada por aquí...</h1>
-              <h3>¡Agrega contenido a tus favoritos!</h3>
-            </>
-          }
+          <span className='section-description-container'>
+            {
+              favorites?.length
+                ?
+                <>
+                  <h1>Tus favoritos</h1>
+                  <h3>Encuentra tu contenido favorito aquí</h3>
+                </>
+                :
+                <>
+                  <h1>Nada por aquí...</h1>
+                  <h3>¡Agrega contenido a tus favoritos!</h3>
+                </>
+            }
+          </span>
         </div>
         <ul className={s.contLikes}>
           {

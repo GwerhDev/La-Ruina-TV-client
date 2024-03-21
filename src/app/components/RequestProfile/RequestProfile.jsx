@@ -37,7 +37,6 @@ export const RequestProfile = () => {
                             className={s.userIcon} id='profileIcon' alt="perfil"
                             onClick={() => handleOption('/profile')}
                         />
-                        <span id='spanProfile' className={s.spanOpt}>Perfil</span>
                     </li>
                     <li>
                         <img
@@ -46,7 +45,6 @@ export const RequestProfile = () => {
                             id='favoritesIcon' alt="favoritos"
                             onClick={() => handleOption('/favorites')}
                         />
-                        <span id='spanFavs' className={s.spanOpt}>Favs</span>
                     </li>
                     <li>
                         <img
@@ -54,7 +52,6 @@ export const RequestProfile = () => {
                             className={s.configurationIcon} id='configurationIcon' alt="configuration"
                             onClick={() => handleOption('/configuration')}
                         />
-                        <span id='spanList' className={s.spanOpt}>Config</span>
                     </li>
                     <li>
                         <img
@@ -62,7 +59,6 @@ export const RequestProfile = () => {
                             className={s.subscriptionIcon} id='subscriptionIcon' alt="lista"
                             onClick={() => handleOption('/subscription')}
                         />
-                        <span id='spaSubs' className={s.spanOpt}>Subs</span>
                     </li>
                     {
                         role === 'admin'
@@ -72,7 +68,6 @@ export const RequestProfile = () => {
                                     className={s.adminIcon} id='dashboardIcon' alt="lista"
                                     onClick={() => handleOption('/dashboard')}
                                 />
-                                <span id='spanAdmin' className={s.spanOpt}>Dash</span>
                             </li>
                             : null
                     }
@@ -82,7 +77,6 @@ export const RequestProfile = () => {
                             className={s.logoutIcon}
                             alt="salir"
                             onClick={() => logout(history)} />
-                        <span id='spanExit' className={s.spanOpt}>Salir</span>
                     </li>
                 </ul>
             </div>

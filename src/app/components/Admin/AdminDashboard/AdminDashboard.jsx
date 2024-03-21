@@ -16,8 +16,10 @@ export const AdminDashboard = () => {
       <div className='nav-fixed' />
       <div className='section-container'>
         <div className='header-container'>
-          <h1>Bienvenido a tu dashboard</h1>
-          <h3>¿Qué quieres hacer?</h3>
+          <span className='section-description-container'>
+            <h1>Bienvenido a tu dashboard</h1>
+            <h3>¿Qué quieres hacer?</h3>
+          </span>
         </div>
         <Requests />
       </div>

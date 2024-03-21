@@ -15,8 +15,10 @@ export const MyConfigurations = () => {
       <div className='nav-fixed' />
       <div className='section-container'>
         <div className='header-container'>
-          <h1>Configuraciones</h1>
-          <h3>Edita las preferencias de tu aplicación</h3>
+          <span className='section-description-container'>
+            <h1>Configuraciones</h1>
+            <h3>Edita las preferencias de tu aplicación</h3>
+          </span>
         </div>
       </div>
       <RequestProfile />

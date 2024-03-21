@@ -23,24 +23,26 @@ export const MyAccount = () => {
   }, [dispatch]);
 
   return (
-    <div className='main-container'>
+    <main className='main-container'>
       <div className='nav-fixed' />
       <div className='section-container'>
         <div className='header-container'>
-          <p>Perfil de</p>
+          <span className='section-description-container'>
+            <p>Perfil de</p>
 
-          <h1>{username ? username : "Usuario"}</h1>
+            <h1>{username ? username : "Usuario"}</h1>
 
-          <li>
-            <img
-              className={s.userIcon}
-              referrerPolicy="no-referrer"
-              src={profilePic ? profilePic : userIcon}
-              height='100px'
-              alt="foto de perfil"
-            />
-          </li>
-          <li>{role}</li>
+            <li>
+              <img
+                className={s.userIcon}
+                referrerPolicy="no-referrer"
+                src={profilePic ? profilePic : userIcon}
+                height='100px'
+                alt="foto de perfil"
+              />
+            </li>
+            <li>{role}</li>
+          </span>
         </div>
         <div className={s.buttons}>
           <a href={urlHub}><button className='button1'>Editar cuenta</button></a>
@@ -51,6 +53,6 @@ export const MyAccount = () => {
         </div>
       </div>
       <RequestProfile />
-    </div>
+    </main>
   )
 }
