@@ -7,14 +7,14 @@ export const FilteredCard = (props) => {
 
     return (
         <div className={s.container}>
-            <div className={s.cardContainer} style={{ backgroundImage: `url(${RenderImageGwerhdinary(img)})` }}>
-                <Link to={`/view/v=${id}`}>
+            <Link to={`/view/v=${id}`}>
+                <div className={s.cardContainer} style={{ backgroundImage: `url(${RenderImageGwerhdinary(img)})` }}>
                     <div className={s.divContSearch}>
                         <h2 className={s.artist}>{artist}</h2>
                         <h1 className={s.title}>{title}</h1>
                     </div>
-                </Link>
-            </div>
+                </div>
+            </Link>
         </div>
     )
 }
