@@ -20,7 +20,14 @@
     justify-content: center;
     background: linear-gradient(90deg, rgb(201, 201, 201), rgba(109, 109, 109, 0.3), rgb(97, 97, 97));
     background-size: 200% 100%;
-    padding: 1rem;
+    font-size: 10px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.notFound h2 {
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 
 @keyframes shine {
