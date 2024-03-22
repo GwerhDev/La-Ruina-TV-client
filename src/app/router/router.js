@@ -66,20 +66,20 @@ function Router() {
               <Favorites />
             </Route>
 
-            <Route exact path='/dashboard'>
-              <Redirect to='/admin/dashboard' />
-            </Route>
-
-            <Route exact path='/admin/dashboard'>
-              <Dashboard />
-            </Route>
-
             <Route exact path='/subscription'>
               <Redirect to='/u/subscription' />
             </Route>
 
             <Route exact path='/u/subscription'>
               <Subscription />
+            </Route>
+
+            <Route exact path='/dashboard'>
+              <Redirect to='/admin/dashboard' />
+            </Route>
+
+            <Route exact path='/admin/dashboard'>
+              <Dashboard />
             </Route>
 
             <Route exact path='/releases'>
