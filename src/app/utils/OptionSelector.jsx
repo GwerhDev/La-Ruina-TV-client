@@ -6,9 +6,10 @@ import billingIcon from '../../assets/images/svg/billing-icon.svg';
 import userIcon from '../../assets/images/svg/profile-icon.svg';
 import supportIcon from '../../assets/images/svg/support-icon.svg';
 import contentIcon from '../../assets/images/svg/content-icon.svg';
+import searchIcon from '../../assets/images/svg/search-icon.svg';
 
 export const OptionSelector = (props) => {
-  const { settings, security, favorites, subscription, users, content, support } = props || null;
+  const { settings, security, favorites, subscription, users, content, support, search } = props || null;
 
   return (
     <section className={s.container}>
@@ -34,6 +35,12 @@ export const OptionSelector = (props) => {
         subscription &&
         <li className={s.option}>
           <img src={billingIcon} alt="" height="25px" />
+        </li>
+      }
+      {
+        search &&
+        <li className={s.option}>
+          <img src={searchIcon} alt="" height="25px" />
         </li>
       }
       {

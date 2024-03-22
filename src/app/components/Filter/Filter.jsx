@@ -23,7 +23,7 @@ export const Filter = () => {
             <h1>Resultados de búsqueda</h1>
             <h3>Estos son los resultados de tu búsqueda: "{search}"</h3>
           </span>
-          <OptionSelector favorites settings />
+          <OptionSelector search settings />
         </div>
         <ul className={s.ulSearchedItem}>
           Coincidencias por título
