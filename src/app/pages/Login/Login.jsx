@@ -16,7 +16,7 @@ const Enter = () => {
   );
 
   return (
-    <div className={s.enterBody}>
+    <div className={s.container}>
       <div className='nav-fixed'/>
       <div className={s.welcomeCont} id='welcomeCont'>
         <h1>ENTRÁ BOBO, VENÍ PARA ACÁ</h1>
@@ -30,6 +30,7 @@ const Enter = () => {
         <LoginGoogle/>
         <br/>
         <LoginLaRuinaHub/>
+        <br/>
         <p className='family-poppins'>¿No tienes una cuenta? <a className={s.linkHub} href={URL_LARUINAHUB_REGISTER}>Regístrate</a></p>
       </div>
     </div>
