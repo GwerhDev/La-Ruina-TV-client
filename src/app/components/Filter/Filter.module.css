@@ -20,6 +20,7 @@
     justify-content: center;
     background: linear-gradient(90deg, rgb(201, 201, 201), rgba(109, 109, 109, 0.3), rgb(97, 97, 97));
     background-size: 200% 100%;
+    padding: .5rem;
 }
 
 @keyframes shine {
