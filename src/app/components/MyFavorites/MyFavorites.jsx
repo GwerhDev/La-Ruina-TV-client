@@ -1,24 +1,17 @@
 import s from './MyFavorites.module.css';
 import React, { useEffect } from 'react';
-import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { RequestProfile } from '../RequestProfile/RequestProfile';
-import { resetOption, setOption } from '../../../middlewares/redux/actions';
+import { setOption } from '../../../middlewares/redux/actions';
 import { getFavorites } from '../../../middlewares/redux/actions/account';
-import { RenderImageGwerhdinary } from '../../../functions/RenderImageGwerhdinary';
 import { OptionSelector } from '../../utils/OptionSelector';
+import { FilteredCard } from '../../utils/FilteredCard';
 
 export const MyFavorites = () => {
   const dispatch = useDispatch();
   const currentUser = useSelector(state => state.currentUser);
   const favorites = useSelector(state => state.favorites);
   const userId = currentUser?.id;
-
-  function handleClick() {
-    return (
-      dispatch(resetOption())
-    )
-  };
 
   useEffect(() => {
     dispatch(getFavorites(userId));
@@ -51,26 +44,15 @@ export const MyFavorites = () => {
           {
             favorites?.map((e, index) => {
               return (
-                <li className={s.liLikes} key={index}>
-                  <div className={s.itemContainer}>
-                    <Link to={`/view/v=${e.id}`} className={s.imageContainer}>
-                      <div
-                        className={s.imageContainer}
-                        style={{ backgroundImage: `url(${RenderImageGwerhdinary(e.imageSlider)})` }}
-                        onClick={handleClick}
-                      >
-                        <div className={s.divH3}>
-                          <h3>
-                            {e.artist}
-                          </h3>
-                          <h2>
-                            {e.title}
-                          </h2>
-                        </div>
-                      </div>
-                    </Link>
-                  </div>
-                </li>
+                <FilteredCard
+                  id={e.id}
+                  title={e.title}
+                  img={e.imageSlider}
+                  categories={e.categories}
+                  artist={e.artist}
+                  idLinkYT={e.idLinkYT}
+                  mediaType={e.mediaType}
+                />
               )
             })
           }
