@@ -70,9 +70,6 @@ export const MySubscription = () => {
                 <li>
                   <img src={checkedIcon} width="12px" alt="check" /> Reproduce tus canciones en cualquier lugar, incluso sin conexión
                 </li>
-                <li>
-                  <img src={checkedIcon} width="12px" alt="check" /> Adquiere nuestro reproductor integrado para desplazarte por cualquier lugar sin dejar de escuchar tu música favorita
-                </li>
               </ul>
               <button className={!activePlan ? s.btnSubmitEnabled : s.btnSubmitDisabled} disabled={activePlan} onClick={handleClick}>
                 {!activePlan ? 'Comenzar' : 'Activo'}
