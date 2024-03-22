@@ -22,7 +22,7 @@ export const Visor = () => {
     } = VisorFunction();
 
     function handleInfoButton() {
-        $d('#infoCont').style.display = 'flex';
+        $d('#info-background-container').style.display = 'flex';
     };
 
     return (

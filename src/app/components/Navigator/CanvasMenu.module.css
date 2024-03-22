@@ -18,3 +18,47 @@
 .navBurgerMenu li:hover{
     background-color: rgb(0, 0, 0);
 }
+
+.search {
+    padding-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formSearchBar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchBar {
+    height: 40px;
+    width: 300px;
+    border: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.searchBtn {
+    padding: 12px;
+    background-color: transparent;
+    border: none;
+    background-color: #171717;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.searchBtn:hover {
+    outline: solid white 1px;
+}
+
+.searchBtn:disabled {
+    background-color: #383838;
+}
+
+.searchBtn:disabled:hover {
+    cursor: not-allowed;
+}

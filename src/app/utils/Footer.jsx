@@ -24,7 +24,7 @@ export const Footer = () => {
                     <p>Soporte técnico</p>
                 </div>
             </div>
-            <p>© {new Date().getFullYear()} LA RUINA</p>
+            <h3>© {new Date().getFullYear()} LA RUINA</h3>
         </div>
     )
 }

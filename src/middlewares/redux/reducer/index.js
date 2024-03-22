@@ -19,7 +19,8 @@ import {
     GET_FULL_DETAIL,
     GET_PRODUCERS,
     GET_USER_PLAN,
-    RESET_DETAILS_MEDIA
+    RESET_DETAILS_MEDIA,
+    IS_LOGGED
 } from "../../misc";
 
 
@@ -30,6 +31,7 @@ const initialState = {
 
     /*----------------Auth----------------*/
     currentUser: null,
+    isLogged: null,
     option: '',
 
     /*----------------Media----------------*/
@@ -50,6 +52,12 @@ const initialState = {
 
 export default function rootReducer(state = initialState, action) {
     switch (action.type) {
+        case IS_LOGGED:
+            return {
+                ...state,
+                isLogged: action.payload
+            }
+
         case ERROR: 
             return {
                 ...state,

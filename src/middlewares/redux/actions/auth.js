@@ -1,20 +1,30 @@
 import axios from "axios";
 import { URL_API } from "../../config";
-import { CURRENT_USER, ERROR } from "../../misc";
+import { AUTHENTICATING, CURRENT_USER, ERROR, IS_LOGGED } from "../../misc";
 import { options } from "../../helpers";
 import { reset } from "../../../functions/Reset";
 
+export function isLogged(e) {
+  return {
+    type: IS_LOGGED,
+    payload: e,
+  }
+}
+
 export function auth(history) {
   return async function (dispatch) {
+    dispatch(isLogged(AUTHENTICATING));
     await axios.get(`${URL_API}/auth`, options())
       .then(res => {
+        dispatch(isLogged(true));
         dispatch({
           type: CURRENT_USER,
           payload: res.data.userData
-        })
+        });
         return res.data.logged && history.push(`/browser`);
       })
       .catch((e) => {
+        dispatch(isLogged(false));
         console.error(e);
         return;
       }

@@ -24,4 +24,13 @@
   align-items: flex-start;
   justify-content: flex-start;
   padding: 3rem;
+  gap: 10px;
+}
+
+p {
+  font-weight: thin;
+}
+
+h3 {
+  font-weight: 400;
 }

@@ -12,7 +12,7 @@ import navBack from '../../../functions/Navigator';
 export const Navigator = () => {
     const dispatch = useDispatch();
     const [posNav, setPosNav] = useState();
-
+    
     useEffect(() => {
         dispatch(getUserData());
     }, [dispatch]);

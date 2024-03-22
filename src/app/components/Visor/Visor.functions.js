@@ -4,9 +4,9 @@ import { $d, $gId } from '../../../functions';
 
 export const VisorFunction = () => {
     document.addEventListener('mouseup', function (e) {
-        var container0 = $gId('infoCont');
+        var container0 = $gId('info-container');
         if (!container0?.contains(e.target)) {
-            $d('#infoCont').style.display='none'
+            $d('#info-background-container').style.display='none'
         }
     });
 

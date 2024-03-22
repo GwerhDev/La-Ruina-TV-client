@@ -212,6 +212,13 @@ button:disabled {
   filter: drop-shadow(2px 2px 2px black);
 }
 
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 100;
+}
+
 .bnv_ul {
   position: relative;
   list-style: none;
@@ -300,7 +307,6 @@ button:disabled {
 }
 
 .music {
-
   display: none;
 }
 
@@ -490,10 +496,6 @@ button:disabled {
     opacity: 0;
     scale: 0
   }
-}
-
-#infoCont {
-  display: none;
 }
 
 .button1,
