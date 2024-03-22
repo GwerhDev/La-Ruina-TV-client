@@ -51,18 +51,34 @@ function Router() {
             </Route>
 
             <Route exact path='/profile'>
+              <Redirect to='/u/profile' />
+            </Route>
+
+            <Route exact path='/u/profile'>
               <Profile />
             </Route>
 
             <Route exact path='/favorites'>
+              <Redirect to='/u/favorites' />
+            </Route>
+
+            <Route exact path='/u/favorites'>
               <Favorites />
             </Route>
 
             <Route exact path='/dashboard'>
+              <Redirect to='/admin/dashboard' />
+            </Route>
+
+            <Route exact path='/admin/dashboard'>
               <Dashboard />
             </Route>
 
             <Route exact path='/subscription'>
+              <Redirect to='/u/subscription' />
+            </Route>
+
+            <Route exact path='/u/subscription'>
               <Subscription />
             </Route>
 

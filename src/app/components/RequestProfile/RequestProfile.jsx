@@ -39,13 +39,13 @@ export const RequestProfile = () => {
                                 <img
                                     src={profilePic}
                                     className={s.profilePic} id='profileIcon' alt="perfil"
-                                    onClick={() => handleOption('/profile')}
+                                    onClick={() => handleOption('/u/profile')}
                                 />
                                 :
                                 <img
                                     src={userIcon}
                                     className={s.userIcon} id='profileIcon' alt="perfil"
-                                    onClick={() => handleOption('/profile')}
+                                    onClick={() => handleOption('/u/profile')}
                                 />
                         }
                     </li>
