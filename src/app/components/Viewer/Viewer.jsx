@@ -40,8 +40,8 @@ export const Viewer = () => {
 
     function handleClickBack() {
         $d('.playerLi').style.display = 'none';
-        $d('.playerBackGroundEffect').style.opacity = '0';
-        $d('#visor-post-info').style.display = "flex";
+        $d('.player-background-effect').style.opacity = '0';
+        $d('#viewer-info').style.display = "flex";
         $d('#player-section').style.display = "none";
     };
 
@@ -63,17 +63,17 @@ export const Viewer = () => {
             {
                 infoDetailViewer?.id?.length
                     ?
-                    <div className={s.visor}>
-                        <div className={s.visorBGCanvas}>
-                            <img className={s.visorBG} src={imageSlider} alt='' />
+                    <div className={s.viewer}>
+                        <div className={s.backgroundCanvas}>
+                            <div className={s.visorBG} style={{ backgroundImage: 'url(' + imageSlider + ')' }} alt='' />
                         </div>
                         <div className={s.visorCanvas}></div>
-                        <div className='playerBackGroundEffect' onClick={handleClickBack}></div>
+                        <div className='player-background-effect' onClick={handleClickBack}></div>
                         <div className={s.sectionsContainer}>
                             <section className={s.playerSection} id='player-section'>
-                                {currentUser && <YtPlayer idLinkYT={idLinkYT} />}
+                                { currentUser && <YtPlayer idLinkYT={idLinkYT} /> }
                             </section>
-                            <section className={s.visorPostInfo} id='visor-post-info'>
+                            <section className={s.visorPostInfo} id='viewer-info'>
                                 <div className={s.infoContainer}>
                                     <div className={s.visorPostArtista}>
                                         {currentUser?.role === 'admin' && <ContentMagementButtons />}
@@ -111,10 +111,10 @@ export const Viewer = () => {
                                                             return (
                                                                 dispatch(subscriberYoutubeVerification(currentUser?.email)),
                                                                 (subscriber ? $d('#canvasYtSubBtn').style.display = 'none' : $d('#canvasYtSubBtn').style.display = 'flex'),
-                                                                $d('.playerBackGroundEffect').style.opacity = '1',
+                                                                $d('.player-background-effect').style.opacity = '1',
                                                                 $d('.playerLi').style.display = 'block',
                                                                 $d('.playUl').style.opacity = '1',
-                                                                $d('#visor-post-info').style.display = "none",
+                                                                $d('#viewer-info').style.display = "none",
                                                                 $d('#player-section').style.display = "flex"
                                                             )
                                                         }}

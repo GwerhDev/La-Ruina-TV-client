@@ -52,13 +52,13 @@ export const CanvasMenu = () => {
             <div className={s.contMenu}>
                 <ul className={s.navBurgerMenu}>
                     <li onClick={handleClick}>
-                        <Link to='/browser'>Inicio</Link>
+                        <Link className={s.option} to='/browser'>Inicio</Link>
                     </li>
                     <li onClick={handleClick}>
-                        <Link to='/releases'>Novedades</Link>
+                        <Link className={s.option} to='/releases'>Novedades</Link>
                     </li>
                     <li onClick={handleClick}>
-                        <Link to='/donate'>Colaborar</Link>
+                        <Link className={s.option} to='/donate'>Colaborar</Link>
                     </li>
                     <li className={s.search}>
                         <form className={s.formSearchBar} onSubmit={handleSubmit}>

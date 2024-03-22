@@ -28,7 +28,7 @@ export const Visor = () => {
     return (
         <div className={s.visorContainer} id='visor'>
             <video className={s.visorVideoIntro} src={visorIntroVideo} autoPlay muted loop type="video/mp4" />
-            <div className={s.visorBGCanvas}>
+            <div className={s.backgroundCanvas}>
                 <img className={s.visorBG} id='visorBG' src={RenderImageGwerhdinary(visorImage)} alt='' />
             </div>
             <div className={s.visorCanvas} />

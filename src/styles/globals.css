@@ -121,7 +121,7 @@ button:disabled {
   filter: drop-shadow(2px 5px 8px black);
 }
 
-.navMenu {
+.nav-menu {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -783,7 +783,7 @@ h4 {
 }
 
 /* ------------------PLAY----------------- */
-.playerBackGroundEffect {
+.player-background-effect {
   top: 0;
   left: 0;
   opacity: 0;
@@ -834,7 +834,7 @@ h4 {
     display: flex;
   }
 
-  .navMenu {
+  .nav-menu {
     display: none;
   }
 
@@ -850,7 +850,7 @@ h4 {
     display: flex;
   }
 
-  .navMenu {
+  .nav-menu {
     display: none;
   }
 
@@ -903,7 +903,7 @@ h4 {
     display: none;
   }
 
-  .navMenu {
+  .nav-menu {
     display: flex;
   }
 

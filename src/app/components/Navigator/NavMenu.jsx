@@ -19,7 +19,7 @@ export const NavMenu = () => {
     };
 
     return (
-        <ul className='navMenu'>
+        <ul className='nav-menu'>
             <li onClick={handleClick}>
                 <Link to='/browser'>Inicio</Link>
             </li>
