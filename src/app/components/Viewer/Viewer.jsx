@@ -65,23 +65,23 @@ export const Viewer = () => {
                     ?
                     <div className={s.viewer}>
                         <div className={s.backgroundCanvas}>
-                            <div className={s.visorBG} style={{ backgroundImage: 'url(' + imageSlider + ')' }} alt='' />
+                            <div className={s.background} style={{ backgroundImage: 'url(' + imageSlider + ')' }} alt='' />
                         </div>
-                        <div className={s.visorCanvas}></div>
+                        <div className={s.viewerCanvas}></div>
                         <div className='player-background-effect' onClick={handleClickBack}></div>
                         <div className={s.sectionsContainer}>
                             <section className={s.playerSection} id='player-section'>
-                                { currentUser && <YtPlayer idLinkYT={idLinkYT} /> }
+                                {currentUser && <YtPlayer idLinkYT={idLinkYT} />}
                             </section>
-                            <section className={s.visorPostInfo} id='viewer-info'>
+                            <section className={s.viewerInfo} id='viewer-info'>
                                 <div className={s.infoContainer}>
-                                    <div className={s.visorPostArtista}>
+                                    <div className={s.viewerArtist}>
                                         {currentUser?.role === 'admin' && <ContentMagementButtons />}
                                         <p>{artist}</p>
                                     </div>
-                                    <div className={s.visorPostTitulo}>
+                                    <div className={s.viewerTitle}>
                                         <p>{title}</p>
-                                        <div className={s.visorInfo}>
+                                        <div className={s.viewerDescription}>
                                             <p>{info}</p>
                                         </div>
                                     </div>
@@ -119,12 +119,12 @@ export const Viewer = () => {
                                                             )
                                                         }}
                                                         onMouseEnter={() => {
-                                                            $d('.visorButtonPlay').src = playIconb
+                                                            $d('.visor-play-button').src = playIconb
                                                         }}
                                                         onMouseLeave={() => {
-                                                            $d('.visorButtonPlay').src = playIconn
+                                                            $d('.visor-play-button').src = playIconn
                                                         }}>
-                                                        <img className='visorButtonPlay' src={playIconn} alt='visorbtn' />
+                                                        <img className='visor-play-button' src={playIconn} alt='visorbtn' />
                                                         Ver ahora
                                                     </button>
                                                     :
@@ -137,7 +137,7 @@ export const Viewer = () => {
                                                                 $d('#slideCanvasCont').style.overflowY = "hidden"
                                                             )
                                                         }}>
-                                                        <img className='visorButtonPlay' src={userIcon} alt='visorbtn' />
+                                                        <img className='visor-play-button' src={userIcon} alt='visorbtn' />
                                                         Ingresar
                                                     </button>
                                             }

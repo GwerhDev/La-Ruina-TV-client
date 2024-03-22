@@ -14,7 +14,7 @@ function Verify() {
                 <h1 style={{color: 'white'}}>Tu correo fue verificado!</h1>
                 <h3 style={{color: 'white', filter: 'drop-shadow(0px 0px 2px green)'}}>Ya puedes iniciar sesión</h3>
                 <button
-                    className='button1'
+                    className='button-primary'
                     onClick={()=>
                         {
                             $d('.LogInBody').style.transitionDuration="1s"

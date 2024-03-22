@@ -22,7 +22,7 @@
     overflow: hidden;
 }
 
-.visorBG {
+.background {
     min-width: 100%;
     min-height: 100%;
     position: relative;
@@ -34,7 +34,7 @@
     background-size: cover;
 }
 
-.visorPostInfo {
+.viewerInfo {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -45,12 +45,12 @@
     animation-timing-function: ease-in-out;
 }
 
-.visorPostArtista {
+.viewerArtist {
     width: fit-content;
     align-content: center;
 }
 
-.visorPostArtista p {
+.viewerArtist p {
     color: #ffffff;
     text-decoration: overline;
     font-size: 18px;
@@ -59,12 +59,12 @@
     margin: 0;
 }
 
-.visorPostArtista p:hover {
+.viewerArtist p:hover {
     opacity: 1;
     cursor: pointer;
 }
 
-.visorPostTitulo p {
+.viewerTitle p {
     font-size: 50px;
     color: #ffffff;
     text-shadow: #000000;
@@ -73,14 +73,14 @@
     margin: 0;
 }
 
-.visorCanvas {
+.viewerCanvas {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), #000000 97%);
     width: 100%;
     height: 100vh;
     position: absolute;
 }
 
-.visorInfo {
+.viewerDescription {
     width: 410px;
     height: 100px;
     top: 100px;
@@ -88,7 +88,7 @@
     font-family: Product Sans, sans-serif;
 }
 
-.visorInfo p {
+.viewerDescription p {
     font-weight: 100;
     font-size: 16px;
     padding: 0;

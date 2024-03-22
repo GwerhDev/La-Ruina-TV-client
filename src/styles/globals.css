@@ -498,8 +498,8 @@ h4 {
   }
 }
 
-.button1,
-.button2,
+.button-primary,
+.button-secondary,
 .buttonVer {
   height: 50px;
   width: 200px;
@@ -512,20 +512,20 @@ h4 {
   backdrop-filter: blur(8px);
 }
 
-.button1,
+.button-primary,
 .buttonVer {
   background: linear-gradient(to bottom, #ffffff, rgba(0, 0, 0, 0.679));
   background-color: #ffffff;
 }
 
-.button2 {
+.button-secondary {
   background-color: #84848446;
   color: #ffffff;
   font-weight: 100;
   backdrop-filter: blur(8px);
 }
 
-.button1:hover,
+.button-primary:hover,
 .buttonVer:hover {
   background: linear-gradient(to bottom, #171717, rgba(0, 0, 0, 0.679));
   background-color: #171717;
@@ -533,17 +533,17 @@ h4 {
   transition-duration: 0.2s;
 }
 
-.button1:disabled {
+.button-primary:disabled {
   background: #9b9b9b;
   color: #747474;
 }
 
-.button2:hover {
+.button-secondary:hover {
   background-color: #171717;
   transition-duration: 0.5s;
 }
 
-.visorTagIcon {
+.visor-tag-icon {
   max-height: 40px;
   position: relative;
   bottom: 10px;
@@ -552,14 +552,14 @@ h4 {
   z-index: 9999;
 }
 
-.visorTagIcon:hover {
+.visor-tag-icon:hover {
   filter: brightness(2);
   opacity: 1;
   cursor: pointer;
   z-index: 9999;
 }
 
-.visorButtonPlay {
+.visor-play-button {
   width: 15px;
   margin-right: 10px;
   position: absolute;

@@ -77,7 +77,7 @@ const LoginInner = () => {
           </li>
           <li className={s.form_li}>
             <p>{errorMessage}</p>
-            <button disabled={disabled} className={`${s.innerLoginButton} button1`} onClick={handleSubmit}>
+            <button disabled={disabled} className={`${s.innerLoginButton} button-primary`} onClick={handleSubmit}>
               Entrar
             </button>
           </li>

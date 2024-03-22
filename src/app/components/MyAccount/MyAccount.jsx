@@ -45,8 +45,8 @@ export const MyAccount = () => {
           </span>
         </div>
         <div className={s.buttons}>
-          <a href={urlHub}><button className='button1'>Editar cuenta</button></a>
-          <button className='button2' onClick={handleClick}>Eliminar cuenta</button>
+          <a href={urlHub}><button className='button-primary'>Editar cuenta</button></a>
+          <button className='button-secondary' onClick={handleClick}>Eliminar cuenta</button>
         </div>
         <div className={s.deleteAccount} id={'deleteAccount'}>
           <DeleteAccount />

@@ -217,11 +217,11 @@ const ContentCreate = () => {
               redirectRoute
                 ? <div>
                   <Link to={redirectRoute}>
-                    <button className='button1'>
+                    <button className='button-primary'>
                       Ver contenido
                     </button>
                   </Link>
-                  <button className='button2' onClick={resetForm}>Crear más contenido</button>
+                  <button className='button-secondary' onClick={resetForm}>Crear más contenido</button>
                 </div>
                 : <div className={s.loaderContainer}>
                   Espere un momento...

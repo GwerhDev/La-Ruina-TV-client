@@ -201,11 +201,11 @@ const ContentUpdate = () => {
               redirectRoute
                 ? <div>
                     <Link to={redirectRoute}>
-                      <button className='button1'>
+                      <button className='button-primary'>
                         Ver contenido
                       </button>
                     </Link>
-                    <button className='button2' onClick={resetForm}>Volver a editar</button>
+                    <button className='button-secondary' onClick={resetForm}>Volver a editar</button>
                   </div>
                 : <div className={s.loaderContainer}>
                     Espere un momento...

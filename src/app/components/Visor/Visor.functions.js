@@ -68,10 +68,10 @@ export const VisorFunction = () => {
             setVisorMediaType(mediaType)
             setVisorActionButton(actionButton)
             $d(`#visor`).style.transform = 'translateX(0)'
-            $d('#visorBtn').style.scale = '1'
-            $d('#visorBG').style.animationName = 'aniScale'
-            $d('#visorBG').style.animationDuration = `${timeInterval}s`
-            $d('#visorBG').style.animationIterationCount = inf
+            $d('#visor-button').style.scale = '1'
+            $d('#visor-background').style.animationName = 'aniScale'
+            $d('#visor-background').style.animationDuration = `${timeInterval}s`
+            $d('#visor-background').style.animationIterationCount = inf
             $d('#visorPostInfo').style.animationName = 'infoScale'
             $d('#visorPostInfo').style.animationDuration = `${timeInterval}s`
             $d('#visorPostInfo').style.animationIterationCount = inf

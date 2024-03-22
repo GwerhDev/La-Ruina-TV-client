@@ -54,7 +54,7 @@ p {
     justify-content: center;
 }
 
-.button1,.button2{
+.button-primary,.button-secondary{
     height: 50px;
     width: 200px;
     position: relative;
@@ -66,23 +66,23 @@ p {
     backdrop-filter: blur(9px);
 }
 
-.button1{
+.button-primary{
     background: linear-gradient(to bottom, #ffffff, rgba(0, 0, 0, 0.679));
     background-color: #ffffff;
 }
 
-.button2{
+.button-secondary{
     background-color: #84848446;
     color: #ffffff;
     font-weight: 100;
 }
-.button1:hover{
+.button-primary:hover{
     background: linear-gradient(to bottom, #171717, rgba(0, 0, 0, 0.679));
     background-color: #171717;
     color: #ffffff;
     transition-duration: 0.2s;
 }
-.button2:hover{
+.button-secondary:hover{
     background-color: #171717;
     transition-duration: 0.5s;
 }
