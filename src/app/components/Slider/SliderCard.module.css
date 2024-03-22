@@ -164,9 +164,15 @@ button:hover {
   padding: 0;
   width: 100%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   padding-left: 10px;
+  padding-right: 10px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
 }
 
 .sliderItem:hover .sliderInfoCanvas {

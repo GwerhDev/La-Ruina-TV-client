@@ -73,7 +73,6 @@
 .likeIcon,
 .listIcon,
 .userIcon,
-.configurationIcon,
 .profilePic {
 	width: 30px;
 	filter: grayscale(1);
@@ -123,7 +122,6 @@
 .adminIcon:hover,
 .logoutIcon:hover,
 .userIcon:hover,
-.configurationIcon:hover,
 .subscriptionIcon:hover,
 .notificationIcon:hover,
 .profilePic:hover {

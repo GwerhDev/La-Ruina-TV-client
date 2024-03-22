@@ -4,7 +4,6 @@ import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import userIcon from '../../../assets/images/svg/profile-icon.svg';
 import likeIcon from '../../../assets/images/svg/like-icon.svg';
-import configIcon from '../../../assets/images/svg/settings-icon.svg';
 import adminIcon from '../../../assets/images/svg/admin-icon.svg';
 import logoutIcon from '../../../assets/images/svg/logout-icon.svg';
 import subscriptionIcon from '../../../assets/images/svg/billing-icon.svg';
@@ -56,13 +55,6 @@ export const RequestProfile = () => {
                             className={s.likeIcon}
                             id='favoritesIcon' alt="favoritos"
                             onClick={() => handleOption('/favorites')}
-                        />
-                    </li>
-                    <li>
-                        <img
-                            src={configIcon}
-                            className={s.configurationIcon} id='configurationIcon' alt="configuration"
-                            onClick={() => handleOption('/configuration')}
                         />
                     </li>
                     <li>

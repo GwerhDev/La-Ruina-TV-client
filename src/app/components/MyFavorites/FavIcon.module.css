@@ -2,7 +2,6 @@
     border: 0;
     border-radius: 100px;
     cursor: pointer;
-    margin-top: -5px;
     transition-duration: .4s;
 } 
 .CardFav:hover{

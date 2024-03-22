@@ -6,7 +6,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import btnMenuTv from '../../../assets/images/ruinatv-icon-play-b.png';
 import likeIcon from '../../../assets/images/svg/like-icon.svg';
 import userIcon from '../../../assets/images/svg/profile-icon.svg';
-import configIcon from '../../../assets/images/svg/settings-icon.svg';
 import adminIcon from '../../../assets/images/svg/admin-icon.svg';
 import logoutIcon from '../../../assets/images/svg/logout-icon.svg';
 import subscriptionIcon from '../../../assets/images/svg/billing-icon.svg';
@@ -72,21 +71,7 @@ export const ProfileMenu = () => {
               MIS FAVORITOS
             </button>
           </li>
-          <li className={s.liProfileMenuDisplay}>
-            <button
-              id='optionProfileBtn3'
-              className={s.optionProfileBtn}
-              value='configuration'
-              onClick={(e) => onClickValue(e)}
-              onMouseEnter={() => profileMenuCss('enter')}>
-              <img
-                className={s.imgIcon}
-                onClick={(e) => e.target.value = 'configuration'}
-                src={configIcon}
-                alt="" />
-              CONFIGURACIÓN
-            </button>
-          </li>
+
           <li className={s.liProfileMenuDisplay}>
             <button
               id='optionProfileBtn4'

@@ -47,14 +47,13 @@ export const SliderCard = ({ id, imageSlider, title, keyID }) => {
           />
           <div className={s.sliderInfoCanvas} onClick={handleRedirect}>
             <div className={s.ulTitlesItems}>
-                <img
-                  className={s.sliderItemIconPlayN}
-                  src={playIconN}
-                  alt="play" />
+              <span className={s.title}>
+                <img className={s.sliderItemIconPlayN} src={playIconN} alt="play" />
                 <p style={{ color: 'black' }}>{title}</p>
+              </span>
               {
                 currentUser && favorites?.filter(fav => fav.id === id).length
-                  ? <FavIcon urlID={id} color={'red'} style={{ marginTop: '-10px' }} />
+                  ? <FavIcon urlID={id} color={'red'} />
                   : null
               }
             </div>
