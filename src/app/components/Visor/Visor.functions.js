@@ -72,9 +72,9 @@ export const VisorFunction = () => {
             $d('#visor-background').style.animationName = 'aniScale'
             $d('#visor-background').style.animationDuration = `${timeInterval}s`
             $d('#visor-background').style.animationIterationCount = inf
-            $d('#visorPostInfo').style.animationName = 'infoScale'
-            $d('#visorPostInfo').style.animationDuration = `${timeInterval}s`
-            $d('#visorPostInfo').style.animationIterationCount = inf
+            $d('#visor-info').style.animationName = 'infoScale'
+            $d('#visor-info').style.animationDuration = `${timeInterval}s`
+            $d('#visor-info').style.animationIterationCount = inf
         }, timeInterval * 1000);
         return () => (clearInterval(interval, timeInterval));
     }, [

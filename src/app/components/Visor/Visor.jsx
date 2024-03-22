@@ -9,7 +9,8 @@ import { InfoCanvas } from "../../utils/InfoCanvas";
 import { RenderImageGwerhdinary } from '../../../functions/RenderImageGwerhdinary';
 
 export const Visor = () => {
-    const { visorId, visorTag, visorInfo, mediaList, visorIcon,
+    const { 
+        visorId, visorTag, visorInfo, mediaList, visorIcon,
         visorTitle, visorImage, currentUser, visorArtist, 
     } = VisorFunction();
 
@@ -28,13 +29,15 @@ export const Visor = () => {
             {
                 mediaList?.length
                     ?
-                    <div className={s.visorInfo} id='visorPostInfo'>
+                    <div className={s.visorInfo} id='visor-info'>
                         <div className={s.visorArtist}>
                             <p>{visorArtist}</p>
                         </div>
                         <div className={s.visorTitle}>
                             <p>{visorTitle}</p>
-                            <div className={s.visorDescription}><h3>{visorInfo}</h3></div>
+                            <div className={s.visorDescription}>
+                                <h3>{visorInfo}</h3>
+                            </div>
                             <ul className={s.visorButton} id='visor-button'>
                                 <li>
                                     <Link to={`/view/v=${visorId}`}>

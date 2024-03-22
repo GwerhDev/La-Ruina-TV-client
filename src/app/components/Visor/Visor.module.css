@@ -8,29 +8,28 @@
 }
 
 .visorVideoIntro {
-  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
   width: 100vw;
   height: 100vh;
   object-fit: cover;
-  left: 0;
-  right: 0;
-  top: 0;
-  z-index: 0;
+  position: absolute;
 }
 
 .backgroundCanvas {
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   position: absolute;
   overflow: hidden;
 }
 
 .background {
+  top: 0px;
+  left: 0px;
   min-width: 100%;
   min-height: 100%;
   position: relative;
-  left: 0px;
-  top: 0px;
   animation-timing-function: ease-in-out;
 }
 
@@ -119,4 +118,45 @@
   list-style: none;
   display: flex;
   flex-direction: row;
+}
+
+@media only screen and (max-width: 1380px) {
+  .visorContainer {
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .visorVideoIntro {
+    min-width: 100%;
+    height: 50vh;
+    object-fit: cover;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .backgroundCanvas {
+    height: 50vh;
+    position: absolute;
+    overflow: hidden;
+  }
+
+  .background {
+    top: 0px;
+    left: 0px;
+    min-width: 100%;
+    min-height: 100%;
+    position: relative;
+    animation-timing-function: ease-in-out;
+  }
+  
+  .visorCanvas {
+    height: 50vh;
+  }
+
+  .visorInfo {
+    width: 100%;
+  }
 }
