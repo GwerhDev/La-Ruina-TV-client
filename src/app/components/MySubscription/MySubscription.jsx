@@ -7,6 +7,7 @@ import { reset } from '../../../functions/Reset';
 import { resetOption, setOption } from '../../../middlewares/redux/actions';
 import checkedIcon from '../../../assets/images/checked-icon.png';
 import { subscriberPlanVerification } from '../../../middlewares/redux/actions/subscriber';
+import { OptionSelector } from '../../utils/OptionSelector';
 
 export const MySubscription = () => {
   const dispatch = useDispatch()
@@ -36,6 +37,7 @@ export const MySubscription = () => {
             <h1>Suscripción</h1>
             <h3>Elegí tu plan</h3>
           </span>
+          <OptionSelector subscription security settings support />
         </div>
         <ul className={s.ulCheck}>
           <li className={s.liCheck}>
@@ -44,18 +46,14 @@ export const MySubscription = () => {
               <div className={s.divPrice}>
                 Gratuito
               </div>
-              <div className={s.divDescription}>
-                <ul>
-                  <h5>
-                    <li>
-                      <img src={checkedIcon} width="12px" alt="check" /> Acceso a todo nuestro contenido mediante plataformas comerciales
-                    </li>
-                    <li>
-                      <img src={checkedIcon} width="12px" alt="check" /> Debes suscribirte a nuestro canal de Youtube
-                    </li>
-                  </h5>
-                </ul>
-              </div>
+              <ul className={s.ulDescription}>
+                <li>
+                  <img src={checkedIcon} width="12px" alt="check" /> Acceso a todo nuestro contenido mediante plataformas comerciales
+                </li>
+                <li>
+                  <img src={checkedIcon} width="12px" alt="check" /> Debes suscribirte a nuestro canal de Youtube
+                </li>
+              </ul>
               <div className={s.btnSubmitFree}>Activo</div>
             </div>
           </li>
@@ -65,21 +63,17 @@ export const MySubscription = () => {
               <div className={s.divPrice}>
                 $1.000 CLP mensual
               </div>
-              <div className={s.divDescription}>
-                <ul>
-                  <h5>
-                    <li>
-                      <img src={checkedIcon} width="12px" alt="check" /> Acceso a todo nuestro contenido sin anuncios
-                    </li>
-                    <li>
-                      <img src={checkedIcon} width="12px" alt="check" /> Reproduce tus canciones en cualquier lugar, incluso sin conexión
-                    </li>
-                    <li>
-                      <img src={checkedIcon} width="12px" alt="check" /> Adquiere nuestro reproductor integrado para desplazarte por cualquier lugar sin dejar de escuchar tu música favorita
-                    </li>
-                  </h5>
-                </ul>
-              </div>
+              <ul className={s.ulDescription}>
+                <li>
+                  <img src={checkedIcon} width="12px" alt="check" /> Acceso a todo nuestro contenido sin anuncios
+                </li>
+                <li>
+                  <img src={checkedIcon} width="12px" alt="check" /> Reproduce tus canciones en cualquier lugar, incluso sin conexión
+                </li>
+                <li>
+                  <img src={checkedIcon} width="12px" alt="check" /> Adquiere nuestro reproductor integrado para desplazarte por cualquier lugar sin dejar de escuchar tu música favorita
+                </li>
+              </ul>
               <button className={!activePlan ? s.btnSubmitEnabled : s.btnSubmitDisabled} disabled={activePlan} onClick={handleClick}>
                 {!activePlan ? 'Comenzar' : 'Activo'}
               </button>

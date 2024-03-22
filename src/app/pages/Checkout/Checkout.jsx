@@ -14,31 +14,34 @@ const Checkout = () => {
 
   BodyCss();
   return (
-    <div className={s.donateCont}>
-      <div className='nav-fixed' ></div>
-      <div className={s.donateFormat} >
-        Plataforma de pago
-        <ul className={s.ulContBtn}>
-          <li className={s.donateBtn}>
-            <button className={s.btnSubmit} onClick={() => handleCheckout(PAYMENT_FLOW, dispatch, type, currentUser)}>
-              Flow.cl
-            </button>
+    <main className='main-container'>
+      <div className='nav-fixed' />
+      <div className='section-container'>
+        <div className='header-container'>
+          <h1>Plataforma de pago</h1>
+          <p>Seleccione una opción:</p>
+          <ul className={s.ulContBtn}>
+            <li className={s.donateBtn}>
+              <button className={s.btnSubmit} onClick={() => handleCheckout(PAYMENT_FLOW, dispatch, type, currentUser)}>
+                Flow.cl
+              </button>
+            </li>
+            <li className={s.donateBtn}>
+              <button className={s.btnSubmit} onClick={() => handleCheckout(PAYMENT_MERCADOPAGO, dispatch, type, currentUser)}>
+                MercadoPago
+              </button>
+            </li>
+          </ul>
+          <li className={s.salirBtn}>
+            <Link to={`/${typeCheck}`}>
+              <button className={s.backSubmit}>
+                Volver
+              </button>
+            </Link>
           </li>
-          <li className={s.donateBtn}>
-            <button className={s.btnSubmit} onClick={() => handleCheckout(PAYMENT_MERCADOPAGO, dispatch, type, currentUser)}>
-              MercadoPago
-            </button>
-          </li>
-        </ul>
-        <li className={s.salirBtn}>
-          <Link to={`/${typeCheck}`}>
-            <button className={s.salirSubmit}>
-              Volver
-            </button>
-          </Link>
-        </li>
+        </div>
       </div>
-    </div>
+    </main>
   )
 }
 

@@ -6,6 +6,7 @@ import { RequestProfile } from '../RequestProfile/RequestProfile';
 import { resetOption, setOption } from '../../../middlewares/redux/actions';
 import { getFavorites } from '../../../middlewares/redux/actions/account';
 import { RenderImageGwerhdinary } from '../../../functions/RenderImageGwerhdinary';
+import { OptionSelector } from '../../utils/OptionSelector';
 
 export const MyFavorites = () => {
   const dispatch = useDispatch();
@@ -44,8 +45,9 @@ export const MyFavorites = () => {
                 </>
             }
           </span>
+          <OptionSelector favorites settings />
         </div>
-        <ul className={s.contLikes}>
+        <ul className={s.favoritesContainer}>
           {
             favorites?.map((e, index) => {
               return (

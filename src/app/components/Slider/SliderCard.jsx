@@ -1,10 +1,10 @@
 import s from './SliderCard.module.css';
-import FavIcon from "../MyFavorites/FavIcon";
 import editIcon from '../../../assets/images/edit-icon.png';
 import playIconN from "../../../assets/images/ruinatv-icon-play-n.png";
 import deleteIcon from '../../../assets/images/delete-icon.png';
 import defaultBackground from '../../../assets/images/default-background.png'
 import { $d } from '../../../functions';
+import { FavIcon } from "../../utils/FavIcon";
 import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { deleteMedia } from '../../../middlewares/redux/actions/admin';

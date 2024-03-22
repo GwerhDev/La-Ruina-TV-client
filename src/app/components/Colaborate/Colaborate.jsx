@@ -7,21 +7,23 @@ import laruinaLogo from '../../../assets/images/ruina-records-logo.png'
 export const Colaborate = () => {
   BodyCss()
   return (
-    <div className={s.donateCont}>
+    <main className='main-container'>
       <div className='nav-fixed' />
-      <div className={s.donateFormat} >
-        <img src={laruinaLogo} alt='laruina.cl' width='300px' className={s.laruinaLogo} /> <br/>
-        DONAR A ESTE PROYECTO
-        <ul className={s.ulContBtn}>
-          <li className={s.donateBtn}>
-            <Link to='/checkout/donation'>
-              <button className={s.btnSubmit}>
-                Ir al Checkout
-              </button>
-            </Link>
-          </li>
-        </ul>
+      <div className='section-container'>
+        <div className='header-container'>
+          <h1>DONAR A ESTE PROYECTO</h1>
+          <img src={laruinaLogo} alt='laruina.cl' width='300px' className={s.laruinaLogo} />
+          <ul className={s.ulContBtn}>
+            <li className={s.donateBtn}>
+              <Link to='/checkout/donation'>
+                <button className={s.btnSubmit}>
+                  Ir al Checkout
+                </button>
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
+    </main>
   )
 }

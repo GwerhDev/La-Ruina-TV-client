@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { Requests } from '../Requests/Requests';
 import { setOption } from '../../../../middlewares/redux/actions';
 import { RequestProfile } from '../../RequestProfile/RequestProfile';
+import { OptionSelector } from '../../../utils/OptionSelector';
 
 export const AdminDashboard = () => {
   const dispatch = useDispatch();
@@ -20,6 +21,7 @@ export const AdminDashboard = () => {
             <h1>Bienvenido a tu dashboard</h1>
             <h3>¿Qué quieres hacer?</h3>
           </span>
+          <OptionSelector content users settings />
         </div>
         <Requests />
       </div>
