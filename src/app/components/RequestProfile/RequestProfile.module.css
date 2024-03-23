@@ -119,12 +119,12 @@
 
 .listIcon:hover,
 .likeIcon:hover,
+.userIcon:hover,
 .adminIcon:hover,
 .logoutIcon:hover,
-.userIcon:hover,
+.profilePic:hover,
 .subscriptionIcon:hover,
-.notificationIcon:hover,
-.profilePic:hover {
+.notificationIcon:hover {
 	cursor: pointer;
 	filter: grayscale(.2);
 	opacity: 1;
