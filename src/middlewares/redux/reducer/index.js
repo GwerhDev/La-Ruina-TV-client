@@ -20,7 +20,8 @@ import {
     GET_PRODUCERS,
     GET_USER_PLAN,
     RESET_DETAILS_MEDIA,
-    IS_LOGGED
+    IS_LOGGED,
+    SET_BACK_ROUTE
 } from "../../misc";
 
 
@@ -48,10 +49,21 @@ const initialState = {
     error: "",
     /*------------Filter&Search------------*/
     searchedMedia: [],
+    /*------------Navigation------------*/
+    navigation: {
+        backRoute: null,
+    },
 }
 
 export default function rootReducer(state = initialState, action) {
     switch (action.type) {
+        case SET_BACK_ROUTE:
+            return {
+                ...state,
+                navigation: {
+                    backRoute: action.payload,
+                }
+            }
         case IS_LOGGED:
             return {
                 ...state,

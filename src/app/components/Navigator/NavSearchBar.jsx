@@ -7,7 +7,7 @@ export const NavSearchBar = () => {
     window.onscroll = function () { navBack(setPosNav, posNav) };
 
     return (
-        <ul className='navSearchBar'>
+        <ul className='nav-searchbar'>
             <div className='divSearchBarResponsive'>
                 <SearchBar/>
             </div>

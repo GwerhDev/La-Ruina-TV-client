@@ -130,7 +130,7 @@ button:disabled {
   font-size: 25px;
 }
 
-.navSearchBar {
+.nav-searchbar {
   display: none;
   flex-direction: row;
   justify-content: flex-end;
@@ -507,7 +507,7 @@ h4 {
 
 .button-primary,
 .button-secondary,
-.buttonVer {
+.button-watch {
   height: 50px;
   width: 200px;
   position: relative;
@@ -520,7 +520,7 @@ h4 {
 }
 
 .button-primary,
-.buttonVer {
+.button-watch {
   background: linear-gradient(to bottom, #ffffff, rgba(0, 0, 0, 0.679));
   background-color: #ffffff;
 }
@@ -533,7 +533,7 @@ h4 {
 }
 
 .button-primary:hover,
-.buttonVer:hover {
+.button-watch:hover {
   background: linear-gradient(to bottom, #171717, rgba(0, 0, 0, 0.679));
   background-color: #171717;
   color: #ffffff;
@@ -861,7 +861,7 @@ h4 {
     display: none;
   }
 
-  .navSearchBar {
+  .nav-searchbar {
     display: flex;
   }
 
@@ -898,7 +898,7 @@ h4 {
 
 }
 
-@media only screen and (min-width: 1180px) {
+@media only screen and (min-width: 1300px) {
   .divSearchBarResponsive {
     display: flex;
   }

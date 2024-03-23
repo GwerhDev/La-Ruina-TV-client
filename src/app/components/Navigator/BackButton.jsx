@@ -4,6 +4,8 @@ import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { resetOption } from '../../../middlewares/redux/actions';
 import { toTop } from '../../../functions/toTop';
+import { resetBackRoute } from '../../../middlewares/redux/actions/navigation';
+import { resetDetailsMedia } from '../../../middlewares/redux/actions/media';
 
 export const BackButton = () => {
     const history = useHistory();
@@ -12,8 +14,10 @@ export const BackButton = () => {
 
     function handleButton() {
         toTop();
-        dispatch(resetOption());
         history.push(backRoute || '');
+        dispatch(resetOption());
+        dispatch(resetBackRoute());
+        dispatch(resetDetailsMedia());
     };
 
     return (

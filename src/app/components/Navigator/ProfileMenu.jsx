@@ -11,15 +11,19 @@ import logoutIcon from '../../../assets/images/svg/logout-icon.svg';
 import subscriptionIcon from '../../../assets/images/svg/billing-icon.svg';
 import { logout } from '../../../functions/Logout';
 import { toTop } from '../../../functions/toTop';
+import { useLocation } from 'react-router-dom/cjs/react-router-dom';
+import { setBackRoute } from '../../../middlewares/redux/actions/navigation';
 
 export const ProfileMenu = () => {
   const currentUser = useSelector(state => state.currentUser);
   const dispatch = useDispatch();
+  const location = useLocation();
   const history = useHistory();
   const { profilePic, username, role } = currentUser;
 
   function onClickValue(e) {
     toTop();
+    dispatch(setBackRoute(location.pathname));
     dispatch(setOption(e.target.value || e));
     history.push("/" + e.target.value || e);
   };

@@ -1,3 +1,4 @@
+import { useSelector } from 'react-redux';
 import s from './Auth.module.css';
 import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux';
@@ -9,15 +10,16 @@ const Auth = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const location = useLocation();
+  const backRoute = useSelector(state => state.navigation?.backRoute) || null;
   const params = new URLSearchParams(location.search);
   const userToken = params.get('token');
   
   useEffect(() => {
     if (userToken) {
       setUserToken(userToken);
-      dispatch(auth(history));
+      dispatch(auth(history, backRoute));
     }
-  }, [dispatch, userToken, history]);
+  }, [dispatch, userToken, history, backRoute]);
 
   return (
     <div className={s.loaderContainer}>

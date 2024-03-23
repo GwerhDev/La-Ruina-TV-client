@@ -11,7 +11,7 @@ export function isLogged(e) {
   }
 }
 
-export function auth(history) {
+export function auth(history, backRoute) {
   return async function (dispatch) {
     dispatch(isLogged(AUTHENTICATING));
     await axios.get(`${URL_API}/auth`, options())
@@ -21,14 +21,14 @@ export function auth(history) {
           type: CURRENT_USER,
           payload: res.data.userData
         });
-        return res.data.logged && history.push(`/browser`);
+        res.data.logged && history.push(backRoute || '/');
+        return;
       })
       .catch((e) => {
         dispatch(isLogged(false));
         console.error(e);
         return;
-      }
-    )
+      })
   }
 };
 
@@ -41,14 +41,14 @@ export function loginInner(email, password, history) {
         reset();
       })
       .catch((e) => {
-        dispatch({ 
-          type: ERROR, 
-          payload: e.response.data.message 
+        dispatch({
+          type: ERROR,
+          payload: e.response.data.message
         });
         console.error(e.code);
         return;
       }
-    )
+      )
   }
 };
 
@@ -69,7 +69,7 @@ export function signupInner(email, password, history) {
         console.error(e);
         return;
       }
-    )
+      )
   }
 };
 
@@ -83,7 +83,7 @@ export function signupGoogle(history) {
         console.error(e);
         return;
       }
-    )
+      )
   }
 };
 

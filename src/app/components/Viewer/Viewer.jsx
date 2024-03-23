@@ -17,24 +17,29 @@ import { subscriberYoutubeVerification } from '../../../middlewares/redux/action
 import { DeleteCanvas } from '../../utils/DeleteCanvas';
 import { deleteMedia } from '../../../middlewares/redux/actions/admin';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import { resetBackRoute, setBackRoute } from '../../../middlewares/redux/actions/navigation';
+import { useLocation } from 'react-router-dom/cjs/react-router-dom';
 
 export const Viewer = () => {
     const params = useParams();
     const history = useHistory();
     const { id } = params;
     const dispatch = useDispatch();
+    const location = useLocation();
     const favorites = useSelector(state => state.favorites);
     const subscriber = useSelector(state => state.subscriber);
     const currentUser = useSelector(state => state.currentUser);
     const infoDetailViewer = useSelector(state => state.infoDetailViewer);
 
     function onClickValue(e) {
+        dispatch(setBackRoute(location.pathname))
         dispatch(setOption(e.target.id));
         history.push('/login');
     };
 
     function handleBackButton() {
         dispatch(resetOption());
+        dispatch(resetBackRoute());
         dispatch(resetDetailsMedia());
     };
 
@@ -106,7 +111,7 @@ export const Viewer = () => {
                                                 currentUser
                                                     ?
                                                     <button
-                                                        className='buttonVer'
+                                                        className='button-watch'
                                                         onClick={() => {
                                                             return (
                                                                 dispatch(subscriberYoutubeVerification(currentUser?.email)),
@@ -129,7 +134,7 @@ export const Viewer = () => {
                                                     </button>
                                                     :
                                                     <button
-                                                        className='buttonVer'
+                                                        className='button-watch'
                                                         id='login'
                                                         onClick={(e) => {
                                                             return (

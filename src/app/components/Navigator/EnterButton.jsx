@@ -9,15 +9,13 @@ export const EnterBtn = () => {
   const history = useHistory();
 
   function onClickValue() {
-    return (
-      dispatch(setOption('login')),
-      history.push('/login')
-    )
+    dispatch(setOption('login'));
+    history.push('/login');
   };
 
   return (
     <div className={s.enterBtn} onClick={onClickValue}>
-      <img src={userIcon} alt='userIcon' width='20px'/>
+      <img src={userIcon} alt='userIcon' width='20px' />
       Ingresar
     </div>
   )
