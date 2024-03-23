@@ -1,15 +1,14 @@
-import { useHistory } from 'react-router-dom';
 import s from './BackButton.module.css';
-import React from 'react';
 import backIcon from '../../../assets/images/ruinatv-icon-play-b.png';
-import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import { resetOption } from '../../../middlewares/redux/actions';
 import { toTop } from '../../../functions/toTop';
 
-export const BackButton = (props) => {
-    const dispatch = useDispatch();
+export const BackButton = () => {
     const history = useHistory();
-    const { backRoute } = props || null;
+    const dispatch = useDispatch();
+    const backRoute = useSelector(state => state.navigation?.backRoute) || null;
 
     function handleButton() {
         toTop();
@@ -18,9 +17,9 @@ export const BackButton = (props) => {
     };
 
     return (
-        <div className={s.BackButton}>
+        <div className={s.backContainer}>
             <button
-                className={s.BackButton}
+                className={s.backContainer}
                 onClick={handleButton}>
                 <img className={s.backIcon} src={backIcon} alt='backIcon' width='15px' />
                 Volver

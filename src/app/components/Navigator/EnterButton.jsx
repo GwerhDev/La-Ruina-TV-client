@@ -17,7 +17,7 @@ export const EnterBtn = () => {
 
   return (
     <div className={s.enterBtn} onClick={onClickValue}>
-      <img className={s.userIconEnter} src={userIcon} alt='userIcon' width='20px'/>
+      <img src={userIcon} alt='userIcon' width='20px'/>
       Ingresar
     </div>
   )

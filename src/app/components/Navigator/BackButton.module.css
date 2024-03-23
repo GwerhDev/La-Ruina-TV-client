@@ -1,4 +1,4 @@
-.BackButton {
+.backContainer {
     font-family: Bebas Neue;
     font-size: 20px;
     color: aliceblue;
@@ -19,12 +19,18 @@
     opacity: .8;
 }
 
-.BackButton,
+.backContainer,
 .backIcon {
     transition-duration: 1s;
 }
 
-.BackButton:hover,
+.backContainer:hover,
 .backIcon:hover {
     opacity: 1;
+}
+
+@media only screen and (max-width: 1380px) {
+    .backContainer {
+        margin-right: -10px;
+    }
 }
