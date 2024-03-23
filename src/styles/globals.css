@@ -269,6 +269,13 @@ h4 {
   background: linear-gradient(to bottom, #ffffffcf, rgb(137, 137, 137));
 }
 
+@media only screen and (max-width: 1380px) {
+  .section-container {
+    padding-left: 25px;
+    padding-right: 35px;
+  }
+}
+
 .header-container {
   width: 100%;
   max-width: 2000px;

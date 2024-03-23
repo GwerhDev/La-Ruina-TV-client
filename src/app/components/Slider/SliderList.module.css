@@ -1,69 +1,15 @@
-.sliderCont {
-  top: -120px;
-  width: 100vw;
-  overflow: hidden;
-  margin-right: 10px;
-  position: relative;
-}
-
-.sliderCont h3 {
-  color: #ffffff;
-  left: 50px;
-  top: 30px;
-  position: relative;
-  font-weight: 100;
-  font-size: 22px;
-}
-
-.sliderContItems {
-  position: relative;
-  width: 100%;
-  height: 170px;
-  right: 10px;
-  overflow: hidden;
-}
-
-.sliderPrevBtn {
-  width: 50px;
-  transform: translate(-65px);
-  background: linear-gradient(to right, rgb(255, 255, 255), transparent);
-  left: 10px;
-  opacity: 0.5;
-}
-
-.sliderPostBtn {
-  width: 50px;
-  right: 0px;
-  background: linear-gradient(to left, rgb(255, 255, 255), transparent);
-  opacity: 0;
-}
-
-.sliderPrevBtn,
-.sliderPostBtn {
-  height: 120px;
-  top: 16px;
-  position: absolute;
-  color: #ffffff;
-  z-index: 99999;
-  border: none;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 20px;
-  font-weight: 900;
-}
-
-button:hover {
-  cursor: pointer;
-}
-
 .sliderItems {
   height: 0;
 }
 
 .sliderListaItems {
+  margin: 0;
+  padding: 0;
   display: inline-flex;
   flex-direction: row;
   position: relative;
-  left: 20px;
+  padding-top: 1rem;
+  padding-left: 60px;
 }
 
 .sliderListaItems li {
@@ -179,4 +125,11 @@ button:hover {
   margin-right: 5px;
   margin-left: 5px;
   margin-top: -4px;
+}
+
+@media only screen and (max-width: 1380px) {
+  .sliderListaItems {
+    padding-left: 35px;
+  }
+
 }
