@@ -27,7 +27,8 @@ export const ProfileMenu = () => {
   return (
     <div className={s.profileCont}>
       <div className={s.profileBtnCont}>
-        <div className={s.profileBtnMenu} id='profile-button' onClick={() => profileMenuCss('enter')} onMouseLeave={() => profileMenuCss('leave')}>
+        <div className={s.profileBtnMenu} id='profile-button' 
+          onClick={() => profileMenuCss('enter')} onMouseLeave={() => profileMenuCss('leave')}>
           {
             profilePic
             ?

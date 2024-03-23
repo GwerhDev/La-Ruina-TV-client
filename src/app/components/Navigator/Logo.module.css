@@ -1,5 +1,5 @@
 .logo {
-  top: 10px;
+  top: 7px;
   margin: 0;
   padding: 0;
   width: 200px;
@@ -38,7 +38,7 @@
 
 .ruinaLogo {
   opacity: 0.7;
-  width: 120px;
+  width: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -57,7 +57,7 @@
   padding-left: 10px;
   display: none;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
   transition-duration: .4s;
 }
 

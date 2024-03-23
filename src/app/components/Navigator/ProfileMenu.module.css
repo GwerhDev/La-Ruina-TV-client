@@ -8,6 +8,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-right: -30px;
 }
 
 .profileBtnCont {
@@ -38,7 +39,6 @@
     width: 100%;
     height: 65px;
     border-radius: 5px;
-    gap: .5rem;
 }
 
 .btnMenuTv {
@@ -102,7 +102,7 @@
 }
 
 .ulProfileOptions {
-    gap: .5rem;
+    gap: 5px;
     margin: 0;
     height: 0;
     padding: 0;
