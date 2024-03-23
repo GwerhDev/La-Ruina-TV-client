@@ -24,6 +24,14 @@
   gap: 2px;
 }
 
+.containerLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-left: -10px;
+} 
+
 .logoButton span img {
   transition-duration: .4s;
   opacity: .5;

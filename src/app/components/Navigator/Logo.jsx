@@ -57,8 +57,12 @@ export const Logo = () => {
     return (
         <div className={s.logo}>
             <div className={s.logoButton} id='logo-button'>
-                <span onClick={handleAppsMenu}><img className={s.btnMenuTv} src={btnMenuTv} alt='menú' width='10px' /></span>
-                <img className={s.ruinaLogo} src={ruinaLogo} alt="La Ruina TV" onClick={handleLogoClick} />
+                <div className={s.containerLogo}>
+                    <span onClick={handleAppsMenu}>
+                        <img className={s.btnMenuTv} src={btnMenuTv} alt='menú' width='10px' />
+                    </span>
+                    <img className={s.ruinaLogo} src={ruinaLogo} alt="La Ruina TV" onClick={handleLogoClick} />
+                </div>
             </div>
             <ul className={s.appsContainer} id='apps-container'>
                 <a href={urlHub}><li id='app-option-1'>Hub</li></a>
