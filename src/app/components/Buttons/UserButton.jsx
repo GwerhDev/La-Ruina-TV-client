@@ -20,7 +20,7 @@ export const UserButton = () => {
               :
               <img className={s.userIcon} referrerPolicy="no-referrer" src={userIcon} alt='userIcon' width='25px' />
             }
-            <p>Hola, <span>{username ? username.substring(0, 5) + "..." : "Usuario"}</span></p>
+            <p id='username' className={s.username}>Hola, <span>{username ? username.substring(0, 5) + "..." : "Usuario"}</span></p>
           </div>
           <div className={s.openMenuButton} onClick={() => profileButtonFunctions('enter')} onMouseLeave={() => profileButtonFunctions('leave')}>
             <img className={s.btnMenuTv} src={btnMenuTv} alt='menú' width='8px' />

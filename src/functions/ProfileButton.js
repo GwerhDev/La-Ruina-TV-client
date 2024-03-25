@@ -36,6 +36,8 @@ export default function profileButtonFunctions(e){
                 $d(`#optionProfileBtn6`).style.scale='0'
                 $d(`.liProfileMenuDisplay`).style.display='none'
                 $d(`#ul-options-profile-menu`).style.display='none'
+                $d(`#profile-button`).style.width='50%'
+                $d(`#username`).style.width='0'   
             }
         })
     if(e==='enter'){
@@ -56,6 +58,7 @@ export default function profileButtonFunctions(e){
         $d(`#optionProfileBtn6`).style.scale='1'
         $d(`.liProfileMenuDisplay`).style.display='block'
         $d(`#ul-options-profile-menu`).style.display='grid'
-
+        $d(`#profile-button`).style.width='100%'        
+        $d(`#username`).style.width='100px'
     }
 }
