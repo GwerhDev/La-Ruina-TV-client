@@ -1,5 +1,4 @@
 import './styles/root.css';
-import './styles/player.css';
 import './styles/globals.css';
 import React from 'react';
 import store from './middlewares/redux/store';

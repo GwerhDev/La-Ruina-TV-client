@@ -21,12 +21,12 @@ const Checkout = () => {
           <h1>Plataforma de pago</h1>
           <p>Seleccione una opción:</p>
           <ul className={s.ulContBtn}>
-            <li className={s.donateBtn}>
+            <li className={s.buttonDonate}>
               <button className={s.btnSubmit} onClick={() => handleCheckout(PAYMENT_FLOW, dispatch, type, currentUser)}>
                 Flow.cl
               </button>
             </li>
-            <li className={s.donateBtn}>
+            <li className={s.buttonDonate}>
               <button className={s.btnSubmit} onClick={() => handleCheckout(PAYMENT_MERCADOPAGO, dispatch, type, currentUser)}>
                 MercadoPago
               </button>

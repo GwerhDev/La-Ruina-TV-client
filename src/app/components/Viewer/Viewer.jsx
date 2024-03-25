@@ -44,7 +44,7 @@ export const Viewer = () => {
     };
 
     function handleClickBack() {
-        $d('.playerLi').style.display = 'none';
+        $d('.player-li').style.display = 'none';
         $d('.player-background-effect').style.opacity = '0';
         $d('#viewer-info').style.display = "flex";
         $d('#player-section').style.display = "none";
@@ -94,7 +94,7 @@ export const Viewer = () => {
                                         <ul className={s.viewMediaTypesList}>
                                             {
                                                 currentUser &&
-                                                <button className='buttonAddToFavorites' onClick={() => { dispatch(favorites.find(e => e.id === id) ? deleteFavorites(id) : addFavorites(currentUser.id, id)) }}>
+                                                <button className='button-add-favorite' onClick={() => { dispatch(favorites.find(e => e.id === id) ? deleteFavorites(id) : addFavorites(currentUser.id, id)) }}>
                                                     <img
                                                         className={s.favIcon}
                                                         id="favViewIcon"
@@ -117,8 +117,8 @@ export const Viewer = () => {
                                                                 dispatch(subscriberYoutubeVerification(currentUser?.email)),
                                                                 (subscriber ? $d('#canvasYtSubBtn').style.display = 'none' : $d('#canvasYtSubBtn').style.display = 'flex'),
                                                                 $d('.player-background-effect').style.opacity = '1',
-                                                                $d('.playerLi').style.display = 'block',
-                                                                $d('.playUl').style.opacity = '1',
+                                                                $d('.player-li').style.display = 'block',
+                                                                $d('.player-ul').style.opacity = '1',
                                                                 $d('#viewer-info').style.display = "none",
                                                                 $d('#player-section').style.display = "flex"
                                                             )
@@ -146,7 +146,7 @@ export const Viewer = () => {
                                                         Ingresar
                                                     </button>
                                             }
-                                            <Link to='/browser'><button className='buttonVolver' onClick={handleBackButton}>Volver al inicio</button></Link>
+                                            <Link to='/browser'><button className='button-back' onClick={handleBackButton}>Volver al inicio</button></Link>
 
                                         </div>
                                     </div>

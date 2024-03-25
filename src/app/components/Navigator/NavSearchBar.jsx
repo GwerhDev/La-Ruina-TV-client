@@ -8,7 +8,7 @@ export const NavSearchBar = () => {
 
     return (
         <ul className='nav-searchbar'>
-            <div className='divSearchBarResponsive'>
+            <div className='responsive-searchbar'>
                 <SearchBar/>
             </div>
         </ul>

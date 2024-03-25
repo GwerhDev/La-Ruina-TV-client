@@ -3,7 +3,7 @@ import { $d } from '../../../functions';
 
 export const NavBurgerMenuTablet = () => {
     return (
-        <div className="navBurgerTabletCont">
+        <div className="nav-burger-tablet-container">
             <img 
                 className='menuIcon' 
                 onClick={()=>{$d('.canvas-menu-container').style.display='flex'}}

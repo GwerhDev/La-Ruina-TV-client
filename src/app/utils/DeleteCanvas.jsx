@@ -10,18 +10,18 @@ export const DeleteCanvas = (props) => {
 
   function handleDelete() {
     dispatch(deleteFunction(id));
-    $d(`#deleteCanvas${keyId}${id}`).style.display='none';
+    $d(`#canvas-delete${keyId}${id}`).style.display='none';
     if (history.location.pathname !== '/browser') {
       history.push('/browser');
     }
   };
 
   function handleCancelDelete() {
-    $d(`#deleteCanvas${keyId}${id}`).style.display='none';
+    $d(`#canvas-delete${keyId}${id}`).style.display='none';
   };
 
   return (
-    <div className={s.container} id={`deleteCanvas${keyId}${id}`} style={{ display:'none' }}>
+    <div className={s.container} id={`canvas-delete${keyId}${id}`} style={{ display:'none' }}>
       <div className={s.canvasContainer}>
         ¿Eliminar?
         <button className={s.secundaryButton} onClick={handleDelete}>Sí</button>

@@ -27,11 +27,11 @@ export const SliderCard = ({ id, imageSlider, title, keyID }) => {
   };
 
   function handleDeleteMedia() {
-    $d(`#deleteCanvas${keyID}${id}`).style.display = 'flex';
+    $d(`#canvas-delete${keyID}${id}`).style.display = 'flex';
   };
 
   function opacityCanvas(opacity) {
-    $d(`#deleteCanvas${keyID}${id}`).style.opacity = opacity;
+    $d(`#canvas-delete${keyID}${id}`).style.opacity = opacity;
   };
 
   return (

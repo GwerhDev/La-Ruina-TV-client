@@ -14,7 +14,7 @@ export const Colaborate = () => {
           <h1>DONAR A ESTE PROYECTO</h1>
           <img src={laruinaLogo} alt='laruina.cl' width='300px' className={s.laruinaLogo} />
           <ul className={s.ulContBtn}>
-            <li className={s.donateBtn}>
+            <li className={s.buttonDonate}>
               <Link to='/checkout/donation'>
                 <button className={s.btnSubmit}>
                   Ir al Checkout
