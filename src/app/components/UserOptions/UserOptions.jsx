@@ -11,7 +11,7 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom';
 import { toTop } from '../../../functions/toTop';
 import { setBackRoute } from '../../../middlewares/redux/actions/navigation';
 import { setOption } from '../../../middlewares/redux/actions';
-import profileButtonFunctions from '../../../functions/ProfileButton';
+import { userButtonEnter } from '../../../functions/UserButton';
 
 export const UserOptions = () => {
   const currentUser = useSelector(state => state.currentUser);
@@ -34,7 +34,7 @@ export const UserOptions = () => {
           className={s.optionProfileBtn}
           value='profile'
           onClick={(e) => onClickValue(e)}
-          onMouseEnter={() => profileButtonFunctions('enter')}>
+          onMouseEnter={userButtonEnter}>
           <img
             className={s.imgIconProf}
             referrerPolicy="no-referrer"
@@ -51,7 +51,7 @@ export const UserOptions = () => {
           className={s.optionProfileBtn}
           value='favorites'
           onClick={(e) => onClickValue(e)}
-          onMouseEnter={() => profileButtonFunctions('enter')}>
+          onMouseEnter={userButtonEnter}>
           <img
             className={s.imgIcon}
             onClick={(e) => e.target.value = 'favorites'}
@@ -67,7 +67,7 @@ export const UserOptions = () => {
           className={s.optionProfileBtn}
           value='subscription'
           onClick={(e) => onClickValue(e)}
-          onMouseEnter={() => profileButtonFunctions('enter')}>
+          onMouseEnter={userButtonEnter}>
           <img
             className={s.imgIcon}
             onClick={(e) => e.target.value = 'subscription'}
@@ -85,7 +85,7 @@ export const UserOptions = () => {
               className={s.optionProfileBtn}
               value={currentUser?.role === 'admin' ? 'dashboard' : 'subscription'}
               onClick={(e) => onClickValue(e)}
-              onMouseEnter={() => profileButtonFunctions('enter')}>
+              onMouseEnter={userButtonEnter}>
               <img
                 className={s.imgIcon}
                 onClick={(e) => e.target.value = 'dashboard'}
@@ -101,7 +101,7 @@ export const UserOptions = () => {
           id='optionProfileBtn6'
           className={s.optionProfileBtn}
           onClick={() => logout(history)}
-          onMouseEnter={() => profileButtonFunctions('enter')}>
+          onMouseEnter={userButtonEnter}>
           <img
             className={s.imgIcon}
             src={logoutIcon}

@@ -39,6 +39,10 @@
     overflow: hidden;
 }
 
+.username:hover {
+    cursor: pointer;
+}
+
 .usernameContainer {
     width: 100%;
     gap: 5px;
