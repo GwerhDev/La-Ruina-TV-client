@@ -104,7 +104,7 @@ button:disabled {
 
 
 .canvas-menu-container {
-  width: 100%;
+  width: 100vw;
   height: auto;
   text-align: center;
   display: flex;
