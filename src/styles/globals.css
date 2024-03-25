@@ -94,15 +94,6 @@ button:disabled {
   font-size: 25px;
 }
 
-.nav-searchbar {
-  display: none;
-  flex-direction: row;
-  justify-content: flex-end;
-  list-style-type: none;
-  height: 100%;
-}
-
-
 .canvas-menu-container {
   width: 100vw;
   height: auto;
@@ -446,13 +437,6 @@ h4 {
     display: none;
   }
 
-  .nav-searchbar {
-    display: flex;
-  }
-
-  .responsive-searchbar {
-    display: none;
-  }
 }
 
 
@@ -477,11 +461,7 @@ h4 {
 
 /* Big screen devices (889px and above) */
 
-@media only screen and (min-width: 1300px) {
-  .responsive-searchbar {
-    display: flex;
-  }
-}
+
 
 /* Extra big screen devices (2000px and above) */
 @media only screen and (min-width: 1300px) {

@@ -1,3 +1,4 @@
+import s from './NavSearchBar.module.css';
 import { useState } from 'react';
 import { SearchBar } from './SearchBar';
 import navBack from '../../../functions/Navigator';
@@ -7,10 +8,10 @@ export const NavSearchBar = () => {
     window.onscroll = function () { navBack(setPosNav, posNav) };
 
     return (
-        <ul className='nav-searchbar'>
-            <div className='responsive-searchbar'>
+        <div className={s.container}>
+            <div className={s.innerContainer}>
                 <SearchBar/>
             </div>
-        </ul>
+        </div>
     )
 };
