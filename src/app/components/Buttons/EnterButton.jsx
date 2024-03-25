@@ -4,7 +4,7 @@ import userIcon from '../../../assets/images/svg/profile-icon.svg';
 import { useHistory } from 'react-router-dom';
 import { setOption } from '../../../middlewares/redux/actions';
 
-export const EnterBtn = () => {
+export const EnterButton = () => {
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -14,9 +14,9 @@ export const EnterBtn = () => {
   };
 
   return (
-    <div className={s.enterBtn} onClick={onClickValue}>
+    <button className={s.container} onClick={onClickValue}>
       <img src={userIcon} alt='userIcon' width='20px' />
       Ingresar
-    </div>
+    </button>
   )
 };

@@ -1,13 +1,17 @@
 .innerNavContainer {
+  margin: 0;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  width: 100vw;
   max-width: 2000px;
 }
 
 .leftSection,
 .rightSection {
+  margin: 0;
+  padding: 0;
   width: 200px;
   height: 80px;
   display: flex;
@@ -15,16 +19,43 @@
 }
 
 .leftSection {
+  padding-top: 15px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  padding-left: 0px;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .rightSection {
-  margin: 0;
-  padding: 0;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  margin-right: 10px;
+}
+
+.middleSection {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+@media only screen and (max-width: 2000px) {
+  .leftSection {
+    padding-left: 50px;
+  }
+
+  .rightSection {
+    padding-right: 50px;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .leftSection {
+    padding-left: 25px;
+  }
+
+  .rightSection {
+    padding-right: 25px;
+  }
 }

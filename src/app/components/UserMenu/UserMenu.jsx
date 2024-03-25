@@ -1,10 +1,10 @@
-import s from './NavProfileMenu.module.css';
+import s from './UserMenu.module.css';
 import navBack from '../../../functions/Navigator';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { EnterBtn } from './EnterButton';
-import { BackButton } from './BackButton';
-import { ProfileMenu } from './ProfileMenu';
+import { EnterButton } from '../Buttons/EnterButton';
+import { BackButton } from '../Buttons/BackButton';
+import { UserButton } from '../Buttons/UserButton';
 import { AUTHENTICATING } from '../../../middlewares/misc';
 
 export const NavProfileMenu = () => {
@@ -15,17 +15,21 @@ export const NavProfileMenu = () => {
     window.onscroll = function () { navBack(setPosNav, posNav) };
 
     return (
-        <ul className={s.profileMenuBtn}>
+        <span className={s.container}>
             {
                 isLogged === AUTHENTICATING
                 ?
                     <div className={s.loader}></div>
                 :
                     !currentUser
-                        ? option === 'login' ? <li><BackButton /></li> : <li><EnterBtn /></li>
-                        : option === '' || option === 'login' ? <li><ProfileMenu /></li> : <li><BackButton /></li>
+                        ? option === 'login'
+                            ? <span className={s.buttonContainer}><BackButton /></span>
+                            : <span className={s.buttonContainer}><EnterButton /></span>
+                        : option === '' || option === 'login' 
+                            ? <span className={s.buttonContainer}><UserButton /></span>
+                            : <span className={s.buttonContainer}><BackButton /></span>
 
             }
-        </ul>
+        </span>
     )
 }

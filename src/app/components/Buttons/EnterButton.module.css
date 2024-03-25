@@ -1,17 +1,19 @@
-.enterBtn {
+.container {
+  margin: 0;
+  padding: 0;
   font-family: Bebas Neue;
-  color: rgba(255, 255, 255, 0.781);
-  transition-duration: .5s;
-  z-index: 9999999;
   font-size: 20px;
-  height: 50px;
+  color: aliceblue;
+  background-color: transparent;
+  border: none;
+  opacity: .8;
   display: flex;
   align-items: center;
-  margin-right: 30px;
+  justify-content: center;
   gap: 5px;
 }
 
-.enterBtn:hover {
+.container:hover {
   cursor: pointer;
   color: white;
 }

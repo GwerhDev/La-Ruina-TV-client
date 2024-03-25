@@ -102,17 +102,9 @@ button:disabled {
   height: 100%;
 }
 
-.nav-burger-tablet-container {
-  width: 100%;
-  height: 80px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .canvas-menu-container {
-  width: 100vw;
+  width: 100%;
   height: auto;
   text-align: center;
   display: flex;
@@ -125,16 +117,6 @@ button:disabled {
   transition-duration: 1s;
   padding-top: 2rem;
   padding-bottom: 2rem;
-}
-
-.menuIcon {
-  opacity: .7;
-  z-index: 99999;
-}
-
-.menuIcon:hover {
-  opacity: 1;
-  cursor: pointer;
 }
 
 .nav-container li {
@@ -172,14 +154,14 @@ h4 {
 .main-container {
   margin: 0;
   padding: 0;
-  width: 100%;
+  width: 100vw;
   display: flex;
   align-items: flex-start;
   justify-content: center;
 }
 
 .section-container {
-  width: 100%;
+  width: 100vw;
   min-height: 100vh;
   display: flex;
   list-style: none;
@@ -198,7 +180,7 @@ h4 {
 @media only screen and (max-width: 1300px) {
   .section-container {
     padding-left: 25px;
-    padding-right: 35px;
+    padding-right: 25px;
   }
 }
 
@@ -494,12 +476,6 @@ h4 {
 @media only screen and (min-width: 768px) {}
 
 /* Big screen devices (889px and above) */
-@media only screen and (min-width: 889px) {
-  .nav-burger-tablet-container {
-    display: flex;
-  }
-
-}
 
 @media only screen and (min-width: 1300px) {
   .responsive-searchbar {
@@ -508,15 +484,10 @@ h4 {
 }
 
 /* Extra big screen devices (2000px and above) */
-@media only screen and (min-width: 1380px) {
-  .nav-burger-tablet-container {
-    display: none;
-  }
-
+@media only screen and (min-width: 1300px) {
   .nav-menu {
     display: flex;
   }
-
 }
 
 #canvas-delete {

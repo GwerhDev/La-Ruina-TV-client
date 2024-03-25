@@ -1,5 +1,5 @@
-import s from './ProfileMenu.module.css';
-import profileMenuCss from '../../../functions/ProfileMenu';
+import s from './UserButton.module.css';
+import profileButtonFunctions from '../../../functions/ProfileButton';
 import { setOption } from '../../../middlewares/redux/actions';
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -14,7 +14,7 @@ import { toTop } from '../../../functions/toTop';
 import { useLocation } from 'react-router-dom/cjs/react-router-dom';
 import { setBackRoute } from '../../../middlewares/redux/actions/navigation';
 
-export const ProfileMenu = () => {
+export const UserButton = () => {
   const currentUser = useSelector(state => state.currentUser);
   const dispatch = useDispatch();
   const location = useLocation();
@@ -29,19 +29,22 @@ export const ProfileMenu = () => {
   };
 
   return (
-    <div className={s.profileCont}>
+    <div className={s.container}>
       <div className={s.profileBtnCont}>
-        <div className={s.profileBtnMenu} id='profile-button' 
-          onClick={() => profileMenuCss('enter')} onMouseLeave={() => profileMenuCss('leave')}>
-          {
-            profilePic
-            ?
-            <img className={s.profilePic} referrerPolicy="no-referrer" src={profilePic} alt='userIcon' width='25px' />
-            :
-            <img className={s.userIcon} referrerPolicy="no-referrer" src={userIcon} alt='userIcon' width='25px' />
-          }
-          <p>Hola, <span>{username ? username.substring(0, 5) + "..." : "Usuario"}</span></p>
-          <img className={s.btnMenuTv} src={btnMenuTv} alt='menú' width='8px' />
+        <div className={s.profileBtnMenu} id='profile-button'>
+          <div className={s.usernameContainer}>
+            {
+              profilePic
+              ?
+              <img className={s.profilePic} referrerPolicy="no-referrer" src={profilePic} alt='userIcon' width='25px' />
+              :
+              <img className={s.userIcon} referrerPolicy="no-referrer" src={userIcon} alt='userIcon' width='25px' />
+            }
+            <p>Hola, <span>{username ? username.substring(0, 5) + "..." : "Usuario"}</span></p>
+          </div>
+          <div className={s.openMenuButton} onClick={() => profileButtonFunctions('enter')} onMouseLeave={() => profileButtonFunctions('leave')}>
+            <img className={s.btnMenuTv} src={btnMenuTv} alt='menú' width='8px' />
+          </div>
         </div>
         <ul className={s.ulProfileOptions} id='ul-options-profile-menu'>
           <li className={s.liProfileMenuDisplay}>
@@ -50,7 +53,7 @@ export const ProfileMenu = () => {
               className={s.optionProfileBtn}
               value='profile'
               onClick={(e) => onClickValue(e)}
-              onMouseEnter={() => profileMenuCss('enter')}>
+              onMouseEnter={() => profileButtonFunctions('enter')}>
               <img
                 className={s.imgIconProf}
                 referrerPolicy="no-referrer"
@@ -67,7 +70,7 @@ export const ProfileMenu = () => {
               className={s.optionProfileBtn}
               value='favorites'
               onClick={(e) => onClickValue(e)}
-              onMouseEnter={() => profileMenuCss('enter')}>
+              onMouseEnter={() => profileButtonFunctions('enter')}>
               <img
                 className={s.imgIcon}
                 onClick={(e) => e.target.value = 'favorites'}
@@ -83,7 +86,7 @@ export const ProfileMenu = () => {
               className={s.optionProfileBtn}
               value='subscription'
               onClick={(e) => onClickValue(e)}
-              onMouseEnter={() => profileMenuCss('enter')}>
+              onMouseEnter={() => profileButtonFunctions('enter')}>
               <img
                 className={s.imgIcon}
                 onClick={(e) => e.target.value = 'subscription'}
@@ -101,7 +104,7 @@ export const ProfileMenu = () => {
                   className={s.optionProfileBtn}
                   value={role === 'admin' ? 'dashboard' : 'subscription'}
                   onClick={(e) => onClickValue(e)}
-                  onMouseEnter={() => profileMenuCss('enter')}>
+                  onMouseEnter={() => profileButtonFunctions('enter')}>
                   <img
                     className={s.imgIcon}
                     onClick={(e) => e.target.value = 'dashboard'}
@@ -117,7 +120,7 @@ export const ProfileMenu = () => {
               id='optionProfileBtn6'
               className={s.optionProfileBtn}
               onClick={() => logout(history)}
-              onMouseEnter={() => profileMenuCss('enter')}>
+              onMouseEnter={() => profileButtonFunctions('enter')}>
               <img
                 className={s.imgIcon}
                 src={logoutIcon}

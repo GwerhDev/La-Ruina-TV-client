@@ -1,6 +1,6 @@
 import { $d, $gId } from ".";
 
-export default function profileMenuCss(e){
+export default function profileButtonFunctions(e){
     document.addEventListener('mouseup', function(e) {
         var container0 = $gId('optionProfileBtn0');
         var container1 = $gId('optionProfileBtn1');

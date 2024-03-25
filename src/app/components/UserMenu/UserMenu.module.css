@@ -1,9 +1,19 @@
-.profileMenuBtn{
+.container {
+  margin: 0;
+  padding: 0;
   width: 200px;
-  height: 70px;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.buttonContainer {
+  height: 50px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .loader {
@@ -20,4 +30,12 @@
   100% {
     transform: rotate(1turn)
   }
+}
+
+@media only screen and (max-width: 2000px) {
+
+}
+
+@media only screen and (max-width: 1300px) {
+
 }

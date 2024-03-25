@@ -10,24 +10,20 @@ import { resetDetailsMedia } from '../../../middlewares/redux/actions/media';
 export const BackButton = () => {
     const history = useHistory();
     const dispatch = useDispatch();
-    const backRoute = useSelector(state => state.navigation?.backRoute) || null;
+    const backRoute = useSelector(state => state.navigation?.backRoute) || '';
 
     function handleButton() {
         toTop();
-        history.push(backRoute || '');
+        history.push(backRoute);
         dispatch(resetOption());
         dispatch(resetBackRoute());
         dispatch(resetDetailsMedia());
     };
 
     return (
-        <div className={s.backContainer}>
-            <button
-                className={s.backContainer}
-                onClick={handleButton}>
-                <img className={s.backIcon} src={backIcon} alt='backIcon' width='15px' />
-                Volver
-            </button>
-        </div>
+        <button className={s.container} onClick={handleButton}>
+            <img className={s.backIcon} src={backIcon} alt='Volver' width='15px' />
+            Volver
+        </button>
     )
 }
