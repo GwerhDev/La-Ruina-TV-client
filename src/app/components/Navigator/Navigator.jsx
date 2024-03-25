@@ -9,6 +9,7 @@ import { BurgerButton } from '../Buttons/BurgerButton';
 import { getUserData } from '../../../middlewares/redux/actions/account';
 import navBack from '../../../functions/Navigator';
 import { ConnectedApps } from '../ConnectedApps/ConnectedApps';
+import { UserOptions } from '../UserOptions/UserOptions';
 
 export const Navigator = () => {
     const dispatch = useDispatch();
@@ -31,9 +32,10 @@ export const Navigator = () => {
                     <NavMenu />
                     <BurgerButton />
                 </section>
+                <NavSearchBar />
                 <section className={s.rightSection}>
-                    <NavSearchBar />
                     <NavProfileMenu />
+                    <UserOptions />
                 </section>
             </div>
         </div>

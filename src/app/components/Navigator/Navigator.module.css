@@ -25,12 +25,13 @@
   justify-content: flex-start;
   padding-left: 0px;
   flex-direction: column;
-  gap: 5px;
+  gap: 7px;
 }
 
 .rightSection {
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: flex-end;
 }
 
