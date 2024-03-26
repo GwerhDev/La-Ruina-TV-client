@@ -19,7 +19,9 @@ export const UserMenu = () => {
       {
         isLogged === AUTHENTICATING
           ?
-          <div className={s.loader}></div>
+          <div className={s.loaderContainer}>
+            <div className={s.loader} />
+          </div>
           :
           !currentUser
             ? option === 'login'

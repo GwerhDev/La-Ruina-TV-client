@@ -16,6 +16,12 @@
   justify-content: flex-end;
 }
 
+.loaderContainer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .loader {
   width: 25px;
   aspect-ratio: 1;
