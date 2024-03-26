@@ -8,7 +8,7 @@ export const SliderTrack = (props) => {
   return (
     <div className={s.container}>
       <button className={s.prevButton}>
-        <img className={s.prevButtonImg} alt='' src={playIconb} width="100%"/>
+        <img className={s.prevButtonImg} alt='' src={playIconb} width="100%" />
       </button>
       <ul className={s.itemList}>
         {
@@ -26,7 +26,7 @@ export const SliderTrack = (props) => {
         }
       </ul>
       <button className={s.nextButton}>
-        <img className={s.nextButtonImg} alt='' src={playIconb} width="100%"/>
+        <img className={s.nextButtonImg} alt='' src={playIconb} width="100%" />
       </button>
     </div>
   )

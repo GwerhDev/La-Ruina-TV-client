@@ -61,7 +61,6 @@
 .sliderItem:hover {
   height: 150px;
   transition-duration: 0.5s;
-  scale: 1.03;
   cursor: pointer;
   background: linear-gradient(to top, #ffffff, rgb(0, 0, 0));
 }
