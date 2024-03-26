@@ -120,7 +120,7 @@
   flex-direction: row;
 }
 
-@media only screen and (max-width: 1380px) {
+@media only screen and (max-width: 1300px) {
   .visorContainer {
     top: 0;
     left: 0;

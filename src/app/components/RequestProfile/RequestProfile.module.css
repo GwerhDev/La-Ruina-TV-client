@@ -24,7 +24,7 @@
 	padding-right: 50px;
 }
 
-@media only screen and (max-width: 1380px) {
+@media only screen and (max-width: 1300px) {
 	.innerContainer {
 		padding-left: 25px;
 		padding-right: 25px;
@@ -140,4 +140,4 @@
 }
 
 
-@media only screen and (max-width: 1380px) {}
+@media only screen and (max-width: 1300px) {}
