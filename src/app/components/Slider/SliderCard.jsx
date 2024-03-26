@@ -28,10 +28,7 @@ export const SliderCard = (props) => {
 
   return (
     <div className={s.sliderItem}>
-      <img
-        alt=''
-        className={s.media}
-        onClick={handleRedirect}
+      <img alt='' className={s.media} onClick={handleRedirect}
         src={RenderImageGwerhdinary(imageSlider) || defaultBackground}
       />
       <div className={s.sliderInfoCanvas} onClick={handleRedirect}>
@@ -41,7 +38,7 @@ export const SliderCard = (props) => {
             <p style={{ color: 'black' }}>{title}</p>
           </span>
           {
-            currentUser && favorites?.filter(fav => fav.id === id).length
+            currentUser && favorites?.filter(e => e.id === id).length
               ? <FavIcon urlID={id} color={'red'} />
               : null
           }
