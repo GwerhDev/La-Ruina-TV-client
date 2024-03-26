@@ -53,10 +53,10 @@
 
 @media only screen and (max-width: 1300px) {
   .leftSection {
-    padding-left: 25px;
+    padding-left: 0;
   }
 
   .rightSection {
-    padding-right: 25px;
+    padding-right: 0;
   }
 }
