@@ -1,25 +1,24 @@
 import s from './Navigator.module.css';
 import { useState, useEffect } from 'react';
-import { NavMenu } from './NavMenu';
 import { useDispatch } from 'react-redux';
-import { NavSearchBar } from './NavSearchBar';
-import { NavProfileMenu } from '../UserMenu/UserMenu';
+import { NavSearchBar } from '../SearchBar/NavSearchBar';
+import { NavMenu } from './NavMenu';
+import { UserMenu } from '../UserMenu/UserMenu';
 import { LogoButton } from '../Buttons/LogoButton';
 import { BurgerButton } from '../Buttons/BurgerButton';
+import { UserOptions } from '../UserOptions/UserOptions';
+import { ConnectedApps } from '../ConnectedApps/ConnectedApps';
 import { getUserData } from '../../../middlewares/redux/actions/account';
 import navBack from '../../../functions/Navigator';
-import { ConnectedApps } from '../ConnectedApps/ConnectedApps';
-import { UserOptions } from '../UserOptions/UserOptions';
 
 export const Navigator = () => {
     const dispatch = useDispatch();
     const [posNav, setPosNav] = useState();
+    window.onscroll = function () { navBack(setPosNav, posNav) };
 
     useEffect(() => {
         dispatch(getUserData());
     }, [dispatch]);
-
-    window.onscroll = function () { navBack(setPosNav, posNav) };
 
     return (
         <div className='nav-container'>
@@ -34,7 +33,7 @@ export const Navigator = () => {
                 </section>
                 <NavSearchBar />
                 <section className={s.rightSection}>
-                    <NavProfileMenu />
+                    <UserMenu />
                     <UserOptions />
                 </section>
             </div>

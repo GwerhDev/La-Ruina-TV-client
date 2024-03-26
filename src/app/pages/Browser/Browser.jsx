@@ -36,7 +36,7 @@ const Browser = () => {
   }, [dispatch, currentUser]);
 
   return (
-    <div className="browserBody">
+    <main>
       <Visor />
 
       <Slider title={"Contenido"} data={mediaList} idCategory={-1} id={`s${-1}`} key={`s${-1}`} />
@@ -44,7 +44,7 @@ const Browser = () => {
       <CategorySlider data={mediaByCategory} dbCategories={dbCategories} />
 
       <Footer />
-    </div>
+    </main>
   );
 };
 

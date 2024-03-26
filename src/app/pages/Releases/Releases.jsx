@@ -4,7 +4,7 @@ import { BodyCss } from '../../../functions';
 const Releases = () => {
   BodyCss()
   return (
-    <div className='browserBody'>
+    <div>
     </div>
   )
 }
