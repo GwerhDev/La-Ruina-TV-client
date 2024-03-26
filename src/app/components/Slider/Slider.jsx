@@ -11,7 +11,7 @@ export const Slider = (props) => {
           ?
           <div className={s.container}>
             <h3>{title}</h3>
-            <SliderTrack title={title} key={id} data={data} />
+            <SliderTrack title={title} id={id} data={data} />
           </div>
           :
           <div className={s.emptySliderContItems}>

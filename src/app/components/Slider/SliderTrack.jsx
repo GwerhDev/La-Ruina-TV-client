@@ -1,19 +1,23 @@
 import s from './SliderTrack.module.css';
 import { SliderCard } from './SliderCard';
 import playIconb from '../../../assets/images/ruinatv-icon-play-b.png';
+import { useState } from 'react';
+import { nextButton, prevButton } from '../../../functions/Slider';
 
 export const SliderTrack = (props) => {
-  const { data } = props || null;
+  const { data, id } = props || null;
+  const maxWidth = data?.length*210;
+  const [currentPosition, setCurrentPosition] = useState(0);
 
   return (
     <div className={s.container}>
       {
         data.length > 1 &&
-        <button className={s.prevButton}>
+        <button className={s.prevButton} onClick={() => prevButton(currentPosition, setCurrentPosition, maxWidth, id)}>
           <img className={s.prevButtonImg} alt='' src={playIconb} width="100%" />
         </button>
       }
-      <ul className={s.itemList}>
+      <ul className={s.itemList} id={`item-list-${id}`}>
         {
           data?.map((e) => {
             return (
@@ -30,7 +34,7 @@ export const SliderTrack = (props) => {
       </ul>
       {
         data.length > 1 &&
-        <button className={s.nextButton}>
+        <button className={s.nextButton} onClick={() => nextButton(currentPosition, setCurrentPosition, maxWidth, id)}>
           <img className={s.nextButtonImg} alt='' src={playIconb} width="100%" />
         </button>
       }

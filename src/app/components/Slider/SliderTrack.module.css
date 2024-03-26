@@ -3,6 +3,8 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  overflow: hidden;
+
 }
 
 .prevButton {
@@ -53,10 +55,7 @@
   height: 120px;
   padding-bottom: 2rem;
   display: flex;
-  overflow: hidden;
-  overflow-x: scroll;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
+  transition-duration: 1s;
   padding-left: 50px;
   padding-right: 50px;
 }
@@ -66,10 +65,14 @@
 }
 
 @media only screen and (max-width: 1380px) {
+  .container {
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;  }
+
   .prevButton,
   .nextButton {
-    width: 25px;
-    padding: 6px;
+    display: none;
   }
 
   .itemList {
