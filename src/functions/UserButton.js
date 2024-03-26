@@ -13,6 +13,7 @@ export function userButtonEnter() {
     $d(`#profile-button`).style.backgroundColor = '#171717';
     $d(`#profile-button`).style.width = '100%';
     $d(`#username`).style.width = '100px';
+    $d(`#username-container`).style.justifyContent = 'center';
 }
 
 export function userButtonLeave() {
@@ -44,6 +45,7 @@ export function userButtonLeave() {
             $d(`#ul-options-profile-menu`).style.display = 'none'
             $d(`#profile-button`).style.width = '50%'
             $d(`#username`).style.width = '0'
+            $d(`#username-container`).style.justifyContent = 'flex-end'
         }
     })
 }
@@ -68,4 +70,5 @@ export function userButtonClick() {
     $d(`#ul-options-profile-menu`).style.display = 'grid';
     $d(`#profile-button`).style.width = '100%';
     $d(`#username`).style.width = '100px';
+    $d(`#username-container`).style.justifyContent = 'center';
 }

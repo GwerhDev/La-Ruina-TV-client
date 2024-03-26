@@ -25,7 +25,7 @@ export const UserButton = () => {
     <div className={s.container}>
       <div className={s.profileBtnCont}>
           <div className={s.profileBtnMenu} id='profile-button' onMouseEnter={userButtonEnter}>
-            <div className={s.usernameContainer}>
+            <div className={s.usernameContainer} id='username-container'>
               {
                 profilePic
                   ?
