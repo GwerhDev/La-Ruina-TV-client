@@ -17,6 +17,7 @@ import {
   deleteProducer,
 } from '../../../../middlewares/redux/actions/admin';
 import { PrimaryButton } from '../../Buttons/PrimaryButton';
+import { SecondaryButton } from '../../Buttons/SecondaryButton';
 
 const ContentCreate = () => {
   const dispatch = useDispatch();
@@ -221,7 +222,7 @@ const ContentCreate = () => {
                   <Link to={redirectRoute}>
                     <PrimaryButton text={"Ver contenido"}/>
                   </Link>
-                  <button className='button-secondary' onClick={resetForm}>Crear más contenido</button>
+                  <SecondaryButton onClick={resetForm} text={"Crear más contenido"}/>
                 </div>
                 : 
                 <div className={s.loaderContainer}>

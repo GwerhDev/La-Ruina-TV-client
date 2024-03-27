@@ -1,5 +1,4 @@
 import s from './Viewer.module.css';
-import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
@@ -20,6 +19,7 @@ import { resetBackRoute, setBackRoute } from '../../../middlewares/redux/actions
 import { useLocation } from 'react-router-dom/cjs/react-router-dom';
 import { PrimaryButton } from '../Buttons/PrimaryButton';
 import { Loader } from '../../utils/Loader';
+import { SecondaryButton } from '../Buttons/SecondaryButton';
 
 export const Viewer = () => {
   const params = useParams();
@@ -41,6 +41,7 @@ export const Viewer = () => {
     dispatch(resetOption());
     dispatch(resetBackRoute());
     dispatch(resetDetailsMedia());
+    history.push('/');
   };
 
   function handleClickBack() {
@@ -112,13 +113,11 @@ export const Viewer = () => {
                           ?
                           <PrimaryButton
                             onClick={() => {
-                              return (
-                                $d('.player-background-effect').style.opacity = '1',
-                                $d('.player-li').style.display = 'block',
-                                $d('.player-ul').style.opacity = '1',
-                                $d('#viewer-info').style.display = "none",
-                                $d('#player-section').style.display = "flex"
-                              )
+                              $d('.player-ul').style.opacity = '1';
+                              $d('.player-li').style.display = 'block';
+                              $d('#viewer-info').style.display = "none";
+                              $d('#player-section').style.display = "flex";
+                              $d('.player-background-effect').style.opacity = '1';
                             }}
                             onMouseEnter={() => { $d('#visor-play-button').src = playIconb }}
                             onMouseLeave={() => { $d('#visor-play-button').src = playIconn }}
@@ -127,14 +126,14 @@ export const Viewer = () => {
                             text={"Ver ahora"}
                           />
                           :
-                          <PrimaryButton
-                            onClick={onClickValue}
+                          <PrimaryButton 
+                            onClick={onClickValue} 
                             icon={userIcon}
-                            iconId={"visor-play-button"}
+                            iconId={"visor-play-button"} 
                             text={"Ingresar"}
                           />
                       }
-                      <Link to='/browser'><button className='button-back' onClick={handleBackButton}>Volver al inicio</button></Link>
+                      <SecondaryButton onClick={handleBackButton} text={"Volver al inicio"}/>
                     </div>
                   </div>
                 </div>

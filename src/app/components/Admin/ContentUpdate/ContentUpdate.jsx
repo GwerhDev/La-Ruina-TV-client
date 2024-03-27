@@ -20,6 +20,7 @@ import {
   updateMedia,
 } from '../../../../middlewares/redux/actions/admin';
 import { PrimaryButton } from '../../Buttons/PrimaryButton';
+import { SecondaryButton } from '../../Buttons/SecondaryButton';
 
 const ContentUpdate = () => {
   const { id } = useParams();
@@ -205,7 +206,7 @@ const ContentUpdate = () => {
                   <Link to={redirectRoute}>
                     <PrimaryButton text="Ver contenido" />
                   </Link>
-                  <button className='button-secondary' onClick={resetForm}>Volver a editar</button>
+                  <SecondaryButton onClick={resetForm} text={"Volver a editar"}/>
                 </div>
                 :
                 <div className={s.loaderContainer}>

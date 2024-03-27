@@ -8,6 +8,7 @@ import { $d } from "../../../functions";
 import { InfoCanvas } from "../../utils/InfoCanvas";
 import { RenderImageGwerhdinary } from '../../../functions/RenderImageGwerhdinary';
 import { PrimaryButton } from '../Buttons/PrimaryButton';
+import { SecondaryButton } from '../Buttons/SecondaryButton';
 
 export const Visor = () => {
   const {
@@ -52,11 +53,10 @@ export const Visor = () => {
                 </Link>
               </li>
               <li>
-                <button
-                  className='button-secondary'
-                  onClick={handleInfoButton} >
-                  Más información
-                </button>
+                <SecondaryButton
+                  onClick={handleInfoButton}
+                  text={"Más información"}
+                />
               </li>
             </ul>
             <ul className={s.visorIcons}>
