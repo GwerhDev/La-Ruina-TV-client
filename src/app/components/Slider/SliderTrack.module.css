@@ -1,10 +1,10 @@
 .container {
   gap: 0;
   width: 100%;
+  max-width: 2000px;
   display: flex;
   justify-content: space-between;
   overflow: hidden;
-
 }
 
 .prevButton {
@@ -13,13 +13,12 @@
   width: 50px;
   height: 120px;
   background: transparent;
-  opacity: 0;
   transition-duration: 1s;
   border: none;
   position: absolute;
   left: 0;
   z-index: 999;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.623) 10%, transparent 100%);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0) 10%, transparent 100%);
   backdrop-filter: grayscale(.7);
 }
 
@@ -29,24 +28,37 @@
   width: 50px;
   height: 120px;
   background: transparent;
-  opacity: 0;
   transition-duration: 1s;
   border: none;
   position: absolute;
   right: 0;
   z-index: 999;
-  background: linear-gradient(to left, rgba(0, 0, 0, 0.623) 10%, transparent 100%);
+  background: linear-gradient(to left, rgba(0, 0, 0, 0) 10%, transparent 100%);
   backdrop-filter: grayscale(.7);
 }
 
-.desktop:hover .prevButton,
+.desktop:hover .prevButton {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.635) 10%, transparent 100%);
+}
+
 .desktop:hover .nextButton {
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.635) 10%, transparent 100%);
+}
+
+.desktop:hover .prevButtonImg,
+.desktop:hover .nextButtonImg {
   opacity: 1;
 }
 
 .nextButton:hover,
 .prevButton:hover {
   opacity: 1;
+}
+
+.prevButtonImg,
+.nextButtonImg {
+  opacity: .2;
+  transition-duration: 1s;
 }
 
 .prevButtonImg {
@@ -83,11 +95,19 @@
   width: 100%;
 }
 
+@media only screen and (min-width: 2000px) {
+  .container {
+    position: relative;
+    padding: 0;
+    margin: 0;
+  }
+}
+
 @media only screen and (max-width: 1300px) {
   .container {
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;  
+    scroll-behavior: smooth;
   }
 
   .desktop {

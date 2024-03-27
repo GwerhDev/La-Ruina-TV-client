@@ -27,61 +27,57 @@ export const Visor = () => {
       <div className={s.visorCanvas} />
       <InfoCanvas title={visorTitle} artist={visorArtist} id={visorId} image={RenderImageGwerhdinary(visorImage)} />
       {
-        mediaList?.length
-          ?
-          <div className={s.visorInfo} id='visor-info'>
-            <div className={s.visorArtist}>
-              <p>{visorArtist}</p>
-            </div>
-            <div className={s.visorTitle}>
-              <p>{visorTitle}</p>
-              <div className={s.visorDescription}>
-                <h3>{visorInfo}</h3>
-              </div>
-              <ul className={s.visorButton} id='visor-button'>
-                <li>
-                  <Link to={`/view/v=${visorId}`}>
-                    <button
-                      className='button-primary'
-                      id={visorId}
-                      titulo={visorTitle}
-                      artista={visorArtist}
-                      img={visorImage}
-                      tag={visorTag || null}
-                      onClick={() => { window.scrollTo(0, 0) }}
-                      onMouseEnter={() => {
-                        $d('.visor-play-button').src = playIconb
-                      }}
-                      onMouseLeave={() => {
-                        $d('.visor-play-button').src = playIconn
-                      }}
-                    >
-                      <img className='visor-play-button' src={playIconn} alt='' />{!currentUser ? 'Previsualizar' : 'Ir al contenido'}
-                    </button>
-                  </Link>
-                </li>
-                <li>
-                  <button
-                    className='button-secondary'
-                    onClick={handleInfoButton} >
-                    Más información
-                  </button>
-                </li>
-              </ul>
-              <ul className={s.visorIcons}>
-                {
-                  visorIcon?.map((e) => {
-                    return (
-                      <li key={e}><img className='visor-tag-icon' src={e} alt="" /></li>
-                    )
-                  })
-                }
-              </ul>
-            </div>
-
+        mediaList?.length &&
+        <div className={s.visorInfo} id='visor-info'>
+          <div className={s.visorArtist}>
+            <p>{visorArtist}</p>
           </div>
-          :
-          null
+          <div className={s.visorTitle}>
+            <p>{visorTitle}</p>
+            <div className={s.visorDescription}>
+              <h3>{visorInfo}</h3>
+            </div>
+            <ul className={s.visorButton} id='visor-button'>
+              <li>
+                <Link to={`/view/v=${visorId}`}>
+                  <button
+                    className='button-primary'
+                    id={visorId}
+                    titulo={visorTitle}
+                    artista={visorArtist}
+                    img={visorImage}
+                    tag={visorTag || null}
+                    onClick={() => { window.scrollTo(0, 0) }}
+                    onMouseEnter={() => {
+                      $d('.visor-play-button').src = playIconb
+                    }}
+                    onMouseLeave={() => {
+                      $d('.visor-play-button').src = playIconn
+                    }}
+                  >
+                    <img className='visor-play-button' src={playIconn} alt='' />{!currentUser ? 'Previsualizar' : 'Ir al contenido'}
+                  </button>
+                </Link>
+              </li>
+              <li>
+                <button
+                  className='button-secondary'
+                  onClick={handleInfoButton} >
+                  Más información
+                </button>
+              </li>
+            </ul>
+            <ul className={s.visorIcons}>
+              {
+                visorIcon?.map((e) => {
+                  return (
+                    <li key={e}><img className='visor-tag-icon' src={e} alt="" /></li>
+                  )
+                })
+              }
+            </ul>
+          </div>
+        </div>
       }
     </div>
   )

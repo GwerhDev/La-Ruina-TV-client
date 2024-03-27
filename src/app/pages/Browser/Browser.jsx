@@ -38,11 +38,8 @@ const Browser = () => {
   return (
     <main>
       <Visor />
-
       <Slider title={"Contenido"} data={mediaList} idCategory={-1} id={`s${-1}`} key={`s${-1}`} />
-
       <CategorySlider data={mediaByCategory} dbCategories={dbCategories} />
-
       <Footer />
     </main>
   );

@@ -38,11 +38,20 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   padding: 50px;
   height: 100vh;
   width: 100%;
   animation-timing-function: ease-in-out;
+}
+
+.infoContainer {
+  display: flex;
+  justify-content: flex-start;
+  background-color: aqua;
+  max-width: 2000px;
+  width: 100%;
+  flex-direction: column;
 }
 
 .viewerArtist {
@@ -149,9 +158,15 @@
   display: flex;
 }
 
+@media only screen and (min-width: 2000px) {
+  .infoContainer {
+    padding-left: 100px;
+  }
+}
+
 @media only screen and (max-width: 1300px) {
   .viewerInfo {
     padding-left: 25px;
-    padding-right: 35px;
+    padding-right: 25px;
   }
 }
