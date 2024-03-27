@@ -13,12 +13,12 @@ import { ContentMagementButtons } from '../../components/Admin/Buttons/ContentMa
 import { resetOption, setOption } from '../../../middlewares/redux/actions';
 import { getMediaById, resetDetailsMedia } from '../../../middlewares/redux/actions/media';
 import { addFavorites, deleteFavorites, getFavorites } from '../../../middlewares/redux/actions/account';
-import { subscriberYoutubeVerification } from '../../../middlewares/redux/actions/subscriber';
 import { DeleteCanvas } from '../../utils/DeleteCanvas';
 import { deleteMedia } from '../../../middlewares/redux/actions/admin';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { resetBackRoute, setBackRoute } from '../../../middlewares/redux/actions/navigation';
 import { useLocation } from 'react-router-dom/cjs/react-router-dom';
+import { PrimaryButton } from '../Buttons/PrimaryButton';
 
 export const Viewer = () => {
   const params = useParams();
@@ -27,7 +27,6 @@ export const Viewer = () => {
   const dispatch = useDispatch();
   const location = useLocation();
   const favorites = useSelector(state => state.favorites);
-  const subscriber = useSelector(state => state.subscriber);
   const currentUser = useSelector(state => state.currentUser);
   const infoDetailViewer = useSelector(state => state.infoDetailViewer);
 
@@ -110,12 +109,9 @@ export const Viewer = () => {
                       {
                         currentUser
                           ?
-                          <button
-                            className='button-watch'
+                          <PrimaryButton
                             onClick={() => {
                               return (
-                                dispatch(subscriberYoutubeVerification(currentUser?.email)),
-                                (subscriber ? $d('#canvasYtSubBtn').style.display = 'none' : $d('#canvasYtSubBtn').style.display = 'flex'),
                                 $d('.player-background-effect').style.opacity = '1',
                                 $d('.player-li').style.display = 'block',
                                 $d('.player-ul').style.opacity = '1',
@@ -123,15 +119,12 @@ export const Viewer = () => {
                                 $d('#player-section').style.display = "flex"
                               )
                             }}
-                            onMouseEnter={() => {
-                              $d('.visor-play-button').src = playIconb
-                            }}
-                            onMouseLeave={() => {
-                              $d('.visor-play-button').src = playIconn
-                            }}>
-                            <img className='visor-play-button' src={playIconn} alt='visorbtn' />
-                            Ver ahora
-                          </button>
+                            onMouseEnter={() => { $d('#visor-play-button').src = playIconb }}
+                            onMouseLeave={() => { $d('#visor-play-button').src = playIconn }}
+                            icon={playIconn}
+                            iconId={"visor-play-button"}
+                            text="Ver ahora"
+                          />
                           :
                           <button
                             className='button-watch'
@@ -142,7 +135,7 @@ export const Viewer = () => {
                                 $d('#slideCanvasCont').style.overflowY = "hidden"
                               )
                             }}>
-                            <img className='visor-play-button' src={userIcon} alt='visorbtn' />
+                            <img id='visor-play-button' src={userIcon} alt='visorbtn' />
                             Ingresar
                           </button>
                       }

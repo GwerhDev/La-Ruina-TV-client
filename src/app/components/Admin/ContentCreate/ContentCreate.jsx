@@ -16,6 +16,7 @@ import {
   deleteMediatype,
   deleteProducer,
 } from '../../../../middlewares/redux/actions/admin';
+import { PrimaryButton } from '../../Buttons/PrimaryButton';
 
 const ContentCreate = () => {
   const dispatch = useDispatch();
@@ -215,15 +216,15 @@ const ContentCreate = () => {
             <h1>{redirectRoute ? "¡Contenido creado!" : "Creando contenido..."}</h1>
             {
               redirectRoute
-                ? <div>
+                ? 
+                <div>
                   <Link to={redirectRoute}>
-                    <button className='button-primary'>
-                      Ver contenido
-                    </button>
+                    <PrimaryButton text={"Ver contenido"}/>
                   </Link>
                   <button className='button-secondary' onClick={resetForm}>Crear más contenido</button>
                 </div>
-                : <div className={s.loaderContainer}>
+                : 
+                <div className={s.loaderContainer}>
                   Espere un momento...
                   <div className='loader' />
                 </div>

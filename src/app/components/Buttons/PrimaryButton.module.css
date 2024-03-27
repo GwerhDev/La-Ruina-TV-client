@@ -1,0 +1,28 @@
+.primaryButton {
+  height: 50px;
+  width: 200px;
+  position: relative;
+  margin-right: 10px;
+  font-family: bebas neue;
+  font-size: 20px;
+  border: none;
+  border-radius: 2%;
+  backdrop-filter: blur(8px);
+}
+
+.primaryButton {
+  background: linear-gradient(to bottom, #ffffff, rgba(0, 0, 0, 0.679));
+  background-color: #ffffff;
+}
+
+.primaryButton:hover {
+  background: linear-gradient(to bottom, #171717, rgba(0, 0, 0, 0.679));
+  background-color: #171717;
+  color: #ffffff;
+  transition-duration: 0.2s;
+}
+
+.primaryButton:disabled {
+  background: #9b9b9b;
+  color: #747474;
+}

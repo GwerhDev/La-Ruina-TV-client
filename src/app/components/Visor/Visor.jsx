@@ -7,10 +7,11 @@ import { VisorFunction } from './Visor.functions';
 import { $d } from "../../../functions";
 import { InfoCanvas } from "../../utils/InfoCanvas";
 import { RenderImageGwerhdinary } from '../../../functions/RenderImageGwerhdinary';
+import { PrimaryButton } from '../Buttons/PrimaryButton';
 
 export const Visor = () => {
   const {
-    visorId, visorTag, visorInfo, mediaList, visorIcon,
+    visorId, visorInfo, mediaList, visorIcon,
     visorTitle, visorImage, currentUser, visorArtist,
   } = VisorFunction();
 
@@ -40,23 +41,14 @@ export const Visor = () => {
             <ul className={s.visorButton} id='visor-button'>
               <li>
                 <Link to={`/view/v=${visorId}`}>
-                  <button
-                    className='button-primary'
-                    id={visorId}
-                    titulo={visorTitle}
-                    artista={visorArtist}
-                    img={visorImage}
-                    tag={visorTag || null}
+                  <PrimaryButton
                     onClick={() => { window.scrollTo(0, 0) }}
-                    onMouseEnter={() => {
-                      $d('.visor-play-button').src = playIconb
-                    }}
-                    onMouseLeave={() => {
-                      $d('.visor-play-button').src = playIconn
-                    }}
-                  >
-                    <img className='visor-play-button' src={playIconn} alt='' />{!currentUser ? 'Previsualizar' : 'Ir al contenido'}
-                  </button>
+                    onMouseEnter={() => { $d('#visor-play-button').src = playIconb }}
+                    onMouseLeave={() => { $d('#visor-play-button').src = playIconn }}
+                    text={!currentUser ? 'Previsualizar' : 'Ir al contenido'}
+                    icon={playIconn}
+                    iconId='visor-play-button'
+                  />
                 </Link>
               </li>
               <li>

@@ -4,21 +4,22 @@ import { Link, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import defaultPreview from '../../../../assets/images/default-background.png';
 import { toTop } from '../../../../functions/toTop';
-import { 
+import {
   getCategories,
-  getGenres, 
-  getMediaById, 
-  getMediatypes, 
+  getGenres,
+  getMediaById,
+  getMediatypes,
 } from '../../../../middlewares/redux/actions/media';
 import {
   createCategory,
   createGenre,
-  createMediatype, 
-  deleteCategory, 
-  deleteGenre, 
+  createMediatype,
+  deleteCategory,
+  deleteGenre,
   deleteMediatype,
   updateMedia,
 } from '../../../../middlewares/redux/actions/admin';
+import { PrimaryButton } from '../../Buttons/PrimaryButton';
 
 const ContentUpdate = () => {
   const { id } = useParams();
@@ -155,7 +156,7 @@ const ContentUpdate = () => {
       newImageSlider: imgSlider,
       newImageVisor: imgVisor,
     };
-    
+
     dispatch(updateMedia(id, formData));
     dispatch(getMediaById(id));
     setRedirectRoute('/view/v=' + id);
@@ -181,7 +182,7 @@ const ContentUpdate = () => {
     setImgSlider(infoDetailViewer?.imageSlider);
     setPreviewVisor(infoDetailViewer?.imageVisor);
     setPreviewSlider(infoDetailViewer?.imageSlider);
-  },[infoDetailViewer]);
+  }, [infoDetailViewer]);
 
   useEffect(() => {
     dispatch(getGenres());
@@ -199,18 +200,18 @@ const ContentUpdate = () => {
             <h1>{redirectRoute ? "¡Contenido actualizado!" : "Actualizando contenido..."}</h1>
             {
               redirectRoute
-                ? <div>
-                    <Link to={redirectRoute}>
-                      <button className='button-primary'>
-                        Ver contenido
-                      </button>
-                    </Link>
-                    <button className='button-secondary' onClick={resetForm}>Volver a editar</button>
-                  </div>
-                : <div className={s.loaderContainer}>
-                    Espere un momento...
-                    <div className='loader' />
-                  </div>
+                ?
+                <div>
+                  <Link to={redirectRoute}>
+                    <PrimaryButton text="Ver contenido" />
+                  </Link>
+                  <button className='button-secondary' onClick={resetForm}>Volver a editar</button>
+                </div>
+                :
+                <div className={s.loaderContainer}>
+                  Espere un momento...
+                  <div className='loader' />
+                </div>
             }
           </div>
           : <div className={s.createBody}>
@@ -256,7 +257,7 @@ const ContentUpdate = () => {
                   <p>
                     <label>Imagen del Slider</label>
                     <br></br>
-                    <img src={ previewSlider || defaultPreview } alt="visor" height="120px" />
+                    <img src={previewSlider || defaultPreview} alt="visor" height="120px" />
                     <br></br>
                     <input
                       className={s.inputBtn}
@@ -278,7 +279,7 @@ const ContentUpdate = () => {
                   <p>
                     <label>Imagen del Visor</label>
                     <br></br>
-                    <img src={ previewVisor || defaultPreview } alt="visor" height="120px" />
+                    <img src={previewVisor || defaultPreview} alt="visor" height="120px" />
                     <br></br>
                     <input
                       className={s.inputBtn}
@@ -309,7 +310,7 @@ const ContentUpdate = () => {
                         name="idLinkYT"
                         value={data?.idLinkYT || ''}
                         placeholder='ejemplo: hMS8RtYVouc'
-                        onChange={(e) => setData({ ...data, idLinkYT: e.target.value })} 
+                        onChange={(e) => setData({ ...data, idLinkYT: e.target.value })}
                       />
                     </p>
                     <p>

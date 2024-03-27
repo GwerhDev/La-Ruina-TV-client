@@ -312,7 +312,7 @@ h4 {
   z-index: 9999;
 }
 
-.visor-play-button {
+#visor-play-button {
   width: 15px;
   margin-right: 10px;
   position: absolute;

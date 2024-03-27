@@ -48,7 +48,6 @@
 .infoContainer {
   display: flex;
   justify-content: flex-start;
-  background-color: aqua;
   max-width: 2000px;
   width: 100%;
   flex-direction: column;
