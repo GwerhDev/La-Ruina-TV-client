@@ -64,11 +64,34 @@
   position: sticky;
 }
 
+.desktop {
+  display: flex;
+}
+
+.mobile {
+  display: none;
+}
+
+.desktop,
+.mobile {
+  align-items: flex-start;
+  width: 100%;
+}
+
 @media only screen and (max-width: 1300px) {
   .container {
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;  }
+    scroll-behavior: smooth;  
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: flex;
+  }
 
   .prevButton,
   .nextButton {
@@ -76,6 +99,7 @@
   }
 
   .itemList {
+    transform: translateX("0");
     padding-left: 25px;
     padding-right: 25px;
   }

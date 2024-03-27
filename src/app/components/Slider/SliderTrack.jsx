@@ -6,38 +6,57 @@ import { nextButton, prevButton } from '../../../functions/Slider';
 
 export const SliderTrack = (props) => {
   const { data, id } = props || null;
-  const maxWidth = data?.length*210;
+  const maxWidth = data?.length * 210;
   const [currentPosition, setCurrentPosition] = useState(0);
 
   return (
     <div className={s.container}>
-      {
-        data.length > 1 &&
-        <button className={s.prevButton} onClick={() => prevButton(currentPosition, setCurrentPosition, maxWidth, id)}>
-          <img className={s.prevButtonImg} alt='' src={playIconb} width="100%" />
-        </button>
-      }
-      <ul className={s.itemList} id={`item-list-${id}`}>
+      <div className={s.desktop}>
         {
-          data?.map((e) => {
-            return (
-              <li className={s.item} key={e.id}>
-                <SliderCard
-                  id={e.id}
-                  title={e.title}
-                  imageSlider={e.imageSlider}
-                />
-              </li>
-            )
-          })
+          data.length > 1 &&
+          <button className={s.prevButton} onClick={() => prevButton(currentPosition, setCurrentPosition, maxWidth, id)}>
+            <img className={s.prevButtonImg} alt='' src={playIconb} width="100%" />
+          </button>
         }
-      </ul>
-      {
-        data.length > 1 &&
-        <button className={s.nextButton} onClick={() => nextButton(currentPosition, setCurrentPosition, maxWidth, id)}>
-          <img className={s.nextButtonImg} alt='' src={playIconb} width="100%" />
-        </button>
-      }
+        <ul className={s.itemList} id={`item-list-${id}`}>
+          {
+            data?.map((e) => {
+              return (
+                <li className={s.item} key={e.id}>
+                  <SliderCard
+                    id={e.id}
+                    title={e.title}
+                    imageSlider={e.imageSlider}
+                  />
+                </li>
+              )
+            })
+          }
+        </ul>
+        {
+          data.length > 1 &&
+          <button className={s.nextButton} onClick={() => nextButton(currentPosition, setCurrentPosition, maxWidth, id)}>
+            <img className={s.nextButtonImg} alt='' src={playIconb} width="100%" />
+          </button>
+        }
+      </div>
+      <div className={s.mobile}>
+        <ul className={s.itemList} id={`item-list-${id}`}>
+          {
+            data?.map((e) => {
+              return (
+                <li className={s.item} key={e.id}>
+                  <SliderCard
+                    id={e.id}
+                    title={e.title}
+                    imageSlider={e.imageSlider}
+                  />
+                </li>
+              )
+            })
+          }
+        </ul>
+      </div>
     </div>
   )
 }
