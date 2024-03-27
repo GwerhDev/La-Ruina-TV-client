@@ -19,6 +19,7 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { resetBackRoute, setBackRoute } from '../../../middlewares/redux/actions/navigation';
 import { useLocation } from 'react-router-dom/cjs/react-router-dom';
 import { PrimaryButton } from '../Buttons/PrimaryButton';
+import { Loader } from '../../utils/Loader';
 
 export const Viewer = () => {
   const params = useParams();
@@ -32,7 +33,7 @@ export const Viewer = () => {
 
   function onClickValue(e) {
     dispatch(setBackRoute(location.pathname))
-    dispatch(setOption(e.target.id));
+    dispatch(setOption('login'));
     history.push('/login');
   };
 
@@ -123,24 +124,17 @@ export const Viewer = () => {
                             onMouseLeave={() => { $d('#visor-play-button').src = playIconn }}
                             icon={playIconn}
                             iconId={"visor-play-button"}
-                            text="Ver ahora"
+                            text={"Ver ahora"}
                           />
                           :
-                          <button
-                            className='button-watch'
-                            id='login'
-                            onClick={(e) => {
-                              return (
-                                onClickValue(e),
-                                $d('#slideCanvasCont').style.overflowY = "hidden"
-                              )
-                            }}>
-                            <img id='visor-play-button' src={userIcon} alt='visorbtn' />
-                            Ingresar
-                          </button>
+                          <PrimaryButton
+                            onClick={onClickValue}
+                            icon={userIcon}
+                            iconId={"visor-play-button"}
+                            text={"Ingresar"}
+                          />
                       }
                       <Link to='/browser'><button className='button-back' onClick={handleBackButton}>Volver al inicio</button></Link>
-
                     </div>
                   </div>
                 </div>
@@ -150,7 +144,7 @@ export const Viewer = () => {
           </div>
           :
           <div className={s.loaderContainer}>
-            <div className='loader'></div>
+            <Loader width={"50px"} />
           </div>
       }
     </div>
