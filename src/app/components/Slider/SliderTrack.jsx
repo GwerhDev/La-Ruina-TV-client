@@ -13,7 +13,7 @@ export const SliderTrack = (props) => {
     <div className={s.container}>
       <div className={s.desktop}>
         {
-          data.length > 1 &&
+          data.length > 1 && currentPosition > 0 && /* maxWidth > window.innerWidth && */
           <button className={s.prevButton} onClick={() => prevButton(currentPosition, setCurrentPosition, maxWidth, id)}>
             <img className={s.prevButtonImg} alt='' src={playIconb} width="100%" />
           </button>
@@ -34,21 +34,20 @@ export const SliderTrack = (props) => {
           }
         </ul>
         {
-          data.length > 1 &&
+          data.length > 1 && currentPosition < maxWidth - 210 && /* maxWidth > window.innerWidth && */
           <button className={s.nextButton} onClick={() => nextButton(currentPosition, setCurrentPosition, maxWidth, id)}>
             <img className={s.nextButtonImg} alt='' src={playIconb} width="100%" />
           </button>
         }
       </div>
       <div className={s.mobile}>
-        <ul className={s.itemList} id={`item-list-${id}`}>
+        <ul className={s.itemList}>
           {
             data?.map((e) => {
               return (
                 <li className={s.item} key={e.id}>
                   <SliderCard
                     id={e.id}
-                    title={e.title}
                     imageSlider={e.imageSlider}
                   />
                 </li>

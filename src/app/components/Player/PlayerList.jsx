@@ -5,21 +5,21 @@ import { useDispatch } from 'react-redux'
 import { resetUrlPlayer } from '../../../middlewares/redux/actions'
 
 
-export const PlayerList = (props) =>{
-    const {url} = props
-    const dispatch = useDispatch()
-    return (
-        <div className={s.audioplayer}>
-            <div>          
-                <button className={s.closeBtn} onClick={()=>{return dispatch(resetUrlPlayer())}}>X</button>
-            </div>
-        <AudioPlayer 
-            src={`${url}`}
-            onPlay={() => console.log("onPlay")}
-            onPause={() => console.log("onPause")}
-            onEnded={() => {return}}
-            autoPlay>
-        </AudioPlayer>
-        </div>
-    )
+export const PlayerList = (props) => {
+  const { url } = props
+  const dispatch = useDispatch()
+  return (
+    <div className={s.audioplayer}>
+      <div>
+        <button className={s.closeBtn} onClick={() => { return dispatch(resetUrlPlayer()) }}>X</button>
+      </div>
+      <AudioPlayer
+        src={`${url}`}
+        onPlay={() => console.log("onPlay")}
+        onPause={() => console.log("onPause")}
+        onEnded={() => { return }}
+        autoPlay>
+      </AudioPlayer>
+    </div>
+  )
 }

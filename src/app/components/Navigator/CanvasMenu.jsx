@@ -10,71 +10,71 @@ import searchIcon from '../../../assets/images/search-icon.png';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 export const CanvasMenu = () => {
-    const history = useHistory();
-    const dispatch = useDispatch();
-    const [posNav, setPosNav] = useState();
-    const [search, setSearch] = useState("");
-    const [buttonDisabled, setButtonDisabled] = useState(true)
+  const history = useHistory();
+  const dispatch = useDispatch();
+  const [posNav, setPosNav] = useState();
+  const [search, setSearch] = useState("");
+  const [buttonDisabled, setButtonDisabled] = useState(true)
 
-    function handleInputChange(e) {
-        e.preventDefault();
-        setSearch(e.target.value);
-        if (e.target.value.length ) {
-            setButtonDisabled(false);
-        } else {
-            setButtonDisabled(true)
-        }
-    };
+  function handleInputChange(e) {
+    e.preventDefault();
+    setSearch(e.target.value);
+    if (e.target.value.length) {
+      setButtonDisabled(false);
+    } else {
+      setButtonDisabled(true)
+    }
+  };
 
-    function handleSubmit(e) {
-        e.preventDefault();
-        if (search.length > 0) {
-            return (
-                dispatch(resetOption()),
-                reset(),
-                history.push(`/search/${search}`)
-            );
-        }
-    };
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (search.length > 0) {
+      return (
+        dispatch(resetOption()),
+        reset(),
+        history.push(`/search/${search}`)
+      );
+    }
+  };
 
-    function handleClick() {
-        window.scrollTo(0, 0)
-        return (
-            dispatch(resetOption()),
-            reset()
-        )
-    };
-
-    window.onscroll = function () { navBack(setPosNav, posNav) };
-    CanvasMenuFunction();
+  function handleClick() {
+    window.scrollTo(0, 0)
     return (
-        <div className="canvas-menu-container">
-            <div className={s.contMenu}>
-                <ul className={s.navBurgerMenu}>
-                    <li onClick={handleClick}>
-                        <Link className={s.option} to='/browser'>Inicio</Link>
-                    </li>
-                    <li onClick={handleClick}>
-                        <Link className={s.option} to='/releases'>Novedades</Link>
-                    </li>
-                    <li onClick={handleClick}>
-                        <Link className={s.option} to='/donate'>Colaborar</Link>
-                    </li>
-                    <li className={s.search}>
-                        <form className={s.formSearchBar} onSubmit={handleSubmit}>
-                            <input
-                                className={s.searchBar}
-                                type="text"
-                                placeholder="Buscar..."
-                                onChange={handleInputChange}
-                            />
-                            <button className={s.searchBtn} type="submit" disabled={buttonDisabled}>
-                                <img src={searchIcon} height='20' alt="search" />
-                            </button>
-                        </form>
-                    </li>
-                </ul>
-            </div>
-        </div>
+      dispatch(resetOption()),
+      reset()
     )
+  };
+
+  window.onscroll = function () { navBack(setPosNav, posNav) };
+  CanvasMenuFunction();
+  return (
+    <div className="canvas-menu-container">
+      <div className={s.contMenu}>
+        <ul className={s.navBurgerMenu}>
+          <li onClick={handleClick}>
+            <Link className={s.option} to='/browser'>Inicio</Link>
+          </li>
+          <li onClick={handleClick}>
+            <Link className={s.option} to='/releases'>Novedades</Link>
+          </li>
+          <li onClick={handleClick}>
+            <Link className={s.option} to='/donate'>Colaborar</Link>
+          </li>
+          <li className={s.search}>
+            <form className={s.formSearchBar} onSubmit={handleSubmit}>
+              <input
+                className={s.searchBar}
+                type="text"
+                placeholder="Buscar..."
+                onChange={handleInputChange}
+              />
+              <button className={s.searchBtn} type="submit" disabled={buttonDisabled}>
+                <img src={searchIcon} height='20' alt="search" />
+              </button>
+            </form>
+          </li>
+        </ul>
+      </div>
+    </div>
+  )
 }

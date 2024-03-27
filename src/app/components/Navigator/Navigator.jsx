@@ -12,31 +12,31 @@ import { getUserData } from '../../../middlewares/redux/actions/account';
 import navBack from '../../../functions/Navigator';
 
 export const Navigator = () => {
-    const dispatch = useDispatch();
-    const [posNav, setPosNav] = useState();
-    window.onscroll = function () { navBack(setPosNav, posNav) };
+  const dispatch = useDispatch();
+  const [posNav, setPosNav] = useState();
+  window.onscroll = function () { navBack(setPosNav, posNav) };
 
-    useEffect(() => {
-        dispatch(getUserData());
-    }, [dispatch]);
+  useEffect(() => {
+    dispatch(getUserData());
+  }, [dispatch]);
 
-    return (
-        <div className='nav-container'>
-            <div className={s.innerNavContainer}>
-                <section className={s.leftSection}>
-                    <LogoButton />
-                    <ConnectedApps />
-                </section>
-                <section className={s.middleSection}>
-                    <NavMenu />
-                    <BurgerButton />
-                </section>
-                <NavSearchBar />
-                <section className={s.rightSection}>
-                    <UserMenu />
-                    <UserOptions />
-                </section>
-            </div>
-        </div>
-    )
+  return (
+    <div className='nav-container'>
+      <div className={s.innerNavContainer}>
+        <section className={s.leftSection}>
+          <LogoButton />
+          <ConnectedApps />
+        </section>
+        <section className={s.middleSection}>
+          <NavMenu />
+          <BurgerButton />
+        </section>
+        <NavSearchBar />
+        <section className={s.rightSection}>
+          <UserMenu />
+          <UserOptions />
+        </section>
+      </div>
+    </div>
+  )
 }

@@ -127,3 +127,14 @@
   width: 12px;
   height: 12px;
 }
+
+@media only screen and (max-width: 1300px) {
+  .sliderItem:hover .sliderInfoCanvas {
+    display: none;
+  }
+
+  .sliderItem:hover {
+    background: transparent;
+    height: 0;
+  }
+}

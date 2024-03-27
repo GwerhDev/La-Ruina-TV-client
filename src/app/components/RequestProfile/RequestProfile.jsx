@@ -13,77 +13,77 @@ import { resetOption } from '../../../middlewares/redux/actions';
 import { toTop } from '../../../functions/toTop';
 
 export const RequestProfile = () => {
-    const dispatch = useDispatch();
-    const history = useHistory();
-    const option = useSelector(state => state.option);
-    const { profilePic, role } = useSelector(state => state.currentUser);
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const option = useSelector(state => state.option);
+  const { profilePic, role } = useSelector(state => state.currentUser);
 
-    useEffect(() => {
-        OptionProfile(option)
-    }, [option]);
+  useEffect(() => {
+    OptionProfile(option)
+  }, [option]);
 
-    function handleOption(e) {
-        toTop();
-        history.push(e);
-        dispatch(resetOption())
-    };
+  function handleOption(e) {
+    toTop();
+    history.push(e);
+    dispatch(resetOption())
+  };
 
-    return (
-        <div className={s.outerContainer}>
-            <div className={s.innerContainer}>
-                <ul className={s.ulRequestProfile}>
-                    <li>
-                        {
-                            profilePic
-                                ?
-                                <img
-                                    src={profilePic}
-                                    className={s.profilePic} id='profileIcon' alt="perfil"
-                                    onClick={() => handleOption('/u/profile')}
-                                />
-                                :
-                                <img
-                                    src={userIcon}
-                                    className={s.userIcon} id='profileIcon' alt="perfil"
-                                    onClick={() => handleOption('/u/profile')}
-                                />
-                        }
-                    </li>
-                    <li>
-                        <img
-                            src={likeIcon}
-                            className={s.likeIcon}
-                            id='favoritesIcon' alt="favoritos"
-                            onClick={() => handleOption('/favorites')}
-                        />
-                    </li>
-                    <li>
-                        <img
-                            src={subscriptionIcon}
-                            className={s.subscriptionIcon} id='subscriptionIcon' alt="lista"
-                            onClick={() => handleOption('/subscription')}
-                        />
-                    </li>
-                    {
-                        role === 'admin'
-                            ? <li>
-                                <img
-                                    src={adminIcon}
-                                    className={s.adminIcon} id='dashboardIcon' alt="lista"
-                                    onClick={() => handleOption('/dashboard')}
-                                />
-                            </li>
-                            : null
-                    }
-                    <li>
-                        <img
-                            src={logoutIcon}
-                            className={s.logoutIcon}
-                            alt="salir"
-                            onClick={() => logout(history)} />
-                    </li>
-                </ul>
-            </div>
-        </div>
-    )
+  return (
+    <div className={s.outerContainer}>
+      <div className={s.innerContainer}>
+        <ul className={s.ulRequestProfile}>
+          <li>
+            {
+              profilePic
+                ?
+                <img
+                  src={profilePic}
+                  className={s.profilePic} id='profileIcon' alt="perfil"
+                  onClick={() => handleOption('/u/profile')}
+                />
+                :
+                <img
+                  src={userIcon}
+                  className={s.userIcon} id='profileIcon' alt="perfil"
+                  onClick={() => handleOption('/u/profile')}
+                />
+            }
+          </li>
+          <li>
+            <img
+              src={likeIcon}
+              className={s.likeIcon}
+              id='favoritesIcon' alt="favoritos"
+              onClick={() => handleOption('/favorites')}
+            />
+          </li>
+          <li>
+            <img
+              src={subscriptionIcon}
+              className={s.subscriptionIcon} id='subscriptionIcon' alt="lista"
+              onClick={() => handleOption('/subscription')}
+            />
+          </li>
+          {
+            role === 'admin'
+              ? <li>
+                <img
+                  src={adminIcon}
+                  className={s.adminIcon} id='dashboardIcon' alt="lista"
+                  onClick={() => handleOption('/dashboard')}
+                />
+              </li>
+              : null
+          }
+          <li>
+            <img
+              src={logoutIcon}
+              className={s.logoutIcon}
+              alt="salir"
+              onClick={() => logout(history)} />
+          </li>
+        </ul>
+      </div>
+    </div>
+  )
 }

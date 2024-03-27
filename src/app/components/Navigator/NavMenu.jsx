@@ -7,28 +7,28 @@ import navBack from '../../../functions/Navigator';
 import { toTop } from '../../../functions/toTop';
 
 export const NavMenu = () => {
-    const dispatch = useDispatch();
-    const [posNav, setPosNav] = useState();
+  const dispatch = useDispatch();
+  const [posNav, setPosNav] = useState();
 
-    window.onscroll = function () { navBack(setPosNav, posNav) };
+  window.onscroll = function () { navBack(setPosNav, posNav) };
 
-    function handleClick() {
-        dispatch(resetOption());
-        toTop();
-        reset();
-    };
+  function handleClick() {
+    dispatch(resetOption());
+    toTop();
+    reset();
+  };
 
-    return (
-        <ul className='nav-menu'>
-            <li onClick={handleClick}>
-                <Link to='/browser'>Inicio</Link>
-            </li>
-            <li onClick={handleClick}>
-                <Link to='/releases'>Novedades</Link>
-            </li>
-            <li onClick={handleClick}>
-                <Link to='/donate'>Colaborar</Link>
-            </li>
-        </ul>
-    )
+  return (
+    <ul className='nav-menu'>
+      <li onClick={handleClick}>
+        <Link to='/browser'>Inicio</Link>
+      </li>
+      <li onClick={handleClick}>
+        <Link to='/releases'>Novedades</Link>
+      </li>
+      <li onClick={handleClick}>
+        <Link to='/donate'>Colaborar</Link>
+      </li>
+    </ul>
+  )
 }

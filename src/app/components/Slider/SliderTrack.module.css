@@ -39,6 +39,11 @@
   backdrop-filter: grayscale(.7);
 }
 
+.desktop:hover .prevButton,
+.desktop:hover .nextButton {
+  opacity: 1;
+}
+
 .nextButton:hover,
 .prevButton:hover {
   opacity: 1;
@@ -99,7 +104,6 @@
   }
 
   .itemList {
-    transform: translateX("0");
     padding-left: 25px;
     padding-right: 25px;
   }

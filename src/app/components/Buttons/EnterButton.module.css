@@ -19,7 +19,7 @@
 }
 
 @media only screen and (max-width: 1300px) {
-  .enterBtn {
-    margin-right: 5px;
+  .container {
+    padding-right: 25px;
   }
 }

@@ -8,22 +8,22 @@ import { resetBackRoute } from '../../../middlewares/redux/actions/navigation';
 import { resetDetailsMedia } from '../../../middlewares/redux/actions/media';
 
 export const BackButton = () => {
-    const history = useHistory();
-    const dispatch = useDispatch();
-    const backRoute = useSelector(state => state.navigation?.backRoute) || '';
+  const history = useHistory();
+  const dispatch = useDispatch();
+  const backRoute = useSelector(state => state.navigation?.backRoute) || '';
 
-    function handleButton() {
-        toTop();
-        history.push(backRoute);
-        dispatch(resetOption());
-        dispatch(resetBackRoute());
-        dispatch(resetDetailsMedia());
-    };
+  function handleButton() {
+    toTop();
+    history.push(backRoute);
+    dispatch(resetOption());
+    dispatch(resetBackRoute());
+    dispatch(resetDetailsMedia());
+  };
 
-    return (
-        <button className={s.container} onClick={handleButton}>
-            <img className={s.backIcon} src={backIcon} alt='Volver' width='15px' />
-            Volver
-        </button>
-    )
+  return (
+    <button className={s.container} onClick={handleButton}>
+      <img className={s.backIcon} src={backIcon} alt='Volver' width='15px' />
+      Volver
+    </button>
+  )
 }
