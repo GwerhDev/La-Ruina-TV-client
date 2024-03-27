@@ -6,6 +6,7 @@ import { EnterButton } from '../Buttons/EnterButton';
 import { BackButton } from '../Buttons/BackButton';
 import { UserButton } from '../Buttons/UserButton';
 import { AUTHENTICATING } from '../../../middlewares/misc';
+import { Loader } from '../../utils/Loader';
 
 export const UserMenu = () => {
   const [posNav, setPosNav] = useState();
@@ -20,7 +21,7 @@ export const UserMenu = () => {
         isLogged === AUTHENTICATING
           ?
           <div className={s.loaderContainer}>
-            <div className={s.loader} />
+            <Loader width={"25px"} />
           </div>
           :
           !currentUser

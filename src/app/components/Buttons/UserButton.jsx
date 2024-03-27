@@ -24,21 +24,21 @@ export const UserButton = () => {
   return (
     <div className={s.container}>
       <div className={s.profileBtnCont}>
-          <div className={s.profileBtnMenu} id='profile-button' onMouseEnter={userButtonEnter}>
-            <div className={s.usernameContainer} id='username-container'>
-              {
-                profilePic
-                  ?
-                  <img className={s.profilePic} referrerPolicy="no-referrer" src={profilePic} alt='userIcon' width='25px' />
-                  :
-                  <img className={s.userIcon} referrerPolicy="no-referrer" src={userIcon} alt='userIcon' width='25px' />
-              }
-              <p onClick={handleClick} id='username' className={s.username}>Hola, <span>{username ? username.substring(0, 5) + "..." : "Usuario"}</span></p>
-            </div>
-            <div className={s.openMenuButton} onClick={userButtonClick} onMouseLeave={() => userButtonLeave}>
-              <img className={s.btnMenuTv} src={btnMenuTv} alt='menú' width='8px' />
-            </div>
+        <div className={s.profileBtnMenu} id='profile-button' onMouseEnter={userButtonEnter}>
+          <div className={s.usernameContainer} id='username-container'>
+            {
+              profilePic
+                ?
+                <img className={s.profilePic} referrerPolicy="no-referrer" src={profilePic} alt='userIcon' width='25px' />
+                :
+                <img className={s.userIcon} referrerPolicy="no-referrer" src={userIcon} alt='userIcon' width='25px' />
+            }
+            <p onClick={handleClick} id='username' className={s.username}>Hola, <span>{username ? username.substring(0, 5) + "..." : "Usuario"}</span></p>
           </div>
+          <div className={s.openMenuButton} onClick={userButtonClick} onMouseLeave={() => userButtonLeave}>
+            <img className={s.btnMenuTv} src={btnMenuTv} alt='menú' width='8px' />
+          </div>
+        </div>
       </div>
     </div>
   )

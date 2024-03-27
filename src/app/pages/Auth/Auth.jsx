@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { useHistory, useLocation } from 'react-router-dom';
 import { auth } from '../../../middlewares/redux/actions/auth';
 import { setUserToken } from '../../../middlewares/helpers';
+import { Loader } from '../../utils/Loader';
 
 const Auth = () => {
   const dispatch = useDispatch();
@@ -23,7 +24,7 @@ const Auth = () => {
 
   return (
     <div className={s.loaderContainer}>
-      <div className='loader'></div>
+      <Loader message={"Autenticando..."} width={"50px"} />
     </div>
   )
 }
