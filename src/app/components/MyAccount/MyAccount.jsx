@@ -1,6 +1,7 @@
 import s from './MyAccount.module.css';
 import userIcon from '../../../assets/images/user-icon.png';
 import appIcon from '../../../assets/images/svg/app-icon.svg';
+import friendsIcon from '../../../assets/images/svg/friends-icon.svg';
 import { RequestProfile } from '../RequestProfile/RequestProfile';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
@@ -16,8 +17,8 @@ export const MyAccount = () => {
   const { username, profilePic, role } = currentUser || null;
 
   useEffect(() => {
-    dispatch(setOption('profile'))
-    dispatch(setNavigationAccount('content'))
+    dispatch(setOption('profile'));
+    dispatch(setNavigationAccount('content'));
   }, [dispatch]);
 
   return (
@@ -46,7 +47,7 @@ export const MyAccount = () => {
         {
           account.option === 'content' &&
           <>
-            <Request title={"Mis Amigos"} route={"#"} icon={userIcon} />
+            <Request title={"Mis Amigos"} route={"#"} icon={friendsIcon} />
             <Request title={"Mis Apps"} route={"#"} icon={appIcon} />
           </>
         }
