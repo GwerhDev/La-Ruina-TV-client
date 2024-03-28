@@ -87,7 +87,7 @@ export default function rootReducer(state = initialState, action) {
                 ...state,
                 navigation: {
                     ...state.navigation,
-                    subscrption: {
+                    subscription: {
                         option: action.payload
                     }
                 }
