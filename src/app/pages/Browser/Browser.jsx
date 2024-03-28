@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useHistory } from 'react-router-dom';
 import { resetIdYT, resetOption } from "../../../middlewares/redux/actions";
 import { useDispatch, useSelector } from "react-redux";
-import { getCategories, getMedia, resetMedia } from "../../../middlewares/redux/actions/media";
+import { getCategories, getMedia, resetMedia } from "../../../middlewares/redux/actions/content";
 import { getUserToken } from "../../../middlewares/helpers";
 import { getFavorites } from "../../../middlewares/redux/actions/account";
 import { Slider } from "../../components/Slider/Slider";

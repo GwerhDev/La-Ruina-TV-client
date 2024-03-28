@@ -5,14 +5,17 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { setOption } from '../../../middlewares/redux/actions';
 import { OptionSelector } from '../../utils/OptionSelector';
+import { setNavigationAccount } from '../../../middlewares/redux/actions/navigation';
 
 export const MyAccount = () => {
   const dispatch = useDispatch();
   const currentUser = useSelector(state => state.currentUser);
+  const account = useSelector(state => state.navigation?.account);
   const { username, profilePic, role } = currentUser || null;
 
   useEffect(() => {
     dispatch(setOption('profile'))
+    dispatch(setNavigationAccount('content'))
   }, [dispatch]);
 
   return (
@@ -36,8 +39,13 @@ export const MyAccount = () => {
             </li>
             <li>{role}</li>
           </span>
-          <OptionSelector security settings support />
+          <OptionSelector content security settings support onClick={setNavigationAccount} />
         </div>
+        {
+          account.option === 'content' &&
+          <>
+          </>
+        }
       </div>
       <RequestProfile />
     </main>

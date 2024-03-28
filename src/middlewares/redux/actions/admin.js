@@ -1,7 +1,7 @@
 import axios from "axios";
 import { URL_API } from "../../config";
 import { options } from "../../helpers";
-import { getCategories, getGenres, getMedia, getMediatypes, getProducers } from "./media";
+import { getCategories, getGenres, getMedia, getMediatypes, getProducers } from "./content";
 import { GET_USERS } from "../../misc";
 
 export const createMedia = (formData) => {

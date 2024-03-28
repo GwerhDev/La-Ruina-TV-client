@@ -9,7 +9,7 @@ import {
   getGenres,
   getMediaById,
   getMediatypes,
-} from '../../../../middlewares/redux/actions/media';
+} from '../../../../middlewares/redux/actions/content';
 import {
   createCategory,
   createGenre,

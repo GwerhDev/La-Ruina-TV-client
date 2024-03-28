@@ -102,15 +102,15 @@ function Router() {
               <Checkout />
             </Route>
 
-            <Route exact path='/media/create'>
+            <Route exact path='/content/create'>
               <ContentCreatePage />
             </Route>
 
-            <Route exact path='/media/edit/:id'>
+            <Route exact path='/content/edit/:id'>
               <ContentUpdatePage />
             </Route>
 
-            <Route exact path='/media/edit'>
+            <Route exact path='/content/edit'>
               <ContentList />
             </Route>
 

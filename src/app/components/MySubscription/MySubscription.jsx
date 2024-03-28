@@ -8,6 +8,7 @@ import { resetOption, setOption } from '../../../middlewares/redux/actions';
 import checkedIcon from '../../../assets/images/checked-icon.png';
 import { subscriberPlanVerification } from '../../../middlewares/redux/actions/subscriber';
 import { OptionSelector } from '../../utils/OptionSelector';
+import { setNavigationSubscription } from '../../../middlewares/redux/actions/navigation';
 
 export const MySubscription = () => {
   const dispatch = useDispatch()
@@ -16,16 +17,15 @@ export const MySubscription = () => {
   const activePlan = useSelector(state => state.activePlan);
 
   function handleClick() {
-    return (
-      dispatch(resetOption()),
-      history.push('/checkout/subscription'),
-      reset()
-    )
+    dispatch(resetOption());
+    history.push('/checkout/subscription');
+    reset();
   };
 
   useEffect(() => {
-    dispatch(subscriberPlanVerification(id));
     dispatch(setOption('subscription'));
+    dispatch(setNavigationSubscription('content'));
+    dispatch(subscriberPlanVerification(id));
   }, [dispatch, id]);
 
   return (
@@ -37,7 +37,7 @@ export const MySubscription = () => {
             <h1>Suscripción</h1>
             <h3>Elegí tu plan</h3>
           </span>
-          <OptionSelector subscription security settings support />
+          <OptionSelector content security settings support onClick={setNavigationSubscription} />
         </div>
         <ul className={s.ulCheck}>
           <li className={s.liCheck}>

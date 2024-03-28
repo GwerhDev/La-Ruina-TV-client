@@ -6,6 +6,7 @@ import { setOption } from '../../../middlewares/redux/actions';
 import { getFavorites } from '../../../middlewares/redux/actions/account';
 import { OptionSelector } from '../../utils/OptionSelector';
 import { FilteredCard } from '../../utils/FilteredCard';
+import { setNavigationFavorites } from '../../../middlewares/redux/actions/navigation';
 
 export const MyFavorites = () => {
   const dispatch = useDispatch();
@@ -16,6 +17,7 @@ export const MyFavorites = () => {
   useEffect(() => {
     dispatch(getFavorites(userId));
     dispatch(setOption('favorites'));
+    dispatch(setNavigationFavorites('content'))
   }, [dispatch, userId]);
 
   return (
@@ -38,7 +40,7 @@ export const MyFavorites = () => {
                 </>
             }
           </span>
-          <OptionSelector favorites settings />
+          <OptionSelector content settings onClick={setNavigationFavorites} />
         </div>
         <ul className={s.favoritesContainer}>
           {

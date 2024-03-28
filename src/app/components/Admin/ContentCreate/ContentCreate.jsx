@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import defaultPreview from '../../../../assets/images/default-background.png';
 import { toTop } from '../../../../functions/toTop';
-import { getCategories, getGenres, getMediatypes, getProducers } from '../../../../middlewares/redux/actions/media';
+import { getCategories, getGenres, getMediatypes, getProducers } from '../../../../middlewares/redux/actions/content';
 import {
   createCategory,
   createGenre,

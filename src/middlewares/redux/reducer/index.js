@@ -1,3 +1,4 @@
+import { Navigation } from "../../../interfaces/Navigation";
 import { Content } from "../../../interfaces/Content";
 import {
     GET_INFO,
@@ -21,7 +22,11 @@ import {
     GET_USER_PLAN,
     RESET_DETAILS_MEDIA,
     IS_LOGGED,
-    SET_BACK_ROUTE
+    SET_BACK_ROUTE,
+    SET_NAVIGATION_DASHBOARD,
+    SET_NAVIGATION_ACCOUNT,
+    SET_NAVIGATION_FAVORITES,
+    SET_NAVIGATION_SUBSCRIPTION,
 } from "../../misc";
 
 
@@ -50,56 +55,100 @@ const initialState = {
     /*------------Filter&Search------------*/
     searchedMedia: [],
     /*------------Navigation------------*/
-    navigation: {
-        backRoute: null,
-    },
+    navigation: new Navigation(),
 }
 
 export default function rootReducer(state = initialState, action) {
     switch (action.type) {
+        case SET_NAVIGATION_ACCOUNT:
+            return {
+                ...state,
+                navigation: {
+                    ...state.navigation,
+                    account: {
+                        option: action.payload
+                    }
+                }
+            };
+
+        case SET_NAVIGATION_FAVORITES:
+            return {
+                ...state,
+                navigation: {
+                    ...state.navigation,
+                    favorites: {
+                        option: action.payload
+                    }
+                }
+            };
+
+        case SET_NAVIGATION_SUBSCRIPTION:
+            return {
+                ...state,
+                navigation: {
+                    ...state.navigation,
+                    subscrption: {
+                        option: action.payload
+                    }
+                }
+            };
+
+        case SET_NAVIGATION_DASHBOARD:
+            return {
+                ...state,
+                navigation: {
+                    ...state.navigation,
+                    dashboard: {
+                        option: action.payload
+                    },
+                }
+            };
+
         case SET_BACK_ROUTE:
             return {
                 ...state,
                 navigation: {
+                    ...state.navigation,
                     backRoute: action.payload,
                 }
-            }
+            };
+
         case IS_LOGGED:
             return {
                 ...state,
                 isLogged: action.payload
-            }
+            };
 
-        case ERROR: 
+        case ERROR:
             return {
                 ...state,
                 error: action.payload
             };
-            
+
         case GET_USER_PLAN:
             return {
                 ...state,
                 activePlan: action.payload
             };
-            
-        case GET_FULL_DETAIL: 
+
+        case GET_FULL_DETAIL:
             return {
                 ...state,
                 fullDetail: action.payload
             };
-            
+
         case GET_USERS:
             return {
                 ...state,
                 userList: action.payload
             };
-            
+
         case GET_PRODUCERS:
             return {
                 ...state,
                 dbProducers: action.payload
             };
-            
+
         case GET_SEARCH:
             return {
                 ...state,
@@ -175,7 +224,7 @@ export default function rootReducer(state = initialState, action) {
                 ...state,
                 infoDetailViewer: action.payload
             };
-        
+
         case RESET_DETAILS_MEDIA:
             return {
                 ...state,

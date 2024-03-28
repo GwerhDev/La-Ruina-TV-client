@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import { resetIdYT, resetOption } from "../../../../middlewares/redux/actions";
-import { getMedia, resetMedia } from '../../../../middlewares/redux/actions/media';
+import { getMedia, resetMedia } from '../../../../middlewares/redux/actions/content';
 import { deleteMedia } from '../../../../middlewares/redux/actions/admin';
 
 const ContentList = () => {
@@ -40,7 +40,7 @@ const ContentList = () => {
                                             <li>{e.title}</li> -
                                             <li>{e.artist}</li> -
                                             <li>
-                                                <button className={s.btnEdit} onClick={() => { history.push(`/media/edit/${e.id}`) }} />
+                                                <button className={s.btnEdit} onClick={() => { history.push(`/content/edit/${e.id}`) }} />
                                             </li> -
                                             <li><button className={s.btnDelete} onClick={() => {
                                                 dispatch(deleteMedia(e.id))

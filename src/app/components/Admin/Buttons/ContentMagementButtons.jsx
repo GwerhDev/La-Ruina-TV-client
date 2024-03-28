@@ -10,7 +10,7 @@ export const ContentMagementButtons = () => {
     const { id } = useParams();
     const history = useHistory();
 
-    function handleRedirect() { history.push(`/media/edit/${id}`) };
+    function handleRedirect() { history.push(`/content/edit/${id}`) };
 
     function handleDeleteMedia() { $d(`#deleteCanvasViewer${id}`).style.display = 'flex' };
 

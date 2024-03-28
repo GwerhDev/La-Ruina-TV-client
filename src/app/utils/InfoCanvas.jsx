@@ -1,7 +1,7 @@
 import s from './InfoCanvas.module.css';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getFullDetail } from '../../middlewares/redux/actions/media';
+import { getFullDetail } from '../../middlewares/redux/actions/content';
 
 export const InfoCanvas = (props) => {
   const dispatch = useDispatch();

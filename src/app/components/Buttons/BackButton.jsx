@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { resetOption } from '../../../middlewares/redux/actions';
 import { toTop } from '../../../functions/toTop';
 import { resetBackRoute } from '../../../middlewares/redux/actions/navigation';
-import { resetDetailsMedia } from '../../../middlewares/redux/actions/media';
+import { resetDetailsMedia } from '../../../middlewares/redux/actions/content';
 
 export const BackButton = () => {
   const history = useHistory();
