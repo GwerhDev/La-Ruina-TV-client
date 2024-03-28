@@ -49,15 +49,17 @@ export const MyFavorites = () => {
             {
               favoritesList?.map((e, index) => {
                 return (
-                  <FilteredCard
-                    id={e.id}
-                    title={e.title}
-                    img={e.imageSlider}
-                    categories={e.categories}
-                    artist={e.artist}
-                    idLinkYT={e.idLinkYT}
-                    mediaType={e.mediaType}
-                  />
+                  <li key={index}>
+                    <FilteredCard
+                      id={e.id}
+                      title={e.title}
+                      img={e.imageSlider}
+                      categories={e.categories}
+                      artist={e.artist}
+                      idLinkYT={e.idLinkYT}
+                      mediaType={e.mediaType}
+                    />
+                  </li>
                 )
               })
             }
