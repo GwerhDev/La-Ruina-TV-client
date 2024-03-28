@@ -1,11 +1,13 @@
 import s from './MyAccount.module.css';
 import userIcon from '../../../assets/images/user-icon.png';
+import appIcon from '../../../assets/images/svg/app-icon.svg';
 import { RequestProfile } from '../RequestProfile/RequestProfile';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { setOption } from '../../../middlewares/redux/actions';
 import { OptionSelector } from '../../utils/OptionSelector';
 import { setNavigationAccount } from '../../../middlewares/redux/actions/navigation';
+import { Request } from '../Request/Request';
 
 export const MyAccount = () => {
   const dispatch = useDispatch();
@@ -44,6 +46,8 @@ export const MyAccount = () => {
         {
           account.option === 'content' &&
           <>
+            <Request title={"Mis Amigos"} route={"#"} icon={userIcon} />
+            <Request title={"Mis Apps"} route={"#"} icon={appIcon} />
           </>
         }
       </div>

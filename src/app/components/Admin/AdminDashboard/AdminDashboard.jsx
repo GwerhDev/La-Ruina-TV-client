@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Request } from '../Request/Request';
+import { Request } from '../../Request/Request';
 import { setOption } from '../../../../middlewares/redux/actions';
 import { RequestProfile } from '../../RequestProfile/RequestProfile';
 import { OptionSelector } from '../../../utils/OptionSelector';
-import createIcon from '../../../../assets/images/png/create-icon.png';
+import createIcon from '../../../../assets/images/svg/create-icon.svg';
 import editIcon from '../../../../assets/images/svg/edit-icon.svg';
-import userIcon from '../../../../assets/images/png/user-icon.png';
+import userIcon from '../../../../assets/images/svg/user-icon.svg';
 import { setNavigationDashboard } from '../../../../middlewares/redux/actions/navigation';
 
 export const AdminDashboard = () => {

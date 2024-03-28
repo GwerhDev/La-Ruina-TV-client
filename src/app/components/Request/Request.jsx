@@ -1,7 +1,7 @@
 import s from './Request.module.css';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { resetOption } from '../../../../middlewares/redux/actions';
+import { resetOption } from '../../../middlewares/redux/actions';
 
 
 export const Request = (props) => {
@@ -16,7 +16,7 @@ export const Request = (props) => {
     <div className={s.reqContainer}>
       <Link to={route}>
         <button className={s.crearPost} onClick={handleOption}>
-          <img src={icon} alt="" />
+          <img src={icon} alt="" height={"50px"}/>
           {title}
         </button>
       </Link>
