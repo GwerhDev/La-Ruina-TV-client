@@ -14,11 +14,13 @@ export const Slider = (props) => {
             <SliderTrack title={title} id={id} data={data} />
           </div>
           :
-          <div className={s.emptySliderContItems}>
-            <span className={s.emptyTitle}></span>
-            <div className={s.emptySliderList}>
-              <span className={s.emptySlider}></span>
-              <span className={s.emptySlider}></span>
+          <div className={s.container}>
+            <div className={s.emptySliderContItems}>
+              <span className={s.emptyTitle}></span>
+              <div className={s.emptySliderList}>
+                <span className={s.emptySlider}></span>
+                <span className={s.emptySlider}></span>
+              </div>
             </div>
           </div>
       }
