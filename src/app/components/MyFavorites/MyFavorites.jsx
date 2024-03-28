@@ -11,7 +11,8 @@ import { setNavigationFavorites } from '../../../middlewares/redux/actions/navig
 export const MyFavorites = () => {
   const dispatch = useDispatch();
   const currentUser = useSelector(state => state.currentUser);
-  const favorites = useSelector(state => state.favorites);
+  const favoritesList = useSelector(state => state.favorites);
+  const favorites = useSelector(state => state.navigation?.favorites);
   const userId = currentUser?.id;
 
   useEffect(() => {
@@ -27,7 +28,7 @@ export const MyFavorites = () => {
         <div className='header-container'>
           <span className='section-description-container'>
             {
-              favorites?.length
+              favoritesList?.length
                 ?
                 <>
                   <h1>Tus favoritos</h1>
@@ -42,23 +43,26 @@ export const MyFavorites = () => {
           </span>
           <OptionSelector content settings onClick={setNavigationFavorites} />
         </div>
-        <ul className={s.favoritesContainer}>
-          {
-            favorites?.map((e, index) => {
-              return (
-                <FilteredCard
-                  id={e.id}
-                  title={e.title}
-                  img={e.imageSlider}
-                  categories={e.categories}
-                  artist={e.artist}
-                  idLinkYT={e.idLinkYT}
-                  mediaType={e.mediaType}
-                />
-              )
-            })
-          }
-        </ul>
+        {
+          favorites.option === 'content' &&
+          <ul className={s.favoritesContainer}>
+            {
+              favoritesList?.map((e, index) => {
+                return (
+                  <FilteredCard
+                    id={e.id}
+                    title={e.title}
+                    img={e.imageSlider}
+                    categories={e.categories}
+                    artist={e.artist}
+                    idLinkYT={e.idLinkYT}
+                    mediaType={e.mediaType}
+                  />
+                )
+              })
+            }
+          </ul>
+        }
       </div>
       <RequestProfile />
     </main>
