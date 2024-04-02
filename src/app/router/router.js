@@ -103,15 +103,22 @@ function Router() {
             </Route>
 
             <Route exact path='/content/create'>
+              <Redirect to='/admin/content/create' />
+            </Route>
+
+            <Route exact path='/admin/content/create'>
               <ContentCreatePage />
             </Route>
 
-            <Route exact path='/content/edit/:id'>
+            <Route exact path='/admin/content/edit/:id'>
               <ContentUpdatePage />
             </Route>
 
-            <Route exact path='/content/edit'>
+            <Route exact path='/admin/content/edit'>
               <ContentListPage />
+            </Route>
+            <Route exact path='/content/edit'>
+              <Redirect to='/admin/content/edit' />
             </Route>
 
             <Route exact path='/users/edit'>
