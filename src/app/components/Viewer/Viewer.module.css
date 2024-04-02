@@ -5,7 +5,6 @@
 .editionCanvas {
   width: 100%;
   max-width: 600px;
-  height: 100vh;
   overflow-y: auto;
   transition-duration: 1s;
   display: flex;
@@ -181,5 +180,9 @@
   .viewerInfo {
     padding-left: 25px;
     padding-right: 25px;
+  }
+
+  .editionCanvas {
+    max-width: 1000px;
   }
 }
