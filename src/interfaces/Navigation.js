@@ -1,5 +1,6 @@
 export class Navigation {
   constructor() {
+    this.editionActive = false;
     this.backRoute = "";
     this.dashboard = {
       option: "",

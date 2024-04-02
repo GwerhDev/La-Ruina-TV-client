@@ -20,6 +20,7 @@ import { useLocation } from 'react-router-dom/cjs/react-router-dom';
 import { PrimaryButton } from '../Buttons/PrimaryButton';
 import { Loader } from '../../utils/Loader';
 import { SecondaryButton } from '../Buttons/SecondaryButton';
+import ContentUpdate from '../Admin/ContentUpdate/ContentUpdate';
 
 export const Viewer = () => {
   const params = useParams();
@@ -31,8 +32,8 @@ export const Viewer = () => {
   const currentUser = useSelector(state => state.currentUser);
   const infoDetailViewer = useSelector(state => state.infoDetailViewer);
 
-  function onClickValue(e) {
-    dispatch(setBackRoute(location.pathname))
+  function onClickValue() {
+    dispatch(setBackRoute(location.pathname));
     dispatch(setOption('login'));
     history.push('/login');
   };
@@ -66,6 +67,9 @@ export const Viewer = () => {
 
   return (
     <div className={s.container}>
+      <div className={s.editionCanvas} id='edition-canvas'>
+        <ContentUpdate />
+      </div>
       {
         infoDetailViewer?.id?.length
           ?
@@ -77,12 +81,18 @@ export const Viewer = () => {
             <div className='player-background-effect' onClick={handleClickBack}></div>
             <div className={s.sectionsContainer}>
               <section className={s.playerSection} id='player-section'>
-                {currentUser && <YtPlayer idLinkYT={idLinkYT} />}
+                {
+                  currentUser &&
+                  <YtPlayer idLinkYT={idLinkYT} />
+                }
               </section>
               <section className={s.viewerInfo} id='viewer-info'>
                 <div className={s.infoContainer}>
                   <div className={s.viewerArtist}>
-                    {currentUser?.role === 'admin' && <ContentMagementButtons />}
+                    {
+                      currentUser?.role === 'admin' &&
+                      <ContentMagementButtons />
+                    }
                     <p>{artist}</p>
                   </div>
                   <div className={s.viewerTitle}>
@@ -126,19 +136,19 @@ export const Viewer = () => {
                             text={"Ver ahora"}
                           />
                           :
-                          <PrimaryButton 
-                            onClick={onClickValue} 
+                          <PrimaryButton
+                            onClick={onClickValue}
                             icon={userIcon}
-                            iconId={"visor-play-button"} 
+                            iconId={"visor-play-button"}
                             text={"Ingresar"}
                           />
                       }
-                      <SecondaryButton onClick={handleBackButton} text={"Volver al inicio"}/>
+                      <SecondaryButton onClick={handleBackButton} text={"Volver al inicio"} />
                     </div>
                   </div>
                 </div>
               </section>
-              <DeleteCanvas keyId={'Viewer'} id={id} deleteFunction={deleteMedia} />
+              <DeleteCanvas keyId={'viewer'} id={id} deleteFunction={deleteMedia} />
             </div>
           </div>
           :

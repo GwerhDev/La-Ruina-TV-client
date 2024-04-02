@@ -2,7 +2,14 @@ import axios from "axios";
 import { URL_API } from "../../config";
 import { options } from "../../helpers";
 import { getCategories, getGenres, getMedia, getMediatypes, getProducers } from "./content";
-import { GET_USERS } from "../../misc";
+import { GET_USERS, SET_EDITION } from "../../misc";
+
+export const setEdition = (boolean) => {
+  return {
+    type: SET_EDITION,
+    payload: boolean
+  }
+};
 
 export const createMedia = (formData) => {
   return async function (dispatch) {

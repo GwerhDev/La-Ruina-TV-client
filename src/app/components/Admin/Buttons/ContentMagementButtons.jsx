@@ -1,23 +1,27 @@
 import s from './ContentMagementButtons.module.css';
-import { useHistory } from "react-router-dom";
 
 import editIcon from '../../../../assets/images/edit-icon.png';
 import deleteIcon from '../../../../assets/images/delete-icon.png';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
-import { $d } from '../../../../functions';
+import { $d, $gId } from '../../../../functions';
+import { useDispatch } from 'react-redux';
+import { setEdition } from '../../../../middlewares/redux/actions/admin';
 
 export const ContentMagementButtons = () => {
     const { id } = useParams();
-    const history = useHistory();
+    const dispatch = useDispatch();
 
-    function handleRedirect() { history.push(`/content/edit/${id}`) };
+    function handleEdit() { 
+        dispatch(setEdition(true))
+        $gId('edition-canvas').style.width = '50%';
+    };
 
     function handleDeleteMedia() { $d(`#deleteCanvasViewer${id}`).style.display = 'flex' };
 
     return (
         <div className={s.container}>
             <ul className={s.adminRequest}>
-                <li className={s.adminBtn} onClick={ handleRedirect }>
+                <li className={s.adminBtn} onClick={ handleEdit }>
                     <img src={editIcon} className={s.editImg} alt='edit' width='30px'/>
                 </li>
                 <li className={s.adminBtn} onClick={ handleDeleteMedia }>

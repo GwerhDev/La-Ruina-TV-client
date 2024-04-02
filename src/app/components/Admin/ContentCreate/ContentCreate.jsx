@@ -231,7 +231,8 @@ const ContentCreate = () => {
                 </div>
             }
           </div>
-          : <div className={s.createBody}>
+          : 
+          <div className={s.createBody}>
             <form onSubmit={handleSubmit}>
               <div className='nav-fixed' />
               <div className={s.container}>

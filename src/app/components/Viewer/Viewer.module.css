@@ -1,3 +1,17 @@
+.container {
+  display: flex;
+}
+
+.editionCanvas {
+  width: 0;
+  max-width: 500px;
+  height: 100vh;
+  overflow-y: auto;
+  transition-duration: 1s;
+  display: flex;
+  z-index: 9999;
+}
+
 .favIcon {
   filter: grayscale(1);
 }

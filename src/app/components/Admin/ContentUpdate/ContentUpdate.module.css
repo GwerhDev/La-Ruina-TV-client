@@ -1,44 +1,10 @@
 .mainContainer {
   width: 100%;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: hidden;
+  overflow-y: auto;
   background: linear-gradient(to bottom, #ffffffcf, rgb(137, 137, 137));
-
-}
-
-.createBody {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow-y: scroll;
-}
-
-.createTitle {
-  margin-top: 3rem;
-}
-
-.divTitleArtistDesc p {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-}
-
-.contTitleArtistDesc {
-  width: 50%;
-  top: 0px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  border-color: #171717;
-  border-width: 1px;
-  border-radius: 15px;
-  position: relative;
 }
 
 .container {
@@ -53,6 +19,34 @@
   align-items: center;
 }
 
+.loaderContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.contTitleArtistDesc {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  gap: .3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-color: #171717;
+  border-width: 1px;
+  border-radius: 15px;
+}
+
+.contTitleArtistDesc span {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
 .imgSlrVsr {
   display: flex;
   flex-direction: column;
@@ -61,6 +55,9 @@
   border-color: #171717;
   border-width: 1px;
   text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  gap: 1rem;
 }
 
 .inputBtn:hover {
@@ -103,14 +100,6 @@ textarea {
   background-color: #171717;
   color: #ffffff;
   transition-duration: 0.2s;
-}
-
-.loaderContainer {
-  display: flex;
-  flex-direction: column;
-  height: 100px;
-  align-items: center;
-  justify-content: space-evenly;
 }
 
 .typemedia {

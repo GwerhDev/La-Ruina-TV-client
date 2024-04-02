@@ -27,6 +27,7 @@ import {
     SET_NAVIGATION_ACCOUNT,
     SET_NAVIGATION_FAVORITES,
     SET_NAVIGATION_SUBSCRIPTION,
+    SET_EDITION,
 } from "../../misc";
 
 
@@ -60,6 +61,15 @@ const initialState = {
 
 export default function rootReducer(state = initialState, action) {
     switch (action.type) {
+        case SET_EDITION:
+            return {
+                ...state,
+                navigation: {
+                    ...state.navigation,
+                    editionActive: action.payload
+                }
+            };
+
         case SET_NAVIGATION_ACCOUNT:
             return {
                 ...state,
