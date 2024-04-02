@@ -205,7 +205,6 @@ const ContentUpdate = () => {
     <div className={s.mainContainer}>
       {
         editionActive &&
-
         <>
           <div className='nav-fixed'></div>
           {
@@ -234,22 +233,22 @@ const ContentUpdate = () => {
                     <h1>Actualizar Contenido</h1>
                     <section className={s.contTitleArtistDesc}>
                       <span>
-                        <label>Titulo</label>
-                        <input
-                          type="text"
-                          name="title"
-                          placeholder="Título de la publicación"
-                          value={data?.title || ''}
-                          onChange={handleInputChange}
-                        />
-                      </span>
-                      <span>
                         <label>Artista</label>
                         <input
                           type="text"
                           name="artist"
                           placeholder="Nombre del intérprete"
                           value={data?.artist || ''}
+                          onChange={handleInputChange}
+                        />
+                      </span>
+                      <span>
+                        <label>Titulo</label>
+                        <input
+                          type="text"
+                          name="title"
+                          placeholder="Título de la publicación"
+                          value={data?.title || ''}
                           onChange={handleInputChange}
                         />
                       </span>
