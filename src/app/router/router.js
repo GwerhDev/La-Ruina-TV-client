@@ -15,9 +15,9 @@ import Checkout from '../pages/Checkout/Checkout';
 import Favorites from '../pages/Favorites/Favorites';
 import UserList from '../components/Admin/UserList/UserList';
 import Subscription from '../pages/Subscription/Subscription';
+import ContentListPage from '../pages/Admin/ContentListPage';
 import ContentCreatePage from '../pages/Admin/ContentCreatePage';
 import ContentUpdatePage from '../pages/Admin/ContentUpdatePage';
-import ContentList from '../components/Admin/ContentList/ContentList';
 
 import { Navigator } from '../components/Navigator/Navigator';
 import { CanvasMenu } from '../components/Navigator/CanvasMenu';
@@ -111,7 +111,7 @@ function Router() {
             </Route>
 
             <Route exact path='/content/edit'>
-              <ContentList />
+              <ContentListPage />
             </Route>
 
             <Route exact path='/users/edit'>

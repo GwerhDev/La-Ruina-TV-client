@@ -7,7 +7,7 @@ import userIcon from '../../../assets/images/user-icon.png';
 import likeIcon from '../../../assets/images/like-icon.png';
 import playIconn from '../../../assets/images/ruinatv-icon-play-n.png';
 import playIconb from '../../../assets/images/ruinatv-icon-play-b.png';
-import { $d } from '../../../functions';
+import { $d, $gId } from '../../../functions';
 import { ContentMagementButtons } from '../../components/Admin/Buttons/ContentMagementButtons';
 import { resetOption, setOption } from '../../../middlewares/redux/actions';
 import { getMediaById, resetDetailsMedia } from '../../../middlewares/redux/actions/content';
@@ -31,6 +31,7 @@ export const Viewer = () => {
   const favorites = useSelector(state => state.favorites);
   const currentUser = useSelector(state => state.currentUser);
   const infoDetailViewer = useSelector(state => state.infoDetailViewer);
+  const editionActive = useSelector(state => state.navigation.editionActive);
 
   function onClickValue() {
     dispatch(setBackRoute(location.pathname));
@@ -53,9 +54,13 @@ export const Viewer = () => {
   };
 
   useEffect(() => {
+    editionActive 
+    ? ($gId('edition-canvas').style.width = '50%') 
+    : ($gId('edition-canvas').style.width = '0');
+
     dispatch(getMediaById(id));
     dispatch(getFavorites());
-  }, [dispatch, id]);
+  }, [dispatch, editionActive, id]);
 
   const {
     imageSlider,

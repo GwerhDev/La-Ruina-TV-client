@@ -12,8 +12,8 @@ const ContentList = () => {
     const mediaList = useSelector(state => state.mediaList);
 
     function handleEditButton(id) {
-       dispatch(setEdition(true));
-        history.push(`/content/edit/${id}`);
+        dispatch(setEdition(true));
+        history.push(`/view/v=${id}`);
     }
 
     useEffect(() => {
@@ -30,8 +30,6 @@ const ContentList = () => {
                 <div className={s.divList}>
                     <div className={s.ulList1}>
                         <ul className={s.ulList0}>
-                            <li>Visor</li>  -
-                            <li>Slider</li> -
                             <li>Title</li>  -
                             <li>Artist</li> -
                             <li>Edit</li>   -
@@ -42,10 +40,8 @@ const ContentList = () => {
                                 return (
                                     <li key={index}>
                                         <ul className={s.ulList2}>
-                                            <li><img src={e.imageVisor} height={80} alt="" /></li> -
-                                            <li><img src={e.imageSlider} height={80} alt="" /></li> -
-                                            <li>{e.title}</li> -
-                                            <li>{e.artist}</li> -
+                                            <li>{e.title || "❗"}</li> -
+                                            <li>{e.artist || "❗"}</li> -
                                             <li>
                                                 <button className={s.btnEdit} onClick={() => handleEditButton(e.id)} />
                                             </li> -
