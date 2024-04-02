@@ -13,7 +13,7 @@ export const ContentMagementButtons = () => {
 
     function handleEdit() { 
         dispatch(setEdition(true))
-        $gId('edition-canvas').style.width = '50%';
+        $gId('edition-canvas').style.width = '100%';
     };
 
     function handleDeleteMedia() { $d(`#deleteCanvasViewer${id}`).style.display = 'flex' };

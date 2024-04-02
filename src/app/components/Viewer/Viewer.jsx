@@ -55,7 +55,7 @@ export const Viewer = () => {
 
   useEffect(() => {
     editionActive 
-    ? ($gId('edition-canvas').style.width = '50%') 
+    ? ($gId('edition-canvas').style.width = '100%') 
     : ($gId('edition-canvas').style.width = '0');
 
     dispatch(getMediaById(id));
