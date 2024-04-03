@@ -117,6 +117,7 @@ function Router() {
             <Route exact path='/admin/content/edit'>
               <ContentListPage />
             </Route>
+
             <Route exact path='/content/edit'>
               <Redirect to='/admin/content/edit' />
             </Route>

@@ -1,12 +1,41 @@
-const PlayerYoutube = (props) => {
-  const { idLinkYT } = props;
+import s from './PlayerYoutube.module.css';
+import YouTube from 'react-youtube';
+import { useRef } from 'react';
+import { useSelector } from "react-redux";
+
+export const PlayerYoutube = (props) => {
+  const { idLinkYT } = useSelector(state => state.player);
+  const videoPlayerRef = useRef();
+  const { artist, title, info } = props;
+
+  const opts = {
+    width: '100%',
+    playerVars: {
+      controls: 1,
+      showinfo: 0,
+      autoplay: 0,
+      rel: 0,
+      modestbranding: 1,
+      fs: 1,
+      iv_load_policy: 3,
+      start: 0,
+    },
+  };
+
   return (
-    <div className='player-li'>
-      <iframe title="iframe" id="ytplayer" type="text/html" width="100%" height="100%" allowFullScreen
-        src={`https://www.youtube.com/embed/${idLinkYT}?start=1&color=white`}
-        frameBorder="0" />
+    <div className={s.container} id='player-container'>
+      <div className={s.playerContainer}>
+        {
+          idLinkYT &&
+          <YouTube videoId={idLinkYT} ref={videoPlayerRef} opts={opts} />
+        }
+      </div>
+      <ul className={s.infoCanvas}>
+        <li className={s.artist}>{artist}</li>
+        <li className={s.title}>{title}</li>
+        <li className={s.info}>{info}</li>
+      </ul>
     </div>
   )
 };
 
-export default PlayerYoutube;

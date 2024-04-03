@@ -2,13 +2,11 @@ import s from './Viewer.module.css';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import YtPlayer from '../Player/PlayerYoutube';
 import userIcon from '../../../assets/images/user-icon.png';
 import likeIcon from '../../../assets/images/like-icon.png';
 import playIconn from '../../../assets/images/ruinatv-icon-play-n.png';
 import playIconb from '../../../assets/images/ruinatv-icon-play-b.png';
 import { $d, $gId } from '../../../functions';
-import { ContentMagementButtons } from '../../components/Admin/Buttons/ContentMagementButtons';
 import { resetOption, setOption } from '../../../middlewares/redux/actions';
 import { getMediaById, resetDetailsMedia } from '../../../middlewares/redux/actions/content';
 import { addFavorites, deleteFavorites, getFavorites } from '../../../middlewares/redux/actions/account';
@@ -21,6 +19,9 @@ import { PrimaryButton } from '../Buttons/PrimaryButton';
 import { Loader } from '../../utils/Loader';
 import { SecondaryButton } from '../Buttons/SecondaryButton';
 import ContentUpdate from '../Admin/ContentUpdate/ContentUpdate';
+import { setPlayer } from '../../../middlewares/redux/actions/player';
+import { PlayerYoutube } from '../Player/PlayerYoutube';
+import { ContentMagementButtons } from '../../components/Admin/Buttons/ContentMagementButtons';
 
 export const Viewer = () => {
   const params = useParams();
@@ -46,21 +47,24 @@ export const Viewer = () => {
     history.push('/');
   };
 
+  function handleWatchButton() {
+    dispatch(setPlayer({ idLinkYT }));
+    $d('.player-ul').style.opacity = '1';
+    $d('.player-background-effect').style.opacity = '1';
+  }
+
   function handleClickBack() {
-    $d('.player-li').style.display = 'none';
     $d('.player-background-effect').style.opacity = '0';
-    $d('#viewer-info').style.display = "flex";
-    $d('#player-section').style.display = "none";
   };
 
   useEffect(() => {
-    editionActive 
-    ? ($gId('edition-canvas').style.width = '100%') 
-    : ($gId('edition-canvas').style.width = '0');
+    currentUser && editionActive
+      ? ($gId('edition-canvas').style.width = '100%')
+      : ($gId('edition-canvas').style.width = '0');
 
     dispatch(getMediaById(id));
     dispatch(getFavorites());
-  }, [dispatch, editionActive, id]);
+  }, [dispatch, currentUser, editionActive, id]);
 
   const {
     imageSlider,
@@ -72,11 +76,14 @@ export const Viewer = () => {
 
   return (
     <div className={s.container}>
-      <div className={s.editionCanvas} id='edition-canvas'>
-        <ContentUpdate />
-      </div>
       {
-        infoDetailViewer?.id?.length
+        currentUser?.role === 'admin' &&
+        <div className={s.editionCanvas} id='edition-canvas'>
+          <ContentUpdate />
+        </div>
+      }
+      {
+        infoDetailViewer?.id
           ?
           <div className={s.viewer}>
             <div className={s.backgroundCanvas}>
@@ -85,71 +92,51 @@ export const Viewer = () => {
             <div className={s.viewerCanvas}></div>
             <div className='player-background-effect' onClick={handleClickBack}></div>
             <div className={s.sectionsContainer}>
-              <section className={s.playerSection} id='player-section'>
-                {
-                  currentUser &&
-                  <YtPlayer idLinkYT={idLinkYT} />
-                }
-              </section>
+              <span className={s.playerContainer}>
+                <PlayerYoutube artist={artist} title={title} info={info} />
+              </span>
               <section className={s.viewerInfo} id='viewer-info'>
                 <div className={s.infoContainer}>
-                  <div className={s.viewerArtist}>
+                  {
+                    currentUser &&
+                    <div className={s.userButtons}>
+                      <button className='button-add-favorite' onClick={() => { dispatch(favorites.find(e => e.id === id) ? deleteFavorites(id) : addFavorites(currentUser.id, id)) }}>
+                        <img
+                          className={s.favIcon}
+                          id="favViewIcon"
+                          src={likeIcon}
+                          alt='add favorites'
+                          width='25px'
+                          style={{ filter: `grayscale(${favorites.find(e => e.id === id) ? 0 : 1} )` }}
+                        />
+                      </button>
+                      {
+                        currentUser.role === 'admin' &&
+                        <ContentMagementButtons />
+                      }
+                    </div>
+                  }
+                  <div className={s.buttonsContainer}>
                     {
-                      currentUser?.role === 'admin' &&
-                      <ContentMagementButtons />
+                      currentUser
+                        ?
+                        <PrimaryButton
+                          onClick={handleWatchButton}
+                          onMouseEnter={() => { $d('#visor-play-button').src = playIconb }}
+                          onMouseLeave={() => { $d('#visor-play-button').src = playIconn }}
+                          icon={playIconn}
+                          iconId={"visor-play-button"}
+                          text={"Ver ahora"}
+                        />
+                        :
+                        <PrimaryButton
+                          onClick={onClickValue}
+                          icon={userIcon}
+                          iconId={"visor-play-button"}
+                          text={"Ingresar"}
+                        />
                     }
-                    <p>{artist}</p>
-                  </div>
-                  <div className={s.viewerTitle}>
-                    <p>{title}</p>
-                    <div className={s.viewerDescription}>
-                      <p>{info}</p>
-                    </div>
-                  </div>
-                  <div className={s.viewMediaTypesCont}>
-                    <ul className={s.viewMediaTypesList}>
-                      {
-                        currentUser &&
-                        <button className='button-add-favorite' onClick={() => { dispatch(favorites.find(e => e.id === id) ? deleteFavorites(id) : addFavorites(currentUser.id, id)) }}>
-                          <img
-                            className={s.favIcon}
-                            id="favViewIcon"
-                            src={likeIcon}
-                            alt='add favorites'
-                            width='25px'
-                            style={{ filter: `grayscale(${favorites.find(e => e.id === id) ? 0 : 1} )` }}
-                          />
-                        </button>
-                      }
-                    </ul>
-                    <div className={s.buttonsContainer}>
-                      {
-                        currentUser
-                          ?
-                          <PrimaryButton
-                            onClick={() => {
-                              $d('.player-ul').style.opacity = '1';
-                              $d('.player-li').style.display = 'block';
-                              $d('#viewer-info').style.display = "none";
-                              $d('#player-section').style.display = "flex";
-                              $d('.player-background-effect').style.opacity = '1';
-                            }}
-                            onMouseEnter={() => { $d('#visor-play-button').src = playIconb }}
-                            onMouseLeave={() => { $d('#visor-play-button').src = playIconn }}
-                            icon={playIconn}
-                            iconId={"visor-play-button"}
-                            text={"Ver ahora"}
-                          />
-                          :
-                          <PrimaryButton
-                            onClick={onClickValue}
-                            icon={userIcon}
-                            iconId={"visor-play-button"}
-                            text={"Ingresar"}
-                          />
-                      }
-                      <SecondaryButton onClick={handleBackButton} text={"Volver al inicio"} />
-                    </div>
+                    <SecondaryButton onClick={handleBackButton} text={"Volver al inicio"} />
                   </div>
                 </div>
               </section>

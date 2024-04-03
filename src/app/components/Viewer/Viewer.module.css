@@ -20,9 +20,15 @@
   filter: grayscale(0);
 }
 
+.userButtons {
+  display: flex;
+  gap: .5rem;
+  z-index: 999;
+}
+
 .viewer {
-  overflow: hidden;
-  height: 100vh;
+  width: 50%;
+  height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   z-index: 1;
@@ -48,51 +54,12 @@
   background-size: cover;
 }
 
-.viewerInfo {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 50px;
-  height: 100vh;
-  width: 100%;
-  animation-timing-function: ease-in-out;
-}
-
 .infoContainer {
   display: flex;
   justify-content: flex-start;
   max-width: 2000px;
   width: 100%;
   flex-direction: column;
-}
-
-.viewerArtist {
-  width: fit-content;
-  align-content: center;
-}
-
-.viewerArtist p {
-  color: #ffffff;
-  text-decoration: overline;
-  font-size: 18px;
-  opacity: 0.7;
-  padding: 0;
-  margin: 0;
-}
-
-.viewerArtist p:hover {
-  opacity: 1;
-  cursor: pointer;
-}
-
-.viewerTitle p {
-  font-size: 50px;
-  color: #ffffff;
-  text-shadow: #000000;
-  filter: drop-shadow(1px 1px 2px #000000);
-  padding: 0;
-  margin: 0;
 }
 
 .viewerCanvas {
@@ -102,37 +69,33 @@
   position: absolute;
 }
 
-.viewerDescription {
-  width: 410px;
-  height: 100px;
-  top: 100px;
-  color: #ffffffd4;
-  font-family: Product Sans, sans-serif;
-}
-
-.viewerDescription p {
-  font-weight: 100;
-  font-size: 16px;
-  padding: 0;
-  margin: 0;
-}
-
 .sectionsContainer {
+  margin: 0;
+  padding: 0;
   display: flex;
-  justify-content: space-between;
-  width: 100%;
-  height: 100vh;
-  overflow-y: auto;
+  height: 100%;
   min-height: 500px;
+  flex-direction: column;
 }
 
-.playerSection {
-  display: none;
-  align-items: center;
-  justify-content: center;
+.playerContainer {
+  margin: 0;
+  padding: 0;
   width: 100vw;
-  height: 100%;
-  min-height: 300px;
+  display: flex;
+  margin-top: 7rem;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.viewerInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+  width: 100%;
+  animation-timing-function: ease-in-out;
 }
 
 .viewMediaTypesList {
@@ -172,8 +135,13 @@
 }
 
 @media only screen and (min-width: 2000px) {
+  .viewerInfo {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   .infoContainer {
-    padding-left: 100px;
+    padding: 0;
   }
 }
 

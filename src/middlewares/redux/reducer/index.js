@@ -28,7 +28,9 @@ import {
     SET_NAVIGATION_FAVORITES,
     SET_NAVIGATION_SUBSCRIPTION,
     SET_EDITION,
+    SET_PLAYER,
 } from "../../misc";
+import { Player } from "../../../interfaces/Player";
 
 
 const initialState = {
@@ -41,7 +43,8 @@ const initialState = {
     isLogged: null,
     option: '',
 
-    /*----------------Media----------------*/
+    /*----------------Content----------------*/
+    player: new Player(),
     dbMediatypes: [],
     dbGenres: [],
     dbCategories: [],
@@ -61,6 +64,12 @@ const initialState = {
 
 export default function rootReducer(state = initialState, action) {
     switch (action.type) {
+        case SET_PLAYER:
+            return {
+                ...state,
+                player: action.payload
+            };
+
         case SET_EDITION:
             return {
                 ...state,
