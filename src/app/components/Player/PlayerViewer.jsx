@@ -13,7 +13,7 @@ import { addFavorites, deleteFavorites, getFavorites } from '../../../middleware
 import { resetOption, setOption } from '../../../middlewares/redux/actions';
 import { getMediaById, resetDetailsMedia } from '../../../middlewares/redux/actions/content';
 import { resetBackRoute, setBackRoute } from '../../../middlewares/redux/actions/navigation';
-import { setPlayer } from '../../../middlewares/redux/actions/player';
+import { resetPlayer, setPlayer } from '../../../middlewares/redux/actions/player';
 import { useHistory, useLocation } from 'react-router-dom/cjs/react-router-dom';
 import { $d, $gId } from '../../../functions';
 
@@ -33,6 +33,7 @@ export const PlayerViewer = (props) => {
   };
 
   function handleBackButton() {
+    dispatch(resetPlayer());
     dispatch(resetOption());
     dispatch(resetBackRoute());
     dispatch(resetDetailsMedia());

@@ -8,6 +8,8 @@ import { CanvasMenuFunction } from '../../../functions/CanvasMenuFunction';
 import navBack from '../../../functions/Navigator';
 import searchIcon from '../../../assets/images/search-icon.png';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import { resetPlayer } from '../../../middlewares/redux/actions/player';
+import { toTop } from '../../../functions/toTop';
 
 export const CanvasMenu = () => {
   const history = useHistory();
@@ -29,20 +31,19 @@ export const CanvasMenu = () => {
   function handleSubmit(e) {
     e.preventDefault();
     if (search.length > 0) {
-      return (
-        dispatch(resetOption()),
-        reset(),
-        history.push(`/search/${search}`)
-      );
+      toTop();
+      dispatch(resetPlayer());
+      dispatch(resetOption());
+      reset();
+      history.push(`/search/${search}`)
     }
   };
 
   function handleClick() {
-    window.scrollTo(0, 0)
-    return (
-      dispatch(resetOption()),
-      reset()
-    )
+    toTop();
+    dispatch(resetPlayer());
+    dispatch(resetOption());
+    reset();
   };
 
   window.onscroll = function () { navBack(setPosNav, posNav) };

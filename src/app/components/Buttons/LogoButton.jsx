@@ -6,8 +6,11 @@ import ruinaLogo from '../../../assets/images/ruina-logo.png';
 import { $d, $gId } from '../../../functions';
 import btnMenuTv from '../../../assets/images/ruinatv-icon-play-b.png';
 import { toTop } from '../../../functions/toTop';
+import { resetPlayer } from '../../../middlewares/redux/actions/player';
+import { useDispatch } from 'react-redux';
 
 export const LogoButton = () => {
+  const dispatch = useDispatch();
   const history = useHistory();
   const [posNav, setPosNav] = useState();
   window.onscroll = function () { navBack(setPosNav, posNav) };
@@ -33,6 +36,7 @@ export const LogoButton = () => {
 
   const handleLogoClick = () => {
     toTop();
+    dispatch(resetPlayer())
     history.push('/');
   };
 
@@ -65,8 +69,6 @@ export const LogoButton = () => {
             </div>
           </div>
         </div>
-
-
       </div>
     </div>
   )

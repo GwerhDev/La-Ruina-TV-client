@@ -12,6 +12,7 @@ import { toTop } from '../../../functions/toTop';
 import { setBackRoute } from '../../../middlewares/redux/actions/navigation';
 import { setOption } from '../../../middlewares/redux/actions';
 import { userButtonEnter } from '../../../functions/UserButton';
+import { resetPlayer } from '../../../middlewares/redux/actions/player';
 
 export const UserOptions = () => {
   const currentUser = useSelector(state => state.currentUser);
@@ -21,6 +22,7 @@ export const UserOptions = () => {
 
   function onClickValue(e) {
     toTop();
+    dispatch(resetPlayer());
     dispatch(setBackRoute(location.pathname));
     dispatch(setOption(e.target.value || e));
     history.push("/" + e.target.value || e);

@@ -6,6 +6,7 @@ import { resetOption } from '../../../middlewares/redux/actions';
 import { toTop } from '../../../functions/toTop';
 import { resetBackRoute } from '../../../middlewares/redux/actions/navigation';
 import { resetDetailsMedia } from '../../../middlewares/redux/actions/content';
+import { resetPlayer } from '../../../middlewares/redux/actions/player';
 
 export const BackButton = () => {
   const history = useHistory();
@@ -15,6 +16,7 @@ export const BackButton = () => {
   function handleButton() {
     toTop();
     history.push(backRoute);
+    dispatch(resetPlayer());
     dispatch(resetOption());
     dispatch(resetBackRoute());
     dispatch(resetDetailsMedia());

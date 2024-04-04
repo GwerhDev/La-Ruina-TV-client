@@ -1,3 +1,4 @@
+import { Player } from "../../../interfaces/Player";
 import { SET_PLAYER } from "../../misc";
 
 export function setPlayer(e) {
@@ -10,6 +11,6 @@ export function setPlayer(e) {
 export function resetPlayer() {
   return {
     type: SET_PLAYER,
-    payload: null
+    payload: new Player(),
   }
 };

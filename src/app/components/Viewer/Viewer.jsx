@@ -2,8 +2,6 @@ import s from './Viewer.module.css';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { $d } from '../../../functions';
-import { DeleteCanvas } from '../../utils/DeleteCanvas';
-import { deleteMedia } from '../../../middlewares/redux/actions/admin';
 import { Loader } from '../../utils/Loader';
 import { PlayerViewer } from '../Player/PlayerViewer';
 import ContentUpdate from '../Admin/ContentUpdate/ContentUpdate';
@@ -47,9 +45,6 @@ export const Viewer = () => {
               <span className={s.playerContainer}>
                 <PlayerViewer artist={artist} title={title} info={info} id={id} idYT={idLinkYT} />
               </span>
-              <section className={s.viewerInfo} id='viewer-info'>
-              </section>
-              <DeleteCanvas keyId={'viewer'} id={id} deleteFunction={deleteMedia} />
             </div>
           </div>
           :
