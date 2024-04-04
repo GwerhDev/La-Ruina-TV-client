@@ -12,7 +12,7 @@ export const PlayerYouTube = () => {
     playerVars: {
       controls: 1,
       showinfo: 0,
-      autoplay: 0,
+      autoplay: 0, 
       rel: 0,
       modestbranding: 1,
       fs: 1,
