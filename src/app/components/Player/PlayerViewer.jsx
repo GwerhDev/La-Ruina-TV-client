@@ -1,7 +1,7 @@
 import s from './PlayerViewer.module.css';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { PlayerYouTube } from './PlayerYouTubeComponent';
+import { PlayerYouTube } from './PlayerYouTube';
 import { PrimaryButton } from '../Buttons/PrimaryButton';
 import { SecondaryButton } from '../Buttons/SecondaryButton';
 import { ContentMagementButtons } from '../Admin/Buttons/ContentMagementButtons';

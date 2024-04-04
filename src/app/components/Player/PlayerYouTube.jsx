@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import s from './PlayerYouTubeComponent.module.css';
+import s from './PlayerYouTube.module.css';
 import YouTube from 'react-youtube';
 import { useRef } from 'react';
 
