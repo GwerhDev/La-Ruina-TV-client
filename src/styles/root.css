@@ -12,7 +12,7 @@ ul, li{
   overflow-x: hidden;
 }
 
-body {
+body, .App {
   margin: 0;
   font-family: Bebas Neue;
   -webkit-font-smoothing: antialiased;
@@ -29,6 +29,7 @@ body {
   position: absolute;
   width: 100vw;
   min-height: 100vh;
+  overflow-x: hidden;
   list-style: none;
   background: linear-gradient(168deg, rgb(0, 0, 0) 20% , #171717 120%);
 }
