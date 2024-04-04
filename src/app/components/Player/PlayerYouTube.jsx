@@ -4,7 +4,8 @@ import YouTube from 'react-youtube';
 import { useRef } from 'react';
 
 export const PlayerYouTube = () => {
-  const { idLinkYT } = useSelector(state => state.player);
+  const idLinkYT = useSelector(state => state.player.idLinkYT);
+  const currentUser = useSelector(state => state.currentUser);
   const videoPlayerRef = useRef();
 
   const opts = {
@@ -24,7 +25,7 @@ export const PlayerYouTube = () => {
   return (
     <div className={s.playerContainer}>
       {
-        idLinkYT &&
+        idLinkYT && currentUser &&
         <YouTube iframeClassName={s.youtubeComponent}
           videoId={idLinkYT} ref={videoPlayerRef} opts={opts} />
       }

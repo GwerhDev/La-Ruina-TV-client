@@ -57,6 +57,12 @@
   gap: .4rem
 }
 
+.noUserButtons {
+  display: flex;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
 @media only screen and (min-width: 2000px) {
   .container {
     padding-left: 0;

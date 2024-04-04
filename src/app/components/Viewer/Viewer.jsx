@@ -1,16 +1,21 @@
 import s from './Viewer.module.css';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { $d } from '../../../functions';
+import { $d, $gId } from '../../../functions';
 import { Loader } from '../../utils/Loader';
 import { PlayerViewer } from '../Player/PlayerViewer';
 import ContentUpdate from '../Admin/ContentUpdate/ContentUpdate';
+import { useEffect } from 'react';
+import { getMediaById } from '../../../middlewares/redux/actions/content';
+import { getFavorites } from '../../../middlewares/redux/actions/account';
 
 export const Viewer = () => {
+  const dispatch = useDispatch();
   const params = useParams();
   const { id } = params;
   const currentUser = useSelector(state => state.currentUser);
   const infoDetailViewer = useSelector(state => state.infoDetailViewer);
+  const editionActive = useSelector(state => state.navigation.editionActive);
 
   function handleClickBack() {
     $d('.player-background-effect').style.opacity = '0';
@@ -23,6 +28,15 @@ export const Viewer = () => {
     artist,
     idLinkYT,
   } = infoDetailViewer;
+
+  useEffect(() => {
+    currentUser && editionActive
+      ? ($gId('edition-canvas').style.width = '100%')
+      : ($gId('edition-canvas').style.width = '0');
+
+    dispatch(getMediaById(id));
+    dispatch(getFavorites());
+  }, [dispatch, currentUser, editionActive, id]);
 
   return (
     <div className={s.container}>
