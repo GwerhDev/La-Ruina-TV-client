@@ -69,13 +69,30 @@
   display: flex;
   flex-direction: column;
   width: 50%;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: center;
   border-color: #171717;
   border-width: 1px;
   text-align: center;
   padding-top: 1rem;
   padding-bottom: 1rem;
   gap: 1rem;
+}
+
+.imgSlrVsr span {
+  display: flex;
+  flex-direction: column;
+  width: 180px;
+}
+
+.imgSlrVsr label {
+  background-color: #171717;
+  color: #fff;
+  border-radius: 5px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-bottom: -.6rem;
+  z-index: 1;
 }
 
 .inputBtn:hover {

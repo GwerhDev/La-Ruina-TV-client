@@ -264,9 +264,7 @@ const ContentUpdate = () => {
                     <section className={s.imgSlrVsr}>
                       <span>
                         <label>Imagen del Slider</label>
-                        <br></br>
                         <img src={previewSlider || defaultPreview} alt="visor" height="120px" />
-                        <br></br>
                         <input
                           className={s.inputBtn}
                           style={{ cursor: 'pointer' }}
@@ -286,9 +284,7 @@ const ContentUpdate = () => {
                       </span>
                       <span>
                         <label>Imagen del Visor</label>
-                        <br></br>
                         <img src={previewVisor || defaultPreview} alt="visor" height="120px" />
-                        <br></br>
                         <input
                           className={s.inputBtn}
                           type="file"
