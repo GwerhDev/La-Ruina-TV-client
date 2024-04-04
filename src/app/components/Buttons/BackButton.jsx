@@ -15,11 +15,11 @@ export const BackButton = () => {
 
   function handleButton() {
     toTop();
-    history.push(backRoute);
     dispatch(resetPlayer());
     dispatch(resetOption());
     dispatch(resetBackRoute());
     dispatch(resetDetailsMedia());
+    history.push(backRoute);
   };
 
   return (
