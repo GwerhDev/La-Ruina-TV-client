@@ -61,8 +61,7 @@ export const Viewer = () => {
         infoDetailViewer?.id
           ?
           <div className={s.viewer}>
-            <div className={s.backgroundCanvas}>
-            </div>
+            <div className={s.backgroundCanvas}></div>
             <div className={s.viewerCanvas}></div>
             <div className='player-background-effect' onClick={handleClickBack}></div>
             <div className={s.sectionsContainer}>
