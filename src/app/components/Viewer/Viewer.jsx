@@ -31,8 +31,8 @@ export const Viewer = () => {
 
   useEffect(() => {
     currentUser && editionActive
-      ? ($gId('edition-canvas').style.width = '100%')
-      : ($gId('edition-canvas').style.width = '0');
+      ? ($gId('edition-canvas').style.width = '100%')($gId('edition-canvas').style.minWidth = '300px')
+      : ($gId('edition-canvas').style.width = '0')($gId('edition-canvas').style.minWidth = '0');
 
     dispatch(getMediaById(id));
     dispatch(getFavorites());

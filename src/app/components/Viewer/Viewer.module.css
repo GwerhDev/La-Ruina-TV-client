@@ -5,7 +5,6 @@
 
 .editionCanvas {
   width: 0;
-  min-width: 300px;
   max-width: 600px;
   overflow-y: auto;
   transition-duration: 1s;
