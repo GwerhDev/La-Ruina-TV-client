@@ -21,6 +21,20 @@ export const Viewer = () => {
     $d('.player-background-effect').style.opacity = '0';
   };
 
+  function styles(boolean) {
+    if (boolean) {
+      return (
+        $gId('edition-canvas').style.width = '100%',
+        $gId('edition-canvas').style.minWidth = '300px'
+      )
+    } else {
+      return (
+        $gId('edition-canvas').style.width = '0',
+        $gId('edition-canvas').style.minWidth = '0'
+      )
+    }
+  }
+
   const {
     imageSlider,
     info,
@@ -30,10 +44,7 @@ export const Viewer = () => {
   } = infoDetailViewer;
 
   useEffect(() => {
-    currentUser && editionActive
-      ? ($gId('edition-canvas').style.width = '100%')($gId('edition-canvas').style.minWidth = '300px')
-      : ($gId('edition-canvas').style.width = '0')($gId('edition-canvas').style.minWidth = '0');
-
+    styles(currentUser && editionActive);
     dispatch(getMediaById(id));
     dispatch(getFavorites());
   }, [dispatch, currentUser, editionActive, id]);
