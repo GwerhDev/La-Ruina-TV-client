@@ -101,7 +101,7 @@ button:disabled {
   display: flex;
   background-color: rgba(0, 0, 0, 0.856);
   position: fixed;
-  z-index: 9;
+  z-index: 99999;
   justify-content: center;
   filter: drop-shadow(2px 5px 8px black);
   display: none;
