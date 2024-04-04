@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   display: flex;
-  flex-direction: column;
+  flex-direction: row-reverse;
   width: 100%;
   max-width: 2000px;
   list-style: none;
@@ -16,10 +16,12 @@
 
 .playerContainer {
   width: 100%;
+  aspect-ratio: 16/9;
 }
 
 .youtubeComponent {
   width: 100%;
+  height: 100%;
   aspect-ratio: 16/9;
 }
 
@@ -70,5 +72,6 @@
   .container {
     padding-left: 25px;
     padding-right: 25px;
+    flex-direction: column;
   }
 }
