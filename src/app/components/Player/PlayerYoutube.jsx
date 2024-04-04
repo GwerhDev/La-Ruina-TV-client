@@ -27,7 +27,7 @@ export const PlayerYoutube = (props) => {
       <div className={s.playerContainer}>
         {
           idLinkYT &&
-          <YouTube videoId={idLinkYT} ref={videoPlayerRef} opts={opts} />
+          <YouTube iframeClassName={s.youtubeComponent} videoId={idLinkYT} ref={videoPlayerRef} opts={opts} />
         }
       </div>
       <ul className={s.infoCanvas}>

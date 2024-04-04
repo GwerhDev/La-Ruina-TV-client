@@ -16,7 +16,11 @@
 
 .playerContainer {
   width: 100%;
-  min-height: 365px;
+}
+
+.youtubeComponent {
+  width: 100%;
+  aspect-ratio: 16/9;
 }
 
 .infoCanvas {
