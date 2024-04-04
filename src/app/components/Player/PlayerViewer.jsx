@@ -1,6 +1,7 @@
 import s from './PlayerViewer.module.css';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
+import { PlayerYouTube } from './PlayerYouTube';
 import { PrimaryButton } from '../Buttons/PrimaryButton';
 import { SecondaryButton } from '../Buttons/SecondaryButton';
 import { ContentMagementButtons } from '../Admin/Buttons/ContentMagementButtons';
@@ -15,7 +16,6 @@ import { resetBackRoute, setBackRoute } from '../../../middlewares/redux/actions
 import { setPlayer } from '../../../middlewares/redux/actions/player';
 import { useHistory, useLocation } from 'react-router-dom/cjs/react-router-dom';
 import { $d, $gId } from '../../../functions';
-import { PlayerYouTube } from './PlayerYouTube';
 
 export const PlayerViewer = (props) => {
   const dispatch = useDispatch();
