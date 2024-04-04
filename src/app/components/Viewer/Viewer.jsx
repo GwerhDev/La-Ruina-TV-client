@@ -50,7 +50,7 @@ export const Viewer = () => {
   }, [dispatch, currentUser, editionActive, id]);
 
   return (
-    <div className={s.container}>
+    <div className={s.container} style={{ backgroundImage: 'url(' + imageSlider + ')' }}>
       {
         currentUser?.role === 'admin' &&
         <div className={s.editionCanvas} id='edition-canvas'>
@@ -62,7 +62,6 @@ export const Viewer = () => {
           ?
           <div className={s.viewer}>
             <div className={s.backgroundCanvas}>
-              <div className={s.background} style={{ backgroundImage: 'url(' + imageSlider + ')' }} alt='' />
             </div>
             <div className={s.viewerCanvas}></div>
             <div className='player-background-effect' onClick={handleClickBack}></div>

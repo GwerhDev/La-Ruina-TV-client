@@ -1,6 +1,9 @@
 .container {
   display: flex;
   height: 100vh;
+  overflow-y: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .editionCanvas {
