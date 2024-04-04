@@ -4,7 +4,7 @@
 }
 
 .editionCanvas {
-  width: 100%;
+  width: 0;
   max-width: 600px;
   overflow-y: auto;
   transition-duration: 1s;

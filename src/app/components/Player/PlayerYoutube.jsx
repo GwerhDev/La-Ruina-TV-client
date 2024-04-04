@@ -1,12 +1,11 @@
-import s from './PlayerYoutube.module.css';
+import { useSelector } from 'react-redux';
+import s from './PlayerYouTube.module.css';
 import YouTube from 'react-youtube';
 import { useRef } from 'react';
-import { useSelector } from "react-redux";
 
-export const PlayerYoutube = (props) => {
+export const PlayerYouTube = () => {
   const { idLinkYT } = useSelector(state => state.player);
   const videoPlayerRef = useRef();
-  const { artist, title, info } = props;
 
   const opts = {
     width: '100%',
@@ -23,19 +22,12 @@ export const PlayerYoutube = (props) => {
   };
 
   return (
-    <div className={s.container} id='player-container'>
-      <div className={s.playerContainer}>
-        {
-          idLinkYT &&
-          <YouTube iframeClassName={s.youtubeComponent} videoId={idLinkYT} ref={videoPlayerRef} opts={opts} />
-        }
-      </div>
-      <ul className={s.infoCanvas}>
-        <li className={s.artist}>{artist}</li>
-        <li className={s.title}>{title}</li>
-        <li className={s.info}>{info}</li>
-      </ul>
+    <div className={s.playerContainer}>
+      {
+        idLinkYT &&
+        <YouTube iframeClassName={s.youtubeComponent}
+          videoId={idLinkYT} ref={videoPlayerRef} opts={opts} />
+      }
     </div>
   )
-};
-
+}
