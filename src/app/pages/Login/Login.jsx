@@ -11,7 +11,7 @@ const Enter = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(setOption('login'))
+    dispatch(setOption('login'));
   }, [dispatch]
   );
 

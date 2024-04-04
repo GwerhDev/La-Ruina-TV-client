@@ -37,14 +37,32 @@
   border-color: #171717;
   border-width: 1px;
   border-radius: 15px;
+  gap: .5rem;
+  position: relative;
 }
 
 .contTitleArtistDesc span {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  gap: 1rem;
+  justify-content: flex-start;
+}
+
+.contTitleArtistDesc span label {
+  position: absolute;
+  font-size: 12px;
+  margin-top: -29px;
+  margin-left: -.25rem;
+  background-color: #171717;
+  border-radius: 3px;
+  color: white;
+  padding-left: .5rem;
+  padding-right: .5rem;
+}
+
+.contTitleArtistDesc span input {
+  padding-top: 11px;
+  width: 100%;
 }
 
 .imgSlrVsr {
@@ -139,23 +157,68 @@ textarea {
   width: 107px;
 }
 
-.submit {
-  margin-top: 20px;
+.checkboxes {
+  padding: 1rem;
+  border: dashed;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  background: rgb(187, 187, 187);
+}
+
+.checkboxes button {
+  background-color: #171717;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding-left: .7rem;
+  padding-right: .7rem;
+}
+
+.checkboxTitle {
+  display: flex;
+  width: 180px;
+  justify-content: space-between;
+}
+
+.actionsContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  gap: 1rem;
+}
+
+.actionPrimary {
   padding: 0.6em 0.8em;
-  width: 120px;
+  width: 180px;
   font-family: Bebas Neue;
   font-size: 20px;
   color: white;
   background-color: rgb(32, 32, 32);
   border: none;
-  cursor: pointer;
   border-radius: 40px;
-  margin-bottom: 180px;
-  transition-duration: .2s;
 }
 
-.submit:hover {
-  background-color: #8a8a8a;
-  color: black;
+.actionPrimary:hover {
+  background-color: rgb(78, 78, 78);
   box-shadow: 0px 0px 15px white;
+  cursor: pointer;
+}
+
+.actionSecondary {
+  padding: 0.6em 0.8em;
+  width: 180px;
+  font-family: Bebas Neue;
+  font-size: 20px;
+  color: white;
+  background-color: rgb(88, 88, 88);
+  border: none;
+  border-radius: 40px;
+}
+
+.actionSecondary:hover {
+  box-shadow: 0px 0px 15px white;
+  background-color: rgb(32, 32, 32);
 }

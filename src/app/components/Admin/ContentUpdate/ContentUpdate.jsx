@@ -21,8 +21,6 @@ import {
   setEdition,
   updateMedia,
 } from '../../../../middlewares/redux/actions/admin';
-import { PrimaryButton } from '../../Buttons/PrimaryButton';
-import { SecondaryButton } from '../../Buttons/SecondaryButton';
 
 const ContentUpdate = () => {
   const { id } = useParams();
@@ -215,9 +213,9 @@ const ContentUpdate = () => {
                 {
                   redirectRoute
                     ?
-                    <div>
-                      <SecondaryButton onClick={resetForm} text={"Volver a editar"} />
-                      <PrimaryButton onClick={closePanel} text="Cerrar panel" />
+                    <div className={s.actionsContainer}>
+                      <button className={s.actionPrimary} onClick={resetForm}>Volver a editar</button>
+                      <button className={s.actionSecondary} onClick={closePanel}>Cerrar panel</button>
                     </div>
                     :
                     <div className={s.loaderContainer}>
@@ -353,121 +351,124 @@ const ContentUpdate = () => {
                       </span>
                     </section>
 
-                    <label>Tipo de contenido</label>
+                    <section className={s.checkboxes}>
+                      <span className={s.checkboxTitle}>
+                        <label>Tipo de contenido</label>
+                        <button type='button' onClick={() => setEditMediatype(!editMediatype)}>{!editMediatype ? "Editar" : "Cancelar"}</button>
+                      </span>
 
-                    <button type='button' onClick={() => setEditMediatype(!editMediatype)}>{!editMediatype ? "Editar" : "Cancelar"}</button>
-                    <br />
-
-                    <div className={s.types}>
-                      {
-                        dbMediatypes?.map((t, index) => (
-                          <div className={s.typemedia} key={`${t.name}-${index}`}>
-                            <input
-                              type="checkbox"
-                              name={t.name}
-                              value={t.name || ''}
-                              onChange={() => checkboxMediatype(t.id)} />
-                            <label htmlFor={t.name}>{t.name}</label>
-                            {
-                              editMediatype &&
-                              <div className={s.deleteButtonContainer}>
-                                <button type='button' onClick={() => dispatch(deleteMediatype(t.id))} className="" disabled={!t.name?.length}>
-                                  x
-                                </button>
-                              </div>
-                            }
+                      <div className={s.types}>
+                        {
+                          dbMediatypes?.map((t, index) => (
+                            <div className={s.typemedia} key={`${t.name}-${index}`}>
+                              <input
+                                type="checkbox"
+                                name={t.name}
+                                value={t.name || ''}
+                                onChange={() => checkboxMediatype(t.id)} />
+                              <label htmlFor={t.name}>{t.name}</label>
+                              {
+                                editMediatype &&
+                                <div className={s.deleteButtonContainer}>
+                                  <button type='button' onClick={() => dispatch(deleteMediatype(t.id))} className="" disabled={!t.name?.length}>
+                                    x
+                                  </button>
+                                </div>
+                              }
+                            </div>
+                          ))
+                        }
+                        {
+                          editMediatype &&
+                          <div>
+                            <input value={newMediatype || ''} className={s.inputCreate} onInput={(e) => setNewMediatype(e.target.value)} type="text" />
+                            <button type='button' onClick={handleNewMediatype} className="" disabled={!newMediatype?.length}>
+                              Agregar
+                            </button>
                           </div>
-                        ))
-                      }
-                      {
-                        editMediatype &&
-                        <div>
-                          <input value={newMediatype || ''} className={s.inputCreate} onInput={(e) => setNewMediatype(e.target.value)} type="text" />
-                          <button type='button' onClick={handleNewMediatype} className="" disabled={!newMediatype?.length}>
-                            Agregar
-                          </button>
-                        </div>
-                      }
-                    </div>
+                        }
+                      </div>
 
-                    <br />
-                    <label>Género</label>
-                    <button type='button' onClick={() => setEditGenres(!editGenres)}>{!editGenres ? "Editar" : "Cancelar"}</button>
-                    <br />
+                      <span className={s.checkboxTitle}>
+                        <label>Género</label>
+                        <button type='button' onClick={() => setEditGenres(!editGenres)}>{!editGenres ? "Editar" : "Cancelar"}</button>
+                      </span>
 
-                    <div className={s.types}>
-                      {
-                        dbGenres?.map((t, index) => (
-                          <div className={s.typemedia} key={`${t.name}-${index}`}>
-                            <input
-                              type="checkbox"
-                              name={t.name}
-                              value={t.name || ''}
-                              onChange={() => checkboxGenres(t.id)}
-                            />
-                            <label htmlFor={t.name}>{t.name}</label>
-                            {
-                              editGenres &&
-                              <div className={s.deleteButtonContainer}>
-                                <button type='button' onClick={() => dispatch(deleteGenre(t.id))} className="" disabled={!t.name?.length}>
-                                  x
-                                </button>
-                              </div>
-                            }
+                      <div className={s.types}>
+                        {
+                          dbGenres?.map((t, index) => (
+                            <div className={s.typemedia} key={`${t.name}-${index}`}>
+                              <input
+                                type="checkbox"
+                                name={t.name}
+                                value={t.name || ''}
+                                onChange={() => checkboxGenres(t.id)}
+                              />
+                              <label htmlFor={t.name}>{t.name}</label>
+                              {
+                                editGenres &&
+                                <div className={s.deleteButtonContainer}>
+                                  <button type='button' onClick={() => dispatch(deleteGenre(t.id))} className="" disabled={!t.name?.length}>
+                                    x
+                                  </button>
+                                </div>
+                              }
+                            </div>
+                          ))
+                        }
+                        {
+                          editGenres &&
+                          <div>
+                            <input value={newGenre || ''} className={s.inputCreate} onInput={(e) => setNewGenre(e.target.value)} type="text" />
+                            <button type='button' onClick={handleNewGenre} className="" disabled={!newGenre?.length}>
+                              Agregar
+                            </button>
                           </div>
-                        ))
-                      }
-                      {
-                        editGenres &&
-                        <div>
-                          <input value={newGenre || ''} className={s.inputCreate} onInput={(e) => setNewGenre(e.target.value)} type="text" />
-                          <button type='button' onClick={handleNewGenre} className="" disabled={!newGenre?.length}>
-                            Agregar
-                          </button>
-                        </div>
-                      }
-                    </div>
+                        }
+                      </div>
 
-                    <br />
-                    <label>Categoria</label>
-                    <button type='button' onClick={() => setEditCategories(!editCategories)}>{!editCategories ? "Editar" : "Cancelar"}</button>
-                    <br />
+                      <span className={s.checkboxTitle}>
+                        <label>Categoria</label>
+                        <button type='button' onClick={() => setEditCategories(!editCategories)}>{!editCategories ? "Editar" : "Cancelar"}</button>
+                      </span>
 
-                    <div className={s.types}>
-                      {
-                        dbCategories?.map((t, index) => (
-                          <div className={s.typemedia} key={`${t.name}-${index}`}>
-                            <input
-                              type="checkbox"
-                              name={t.name}
-                              value={t.name || ''}
-                              onChange={() => checkboxCategories(t.id)}
-                            />
-                            <label htmlFor={t.name}>{t.name}</label>
-                            {
-                              editCategories &&
-                              <div className={s.deleteButtonContainer}>
-                                <button type='button' onClick={() => dispatch(deleteCategory(t.id))} className="" disabled={!t.name?.length}>
-                                  x
-                                </button>
-                              </div>
-                            }
+                      <div className={s.types}>
+                        {
+                          dbCategories?.map((t, index) => (
+                            <div className={s.typemedia} key={`${t.name}-${index}`}>
+                              <input
+                                type="checkbox"
+                                name={t.name}
+                                value={t.name || ''}
+                                onChange={() => checkboxCategories(t.id)}
+                              />
+                              <label htmlFor={t.name}>{t.name}</label>
+                              {
+                                editCategories &&
+                                <div className={s.deleteButtonContainer}>
+                                  <button type='button' onClick={() => dispatch(deleteCategory(t.id))} className="" disabled={!t.name?.length}>
+                                    x
+                                  </button>
+                                </div>
+                              }
+                            </div>
+                          ))
+                        }
+                        {
+                          editCategories &&
+                          <div>
+                            <input value={newCategory || ''} className={s.inputCreate} onInput={(e) => setNewCategory(e.target.value)} type="text" />
+                            <button type='button' onClick={handleNewCategory} className="" disabled={!newCategory?.length}>
+                              Agregar
+                            </button>
                           </div>
-                        ))
-                      }
-                      {
-                        editCategories &&
-                        <div>
-                          <input value={newCategory || ''} className={s.inputCreate} onInput={(e) => setNewCategory(e.target.value)} type="text" />
-                          <button type='button' onClick={handleNewCategory} className="" disabled={!newCategory?.length}>
-                            Agregar
-                          </button>
-                        </div>
-                      }
-                    </div>
-                    <div>
-                      <input type="submit" value="Actualizar" className={s.submit} />
-                      <button onClick={closePanel}>Cancelar</button>
+                        }
+                      </div>
+
+                    </section>
+                    <div className={s.actionsContainer}>
+                      <input type="submit" value="Actualizar" className={s.actionPrimary} />
+                      <button className={s.actionSecondary} onClick={closePanel}>Cancelar</button>
                     </div>
                   </div>
                 </form>

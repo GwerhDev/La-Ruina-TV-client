@@ -56,7 +56,7 @@ const LoginInner = () => {
       <ul className={s.form_ul}>
         <form className={s.form}>
           <li className={s.form_li}>
-            Correo electrónico
+            <label>Correo electrónico</label>
             <input
               type="text"
               name="email"
@@ -66,7 +66,7 @@ const LoginInner = () => {
             />
           </li>
           <li className={s.form_li}>
-            Contraseña
+            <label>Contraseña</label>
             <input
               type="password"
               name="password"
