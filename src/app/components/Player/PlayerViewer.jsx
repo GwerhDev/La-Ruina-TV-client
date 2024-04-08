@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { PlayerYouTube } from './PlayerYouTube';
 import { PrimaryButton } from '../Buttons/PrimaryButton';
 import { SecondaryButton } from '../Buttons/SecondaryButton';
-import { ContentMagementButtons } from '../Admin/Buttons/ContentMagementButtons';
+import { ContentMagementButtons } from '../Admin/AdminButtons/ContentMagementButtons';
 import userIcon from '../../../assets/images/user-icon.png';
 import likeIcon from '../../../assets/images/like-icon.png';
 import playIconn from '../../../assets/images/ruinatv-icon-play-n.png';
@@ -15,12 +15,13 @@ import { resetBackRoute, setBackRoute } from '../../../middlewares/redux/actions
 import { resetPlayer, setPlayer } from '../../../middlewares/redux/actions/player';
 import { useHistory, useLocation } from 'react-router-dom/cjs/react-router-dom';
 import { $d } from '../../../functions';
+import { Tags } from '../../utils/Tags';
 
 export const PlayerViewer = (props) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const location = useLocation();
-  const { artist, title, info, id, idYT } = props;
+  const { artist, title, info, id, idYT, genre, category, mediatype } = props;
   const favorites = useSelector(state => state.favorites);
   const currentUser = useSelector(state => state.currentUser);
 
@@ -51,6 +52,34 @@ export const PlayerViewer = (props) => {
         <li className={s.artist}>{artist}</li>
         <li className={s.title}>{title}</li>
         <li className={s.info}>{info}</li>
+        {
+          category?.map((e, i) => {
+            return (
+              <li key={i}>
+                <Tags tag={e} />
+              </li>
+            )
+          })
+        }
+        {
+          genre?.map((e, i) => {
+            return (
+              <li key={i}>
+                <Tags tag={e} />
+              </li>
+            )
+          })
+        }
+        {
+          mediatype?.map((e, i) => {
+            console.log(e)
+            return (
+              <li key={i}>
+                <Tags tag={e} />
+              </li>
+            )
+          })
+        }
         {
           currentUser &&
           <div className={s.userButtons}>

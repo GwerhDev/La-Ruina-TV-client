@@ -65,3 +65,8 @@ code {
 button:disabled:hover {
   cursor: default;
 }
+
+ul {
+  margin: 0;
+  padding: 0;
+}

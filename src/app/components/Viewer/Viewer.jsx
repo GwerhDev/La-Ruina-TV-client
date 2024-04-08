@@ -36,11 +36,14 @@ export const Viewer = () => {
   }
 
   const {
-    imageSlider,
+    imageVisor,
     info,
     title,
     artist,
     idLinkYT,
+    genre,
+    category,
+    mediatype,
   } = infoDetailViewer;
 
   useEffect(() => {
@@ -50,7 +53,9 @@ export const Viewer = () => {
   }, [dispatch, currentUser, editionActive, id]);
 
   return (
-    <div className={s.container} style={{ backgroundImage: 'url(' + imageSlider + ')' }}>
+    <div className={s.container} style={{ backgroundImage: 'url(' + imageVisor + ')' }}>
+      <div className={s.viewerCanvas} />
+      <div className='player-background-effect' onClick={handleClickBack}></div>
       {
         currentUser?.role === 'admin' &&
         <div className={s.editionCanvas} id='edition-canvas'>
@@ -61,12 +66,18 @@ export const Viewer = () => {
         infoDetailViewer?.id
           ?
           <div className={s.viewer}>
-            <div className={s.backgroundCanvas}></div>
-            <div className={s.viewerCanvas}></div>
-            <div className='player-background-effect' onClick={handleClickBack}></div>
             <div className={s.sectionsContainer}>
               <span className={s.playerContainer}>
-                <PlayerViewer artist={artist} title={title} info={info} id={id} idYT={idLinkYT} />
+                <PlayerViewer 
+                  artist={artist} 
+                  title={title} 
+                  info={info} 
+                  id={id} 
+                  idYT={idLinkYT}
+                  genre={genre}
+                  category={category}
+                  mediatype={mediatype}
+                />
               </span>
             </div>
           </div>

@@ -2,7 +2,7 @@ import axios from "axios";
 import { URL_API } from "../../config";
 import { options } from "../../helpers";
 import { getCategories, getGenres, getMedia, getMediatypes, getProducers } from "./content";
-import { GET_USERS, SET_EDITION } from "../../misc";
+import { GET_INFO, GET_USERS, SET_EDITION } from "../../misc";
 
 export const setEdition = (boolean) => {
   return {
@@ -133,7 +133,7 @@ export function deleteProducer(id) {
       console.error(error);
     }
   }
-}
+};
 
 export function getUsers() {
   return async function (dispatch) {
@@ -149,7 +149,7 @@ export function getUsers() {
       console.error(e);
     }
   }
-}
+};
 
 export function createUser(formData) {
   return async function (dispatch) {
@@ -163,7 +163,7 @@ export function createUser(formData) {
       console.error(e);
     }
   }
-}
+};
 
 export function updateUser(id) {
   return async function (dispatch) {
@@ -177,7 +177,7 @@ export function updateUser(id) {
       console.error(e);
     }
   }
-}
+};
 
 export function deleteUser(id) {
   return async function (dispatch) {
@@ -191,4 +191,11 @@ export function deleteUser(id) {
       console.error(e);
     }
   }
-}
+};
+
+export function setInfoDetailViewer(formData) {
+  return {
+    type: GET_INFO,
+    payload: formData
+  }
+};

@@ -5,7 +5,6 @@ import { GET_CATEGORIES, GET_FULL_DETAIL, GET_GENRES, GET_INFO, GET_MEDIA, GET_M
 export async function getImage(id) {
     try {
         const response = await axios.get(`${URL_API}/image/${id}`);
-        console.log(response.data)
         return response.data.image;
     } catch (error) {
         console.error(error)

@@ -11,7 +11,7 @@ export const subscriberYoutubeVerification = (email) => {
           payload: res.data
         })
       })
-      .catch(error => console.log(error));
+      .catch(error => console.error(error));
   }
 };
 
@@ -24,6 +24,6 @@ export const subscriberPlanVerification = (userId) => {
         payload: res.data
       })
     })      
-    .catch(error => console.log(error));
+    .catch(error => console.error(error));
   }
 };

@@ -1,0 +1,42 @@
+.checkboxTitle {
+  display: flex;
+  width: 180px;
+  justify-content: space-between;
+}
+
+.checkboxItem {
+  border: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  width: 180px;
+  margin: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding-top: .2rem;
+  padding-bottom: .2rem;
+}
+
+.deleteButtonContainer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: .3rem;
+}
+
+.inputCreate {
+  height: 15px;
+  border-radius: 5px;
+  width: 107px;
+  padding: 3px;
+}
+
+.buttonCreate {
+  border-radius: 5px;
+  padding: 3px;
+}
+
+button:disabled {
+  background-color: #757575;
+}
