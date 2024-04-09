@@ -10,6 +10,7 @@ const ContentList = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   const mediaList = useSelector(state => state.mediaList);
+  const currentUser = useSelector(state => state.currentUser);
 
   function handleEditButton(id) {
     dispatch(setEdition(true));
@@ -26,43 +27,47 @@ const ContentList = () => {
   return (
     <main className='main-container'>
       <div className='nav-fixed' />
-      <div className='section-container'>
-        <div className='header-container'>
-          <span className='section-description-container'>
-            <h1>Listado de contenido</h1>
-            <h3>Admin</h3>
-          </span>
-        </div>
-        <div className={s.divList}>
-          <div className={s.ulList1}>
-            <ul className={s.ulList0}>
-              <li>Title</li>  -
-              <li>Artist</li> -
-              <li>Edit</li>   -
-              <li>Delete</li>
-            </ul>
-            {
-              mediaList?.map((e, index) => {
-                return (
-                  <li key={index}>
-                    <ul className={s.ulList2}>
-                      <li>{e.title || "❗"}</li> -
-                      <li>{e.artist || "❗"}</li> -
-                      <li>
-                        <button className={s.btnEdit} onClick={() => handleEditButton(e.id)} />
-                      </li> 
-                      -
-                      <li>
-                        <button className={s.btnDelete} onClick={() => { dispatch(deleteMedia(e.id)) }} />
-                      </li>
-                    </ul>
-                  </li>
-                )
-              })
-            }
+      {
+        currentUser?.role === 'admin' &&
+        <div className='section-container'>
+          <div className='header-container'>
+            <span className='section-description-container'>
+              <h1>Listado de contenido</h1>
+              <h3>Admin</h3>
+            </span>
+          </div>
+          <div className={s.divList}>
+            <div className={s.ulList1}>
+              <ul className={s.ulList0}>
+                <li>Title</li>  -
+                <li>Artist</li> -
+                <li>Edit</li>   -
+                <li>Delete</li>
+              </ul>
+              {
+                mediaList?.map((e, index) => {
+                  return (
+                    <li key={index}>
+                      <ul className={s.ulList2}>
+                        <li>{e.title || "❗"}</li> -
+                        <li>{e.artist || "❗"}</li> -
+                        <li>
+                          <button className={s.btnEdit} onClick={() => handleEditButton(e.id)} />
+                        </li>
+                        -
+                        <li>
+                          <button className={s.btnDelete} onClick={() => { dispatch(deleteMedia(e.id)) }} />
+                        </li>
+                      </ul>
+                    </li>
+                  )
+                })
+              }
+            </div>
           </div>
         </div>
-      </div>
+
+      }
     </main>
   )
 }

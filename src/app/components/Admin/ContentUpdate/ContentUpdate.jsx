@@ -104,7 +104,7 @@ const ContentUpdate = () => {
       dispatch(setInfoDetailViewer({
         ...data,
         category: data?.category,
-      }));    
+      }));
 
     } else {
       setData({
@@ -115,7 +115,7 @@ const ContentUpdate = () => {
       dispatch(setInfoDetailViewer({
         ...data,
         category: [...data?.category, e],
-      })); 
+      }));
     }
   };
 
@@ -175,6 +175,7 @@ const ContentUpdate = () => {
     e.preventDefault();
     toTop();
     setSubmitted(true);
+
     const formData = {
       artist: data.artist,
       title: data.title,
@@ -192,7 +193,6 @@ const ContentUpdate = () => {
     };
 
     dispatch(updateMedia(id, formData));
-    dispatch(getMediaById(id));
     setReady(true);
     return;
   };
@@ -241,7 +241,13 @@ const ContentUpdate = () => {
             submitted
               ?
               <div className={s.container}>
-                <h1>{ready ? "¡Contenido actualizado!" : "Actualizando contenido..."}</h1>
+                <h1>
+                  {
+                    ready
+                      ? "¡Contenido actualizado!"
+                      : "Actualizando contenido..."
+                  }
+                </h1>
                 {
                   ready
                     ?

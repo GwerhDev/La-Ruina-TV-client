@@ -14,7 +14,7 @@ export async function getImage(id) {
 export function getMedia() {
     return async function (dispatch) {
         try {
-            const response = await axios.get(`${URL_API}/media`);
+            const response = await axios.get(`${URL_API}/content`);
             dispatch({
                 type: GET_MEDIA,
                 payload: response.data
@@ -28,7 +28,7 @@ export function getMedia() {
 export function getMediaById(id) {
     return async function (dispatch) {
         try {
-            const response = await axios.get(`${URL_API}/media/${id}`);
+            const response = await axios.get(`${URL_API}/content/${id}`);
             dispatch({
                 type: GET_INFO,
                 payload: response.data
@@ -110,7 +110,7 @@ export function getProducers() {
 export function getFullDetail(id) {
     return async function (dispatch) {
         try {
-            const response = await axios.get(`${URL_API}/media/full-detail/${id}`);
+            const response = await axios.get(`${URL_API}/content/full-detail/${id}`);
             dispatch({
                 type: GET_FULL_DETAIL,
                 payload: response.data

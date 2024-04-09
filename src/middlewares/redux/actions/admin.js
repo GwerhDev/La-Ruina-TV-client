@@ -13,7 +13,7 @@ export const setEdition = (boolean) => {
 
 export const createMedia = (formData) => {
   return async function (dispatch) {
-    const response = await axios.post(`${URL_API}/admin/media/create`, formData, options());
+    const response = await axios.post(`${URL_API}/admin/content/create`, formData, options());
     dispatch(getMedia());
     return response.data;
   }
@@ -21,7 +21,7 @@ export const createMedia = (formData) => {
 
 export const updateMedia = (id, formData) => {
   return async function (dispatch) {
-    const response = await axios.patch(`${URL_API}/admin/media/update/${id}`, formData, options());
+    const response = await axios.patch(`${URL_API}/admin/content/update/${id}`, formData, options());
     dispatch(getMedia());
     return response.data;
   }
@@ -29,7 +29,7 @@ export const updateMedia = (id, formData) => {
 
 export const deleteMedia = (id) => {
   return async function (dispatch) {
-    const response = await axios.delete(`${URL_API}/admin/media/delete/${id}`, options());
+    const response = await axios.delete(`${URL_API}/admin/content/delete/${id}`, options());
     dispatch(getMedia());
     return response;
   }
