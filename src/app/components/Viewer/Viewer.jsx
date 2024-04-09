@@ -41,9 +41,9 @@ export const Viewer = () => {
     title,
     artist,
     idLinkYT,
-    genre,
-    category,
-    mediatype,
+    genres,
+    categories,
+    mediatypes,
   } = infoDetailViewer;
 
   useEffect(() => {
@@ -74,9 +74,9 @@ export const Viewer = () => {
                   info={info} 
                   id={id} 
                   idYT={idLinkYT}
-                  genre={genre}
-                  category={category}
-                  mediatype={mediatype}
+                  genres={genres}
+                  categories={categories}
+                  mediatypes={mediatypes}
                 />
               </span>
             </div>

@@ -2,7 +2,7 @@ import axios from "axios";
 import { URL_API } from "../../config";
 import { options } from "../../helpers";
 import { getCategories, getGenres, getMedia, getMediatypes, getProducers } from "./content";
-import { GET_INFO, GET_USERS, SET_EDITION } from "../../misc";
+import { GET_INFO, GET_USERS, SET_CONTENT_CATEGORIES, SET_CONTENT_GENRES, SET_CONTENT_MEDIATYPES, SET_EDITION } from "../../misc";
 
 export const setEdition = (boolean) => {
   return {
@@ -197,5 +197,26 @@ export function setInfoDetailViewer(formData) {
   return {
     type: GET_INFO,
     payload: formData
+  }
+};
+
+export function setContentCategories(object) {
+  return {
+    type: SET_CONTENT_CATEGORIES,
+    payload: object
+  }
+};
+
+export function setContentGenres(object) {
+  return {
+    type: SET_CONTENT_GENRES,
+    payload: object
+  }
+};
+
+export function setContentMediatypes(object) {
+  return {
+    type: SET_CONTENT_MEDIATYPES,
+    payload: object
   }
 };

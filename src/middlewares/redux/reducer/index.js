@@ -29,6 +29,9 @@ import {
     SET_NAVIGATION_SUBSCRIPTION,
     SET_EDITION,
     SET_PLAYER,
+    SET_CONTENT_CATEGORIES,
+    SET_CONTENT_GENRES,
+    SET_CONTENT_MEDIATYPES,
 } from "../../misc";
 import { Player } from "../../../interfaces/Player";
 
@@ -191,6 +194,33 @@ export default function rootReducer(state = initialState, action) {
             return {
                 ...state,
                 dbMediatypes: action.payload
+            };
+
+        case SET_CONTENT_CATEGORIES:
+            return {
+                ...state,
+                infoDetailViewer: {
+                    ...state.infoDetailViewer,
+                    categories: [...state.infoDetailViewer.categories, action.payload]
+                }
+            };
+        
+        case SET_CONTENT_GENRES:
+            return {
+                ...state,
+                infoDetailViewer: {
+                    ...state.infoDetailViewer,
+                    genres: [...state.infoDetailViewer.genres, action.payload]
+                }
+            };
+        
+        case SET_CONTENT_MEDIATYPES:
+            return {
+                ...state,
+                infoDetailViewer: {
+                    ...state.infoDetailViewer,
+                    mediatypes: [...state.infoDetailViewer.mediatypes, action.payload]
+                }
             };
 
         /*----------------YT----------------*/

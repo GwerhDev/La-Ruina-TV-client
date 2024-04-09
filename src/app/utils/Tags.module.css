@@ -5,8 +5,9 @@
 }
 
 .tag p {
-  background-color: #171717;
-  color: white;
+  background-color: #1717179e;
+  backdrop-filter: blur(10px);
+  color: rgba(205, 205, 205, 0.79);
   padding-left: .8rem;
   padding-right: .8rem;
   font-size: smaller;

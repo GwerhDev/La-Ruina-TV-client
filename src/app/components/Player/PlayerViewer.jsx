@@ -21,7 +21,7 @@ export const PlayerViewer = (props) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const location = useLocation();
-  const { artist, title, info, id, idYT, genre, category, mediatype } = props;
+  const { artist, title, info, id, idYT, genres, categories, mediatypes } = props;
   const favorites = useSelector(state => state.favorites);
   const currentUser = useSelector(state => state.currentUser);
 
@@ -52,34 +52,36 @@ export const PlayerViewer = (props) => {
         <li className={s.artist}>{artist}</li>
         <li className={s.title}>{title}</li>
         <li className={s.info}>{info}</li>
-        {
-          category?.map((e, i) => {
-            return (
-              <li key={i}>
-                <Tags tag={e} />
-              </li>
-            )
-          })
-        }
-        {
-          genre?.map((e, i) => {
-            return (
-              <li key={i}>
-                <Tags tag={e} />
-              </li>
-            )
-          })
-        }
-        {
-          mediatype?.map((e, i) => {
-            console.log(e)
-            return (
-              <li key={i}>
-                <Tags tag={e} />
-              </li>
-            )
-          })
-        }
+        <ul className={s.tags}>
+          {
+            categories?.map((e, i) => {
+              return (
+                <li key={i}>
+                  <Tags tag={e} />
+                </li>
+              )
+            })
+          }
+          {
+            genres?.map((e, i) => {
+              return (
+                <li key={i}>
+                  <Tags tag={e} />
+                </li>
+              )
+            })
+          }
+          {
+            mediatypes?.map((e, i) => {
+              return (
+                <li key={i}>
+                  <Tags tag={e} />
+                </li>
+              )
+            })
+          }
+
+        </ul>
         {
           currentUser &&
           <div className={s.userButtons}>

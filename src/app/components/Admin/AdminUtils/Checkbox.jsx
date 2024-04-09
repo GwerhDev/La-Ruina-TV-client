@@ -1,26 +1,44 @@
-import { useDispatch } from 'react-redux';
 import s from './Checkbox.module.css';
 import { useState } from 'react';
-import { CheckboxItem } from './CheckboxItem';
+import { useDispatch } from 'react-redux';
+import { CheckboxCard } from './CheckboxCard';
 
 export const Checkbox = (props) => {
   const dispatch = useDispatch();
   const [edit, setEdit] = useState(false);
+  const {
+    selector,
+    data,
+    label,
+    newAttribute,
+    createFunction,
+    deleteFunction,
+    actionFunction,
+    setNewAttribute,
+  } = props;
 
-  const { label, data, checkbox, handleNewAttribute, newAttribute, setNewAttribute, deleteFunction, selector } = props;
+  function handleNewAttribute(e) {
+    e.preventDefault();
+    dispatch(createFunction(newAttribute));
+    setNewAttribute("");
+  };
 
   return (
     <div>
       <span className={s.checkboxTitle}>
         <label>{label}</label>
-        <button type='button' onClick={() => setEdit(!edit)}>{!edit ? "Editar" : "Cancelar"}</button>
+        <button type='button' onClick={() => setEdit(!edit)}>{edit ? "Cancelar" : "Editar"}</button>
       </span>
 
       <ul>
         {
           data?.map((t, index) => (
             <li className={s.checkboxItem} key={`${t.name}-${index}`}>
-              <CheckboxItem item={t} checkbox={checkbox} selector={selector} />
+              <CheckboxCard
+                data={t}
+                selector={selector}
+                actionFunction={actionFunction}
+              />
               <label htmlFor={t.name}>{t.name}</label>
               {
                 edit &&

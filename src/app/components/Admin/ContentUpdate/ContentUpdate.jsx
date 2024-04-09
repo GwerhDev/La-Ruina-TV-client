@@ -18,6 +18,9 @@ import {
   deleteCategory,
   deleteGenre,
   deleteMediatype,
+  setContentCategories,
+  setContentGenres,
+  setContentMediatypes,
   setEdition,
   setInfoDetailViewer,
   updateMedia,
@@ -43,133 +46,20 @@ const ContentUpdate = () => {
   const [newMediatype, setNewMediatype] = useState("");
   const [previewVisor, setPreviewVisor] = useState("");
   const [previewSlider, setPreviewSlider] = useState("");
-  const [data, setData] = useState({
-    title: "",
-    artist: "",
-    info: "",
-    genre: [],
-    category: [],
-    mediatype: [],
-    idLinkYT: "",
-    idLinkSPOTY: "",
-    urlLinkWEB: "",
-    urlLinkDOWNLOAD: "",
-  });
-
-  function handleNewMediatype(e) {
-    e.preventDefault();
-    dispatch(createMediatype(newMediatype));
-    setNewMediatype("");
-  };
-
-  function handleNewGenre(e) {
-    e.preventDefault();
-    dispatch(createGenre(newGenre));
-    setNewGenre("");
-  };
-
-  function handleNewCategory(e) {
-    e.preventDefault();
-    dispatch(createCategory(newCategory));
-    setNewCategory("");
-  }
 
   function handleInputChange(e) {
-    setData({
-      ...data,
-      [e.target.name]: e.target.value,
-    });
-
     dispatch(setInfoDetailViewer({
-      ...data,
+      ...infoDetailViewer,
       [e.target.name]: e.target.value
     }));
   };
 
   function handleInputVisor(e) {
     dispatch(setInfoDetailViewer({
-      ...data,
+      ...infoDetailViewer,
       imageVisor: e
     }));
   }
-
-  function checkboxCategories(e) {
-    if (data.category?.includes(e)) {
-      data.category = data.category?.filter(id => id !== e);
-      setData({
-        ...data,
-        category: data?.category,
-      });
-
-      dispatch(setInfoDetailViewer({
-        ...data,
-        category: data?.category,
-      }));
-
-    } else {
-      setData({
-        ...data,
-        category: [...data?.category, e],
-      });
-
-      dispatch(setInfoDetailViewer({
-        ...data,
-        category: [...data?.category, e],
-      }));
-    }
-  };
-
-  function checkboxGenres(e) {
-    if (data.genre?.includes(e)) {
-      data.genre = data.genre?.filter(id => id !== e);
-      setData({
-        ...data,
-        genre: data?.genre,
-      });
-
-      dispatch(setInfoDetailViewer({
-        ...data,
-        genre: data?.genre,
-      }));
-
-    } else {
-      setData({
-        ...data,
-        genre: [...data?.genre, e],
-      });
-
-      dispatch(setInfoDetailViewer({
-        ...data,
-        genre: [...data?.genre, e],
-      }));
-    }
-  };
-
-  function checkboxMediatype(e) {
-    if (data.mediatype?.includes(e)) {
-      data.mediatype = data.mediatype?.filter(id => id !== e);
-      setData({
-        ...data,
-        mediatype: data?.mediatype,
-      });
-
-      dispatch(setInfoDetailViewer({
-        ...data,
-        mediatype: data?.mediatype,
-      }));
-
-    } else {
-      setData({
-        ...data,
-        mediatype: [...data?.mediatype, e],
-      });
-
-      dispatch(setInfoDetailViewer({
-        ...data,
-        mediatype: [...data?.mediatype, e],
-      }));
-    }
-  };
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -177,19 +67,19 @@ const ContentUpdate = () => {
     setSubmitted(true);
 
     const formData = {
-      artist: data.artist,
-      title: data.title,
-      info: data.info,
-      genre: data.genre,
-      category: data.category,
-      mediatype: data.mediatype,
-      idLinkYT: data.idLinkYT,
-      idLinkSPOTY: data.idLinkSPOTY,
-      idLinkDRIVE: data.idLinkDRIVE,
-      urlLinkWEB: data.urlLinkWEB,
-      urlLinkDOWNLOAD: data.urlLinkDOWNLOAD,
-      newImageSlider: imgSlider,
+      artist: infoDetailViewer.artist,
+      title: infoDetailViewer.title,
+      info: infoDetailViewer.info,
+      genres: infoDetailViewer.genres,
+      categories: infoDetailViewer.categories,
+      mediatypes: infoDetailViewer.mediatypes,
+      idLinkYT: infoDetailViewer.idLinkYT,
+      urlLinkWEB: infoDetailViewer.urlLinkWEB,
+      idLinkSPOTY: infoDetailViewer.idLinkSPOTY,
+      idLinkDRIVE: infoDetailViewer.idLinkDRIVE,
+      urlLinkDOWNLOAD: infoDetailViewer.urlLinkDOWNLOAD,
       newImageVisor: imgVisor,
+      newImageSlider: imgSlider,
     };
 
     dispatch(updateMedia(id, formData));
@@ -202,7 +92,6 @@ const ContentUpdate = () => {
     dispatch(getMediatypes());
     dispatch(getCategories());
     dispatch(getMediaById(id));
-    setData(infoDetailViewer);
     setImgVisor(infoDetailViewer?.imageVisor);
     setImgSlider(infoDetailViewer?.imageSlider);
     setPreviewVisor(infoDetailViewer?.imageVisor);
@@ -217,7 +106,6 @@ const ContentUpdate = () => {
   };
 
   useEffect(() => {
-    setData(infoDetailViewer);
     setImgVisor(infoDetailViewer?.imageVisor);
     setImgSlider(infoDetailViewer?.imageSlider);
     setPreviewVisor(infoDetailViewer?.imageVisor);
@@ -274,7 +162,7 @@ const ContentUpdate = () => {
                           type="text"
                           name="artist"
                           placeholder="Nombre del intérprete"
-                          value={data?.artist || ''}
+                          value={infoDetailViewer?.artist || ''}
                           onInput={handleInputChange}
                         />
                       </span>
@@ -284,7 +172,7 @@ const ContentUpdate = () => {
                           type="text"
                           name="title"
                           placeholder="Título de la publicación"
-                          value={data?.title || ''}
+                          value={infoDetailViewer?.title || ''}
                           onInput={handleInputChange}
                         />
                       </span>
@@ -294,7 +182,7 @@ const ContentUpdate = () => {
                           placeholder="Escribe una breve reseña..."
                           type="text"
                           name="info"
-                          value={data?.info || ''}
+                          value={infoDetailViewer?.info || ''}
                           onInput={handleInputChange}
                         />
                       </span>
@@ -350,7 +238,7 @@ const ContentUpdate = () => {
                         <input
                           type="text"
                           name="idLinkYT"
-                          value={data?.idLinkYT || ''}
+                          value={infoDetailViewer?.idLinkYT || ''}
                           placeholder='ejemplo: hMS8RtYVouc'
                           onInput={handleInputChange}
                         />
@@ -360,7 +248,7 @@ const ContentUpdate = () => {
                         <input
                           type="text"
                           name="idLinkSPOTY"
-                          value={data?.idLinkSPOTY || ''}
+                          value={infoDetailViewer?.idLinkSPOTY || ''}
                           placeholder='ejemplo: hMS8RtYVouc'
                           onInput={handleInputChange}
                         />
@@ -370,7 +258,7 @@ const ContentUpdate = () => {
                         <input
                           type="text"
                           name="urlLinkWEB"
-                          value={data?.urlLinkWEB || ''}
+                          value={infoDetailViewer?.urlLinkWEB || ''}
                           placeholder='ejemplo: http://2girls1cup.com'
                           onInput={handleInputChange}
                         />
@@ -380,7 +268,7 @@ const ContentUpdate = () => {
                         <input
                           type="text"
                           name="urlLinkDOWNLOAD"
-                          value={data?.urlLinkDOWNLOAD || ''}
+                          value={infoDetailViewer?.urlLinkDOWNLOAD || ''}
                           placeholder='ejemplo: http://2girls1cup.com'
                           onInput={handleInputChange}
                         />
@@ -391,37 +279,34 @@ const ContentUpdate = () => {
                       <Checkbox
                         label={"Tipo de contenido"}
                         data={dbMediatypes}
-                        checkbox={checkboxMediatype}
                         newAttribute={newMediatype}
+                        selector={infoDetailViewer.mediatypes}
                         setNewAttribute={setNewMediatype}
-                        handleNewAttribute={handleNewMediatype}
                         createFunction={createMediatype}
                         deleteFunction={deleteMediatype}
-                        selector={infoDetailViewer?.mediatype}
+                        actionFunction={setContentMediatypes}
                       />
 
                       <Checkbox
                         label={"Género"}
+                        selector={infoDetailViewer.genres}
                         data={dbGenres}
-                        checkbox={checkboxGenres}
                         newAttribute={newGenre}
                         setNewAttribute={setNewGenre}
-                        handleNewAttribute={handleNewGenre}
                         createFunction={createGenre}
                         deleteFunction={deleteGenre}
-                        selector={infoDetailViewer?.genre}
+                        actionFunction={setContentGenres}
                       />
 
                       <Checkbox
                         label={"Categoría"}
                         data={dbCategories}
-                        checkbox={checkboxCategories}
                         newAttribute={newCategory}
+                        selector={infoDetailViewer.categories}
                         setNewAttribute={setNewCategory}
-                        handleNewAttribute={handleNewCategory}
                         createFunction={createCategory}
                         deleteFunction={deleteCategory}
-                        selector={infoDetailViewer?.category}
+                        actionFunction={setContentCategories}
                       />
 
                     </section>

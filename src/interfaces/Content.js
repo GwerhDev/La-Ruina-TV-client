@@ -3,9 +3,9 @@ export class Content {
     this.artist = "";
     this.title = "";
     this.info = "";
-    this.genre = "";
-    this.category = "";
-    this.mediatype = "";
+    this.genres = "";
+    this.categories = "";
+    this.mediatypes = "";
     this.idLinkYT = "";
     this.idLinkSPOTY = "";
     this.idLinkDrive = "";

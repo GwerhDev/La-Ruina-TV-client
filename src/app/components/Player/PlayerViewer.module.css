@@ -53,14 +53,19 @@
 .userButtons {
   display: flex;
   padding-top: 1rem;
-  padding-bottom: 1rem;
   gap: .4rem
 }
 
 .noUserButtons {
   display: flex;
-  padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.tags {
+  display: flex;
+  gap: .5rem;
+  width: 50%;
+  overflow-x: auto;
 }
 
 @media only screen and (min-width: 2000px) {
