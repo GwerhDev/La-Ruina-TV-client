@@ -13,6 +13,7 @@
   font-size: smaller;
   font-family: Sans, sans-serif;
   border-radius: 5px;
+  text-wrap: nowrap;
 }
 
 .tag p:hover {
