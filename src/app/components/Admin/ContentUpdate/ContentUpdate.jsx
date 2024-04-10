@@ -39,9 +39,7 @@ const ContentUpdate = () => {
   const [submitted, setSubmitted] = useState(false);
   const [ready, setReady] = useState(false);
 
-  const [imgVisor, setImgVisor] = useState("");
   const [newGenre, setNewGenre] = useState("");
-  const [imgSlider, setImgSlider] = useState("");
   const [newCategory, setNewCategory] = useState("");
   const [newMediatype, setNewMediatype] = useState("");
   const [previewVisor, setPreviewVisor] = useState("");
@@ -78,8 +76,8 @@ const ContentUpdate = () => {
       idLinkSPOTY: infoDetailViewer.idLinkSPOTY,
       idLinkDRIVE: infoDetailViewer.idLinkDRIVE,
       urlLinkDOWNLOAD: infoDetailViewer.urlLinkDOWNLOAD,
-      newImageVisor: imgVisor,
-      newImageSlider: imgSlider,
+      newImageVisor: infoDetailViewer.imageVisor,
+      newImageSlider: infoDetailViewer.imageSlider,
     };
 
     dispatch(updateMedia(id, formData));
@@ -92,8 +90,6 @@ const ContentUpdate = () => {
     dispatch(getMediatypes());
     dispatch(getCategories());
     dispatch(getMediaById(id));
-    setImgVisor(infoDetailViewer?.imageVisor);
-    setImgSlider(infoDetailViewer?.imageSlider);
     setPreviewVisor(infoDetailViewer?.imageVisor);
     setPreviewSlider(infoDetailViewer?.imageSlider);
     setSubmitted(false);
@@ -106,8 +102,6 @@ const ContentUpdate = () => {
   };
 
   useEffect(() => {
-    setImgVisor(infoDetailViewer?.imageVisor);
-    setImgSlider(infoDetailViewer?.imageSlider);
     setPreviewVisor(infoDetailViewer?.imageVisor);
     setPreviewSlider(infoDetailViewer?.imageSlider);
   }, [infoDetailViewer]);
@@ -201,7 +195,6 @@ const ContentUpdate = () => {
                             const file = e.target.files[0];
                             const reader = new FileReader();
                             reader.onloadend = () => {
-                              setImgSlider(reader.result);
                               setPreviewSlider(reader.result);
                             }
                             reader.readAsDataURL(file);
@@ -220,7 +213,6 @@ const ContentUpdate = () => {
                             const file = e.target.files[0];
                             const reader = new FileReader();
                             reader.onloadend = () => {
-                              setImgVisor(reader.result);
                               setPreviewVisor(reader.result);
                               handleInputVisor(reader.result);
                             }

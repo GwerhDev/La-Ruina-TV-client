@@ -4,11 +4,12 @@ export class Content {
     this.title = "";
     this.info = "";
     this.genres = "";
+    this.producers = "";
     this.categories = "";
     this.mediatypes = "";
     this.idLinkYT = "";
     this.idLinkSPOTY = "";
-    this.idLinkDrive = "";
+    this.idLinkDRIVE = "";
     this.urlLinkWEB = "";
     this.urlLinkDOWNLOAD = "";
     this.imageSlider = "";
