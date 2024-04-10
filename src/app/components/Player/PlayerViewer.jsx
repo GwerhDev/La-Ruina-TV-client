@@ -52,6 +52,10 @@ export const PlayerViewer = (props) => {
         <li className={s.artist}>{artist}</li>
         <li className={s.title}>{title}</li>
         <li className={s.info}>{info}</li>
+        {
+          currentUser?.role === 'admin' &&
+          <ContentMagementButtons />
+        }
         <ul className={s.tags}>
           {
             categories?.map((e, i) => {
@@ -120,10 +124,6 @@ export const PlayerViewer = (props) => {
           }
           <SecondaryButton onClick={handleBackButton} text={"Volver al inicio"} />
         </div>
-        {
-          currentUser?.role === 'admin' &&
-          <ContentMagementButtons />
-        }
       </ul>
     </div>
   )

@@ -22,11 +22,11 @@ export const ContentMagementButtons = () => {
   return (
     <ul className={s.container}>
       <li className={s.adminBtn} onClick={handleEdit}>
-        <img src={editIcon} className={s.editImg} alt='edit' width='20px' />
+        <img src={editIcon} className={s.editImg} alt='edit' width='12px' />
         <p>Editar</p>
       </li>
       <li className={s.adminBtn} onClick={handleDelete}>
-        <img src={deleteIcon} className={s.editImg} alt='edit' width='20px' />
+        <img src={deleteIcon} className={s.editImg} alt='edit' width='12px' />
         <p>Eliminar</p>
       </li>
     </ul>
