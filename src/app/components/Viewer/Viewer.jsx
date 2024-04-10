@@ -8,6 +8,8 @@ import ContentUpdate from '../Admin/ContentUpdate/ContentUpdate';
 import { useEffect } from 'react';
 import { getMediaById } from '../../../middlewares/redux/actions/content';
 import { getFavorites } from '../../../middlewares/redux/actions/account';
+import { DeleteCanvas } from '../../utils/DeleteCanvas';
+import { deleteMedia } from '../../../middlewares/redux/actions/admin';
 
 export const Viewer = () => {
   const dispatch = useDispatch();
@@ -55,7 +57,7 @@ export const Viewer = () => {
   return (
     <div className={s.container} style={{ backgroundImage: 'url(' + imageVisor + ')' }}>
       <div className={s.viewerCanvas} />
-      <div className='player-background-effect' onClick={handleClickBack}></div>
+      <div className='player-background-effect' onClick={handleClickBack} />
       {
         currentUser?.role === 'admin' &&
         <div className={s.editionCanvas} id='edition-canvas'>
@@ -68,11 +70,11 @@ export const Viewer = () => {
           <div className={s.viewer}>
             <div className={s.sectionsContainer}>
               <span className={s.playerContainer}>
-                <PlayerViewer 
-                  artist={artist} 
-                  title={title} 
-                  info={info} 
-                  id={id} 
+                <PlayerViewer
+                  artist={artist}
+                  title={title}
+                  info={info}
+                  id={id}
                   idYT={idLinkYT}
                   genres={genres}
                   categories={categories}
@@ -80,6 +82,10 @@ export const Viewer = () => {
                 />
               </span>
             </div>
+            {
+              currentUser?.role === 'admin' &&
+              <DeleteCanvas id={id} deleteFunction={deleteMedia} title={artist + " - " + title} />
+            }
           </div>
           :
           <div className={s.loaderContainer}>

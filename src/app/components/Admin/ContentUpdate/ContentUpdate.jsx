@@ -57,7 +57,7 @@ const ContentUpdate = () => {
       ...infoDetailViewer,
       imageVisor: e
     }));
-  }
+  };
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -93,6 +93,7 @@ const ContentUpdate = () => {
     setPreviewVisor(infoDetailViewer?.imageVisor);
     setPreviewSlider(infoDetailViewer?.imageSlider);
     setSubmitted(false);
+    setReady(false);
   };
 
   function closePanel() {
@@ -184,7 +185,7 @@ const ContentUpdate = () => {
                     <section className={s.imgSlrVsr}>
                       <span>
                         <label>Imagen del Slider</label>
-                        <img src={previewSlider || defaultPreview} alt="visor" height="120px" />
+                        <img src={previewSlider || defaultPreview} alt="visor" />
                         <input
                           className={s.inputBtn}
                           style={{ cursor: 'pointer' }}
@@ -203,7 +204,7 @@ const ContentUpdate = () => {
                       </span>
                       <span>
                         <label>Imagen del Visor</label>
-                        <img src={previewVisor || defaultPreview} alt="visor" height="120px" />
+                        <img src={previewVisor || defaultPreview} alt="visor" />
                         <input
                           className={s.inputBtn}
                           type="file"

@@ -95,10 +95,7 @@ export const PlayerViewer = (props) => {
                 style={{ filter: `grayscale(${favorites?.find(e => e.id === id) ? 0 : 1} )` }}
               />
             </button>
-            {
-              currentUser?.role === 'admin' &&
-              <ContentMagementButtons />
-            }
+
           </div>
         }
         <div className={s.noUserButtons}>
@@ -123,6 +120,10 @@ export const PlayerViewer = (props) => {
           }
           <SecondaryButton onClick={handleBackButton} text={"Volver al inicio"} />
         </div>
+        {
+          currentUser?.role === 'admin' &&
+          <ContentMagementButtons />
+        }
       </ul>
     </div>
   )

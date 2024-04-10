@@ -50,16 +50,23 @@ const ContentCreate = () => {
       <div className='nav-fixed' />
       {
         submitted
-          ? <div className={s.container}>
-            <h1>{redirectRoute ? "¡Contenido creado!" : "Creando contenido..."}</h1>
+          ? 
+          <div className={s.container}>
+            <h1>
+              {
+                redirectRoute 
+                  ? "¡Contenido creado!" 
+                  : "Creando contenido..."
+              }
+            </h1>
             {
               redirectRoute
                 ?
                 <div>
                   <Link to={redirectRoute}>
-                    <PrimaryButton text={"Ver contenido"} />
+                    <PrimaryButton text={"Continuar"} />
                   </Link>
-                  <SecondaryButton onClick={resetForm} text={"Crear más contenido"} />
+                  <SecondaryButton onClick={resetForm} text={"Crear nuevo contenido"} />
                 </div>
                 :
                 <div className={s.loaderContainer}>
