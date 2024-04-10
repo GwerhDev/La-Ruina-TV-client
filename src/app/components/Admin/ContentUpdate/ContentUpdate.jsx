@@ -172,7 +172,7 @@ const ContentUpdate = () => {
                       </span>
                       <span>
                         <label>Descripción</label>
-                        <input
+                        <textarea
                           placeholder="Escribe una breve reseña..."
                           type="text"
                           name="info"

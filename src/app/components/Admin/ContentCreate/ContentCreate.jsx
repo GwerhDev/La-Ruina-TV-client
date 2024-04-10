@@ -13,12 +13,14 @@ const ContentCreate = () => {
   const [data, setData] = useState(new Content());
   const [submitted, setSubmitted] = useState(false);
   const [redirectRoute, setRedirectRoute] = useState("");
+  const [validatedForm, setValidatedForm] = useState(false);
 
   function handleInputChange(e) {
     setData({
       ...data,
       [e.target.name]: e.target.value,
     });
+    formValidation();
   };
 
   async function handleSubmit(e) {
@@ -33,6 +35,14 @@ const ContentCreate = () => {
     setSubmitted(false);
     setData(new Content());
     setRedirectRoute(null);
+  };
+
+  function formValidation() {
+    if (data.title && data.artist && data.info) {
+      return setValidatedForm(true);
+    } else {
+      return setValidatedForm(false);
+    }
   }
 
   return (
@@ -61,47 +71,42 @@ const ContentCreate = () => {
           :
           <div className={s.createBody}>
             <form onSubmit={handleSubmit}>
-              <div className={s.container}>
+              <section className={s.container}>
                 <h1 className={s.createTitle}>Crear un Nuevo Contenido</h1>
-                <div className={s.contTitleArtistDesc}>
-                  <div className={s.divTitleArtistDesc}>
-                    <p>
-                      <label>Titulo</label>
-                      <input
-                        type="text"
-                        name="title"
-                        placeholder="Título de la publicación"
-                        value={data.title}
-                        onChange={handleInputChange}
-                      />
-                    </p>
-                    <p>
-                      <label>Artista</label>
-                      <input
-                        type="text"
-                        name="artist"
-                        placeholder="Nombre del intérprete"
-                        value={data.artist}
-                        onChange={handleInputChange}
-                      />
-                    </p>
-                    <p>
-                      <label>Descripción</label>
-                      <input
-                        placeholder="Escribe una breve reseña..."
-                        type="text"
-                        name="info"
-                        value={data.info}
-                        onChange={handleInputChange}
-                      />
-                    </p>
-                  </div>
-                </div>
+                <section className={s.contTitleArtistDesc}>
+                  <span>
+                    <label>Titulo</label>
+                    <input
+                      type="text"
+                      name="title"
+                      placeholder="Título de la publicación"
+                      onInput={handleInputChange}
+                    />
+                  </span>
+                  <span>
+                    <label>Artista</label>
+                    <input
+                      type="text"
+                      name="artist"
+                      placeholder="Nombre del intérprete"
+                      onInput={handleInputChange}
+                    />
+                  </span>
+                  <span>
+                    <label>Descripción</label>
+                    <textarea
+                      placeholder="Escribe una breve reseña..."
+                      type="text"
+                      name="info"
+                      onInput={handleInputChange}
+                    />
+                  </span>
+                </section>
 
-                <div>
-                  <input type="submit" value="Continuar" className={s.submit} />
-                </div>
-              </div>
+                <button disabled={!validatedForm} type="submit" className={s.submit}>
+                  Continuar
+                </button>
+              </section>
             </form>
           </div>
       }

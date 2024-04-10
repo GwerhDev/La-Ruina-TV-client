@@ -1,172 +1,208 @@
 .mainContainer {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
-    background: linear-gradient(to bottom, #ffffffcf, rgb(137, 137, 137));
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #ffffffcf, rgb(137, 137, 137));
 
 }
 
 .createBody {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow-y: scroll;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
 }
 
 .createTitle {
-    margin-top: 3rem;
-}
-
-.divTitleArtistDesc p {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
+  margin-top: 3rem;
 }
 
 .contTitleArtistDesc {
-    width: 50%;
-    top: 0px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    border-color: #171717;
-    border-width: 1px;
-    border-radius: 15px;
-    position: relative;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  gap: .3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-color: #171717;
+  border-width: 1px;
+  border-radius: 15px;
+  gap: .5rem;
+  position: relative;
+}
+
+.contTitleArtistDesc span {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.contTitleArtistDesc span label {
+  position: absolute;
+  top: 0;
+  font-size: 12px;
+  margin-top: -3px;
+  margin-left: -.25rem;
+  background-color: #171717;
+  border-radius: 3px;
+  color: white;
+  padding-left: .5rem;
+  padding-right: .5rem;
+}
+
+.contTitleArtistDesc span input {
+  padding-top: 11px;
+  width: 100%;
+}
+
+.contTitleArtistDesc span textarea {
+  padding-top: 11px;
+  width: 100%;
+  min-height: 46px;
+  max-height: 150px;
+  resize: vertical;
+  form-sizing: content;
+  font-family: Poppins;
 }
 
 .container {
-    padding-top: 110px;
-    width: 100vw;
-    left: 0px;
-    margin-top: 0px;
-    margin-bottom: 40px;
-    z-index: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  padding-top: 110px;
+  width: 100vw;
+  left: 0px;
+  margin-top: 0px;
+  margin-bottom: 40px;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .imgSlrVsr {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    justify-content: space-around;
-    border-color: #171717;
-    border-width: 1px;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  justify-content: space-around;
+  border-color: #171717;
+  border-width: 1px;
+  text-align: center;
 }
 
 .inputBtn:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 textarea {
-    resize: none;
+  resize: none;
 }
 
 .btnVolver {
-    position: fixed;
-    top: 3rem;
-    left: 50px;
-    width: 180px;
-    height: 40px;
-    font-family: Bebas Neue;
-    font-size: 17px;
-    background: linear-gradient(to bottom, #ffffff, rgba(0, 0, 0, 0.679));
-    border: none;
-    box-shadow: 0px 0px 20px black;
+  position: fixed;
+  top: 3rem;
+  left: 50px;
+  width: 180px;
+  height: 40px;
+  font-family: Bebas Neue;
+  font-size: 17px;
+  background: linear-gradient(to bottom, #ffffff, rgba(0, 0, 0, 0.679));
+  border: none;
+  box-shadow: 0px 0px 20px black;
 }
 
 .btnContinuar {
-    position: fixed;
-    bottom: 150px;
-    right: 50px;
-    width: 180px;
-    height: 40px;
-    font-family: Bebas Neue;
-    font-size: 20px;
-    background: linear-gradient(to bottom, #ffffff, rgba(0, 0, 0, 0.679));
-    border: none;
-    box-shadow: 0px 0px 20px black;
+  position: fixed;
+  bottom: 150px;
+  right: 50px;
+  width: 180px;
+  height: 40px;
+  font-family: Bebas Neue;
+  font-size: 20px;
+  background: linear-gradient(to bottom, #ffffff, rgba(0, 0, 0, 0.679));
+  border: none;
+  box-shadow: 0px 0px 20px black;
 }
 
 .btnContinuar:hover,
 .btnVolver:hover {
-    background: linear-gradient(to bottom, #171717, rgba(0, 0, 0, 0.679));
-    background-color: #171717;
-    color: #ffffff;
-    transition-duration: 0.2s;
+  background: linear-gradient(to bottom, #171717, rgba(0, 0, 0, 0.679));
+  background-color: #171717;
+  color: #ffffff;
+  transition-duration: 0.2s;
 }
 
 .loaderContainer {
-    display: flex;
-    flex-direction: column;
-    height: 100px;
-    align-items: center;
-    justify-content: space-evenly;
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .typemedia {
-    border: solid;
-    border-width: 1px;
-    border-radius: 5px;
-    background-color: #ffffff;
-    width: 180px;
-    margin: 3px;
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    padding-top: .2rem;
-    padding-bottom: .2rem;
+  border: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  width: 180px;
+  margin: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding-top: .2rem;
+  padding-bottom: .2rem;
 }
 
 .divisor {
-    width: 50vw;
-    margin-left: 25vw;
-    height: 10px;
-    background-color: #171717;
-    margin-bottom: 20px;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
-    filter: drop-shadow(0px 0px 10px black)
+  width: 50vw;
+  margin-left: 25vw;
+  height: 10px;
+  background-color: #171717;
+  margin-bottom: 20px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  filter: drop-shadow(0px 0px 10px black)
 }
 
 .deleteButtonContainer {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    padding-right: .3rem;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: .3rem;
 }
 
 .inputCreate {
-    height: 10px;
-    width: 107px;
+  height: 10px;
+  width: 107px;
 }
 
 .submit {
-    margin-top: 20px;
-    padding: 0.6em 0.8em;
-    width: 120px;
-    font-family: Bebas Neue;
-    font-size: 20px;
-    color: white;
-    background-color: rgb(32, 32, 32);
-    border: none;
-    cursor: pointer;
-    border-radius: 40px;
-    margin-bottom: 180px;
-    transition-duration: .2s;
+  margin-top: 20px;
+  padding: 0.6em 0.8em;
+  width: 120px;
+  font-family: Bebas Neue;
+  font-size: 20px;
+  color: white;
+  background-color: rgb(32, 32, 32);
+  border: none;
+  border-radius: 40px;
+  margin-bottom: 180px;
+  transition-duration: .2s;
 }
 
 .submit:hover {
-    background-color: #8a8a8a;
-    color: black;
-    box-shadow: 0px 0px 15px white;
+  background-color: #8a8a8a;
+  color: black;
+  box-shadow: 0px 0px 15px white;
+}
+
+.submit:disabled {
+  background-color: #8a8a8a;
+  color: white;
+  cursor: not-allowed;
 }
