@@ -77,7 +77,7 @@ export function deleteGenre(id) {
   return async function (dispatch) {
     try {
       const response = await axios.delete(`${URL_API}/admin/genre/delete/${id}`, options());
-      dispatch(getCategories());
+      dispatch(getGenres());
       return response;
     } catch (error) {
       console.error(error);
