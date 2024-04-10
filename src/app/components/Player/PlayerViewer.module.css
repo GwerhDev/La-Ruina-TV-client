@@ -64,7 +64,7 @@
 .tags {
   display: flex;
   gap: .5rem;
-  width: 50%;
+  width: 100%;
   overflow-x: auto;
 }
 

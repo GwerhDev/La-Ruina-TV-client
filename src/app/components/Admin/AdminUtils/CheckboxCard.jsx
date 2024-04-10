@@ -4,11 +4,18 @@ import { useDispatch } from 'react-redux';
 
 export const CheckboxCard = (props) => {
   const dispatch = useDispatch();
-  const { data, selector, actionFunction } = props;
+  const { label, data, selector, actionFunction } = props;
   const [checked, setChecked] = useState(false);
 
-  function handleCheck() {
-    dispatch(actionFunction(data));
+  function handleCheck(e) {
+    let newSelector;
+    if (e.target.checked) {
+      newSelector = [...selector, data];
+      dispatch(actionFunction(newSelector));
+    } else {
+      newSelector = selector.filter(e => e.id !== data.id);
+      dispatch(actionFunction(newSelector));
+    }
   };
 
   useEffect(() => {
@@ -16,13 +23,16 @@ export const CheckboxCard = (props) => {
   }, [selector, data]);
 
   return (
-    <input
-      className={s.checkbox}
-      type="checkbox"
-      name={data.name}
-      value={data.name || ''}
-      checked={checked || false}
-      onChange={handleCheck}
-    />
+    <>
+      <input
+        className={s.checkbox}
+        type="checkbox"
+        name={data.name}
+        value={data.name || ''}
+        checked={checked || false}
+        onChange={handleCheck}
+      />
+      <label className={s.label} htmlFor={label}>{label}</label>
+    </>
   )
 }

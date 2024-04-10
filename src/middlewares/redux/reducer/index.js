@@ -201,7 +201,7 @@ export default function rootReducer(state = initialState, action) {
                 ...state,
                 infoDetailViewer: {
                     ...state.infoDetailViewer,
-                    categories: [...state.infoDetailViewer.categories, action.payload]
+                    categories: action.payload
                 }
             };
         
@@ -210,7 +210,7 @@ export default function rootReducer(state = initialState, action) {
                 ...state,
                 infoDetailViewer: {
                     ...state.infoDetailViewer,
-                    genres: [...state.infoDetailViewer.genres, action.payload]
+                    genres: action.payload
                 }
             };
         
@@ -219,7 +219,7 @@ export default function rootReducer(state = initialState, action) {
                 ...state,
                 infoDetailViewer: {
                     ...state.infoDetailViewer,
-                    mediatypes: [...state.infoDetailViewer.mediatypes, action.payload]
+                    mediatypes: action.payload
                 }
             };
 

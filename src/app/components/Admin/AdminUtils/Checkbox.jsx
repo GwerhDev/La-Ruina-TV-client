@@ -2,6 +2,7 @@ import s from './Checkbox.module.css';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { CheckboxCard } from './CheckboxCard';
+import closeIcon from '../../../../assets/images/svg/close-icon.svg'
 
 export const Checkbox = (props) => {
   const dispatch = useDispatch();
@@ -38,13 +39,13 @@ export const Checkbox = (props) => {
                 data={t}
                 selector={selector}
                 actionFunction={actionFunction}
+                label={t.name}
               />
-              <label htmlFor={t.name}>{t.name}</label>
               {
                 edit &&
                 <div className={s.deleteButtonContainer}>
                   <button type='button' onClick={() => dispatch(deleteFunction(t.id))} disabled={!t.name?.length}>
-                    x
+                    <img src={closeIcon} width="10" alt="Botón eliminar" />
                   </button>
                 </div>
               }
@@ -53,10 +54,10 @@ export const Checkbox = (props) => {
         }
         {
           edit &&
-          <div>
+          <div className={s.addCardContainer}>
             <input value={newAttribute || ''} className={s.inputCreate} onInput={(e) => setNewAttribute(e.target.value)} type="text" />
             <button type='button' onClick={handleNewAttribute} className={s.buttonCreate} disabled={!newAttribute?.length}>
-              Agregar
+              +
             </button>
           </div>
         }
