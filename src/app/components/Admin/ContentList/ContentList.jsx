@@ -38,31 +38,26 @@ const ContentList = () => {
             </span>
           </div>
           <div className={s.divList}>
-            <div className={s.ulList1}>
-              <ul className={s.ulList0}>
-                <li>Title</li>  -
-                <li>Artist</li> -
-                <li>Edit</li>
-              </ul>
-              {
-                contentList?.map((e, index) => {
-                  return (
-                    <li key={index}>
-                      <ul className={s.ulList2}>
-                        <li>{e.title || "❗"}</li> -
-                        <li>{e.artist || "❗"}</li> -
-                        <li>
-                          <button className={s.btnEdit} onClick={() => handleEditButton(e.id)} />
-                        </li>
-                      </ul>
+            <ul className={s.ulList0}>
+              <li>Title</li>  -
+              <li>Artist</li> -
+              <li>Edit</li>
+            </ul>
+            {
+              contentList?.map((e, index) => {
+                return (
+                  <ul className={s.list} key={index}>
+                    <li>{e.title || "❗"}</li> -
+                    <li>{e.artist || "❗"}</li> -
+                    <li>
+                      <button className={s.btnEdit} onClick={() => handleEditButton(e.id)} />
                     </li>
-                  )
-                })
-              }
-            </div>
+                  </ul>
+                )
+              })
+            }
           </div>
         </div>
-
       }
     </main>
   )

@@ -2,6 +2,7 @@ import s from './Request.module.css';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { resetOption } from '../../../middlewares/redux/actions';
+import { toTop } from '../../../functions/toTop';
 
 
 export const Request = (props) => {
@@ -9,7 +10,9 @@ export const Request = (props) => {
   const dispatch = useDispatch();
 
   function handleOption() {
-    return dispatch(resetOption());
+    toTop();
+    dispatch(resetOption());
+    return;
   }
 
   return (
