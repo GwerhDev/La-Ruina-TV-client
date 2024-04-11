@@ -2,10 +2,10 @@ import s from './Toast.module.css';
 import closeIcon from '../../assets/images/svg/close-icon.svg'
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import defaultImage from '../../assets/images/ruinatv-icon-play-b.png'
 import { resetToast } from '../../middlewares/redux/actions/toast';
 import favoriteIcon from '../../assets/images/svg/like-icon.svg';
-
+import defaultImage from '../../assets/images/ruinatv-icon-play-b.png';
+import { motion } from 'framer-motion';
 
 export const Toast = () => {
   const dispatch = useDispatch();
@@ -29,7 +29,11 @@ export const Toast = () => {
     <>
       {
         toast?.show &&
-        <div className={s.container}>
+        <motion.div 
+          className={s.container} 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+        >
           <img className={s.toastImg} src={(toast?.image === "favorite" ? favoriteIcon : toast.image) || defaultImage} alt="" />
           <span>
             <div className={s.toastMessage}>
@@ -40,7 +44,7 @@ export const Toast = () => {
           <button className={s.closeButton} onClick={closeToast}>
             <img src={closeIcon} alt="Cerrar" width={20} />
           </button>
-        </div>
+        </motion.div>
       }
     </>
   )
