@@ -5,14 +5,14 @@ import { setEdition } from '../../../middlewares/redux/actions/admin';
 
 const ContentUpdatePage = () => {
   const dispatch = useDispatch();
-  const currentUser = useSelector(state => state.user.currentUser);
+  const currentUser = useSelector(state => state.currentUser);
 
   useEffect(() => {
     dispatch(setEdition(true));
   }, [dispatch]);
 
   return (
-    currentUser &&
+    currentUser?.role === 'admin' &&
     <ContentUpdate />
   )
 }

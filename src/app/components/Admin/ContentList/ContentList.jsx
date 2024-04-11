@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { resetIdYT, resetOption } from "../../../../middlewares/redux/actions";
 import { resetMedia } from '../../../../middlewares/redux/actions/content';
 import { getMedia } from '../../../../middlewares/redux/actions/admin';
-import { deleteMedia, setEdition } from '../../../../middlewares/redux/actions/admin';
+import { setEdition } from '../../../../middlewares/redux/actions/admin';
 
 const ContentList = () => {
   const history = useHistory();
@@ -42,8 +42,7 @@ const ContentList = () => {
               <ul className={s.ulList0}>
                 <li>Title</li>  -
                 <li>Artist</li> -
-                <li>Edit</li>   -
-                <li>Delete</li>
+                <li>Edit</li>
               </ul>
               {
                 contentList?.map((e, index) => {
@@ -54,10 +53,6 @@ const ContentList = () => {
                         <li>{e.artist || "❗"}</li> -
                         <li>
                           <button className={s.btnEdit} onClick={() => handleEditButton(e.id)} />
-                        </li>
-                        -
-                        <li>
-                          <button className={s.btnDelete} onClick={() => { dispatch(deleteMedia(e.id)) }} />
                         </li>
                       </ul>
                     </li>

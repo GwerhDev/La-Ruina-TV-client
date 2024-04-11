@@ -6,7 +6,7 @@ const Dashboard = () => {
   const currentUser = useSelector(state => state.currentUser);
 
   return (
-    currentUser &&
+    currentUser?.role === 'admin' &&
     <AdminDashboard />
   )
 }
