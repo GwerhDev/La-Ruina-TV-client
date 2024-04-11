@@ -50,12 +50,12 @@ const ContentCreate = () => {
       <div className='nav-fixed' />
       {
         submitted
-          ? 
+          ?
           <div className={s.container}>
             <h1>
               {
-                redirectRoute 
-                  ? "¡Contenido creado!" 
+                redirectRoute
+                  ? "¡Contenido creado!"
                   : "Creando contenido..."
               }
             </h1>
@@ -77,43 +77,41 @@ const ContentCreate = () => {
           </div>
           :
           <div className={s.createBody}>
-            <form onSubmit={handleSubmit}>
-              <section className={s.container}>
-                <h1 className={s.createTitle}>Crear un Nuevo Contenido</h1>
-                <section className={s.contTitleArtistDesc}>
-                  <span>
-                    <label>Titulo</label>
-                    <input
-                      type="text"
-                      name="title"
-                      placeholder="Título de la publicación"
-                      onInput={handleInputChange}
-                    />
-                  </span>
-                  <span>
-                    <label>Artista</label>
-                    <input
-                      type="text"
-                      name="artist"
-                      placeholder="Nombre del intérprete"
-                      onInput={handleInputChange}
-                    />
-                  </span>
-                  <span>
-                    <label>Descripción</label>
-                    <textarea
-                      placeholder="Escribe una breve reseña..."
-                      type="text"
-                      name="info"
-                      onInput={handleInputChange}
-                    />
-                  </span>
-                </section>
-
-                <button disabled={!validatedForm} type="submit" className={s.submit}>
-                  Continuar
-                </button>
+            <form className={s.createForm} onSubmit={handleSubmit}>
+              <h1 className={s.createTitle}>Crear un Nuevo Contenido</h1>
+              <section className={s.contTitleArtistDesc}>
+                <span>
+                  <label>Artista</label>
+                  <input
+                    type="text"
+                    name="artist"
+                    placeholder="Nombre del intérprete"
+                    onInput={handleInputChange}
+                  />
+                </span>
+                <span>
+                  <label>Titulo</label>
+                  <input
+                    type="text"
+                    name="title"
+                    placeholder="Título de la publicación"
+                    onInput={handleInputChange}
+                  />
+                </span>
+                <span>
+                  <label>Descripción</label>
+                  <textarea
+                    placeholder="Escribe una breve reseña..."
+                    type="text"
+                    name="info"
+                    onInput={handleInputChange}
+                  />
+                </span>
               </section>
+
+              <button disabled={!validatedForm} type="submit" className={s.submit}>
+                Continuar
+              </button>
             </form>
           </div>
       }
