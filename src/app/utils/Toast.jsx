@@ -33,6 +33,7 @@ export const Toast = () => {
           className={s.container} 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
         >
           <img className={s.toastImg} src={(toast?.image === "favorite" ? favoriteIcon : toast.image) || defaultImage} alt="" />
           <span>
