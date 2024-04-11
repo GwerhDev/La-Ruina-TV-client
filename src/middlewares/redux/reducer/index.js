@@ -33,6 +33,7 @@ import {
     SET_CONTENT_GENRES,
     SET_CONTENT_MEDIATYPES,
     RESET_TOAST,
+    ADD_FAVORITES,
 } from "../../misc";
 import { Player } from "../../../interfaces/Player";
 import { Toast } from "../../../interfaces/Toast";
@@ -213,7 +214,7 @@ export default function rootReducer(state = initialState, action) {
                     categories: action.payload
                 }
             };
-        
+
         case SET_CONTENT_GENRES:
             return {
                 ...state,
@@ -222,7 +223,7 @@ export default function rootReducer(state = initialState, action) {
                     genres: action.payload
                 }
             };
-        
+
         case SET_CONTENT_MEDIATYPES:
             return {
                 ...state,
@@ -271,6 +272,12 @@ export default function rootReducer(state = initialState, action) {
             return {
                 ...state,
                 favorites: action.payload
+            };
+        case ADD_FAVORITES:
+            return {
+                ...state,
+                favorites: action.payload.favorites,
+                toast: action.payload.toast,
             };
 
         case GET_MEDIA:

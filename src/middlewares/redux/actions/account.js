@@ -1,6 +1,6 @@
 import axios from "axios";
 import { URL_API } from "../../config";
-import { AUTHENTICATING, GET_FAVORITES, GET_USER_DATA } from "../../misc";
+import { ADD_FAVORITES, AUTHENTICATING, GET_FAVORITES, GET_USER_DATA } from "../../misc";
 import { options } from "../../helpers";
 import { isLogged } from "./auth";
 
@@ -38,9 +38,10 @@ export function addFavorites(contentId) {
   return async function (dispatch) {
     await axios.get(`${URL_API}/account/add-favorite/${contentId}`, options())
       .then(res => {
+        console.log(res.data)
         dispatch({
-          type: GET_FAVORITES,
-          payload: res.data.favorites
+          type: ADD_FAVORITES,
+          payload: res.data
         });
       })
       .catch(e => console.error(e));

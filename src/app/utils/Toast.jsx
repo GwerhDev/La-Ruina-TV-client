@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import defaultImage from '../../assets/images/ruinatv-icon-play-b.png'
 import { resetToast } from '../../middlewares/redux/actions/toast';
+import favoriteIcon from '../../assets/images/svg/like-icon.svg';
 
 
 export const Toast = () => {
@@ -29,7 +30,7 @@ export const Toast = () => {
       {
         toast?.show &&
         <div className={s.container}>
-          <img className={s.toastImg} src={toast.image || defaultImage} alt="" />
+          <img className={s.toastImg} src={(toast?.image === "favorite" ? favoriteIcon : toast.image) || defaultImage} alt="" />
           <span>
             <div className={s.toastMessage}>
               <p className={s.title}>{toast.title}</p>
