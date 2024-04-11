@@ -6,7 +6,7 @@ import { deleteUser, getUsers } from '../../../../middlewares/redux/actions/admi
 
 const EditUserList = () => {
   const dispatch = useDispatch();
-  const mediaList = useSelector(state => state.userList);
+  const contentList = useSelector(state => state.userList);
   const currentUser = useSelector(state => state.currentUser);
 
   useEffect(() => {
@@ -31,7 +31,7 @@ const EditUserList = () => {
                 <li>Delete</li>
               </ul>
               {
-                mediaList?.map((e, index) => {
+                contentList?.map((e, index) => {
                   return (
                     <li key={index}>
                       <ul className={s.ulList2}>

@@ -9,7 +9,7 @@ import { deleteMedia, setEdition } from '../../../../middlewares/redux/actions/a
 const ContentList = () => {
   const history = useHistory();
   const dispatch = useDispatch();
-  const mediaList = useSelector(state => state.mediaList);
+  const contentList = useSelector(state => state.contentList);
   const currentUser = useSelector(state => state.currentUser);
 
   function handleEditButton(id) {
@@ -45,7 +45,7 @@ const ContentList = () => {
                 <li>Delete</li>
               </ul>
               {
-                mediaList?.map((e, index) => {
+                contentList?.map((e, index) => {
                   return (
                     <li key={index}>
                       <ul className={s.ulList2}>

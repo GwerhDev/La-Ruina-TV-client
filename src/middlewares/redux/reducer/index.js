@@ -55,7 +55,7 @@ const initialState = {
     favorites: [],
     userList: [],
     mediaByCategory: [],
-    mediaList: [],
+    contentList: [],
     infoDetailViewer: new Content(),
     fullDetail: {},
     error: "",
@@ -265,7 +265,7 @@ export default function rootReducer(state = initialState, action) {
         case GET_MEDIA:
             return {
                 ...state,
-                mediaList: action.payload.mediaList,
+                contentList: action.payload.contentList,
             };
 
         case GET_INFO:

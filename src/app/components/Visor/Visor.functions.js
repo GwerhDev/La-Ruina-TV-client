@@ -10,9 +10,9 @@ export const VisorFunction = () => {
     }
   });
 
-  const mediaList = useSelector(state => state.mediaList);
+  const contentList = useSelector(state => state.contentList);
   const currentUser = useSelector(state => state.currentUser);
-  const max = mediaList?.length || 0;
+  const max = contentList?.length || 0;
   const [counter, setCounter] = useState(0);
   const [visorId, setVisorId] = useState(null);
   const [visorImage, setVisorImage] = useState(null);
@@ -49,7 +49,7 @@ export const VisorFunction = () => {
     mediaType,
     imageVisor,
     actionButton,
-  } = mediaList?.length ? mediaList?.at(counter % max) : defaultVisor;
+  } = contentList?.length ? contentList?.at(counter % max) : defaultVisor;
 
   useEffect(() => {
     let inf = 99999 + counter;
@@ -92,7 +92,7 @@ export const VisorFunction = () => {
   ]);
 
   return {
-    mediaList,
+    contentList,
     currentUser,
     visorId,
     visorArtist,

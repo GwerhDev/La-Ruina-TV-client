@@ -12,7 +12,7 @@ import { SecondaryButton } from '../Buttons/SecondaryButton';
 
 export const Visor = () => {
   const {
-    visorId, visorInfo, mediaList, visorIcon,
+    visorId, visorInfo, contentList, visorIcon,
     visorTitle, visorImage, currentUser, visorArtist,
   } = VisorFunction();
 
@@ -29,7 +29,7 @@ export const Visor = () => {
       <div className={s.visorCanvas} />
       <InfoCanvas title={visorTitle} artist={visorArtist} id={visorId} image={RenderImageGwerhdinary(visorImage)} />
       {
-        mediaList?.length &&
+        contentList?.length &&
         <div className={s.visorInfo} id='visor-info'>
           <div className={s.visorArtist}>
             <p>{visorArtist}</p>

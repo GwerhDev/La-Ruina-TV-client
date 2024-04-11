@@ -9,7 +9,7 @@ export async function getImage(id) {
     } catch (error) {
         console.error(error)
     }
-}
+};
 
 export function getMedia() {
     return async function (dispatch) {

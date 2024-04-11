@@ -14,7 +14,7 @@ const Browser = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const userToken = getUserToken();
-  const mediaList = useSelector((state) => state.mediaList);
+  const contentList = useSelector((state) => state.contentList);
   const currentUser = useSelector((state) => state.currentUser);
   const dbCategories = useSelector((state) => state.dbCategories);
   const mediaByCategory = useSelector((state) => state.mediaByCategory);
@@ -38,7 +38,7 @@ const Browser = () => {
   return (
     <main>
       <Visor />
-      <Slider title={"Contenido"} data={mediaList} idCategory={-1} id={`s${-1}`} key={`s${-1}`} />
+      <Slider title={"Contenido"} data={contentList} idCategory={-1} id={`s${-1}`} key={`s${-1}`} />
       <CategorySlider data={mediaByCategory} dbCategories={dbCategories} />
       <Footer />
     </main>
