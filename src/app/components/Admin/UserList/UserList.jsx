@@ -43,7 +43,7 @@ const EditUserList = () => {
               userList?.map((e, index) => {
                 return (
                   <ul className={s.list} key={index}>
-                    <li>{e.profilePic || "❗"}</li> -
+                    <li><img src={e.profilePic || "❗"} alt="Profile pic" height={"100%"} /></li> -
                     <li>{e.username || "❗"}</li> -
                     <li>{e.email || "❗"}</li> -
                     <li>{e.role || "❗"}</li> -
