@@ -89,7 +89,7 @@ export const PlayerViewer = (props) => {
         {
           currentUser &&
           <div className={s.userButtons}>
-            <button className='button-add-favorite' onClick={() => { dispatch(favorites?.find(e => e.id === id) ? deleteFavorites(id) : addFavorites(currentUser.id, id)) }}>
+            <button className='button-add-favorite' onClick={() => { dispatch(favorites?.find(e => e.id === id) ? deleteFavorites(id) : addFavorites(id)) }}>
               <img
                 className={s.favIcon}
                 id="favViewIcon"

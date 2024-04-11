@@ -181,7 +181,7 @@ export default function rootReducer(state = initialState, action) {
             return {
                 ...state,
                 dbCategories: action.payload.categories,
-                mediaByCategory: action.payload.mediaByCategory
+                mediaByCategory: action.payload.contentByCategory
             };
 
         case GET_GENRES:

@@ -34,10 +34,9 @@ export function getFavorites() {
   }
 };
 
-export function addFavorites(userId, mediaId) {
-  const formData = { userId, mediaId };
+export function addFavorites(contentId) {
   return async function (dispatch) {
-    await axios.post(`${URL_API}/account/add-favorite`, formData, options())
+    await axios.get(`${URL_API}/account/add-favorite/${contentId}`, options())
       .then(res => {
         dispatch({
           type: GET_FAVORITES,
@@ -48,9 +47,9 @@ export function addFavorites(userId, mediaId) {
   }
 };
 
-export function deleteFavorites(userId) {
+export function deleteFavorites(contentId) {
   return async function (dispatch) {
-    await axios.delete(`${URL_API}/account/delete-favorite/${userId}`, options())
+    await axios.delete(`${URL_API}/account/delete-favorite/${contentId}`, options())
       .then(res => {
         dispatch({
           type: GET_FAVORITES,

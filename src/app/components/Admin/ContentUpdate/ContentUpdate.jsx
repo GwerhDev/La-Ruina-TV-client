@@ -52,6 +52,13 @@ const ContentUpdate = () => {
     }));
   };
 
+  function handleInputSlider(e) {
+    dispatch(setInfoDetailViewer({
+      ...infoDetailViewer,
+      imageSlider: e
+    }));
+  };
+
   function handleInputVisor(e) {
     dispatch(setInfoDetailViewer({
       ...infoDetailViewer,
@@ -197,6 +204,7 @@ const ContentUpdate = () => {
                             const reader = new FileReader();
                             reader.onloadend = () => {
                               setPreviewSlider(reader.result);
+                              handleInputSlider(reader.result);
                             }
                             reader.readAsDataURL(file);
                           }}
