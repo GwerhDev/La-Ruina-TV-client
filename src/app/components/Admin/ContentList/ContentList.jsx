@@ -3,7 +3,8 @@ import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import { resetIdYT, resetOption } from "../../../../middlewares/redux/actions";
-import { getMedia, resetMedia } from '../../../../middlewares/redux/actions/content';
+import { resetMedia } from '../../../../middlewares/redux/actions/content';
+import { getMedia } from '../../../../middlewares/redux/actions/admin';
 import { deleteMedia, setEdition } from '../../../../middlewares/redux/actions/admin';
 
 const ContentList = () => {

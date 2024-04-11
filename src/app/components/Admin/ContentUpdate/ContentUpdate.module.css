@@ -80,6 +80,13 @@
   font-family: Poppins;
 }
 
+.publishContainer {
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+  justify-content: center;
+}
+
 .imgSlrVsr {
   display: flex;
   flex-direction: column;

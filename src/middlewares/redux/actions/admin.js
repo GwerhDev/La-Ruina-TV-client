@@ -1,13 +1,24 @@
 import axios from "axios";
 import { URL_API } from "../../config";
 import { options } from "../../helpers";
-import { getCategories, getGenres, getMedia, getMediatypes, getProducers } from "./content";
-import { GET_INFO, GET_USERS, SET_CONTENT_CATEGORIES, SET_CONTENT_GENRES, SET_CONTENT_MEDIATYPES, SET_EDITION } from "../../misc";
+import { getCategories, getGenres, getMediatypes, getProducers } from "./content";
+import { GET_INFO, GET_MEDIA, GET_USERS, SET_CONTENT_CATEGORIES, SET_CONTENT_GENRES, SET_CONTENT_MEDIATYPES, SET_EDITION } from "../../misc";
 
 export const setEdition = (boolean) => {
   return {
     type: SET_EDITION,
     payload: boolean
+  }
+};
+
+export const getMedia = () => {
+  return async function (dispatch) {
+    const response = await axios.get(`${URL_API}/admin/content/`, options());
+    dispatch({
+      type: GET_MEDIA,
+      payload: response.data
+    });
+    return response.data;
   }
 };
 

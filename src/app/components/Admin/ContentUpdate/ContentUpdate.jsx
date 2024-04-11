@@ -39,6 +39,7 @@ const ContentUpdate = () => {
   const [submitted, setSubmitted] = useState(false);
   const [ready, setReady] = useState(false);
 
+  const [publish, setPublish] = useState("");
   const [newGenre, setNewGenre] = useState("");
   const [newCategory, setNewCategory] = useState("");
   const [newMediatype, setNewMediatype] = useState("");
@@ -50,6 +51,13 @@ const ContentUpdate = () => {
       ...infoDetailViewer,
       [e.target.name]: e.target.value
     }));
+  };
+
+  function handlePublish() {
+    dispatch(setInfoDetailViewer({
+      ...infoDetailViewer,
+      published: !infoDetailViewer.published,
+    }))
   };
 
   function handleInputSlider(e) {
@@ -72,6 +80,7 @@ const ContentUpdate = () => {
     setSubmitted(true);
 
     const formData = {
+      published: infoDetailViewer.published,
       artist: infoDetailViewer.artist,
       title: infoDetailViewer.title,
       info: infoDetailViewer.info,
@@ -110,6 +119,7 @@ const ContentUpdate = () => {
   };
 
   useEffect(() => {
+    setPublish(infoDetailViewer?.published);
     setPreviewVisor(infoDetailViewer?.imageVisor);
     setPreviewSlider(infoDetailViewer?.imageSlider);
   }, [infoDetailViewer]);
@@ -309,9 +319,12 @@ const ContentUpdate = () => {
                         deleteFunction={deleteCategory}
                         actionFunction={setContentCategories}
                       />
-
                     </section>
                     <div className={s.actionsContainer}>
+                      <span className={s.publishContainer}>
+                        <input type="checkbox" name="publish" checked={publish} onChange={handlePublish} />
+                        <label htmlFor="checkbox">Publicar</label>
+                      </span>
                       <input type="submit" value="Actualizar" className={s.actionPrimary} />
                       <button className={s.actionSecondary} onClick={closePanel}>Cancelar</button>
                     </div>
