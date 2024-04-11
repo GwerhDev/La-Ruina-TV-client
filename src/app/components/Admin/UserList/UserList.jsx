@@ -6,8 +6,12 @@ import { deleteUser, getUsers } from '../../../../middlewares/redux/actions/admi
 
 const EditUserList = () => {
   const dispatch = useDispatch();
-  const contentList = useSelector(state => state.userList);
+  const userList = useSelector(state => state.userList);
   const currentUser = useSelector(state => state.currentUser);
+
+  function handleDeleteButton(id) {
+    dispatch(deleteUser(id));
+  };
 
   useEffect(() => {
     dispatch(getUsers());
@@ -16,48 +20,44 @@ const EditUserList = () => {
   }, [dispatch]);
 
   return (
-    <div className={s.editListCont}>
+    <main className='main-container'>
+      <div className='nav-fixed' />
       {
         currentUser?.role === 'admin' &&
-        <div className={s.editListFormat} >
-          <h1>Listado de usuarios</h1>
+        <div className='section-container'>
+          <div className='header-container'>
+            <span className='section-description-container'>
+              <h1>Listado de contenido</h1>
+              <h3>Admin</h3>
+            </span>
+          </div>
           <div className={s.divList}>
-            <div className={s.ulList1}>
-              <ul className={s.ulList0}>
-                <li>Profile Pic</li> -
-                <li>Username</li>    -
-                <li>Email</li>       -
-                <li>Role</li>        -
-                <li>Delete</li>
-              </ul>
-              {
-                contentList?.map((e, index) => {
-                  return (
-                    <li key={index}>
-                      <ul className={s.ulList2}>
-                        <li><img src={e.profilePic} height={80} alt="" /></li> -
-                        <li>{e.username}</li> -
-                        <li>{e.email}</li> -
-                        <li>{e.role}</li> -
-                        <li>
-                          <button
-                            className={s.btnDelete}
-                            disabled={e.role === 'admin'}
-                            onClick={() => {
-                              dispatch(deleteUser(e.id))
-                            }}>
-                          </button>
-                        </li>
-                      </ul>
+            <ul className={s.ulList0}>
+              <li>Profile Pic</li>  -
+              <li>Username</li> -
+              <li>Email</li> -
+              <li>Role</li> -
+              <li>Delete</li>
+            </ul>
+            {
+              userList?.map((e, index) => {
+                return (
+                  <ul className={s.list} key={index}>
+                    <li>{e.profilePic || "❗"}</li> -
+                    <li>{e.username || "❗"}</li> -
+                    <li>{e.email || "❗"}</li> -
+                    <li>{e.role || "❗"}</li> -
+                    <li>
+                      <button className={s.btnDelete} onClick={() => handleDeleteButton(e.id)} />
                     </li>
-                  )
-                })
-              }
-            </div>
+                  </ul>
+                )
+              })
+            }
           </div>
         </div>
       }
-    </div>
+    </main>
   )
 }
 

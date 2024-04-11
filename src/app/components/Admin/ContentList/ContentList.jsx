@@ -16,7 +16,7 @@ const ContentList = () => {
   function handleEditButton(id) {
     dispatch(setEdition(true));
     history.push(`/view/v=${id}`);
-  }
+  };
 
   useEffect(() => {
     dispatch(getMedia());
