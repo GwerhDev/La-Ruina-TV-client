@@ -19,6 +19,7 @@ import ContentListPage from '../pages/Admin/ContentListPage';
 import ContentCreatePage from '../pages/Admin/ContentCreatePage';
 import ContentUpdatePage from '../pages/Admin/ContentUpdatePage';
 
+import { Toast } from '../utils/Toast';
 import { Navigator } from '../components/Navigator/Navigator';
 import { CanvasMenu } from '../components/Navigator/CanvasMenu';
 
@@ -27,6 +28,7 @@ function Router() {
     <div className="App">
       <Switch>
         <>
+          <Toast />
           <Navigator />
           <CanvasMenu />
           <div className='bodyApp'>

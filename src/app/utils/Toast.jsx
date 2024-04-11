@@ -1,44 +1,49 @@
-import React, { useEffect, useCallback } from 'react';
-import styles from './Toast.module.css'
+import s from './Toast.module.css';
+import closeIcon from '../../assets/images/svg/close-icon.svg'
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import defaultImage from '../../assets/images/ruinatv-icon-play-b.png'
+import { resetToast } from '../../middlewares/redux/actions/toast';
 
-const Toast = ({ toastlist, position, setList }) => {
 
-  const deleteToast = useCallback(id => {
-    const toastListItem = toastlist?.filter(e => e.id !== id);
-    setList(toastListItem);
-  }, [toastlist, setList]);
+export const Toast = () => {
+  const dispatch = useDispatch();
+  const toast = useSelector(state => state.toast);
+
+  function closeToast() {
+    dispatch(resetToast());
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if(toastlist?.length) {
-        deleteToast(toastlist[0].id);
-      }
+      dispatch(resetToast());
     }, 3000);
 
     return () => {
       clearInterval(interval);
     }
-  }, [toastlist, deleteToast]);
+  }, [dispatch, toast]);
 
   return (
-    <div className={`${styles.container} ${styles[position]}`}>
+    <>
       {
-        toastlist.map((toast, i) => (
-          <div
-            key={i}
-            className={`${styles.notification} ${styles.toast} ${styles[position]}`}
-            style={{ backgroundColor: toast.backgroundColor }}
-          >
-            <button onClick={() => deleteToast(toast.id)}>X</button>
-            <div>
-              <p className={styles.title}>{toast.title}</p>
-              <p className={styles.description}>{toast.description}</p>
+        toast?.show &&
+        <div className={s.container}>
+          <span className={s.toastImgContainer}>
+            <img className={s.toastImg} src={toast.image || defaultImage} alt="" />
+          </span>
+          <span>
+            <div className={s.toastMessage}>
+              <p className={s.title}>{toast.title}</p>
             </div>
-          </div>
-        ))
+            <p className={s.description}>{toast.message}</p>
+          </span>
+          <button className={s.closeButton} onClick={closeToast}>
+            <img src={closeIcon} alt="Cerrar" width={20} />
+          </button>
+        </div>
       }
-    </div>
+    </>
   )
 }
 
-export default Toast

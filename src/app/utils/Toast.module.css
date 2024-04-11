@@ -1,70 +1,73 @@
-
-
 .container {
-    font-size: 14px;
-    position: fixed;
-    z-index: 10;
-  }
-  
-  .buttom-right {
-    bottom: 1rem;
-    right: 1rem;
-    animation: toast-in-right .7s;
-  }
-  
-  .notification {
-    margin-bottom: 1rem;
-    margin-right: 20px;
-    border-radius: 4px;
-    box-shadow: 0 0 10px #999;
-    color: #000;
-    opacity: 0.9;
-    transition: .3s ease;
-  }
-  
-  .notification:hover {
-    box-shadow: 0 0 12px #fff;
-    opacity: 1;
-  }
-  
-  .toast {
-    height: 100px;
-    width: 365px;
-    color: #fff;
-    padding: 20px 15px 10px 10px;
-  }
-  
-  .container button {
-    float: right;
-    background: none;
-    border: none;
-    color: #fff;
-    opacity: 0.8;
-    cursor: pointer;
-  }
-  
-  .title {
-    font-weight: 700;
-    font-size: 16px;
-    text-align: left;
-    margin-top: 0;
-    margin-bottom: 6px;
-    width: 300px;
-    height: 18px;
-    text-shadow: 0px .1px 3px black;
-  }
-  
-  .description {
-    margin: 0;
-    text-align: left;
-    text-shadow: 0px .1px 3px black;    
-  }
-  
-  @keyframes toast-in-right {
-    from {
-      transform: translateX(100%);
-    }
-    to {
-      transform: translateX(0);
-    }
+  font-size: 16px;
+  position: fixed;
+  background: linear-gradient(168deg, rgba(25, 25, 25, 0.848) 20% , #171717e5 120%);
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+  right: 10px;
+  bottom: 2rem;
+  display: flex;
+  width: 200px;
+  color: white;
+  padding: 1rem;
+  border-radius: 50px;
+  gap: 1rem;
+}
+
+.container:hover {
+  background: linear-gradient(168deg, rgb(25, 25, 25) 20% , #171717 120%);
+}
+
+.container span {
+  display: flex;
+  flex-direction: column;
+}
+
+.toastMessage {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toastImgContainer {
+  width: 20px;
+  height: 20px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+}
+
+.toastImg {
+  width: 100%;
+  opacity: .6;
+}
+
+.closeButton {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 100%;
+  position: absolute;
+  padding: 1rem;
+  top: 0;
+  right: 0;
+}
+
+.title {
+  text-wrap: nowrap;
+  width: 120px;
+  overflow-x: hidden;
+}
+
+.description {
+  font-family: Product Sans, sans-serif;
+  font-weight: 100;
+  font-size: small;
+  padding-top: .3rem;
+  text-wrap: nowrap;
+  width: 125px;
+  overflow-x: hidden;
 }

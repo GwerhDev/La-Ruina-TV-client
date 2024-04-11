@@ -12,7 +12,7 @@ export function getUserData() {
       dispatch(isLogged(true));
       dispatch({
         type: GET_USER_DATA,
-        payload: response.data?.userData
+        payload: response.data
       });
     } catch (e) {
       dispatch(isLogged(false));

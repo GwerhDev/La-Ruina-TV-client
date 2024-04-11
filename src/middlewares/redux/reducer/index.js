@@ -32,8 +32,10 @@ import {
     SET_CONTENT_CATEGORIES,
     SET_CONTENT_GENRES,
     SET_CONTENT_MEDIATYPES,
+    RESET_TOAST,
 } from "../../misc";
 import { Player } from "../../../interfaces/Player";
+import { Toast } from "../../../interfaces/Toast";
 
 
 const initialState = {
@@ -48,6 +50,7 @@ const initialState = {
 
     /*----------------Content----------------*/
     player: new Player(),
+    toast: new Toast(),
     dbMediatypes: [],
     dbGenres: [],
     dbCategories: [],
@@ -67,6 +70,12 @@ const initialState = {
 
 export default function rootReducer(state = initialState, action) {
     switch (action.type) {
+        case RESET_TOAST:
+            return {
+                ...state,
+                toast: new Toast()
+            };
+
         case SET_PLAYER:
             return {
                 ...state,
@@ -234,13 +243,15 @@ export default function rootReducer(state = initialState, action) {
         case CURRENT_USER:
             return {
                 ...state,
-                currentUser: action.payload
+                currentUser: action.payload.userData,
+                toast: action.payload.toast,
             };
 
         case GET_USER_DATA:
             return {
                 ...state,
-                currentUser: action.payload
+                currentUser: action.payload.userData,
+                toast: action.payload.toast,
             };
 
         case OPTION:

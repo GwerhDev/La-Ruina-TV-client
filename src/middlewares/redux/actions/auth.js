@@ -19,7 +19,7 @@ export function auth(history, backRoute) {
         dispatch(isLogged(true));
         dispatch({
           type: CURRENT_USER,
-          payload: res.data.userData
+          payload: res.data
         });
         res.data.logged && history.push(backRoute || '/');
         return;
