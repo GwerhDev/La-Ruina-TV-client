@@ -11,7 +11,7 @@
   color: white;
   padding: 1rem;
   border-radius: 50px;
-  gap: 1rem;
+  gap: .3rem;
 }
 
 .container:hover {
@@ -29,19 +29,11 @@
   align-items: center;
 }
 
-.toastImgContainer {
-  width: 20px;
-  height: 20px;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 100%;
-}
-
 .toastImg {
-  width: 100%;
   opacity: .6;
+  border-radius: 100%;
+  width: 35px;
+  height: 35px;
 }
 
 .closeButton {
@@ -68,6 +60,6 @@
   font-size: small;
   padding-top: .3rem;
   text-wrap: nowrap;
-  width: 125px;
+  width: 135px;
   overflow-x: hidden;
 }

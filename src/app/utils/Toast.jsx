@@ -29,9 +29,7 @@ export const Toast = () => {
       {
         toast?.show &&
         <div className={s.container}>
-          <span className={s.toastImgContainer}>
-            <img className={s.toastImg} src={toast.image || defaultImage} alt="" />
-          </span>
+          <img className={s.toastImg} src={toast.image || defaultImage} alt="" />
           <span>
             <div className={s.toastMessage}>
               <p className={s.title}>{toast.title}</p>
