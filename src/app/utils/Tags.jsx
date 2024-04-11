@@ -8,7 +8,7 @@ export const Tags = (props) => {
       {
         tag?.name &&
         <p>
-          #{tag.name?.toLowerCase()}
+          #{tag.name?.toLowerCase().replaceAll(' ', '-').replaceAll('"', '')}
         </p>
       }
     </span>
