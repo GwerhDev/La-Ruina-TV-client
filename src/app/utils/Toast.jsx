@@ -31,16 +31,16 @@ export const Toast = () => {
     <>
       {
         toast?.show &&
-        <motion.div 
-          className={s.container} 
+        <motion.div
+          className={s.container}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
         >
-          <img 
-            className={s.toastImg} 
-            alt="" 
-            src={ toast.image === "favorite" ? favoriteIcon : null || toast.image === "admin" ? adminIcon : null || defaultImage} 
+          <img
+            className={s.toastImg}
+            alt=""
+            src={toast.image === "favorite" ? favoriteIcon : null || toast.image === "admin" ? adminIcon : null || toast.image || defaultImage}
           />
           <span>
             <div className={s.toastMessage}>
