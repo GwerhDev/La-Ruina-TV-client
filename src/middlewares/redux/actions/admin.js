@@ -3,9 +3,11 @@ import { URL_API } from "../../config";
 import { options } from "../../helpers";
 import { getCategories, getGenres, getMediatypes, getProducers } from "./content";
 import {
+  CREATE_CONTENT,
   GET_INFO, GET_MEDIA, GET_USERS, SET_CONTENT_CATEGORIES,
   SET_CONTENT_GENRES, SET_CONTENT_MEDIATYPES, SET_CONTENT_PRODUCERS,
-  SET_EDITION
+  SET_EDITION,
+  UPDATE_CONTENT
 } from "../../misc";
 
 export const setEdition = (boolean) => {
@@ -29,6 +31,10 @@ export const getMedia = () => {
 export const createMedia = (formData) => {
   return async function (dispatch) {
     const response = await axios.post(`${URL_API}/admin/content/create`, formData, options());
+    dispatch({
+      type: CREATE_CONTENT,
+      payload: response.data
+    });
     dispatch(getMedia());
     return response.data;
   }
@@ -36,9 +42,17 @@ export const createMedia = (formData) => {
 
 export const updateMedia = (id, formData) => {
   return async function (dispatch) {
-    const response = await axios.patch(`${URL_API}/admin/content/update/${id}`, formData, options());
-    dispatch(getMedia());
-    return response.data;
+    try {
+      const response = await axios.patch(`${URL_API}/admin/content/update/${id}`, formData, options());
+      dispatch({
+        type: UPDATE_CONTENT,
+        payload: response.data
+      });
+      dispatch(getMedia());
+      return response.data;
+    } catch (error) {
+      console.error(error);
+    }
   }
 };
 

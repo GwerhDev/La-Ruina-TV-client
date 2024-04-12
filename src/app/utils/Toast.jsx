@@ -1,11 +1,12 @@
 import s from './Toast.module.css';
 import closeIcon from '../../assets/images/svg/close-icon.svg'
+import { motion } from 'framer-motion';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { resetToast } from '../../middlewares/redux/actions/toast';
 import favoriteIcon from '../../assets/images/svg/like-icon.svg';
-import defaultImage from '../../assets/images/ruinatv-icon-play-b.png';
-import { motion } from 'framer-motion';
+import adminIcon from '../../assets/images/svg/admin-icon.svg';
+import defaultImage from '../../assets/images/svg/profile-icon.svg';
 
 export const Toast = () => {
   const dispatch = useDispatch();
@@ -18,6 +19,7 @@ export const Toast = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       dispatch(resetToast());
+      toast.image === "favorite" ? toast.image = favoriteIcon : toast.image = adminIcon;
     }, 3000);
 
     return () => {
@@ -35,7 +37,11 @@ export const Toast = () => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
         >
-          <img className={s.toastImg} src={(toast?.image === "favorite" ? favoriteIcon : toast.image) || defaultImage} alt="" />
+          <img 
+            className={s.toastImg} 
+            alt="" 
+            src={ toast.image === "favorite" ? favoriteIcon : null || toast.image === "admin" ? adminIcon : null || defaultImage} 
+          />
           <span>
             <div className={s.toastMessage}>
               <p className={s.title}>{toast.title}</p>

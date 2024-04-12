@@ -35,6 +35,8 @@ import {
     RESET_TOAST,
     ADD_FAVORITES,
     SET_CONTENT_PRODUCERS,
+    UPDATE_CONTENT,
+    CREATE_CONTENT,
 } from "../../misc";
 import { Player } from "../../../interfaces/Player";
 import { Toast } from "../../../interfaces/Toast";
@@ -170,6 +172,18 @@ export default function rootReducer(state = initialState, action) {
                 fullDetail: action.payload
             };
 
+        case CREATE_CONTENT:
+            return {
+                ...state,
+                toast: action.payload.toast
+            };
+
+        case UPDATE_CONTENT:
+            return {
+                ...state,
+                toast: action.payload.toast
+            };
+
         case GET_USERS:
             return {
                 ...state,
@@ -233,7 +247,7 @@ export default function rootReducer(state = initialState, action) {
                     mediatypes: action.payload
                 }
             };
-        
+
         case SET_CONTENT_PRODUCERS:
             return {
                 ...state,
@@ -311,20 +325,7 @@ export default function rootReducer(state = initialState, action) {
         case RESET_MEDIA:
             return {
                 ...state,
-                infoDetailViewer: {
-                    linkimg: "",
-                    idLinkSPOTY: "",
-                    idLinkDRIVE: "",
-                    urlLinkWEB: "",
-                    urlLinkDOWNLOAD: "",
-                    info: "",
-                    title: "",
-                    artist: "",
-                    idLinkYT: "",
-                    genre: [],
-                    category: [],
-                    mediatype: [],
-                },
+                infoDetailViewer: new Content(),
             };
 
         case RESET_VISOR:

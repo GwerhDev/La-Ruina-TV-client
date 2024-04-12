@@ -13,13 +13,13 @@ export const CheckboxCard = (props) => {
       newSelector = [...selector, data];
       dispatch(actionFunction(newSelector));
     } else {
-      newSelector = selector.filter(e => e.id !== data.id);
+      newSelector = selector?.filter(e => e?.id !== data?.id);
       dispatch(actionFunction(newSelector));
     }
   };
 
   useEffect(() => {
-    setChecked(selector?.find(e => e.id === data.id));
+    setChecked(selector? selector.find(e => e.id === data.id) : false);
   }, [selector, data]);
 
   return (
@@ -27,8 +27,8 @@ export const CheckboxCard = (props) => {
       <input
         className={s.checkbox}
         type="checkbox"
-        name={data.name}
-        value={data.name || ''}
+        name={data?.name}
+        value={data?.name || ''}
         checked={checked || false}
         onChange={handleCheck}
       />
