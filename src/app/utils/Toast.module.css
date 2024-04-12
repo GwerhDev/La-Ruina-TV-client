@@ -9,7 +9,9 @@
   display: flex;
   align-items: center;
   color: white;
-  padding: 1rem;
+  padding: .5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   border-radius: 50px;
   gap: 1rem;
   overflow: hidden;
