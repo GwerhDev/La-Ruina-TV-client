@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100vw;
+  width: 100%;
   max-width: 2000px;
 }
 
@@ -12,27 +12,39 @@
 .rightSection {
   margin: 0;
   padding: 0;
-  width: 200px;
-  height: 80px;
+  width: 175px;
   display: flex;
   align-items: center;
 }
 
 .leftSection {
-  padding-top: 15px;
-  display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding-left: 0px;
-  flex-direction: column;
+  padding-left: 50px;
   gap: 7px;
 }
 
 .rightSection {
-  display: flex;
   align-items: center;
-  flex-direction: column;
   justify-content: flex-end;
+  gap: 1rem;
+}
+
+.appsMenuSection {
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.userMenuSection {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 60px;
 }
 
 .middleSection {
@@ -53,7 +65,7 @@
 
 @media only screen and (max-width: 1300px) {
   .leftSection {
-    padding-left: 5px;
+    padding-left: 25px;
   }
 
   .rightSection {

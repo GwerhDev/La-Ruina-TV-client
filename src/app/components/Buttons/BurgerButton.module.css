@@ -1,5 +1,8 @@
 .container {
   width: 100%;
+  position:absolute;
+  top: 0;
+  left: 0;
   height: 80px;
   text-align: center;
   display: flex;

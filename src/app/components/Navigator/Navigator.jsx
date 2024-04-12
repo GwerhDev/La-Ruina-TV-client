@@ -7,9 +7,10 @@ import { UserMenu } from '../UserMenu/UserMenu';
 import { LogoButton } from '../Buttons/LogoButton';
 import { BurgerButton } from '../Buttons/BurgerButton';
 import { UserOptions } from '../UserOptions/UserOptions';
-import { ConnectedApps } from '../ConnectedApps/ConnectedApps';
 import { getUserData } from '../../../middlewares/redux/actions/account';
 import navBack from '../../../functions/Navigator';
+import { ConnectedApps } from '../ConnectedApps/ConnectedApps';
+import { AppsButton } from '../Buttons/AppsButton';
 
 export const Navigator = () => {
   const dispatch = useDispatch();
@@ -25,7 +26,6 @@ export const Navigator = () => {
       <div className={s.innerNavContainer}>
         <section className={s.leftSection}>
           <LogoButton />
-          <ConnectedApps />
         </section>
         <section className={s.middleSection}>
           <NavMenu />
@@ -33,8 +33,14 @@ export const Navigator = () => {
         </section>
         <NavSearchBar />
         <section className={s.rightSection}>
-          <UserMenu />
-          <UserOptions />
+          <ul className={s.appsMenuSection}>
+            <AppsButton />
+            <ConnectedApps width={"200px"} />
+          </ul>
+          <ul className={s.userMenuSection}>
+            <UserMenu />
+            <UserOptions />
+          </ul>
         </section>
       </div>
     </div>

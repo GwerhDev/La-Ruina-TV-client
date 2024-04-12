@@ -19,12 +19,12 @@ export const UserButton = () => {
   function handleClick() {
     dispatch(setBackRoute(location.pathname));
     history.push("/u/profile");
-  }
+  };
 
   return (
     <div className={s.container}>
       <div className={s.profileBtnCont}>
-        <div className={s.profileBtnMenu} id='profile-button' onMouseEnter={userButtonEnter} onClick={userButtonEnter}>
+        <div className={s.profileBtnMenu} id='profile-button' onClick={userButtonEnter}>
           <div className={s.usernameContainer} id='username-container'>
             {
               profilePic
@@ -36,7 +36,7 @@ export const UserButton = () => {
             <p onClick={handleClick} id='username' className={s.username}>Hola, <span>{username ? username.substring(0, 5) + "..." : "Usuario"}</span></p>
           </div>
           <div className={s.openMenuButton} onClick={userButtonClick} onMouseLeave={() => userButtonLeave}>
-            <img className={s.btnMenuTv} src={btnMenuTv} alt='menú' width='8px' />
+            <img className={s.btnMenuTv} src={btnMenuTv} alt='Menú' width='8px' />
           </div>
         </div>
       </div>

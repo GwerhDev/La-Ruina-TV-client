@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  z-index: 99;
+}
+
+.container:hover {
+  cursor: pointer;
+}
