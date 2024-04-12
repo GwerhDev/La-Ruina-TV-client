@@ -21,7 +21,7 @@
   padding-right: 50px;
 }
 
-@media only screen and (max-width: 2000px) {
+@media only screen and (min-width: 2000px) {
   .loaderContainer {
     padding-right: 0;
   }

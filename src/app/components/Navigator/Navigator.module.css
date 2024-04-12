@@ -28,7 +28,7 @@
   align-items: center;
   justify-content: flex-end;
   gap: 1rem;
-  padding-right: 5px;
+  padding-right: 0;
 }
 
 .appsMenuSection {
@@ -57,11 +57,11 @@
 
 @media only screen and (min-width: 2000px) {
   .leftSection {
-    padding-left: 50px;
+    padding-left: 0;
   }
 
   .rightSection {
-    padding-right: 50px;
+    padding-right: 0;
   }
 }
 
