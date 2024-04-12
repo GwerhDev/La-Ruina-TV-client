@@ -38,7 +38,7 @@
 }
 
 .searchBar {
-  height: 40px;
+  height: 30px;
   width: 300px;
   border: none;
   border-top-left-radius: 5px;
@@ -49,11 +49,16 @@
   padding: 12px;
   background-color: transparent;
   border: none;
+  outline: solid;
   background-color: #171717;
   padding-left: 50px;
   padding-right: 50px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .searchBtn:hover {
@@ -70,5 +75,5 @@
 
 .option {
   width: 100vw;
-  font-size: 23px;
+  font-size: 18px;
 }

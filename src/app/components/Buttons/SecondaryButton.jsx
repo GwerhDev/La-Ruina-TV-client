@@ -7,7 +7,7 @@ export const SecondaryButton = (props) => {
     <button className={s.secondaryButton} onClick={onClick} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
       {
         icon &&
-        <img id={iconId || ""} src={icon} alt="" />
+        <img id={iconId || ""} className={s.icon} src={icon} alt="" />
       }
       {text}
     </button>

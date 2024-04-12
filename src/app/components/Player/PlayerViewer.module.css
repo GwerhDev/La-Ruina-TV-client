@@ -60,6 +60,7 @@
 .noUserButtons {
   display: flex;
   padding-bottom: 1rem;
+  gap: .5rem;
 }
 
 .tags {

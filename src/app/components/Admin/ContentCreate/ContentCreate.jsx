@@ -62,7 +62,7 @@ const ContentCreate = () => {
             {
               redirectRoute
                 ?
-                <div>
+                <div className={s.buttonsContainer}>
                   <Link to={redirectRoute}>
                     <PrimaryButton text={"Continuar"} />
                   </Link>

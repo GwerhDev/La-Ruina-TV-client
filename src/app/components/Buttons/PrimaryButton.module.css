@@ -1,16 +1,15 @@
 .primaryButton {
   height: 50px;
   width: 200px;
+  gap: 1rem;
   position: relative;
-  margin-right: 10px;
   font-family: bebas neue;
   font-size: 20px;
   border: none;
   border-radius: 2%;
-  backdrop-filter: blur(8px);
-}
-
-.primaryButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: linear-gradient(to bottom, #ffffff, rgba(0, 0, 0, 0.679));
   background-color: #ffffff;
 }
@@ -25,4 +24,16 @@
 .primaryButton:disabled {
   background: #9b9b9b;
   color: #747474;
+}
+
+@media only screen and (max-width: 1300px) {
+  .primaryButton {
+    height: 30px;
+    width: 150px;
+    font-size: 14px;
+  }
+
+  .icon {
+    height: 12px;
+  }
 }

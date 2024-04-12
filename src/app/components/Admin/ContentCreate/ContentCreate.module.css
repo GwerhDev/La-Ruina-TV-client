@@ -82,6 +82,11 @@
   padding-right: .5rem;
 }
 
+.buttonsContainer {
+  display: flex;
+  gap: .5rem;
+}
+
 .contTitleArtistDesc span input {
   padding-top: 11px;
   width: 100%;
