@@ -5,7 +5,7 @@ import s from './UserButton.module.css';
 import btnMenuTv from '../../../assets/images/ruinatv-icon-play-b.png';
 import userIcon from '../../../assets/images/svg/profile-icon.svg';
 import { useSelector } from 'react-redux';
-import { userButtonClick, userButtonEnter, userButtonLeave } from '../../../functions/UserButton';
+import { userButtonClick, userButtonLeave } from '../../../functions/UserButton';
 import { setBackRoute } from '../../../middlewares/redux/actions/navigation';
 import { $d } from '../../../functions';
 
@@ -27,7 +27,7 @@ export const UserButton = () => {
   return (
     <div className={s.container}>
       <div className={s.profileBtnCont}>
-        <div className={s.profileBtnMenu} id='profile-button' onClick={userButtonEnter}>
+        <div className={s.profileBtnMenu} id='profile-button' onClick={userButtonLeave}>
           <div className={s.usernameContainer} id='username-container'>
             {
               profilePic

@@ -10,11 +10,8 @@ const container6 = $gId('optionProfileBtn6');
 const containerUl = $d('.liProfileMenuDisplay');
 
 export function userButtonEnter() {
-    $d(`#apps-button`).style.scale = '0';
-    $d(`#apps-button`).style.opacity = '0';
     $d(`#profile-button`).style.backgroundColor = '#171717';
     $d(`#profile-button`).style.width = '100%';
-    $d(`#profile-button`).style.paddingLeft = '25px';
     $d(`#username`).style.width = '100px';
 }
 
@@ -69,10 +66,11 @@ export function userButtonClick() {
     $d(`#optionProfileBtn4`).style.scale = '1';
     $d(`#optionProfileBtn5`).style.scale = '1';
     $d(`#optionProfileBtn6`).style.scale = '1';
+    $d(`#profile-button`).style.paddingLeft = '25px';
     $d(`.liProfileMenuDisplay`).style.display = 'block';
     $d(`#ul-options-profile-menu`).style.width = '190px';
     $d(`#profile-button`).style.opacity = '100%';
     $d(`#username`).style.width = '100px';
-    $d(`#apps-button`).style.opacity = '1'
-    $d(`#apps-button`).style.scale = '1'
+    $d(`#apps-button`).style.opacity = '0'
+    $d(`#apps-button`).style.scale = '0'
 }
