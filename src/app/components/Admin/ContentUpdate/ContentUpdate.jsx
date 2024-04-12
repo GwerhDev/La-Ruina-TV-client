@@ -10,17 +10,21 @@ import {
   getGenres,
   getMediaById,
   getMediatypes,
+  getProducers,
 } from '../../../../middlewares/redux/actions/content';
 import {
   createCategory,
   createGenre,
   createMediatype,
+  createProducer,
   deleteCategory,
   deleteGenre,
   deleteMediatype,
+  deleteProducer,
   setContentCategories,
   setContentGenres,
   setContentMediatypes,
+  setContentProducers,
   setEdition,
   setInfoDetailViewer,
   updateMedia,
@@ -31,6 +35,7 @@ const ContentUpdate = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const dbGenres = useSelector(state => state.dbGenres);
+  const dbProducers = useSelector(state => state.dbProducers);
   const dbCategories = useSelector(state => state.dbCategories);
   const dbMediatypes = useSelector(state => state.dbMediatypes);
   const infoDetailViewer = useSelector(state => state.infoDetailViewer);
@@ -42,6 +47,7 @@ const ContentUpdate = () => {
   const [publish, setPublish] = useState("");
   const [newGenre, setNewGenre] = useState("");
   const [newCategory, setNewCategory] = useState("");
+  const [newProducer, setNewProducer] = useState("");
   const [newMediatype, setNewMediatype] = useState("");
   const [previewVisor, setPreviewVisor] = useState("");
   const [previewSlider, setPreviewSlider] = useState("");
@@ -85,6 +91,7 @@ const ContentUpdate = () => {
       title: infoDetailViewer.title,
       info: infoDetailViewer.info,
       genres: infoDetailViewer.genres,
+      producers: infoDetailViewer.producers,
       categories: infoDetailViewer.categories,
       mediatypes: infoDetailViewer.mediatypes,
       idLinkYT: infoDetailViewer.idLinkYT,
@@ -103,6 +110,7 @@ const ContentUpdate = () => {
 
   function resetForm() {
     dispatch(getGenres());
+    dispatch(getProducers());
     dispatch(getMediatypes());
     dispatch(getCategories());
     dispatch(getMediaById(id));
@@ -126,6 +134,7 @@ const ContentUpdate = () => {
 
   useEffect(() => {
     dispatch(getGenres());
+    dispatch(getProducers());
     dispatch(getMediatypes());
     dispatch(getCategories());
     dispatch(getMediaById(id));
@@ -318,6 +327,17 @@ const ContentUpdate = () => {
                         createFunction={createCategory}
                         deleteFunction={deleteCategory}
                         actionFunction={setContentCategories}
+                      />
+
+                      <Checkbox
+                        label={"Productor"}
+                        data={dbProducers}
+                        newAttribute={newProducer}
+                        selector={infoDetailViewer.producers}
+                        setNewAttribute={setNewProducer}
+                        createFunction={createProducer}
+                        deleteFunction={deleteProducer}
+                        actionFunction={setContentProducers}
                       />
                     </section>
                     <div className={s.actionsContainer}>

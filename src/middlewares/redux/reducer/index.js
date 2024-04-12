@@ -34,6 +34,7 @@ import {
     SET_CONTENT_MEDIATYPES,
     RESET_TOAST,
     ADD_FAVORITES,
+    SET_CONTENT_PRODUCERS,
 } from "../../misc";
 import { Player } from "../../../interfaces/Player";
 import { Toast } from "../../../interfaces/Toast";
@@ -230,6 +231,15 @@ export default function rootReducer(state = initialState, action) {
                 infoDetailViewer: {
                     ...state.infoDetailViewer,
                     mediatypes: action.payload
+                }
+            };
+        
+        case SET_CONTENT_PRODUCERS:
+            return {
+                ...state,
+                infoDetailViewer: {
+                    ...state.infoDetailViewer,
+                    producers: action.payload
                 }
             };
 

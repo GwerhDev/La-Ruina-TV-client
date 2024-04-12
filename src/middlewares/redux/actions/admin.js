@@ -2,7 +2,11 @@ import axios from "axios";
 import { URL_API } from "../../config";
 import { options } from "../../helpers";
 import { getCategories, getGenres, getMediatypes, getProducers } from "./content";
-import { GET_INFO, GET_MEDIA, GET_USERS, SET_CONTENT_CATEGORIES, SET_CONTENT_GENRES, SET_CONTENT_MEDIATYPES, SET_EDITION } from "../../misc";
+import {
+  GET_INFO, GET_MEDIA, GET_USERS, SET_CONTENT_CATEGORIES,
+  SET_CONTENT_GENRES, SET_CONTENT_MEDIATYPES, SET_CONTENT_PRODUCERS,
+  SET_EDITION
+} from "../../misc";
 
 export const setEdition = (boolean) => {
   return {
@@ -228,6 +232,13 @@ export function setContentGenres(object) {
 export function setContentMediatypes(object) {
   return {
     type: SET_CONTENT_MEDIATYPES,
+    payload: object
+  }
+};
+
+export function setContentProducers(object) {
+  return {
+    type: SET_CONTENT_PRODUCERS,
     payload: object
   }
 };
