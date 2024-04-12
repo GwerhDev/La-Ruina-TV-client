@@ -7,6 +7,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  transition: 1s;
 }
 
 .profileBtnCont {
@@ -35,6 +36,7 @@
   height: 65px;
   border-radius: 5px;
   overflow: hidden;
+  transition: 1s;
 }
 
 .username:hover {
@@ -47,6 +49,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  transition: 1s;
 }
 
 .btnMenuTv {

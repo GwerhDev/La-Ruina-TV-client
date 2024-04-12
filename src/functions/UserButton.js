@@ -10,11 +10,11 @@ const container6 = $gId('optionProfileBtn6');
 const containerUl = $d('.liProfileMenuDisplay');
 
 export function userButtonEnter() {
+    $d(`#apps-button`).style.opacity = '0';
     $d(`#profile-button`).style.backgroundColor = '#171717';
     $d(`#profile-button`).style.width = '100%';
     $d(`#profile-button`).style.paddingLeft = '25px';
     $d(`#username`).style.width = '100px';
-    $d(`#apps-button`).style.display = 'none';
 }
 
 export function userButtonLeave() {
@@ -43,10 +43,10 @@ export function userButtonLeave() {
             $d(`#optionProfileBtn5`).style.scale = '0'
             $d(`#optionProfileBtn6`).style.scale = '0'
             $d(`.liProfileMenuDisplay`).style.display = 'none'
-            $d(`#ul-options-profile-menu`).style.display = 'none'
+            $d(`#ul-options-profile-menu`).style.width = '0';
             $d(`#username`).style.width = '0'
-            $d(`#apps-button`).style.display = 'flex';
-            $d(`#profile-button`).style.paddingLeft = '0';
+            $d(`#apps-button`).style.opacity = '1'
+            $d(`#profile-button`).style.paddingLeft = '0'
         }
     })
 }
@@ -68,7 +68,7 @@ export function userButtonClick() {
     $d(`#optionProfileBtn5`).style.scale = '1';
     $d(`#optionProfileBtn6`).style.scale = '1';
     $d(`.liProfileMenuDisplay`).style.display = 'block';
-    $d(`#ul-options-profile-menu`).style.display = 'grid';
-    $d(`#profile-button`).style.width = '100%';
+    $d(`#ul-options-profile-menu`).style.width = '190px';
+    $d(`#profile-button`).style.opacity = '100%';
     $d(`#username`).style.width = '100px';
 }
