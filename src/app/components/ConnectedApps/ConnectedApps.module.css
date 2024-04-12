@@ -7,8 +7,8 @@
   transition-duration: .4s;
   z-index: 9999;
   position: absolute;
-  right: 10px;
-  top: 70px;
+  right: 0;
+  top: 40px;
   background-color: #171717;
   padding: 1rem;
   border-radius: 5px;
