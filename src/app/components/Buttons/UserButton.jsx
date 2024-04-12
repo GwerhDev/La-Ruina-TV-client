@@ -7,6 +7,7 @@ import userIcon from '../../../assets/images/svg/profile-icon.svg';
 import { useSelector } from 'react-redux';
 import { userButtonClick, userButtonEnter, userButtonLeave } from '../../../functions/UserButton';
 import { setBackRoute } from '../../../middlewares/redux/actions/navigation';
+import { $d } from '../../../functions';
 
 export const UserButton = () => {
   const dispatch = useDispatch();
@@ -18,6 +19,8 @@ export const UserButton = () => {
 
   function handleClick() {
     dispatch(setBackRoute(location.pathname));
+    $d(`#apps-button`).style.opacity = '1';
+    $d(`#apps-button`).style.scale = '1'
     history.push("/u/profile");
   };
 
@@ -35,7 +38,7 @@ export const UserButton = () => {
             }
             <p onClick={handleClick} id='username' className={s.username}>Hola, <span>{username ? username.substring(0, 5) + "..." : "Usuario"}</span></p>
           </div>
-          <div className={s.openMenuButton} onClick={userButtonClick} onMouseLeave={() => userButtonLeave}>
+          <div className={s.openMenuButton} onClick={userButtonClick} onMouseLeave={userButtonLeave}>
             <img className={s.btnMenuTv} src={btnMenuTv} alt='Menú' width='8px' />
           </div>
         </div>
