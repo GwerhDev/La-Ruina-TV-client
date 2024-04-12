@@ -68,7 +68,7 @@ export function userButtonClick() {
     $d(`#optionProfileBtn6`).style.scale = '1';
     $d(`#profile-button`).style.paddingLeft = '25px';
     $d(`.liProfileMenuDisplay`).style.display = 'block';
-    $d(`#ul-options-profile-menu`).style.width = '190px';
+    $d(`#ul-options-profile-menu`).style.width = '195px';
     $d(`#profile-button`).style.opacity = '100%';
     $d(`#username`).style.width = '100px';
     $d(`#apps-button`).style.opacity = '0'
