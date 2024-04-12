@@ -27,7 +27,8 @@
   padding: 3rem;
   gap: 10px;
   font-weight: lighter;
-  font-size: 11px;
+  font-size: 9px;
+  font-stretch: expanded;
 }
 
 p {
