@@ -25,9 +25,8 @@ body, .App {
   list-style: none;
 }
 
-.bodyApp{
-  position: absolute;
-  width: 100vw;
+.body-app{
+  width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
   list-style: none;

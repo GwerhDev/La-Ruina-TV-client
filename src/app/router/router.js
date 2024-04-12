@@ -31,7 +31,7 @@ function Router() {
           <Toast />
           <Navigator />
           <CanvasMenu />
-          <div className='bodyApp'>
+          <div className='body-app'>
             <Route exact path='/'>
               <Redirect to='/browser' />
             </Route>
