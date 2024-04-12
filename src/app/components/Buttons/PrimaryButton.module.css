@@ -26,6 +26,11 @@
   color: #747474;
 }
 
+.icon {
+  height: 14px;
+  width: 14px;
+}
+
 @media only screen and (max-width: 1300px) {
   .primaryButton {
     height: 35px;
@@ -35,5 +40,6 @@
 
   .icon {
     height: 12px;
+    width: 12px;
   }
 }
