@@ -43,7 +43,15 @@ const EditUserList = () => {
               userList?.map((e, index) => {
                 return (
                   <ul className={s.list} key={index}>
-                    <li><img src={e.googlePic || e.profilePic || "❗"} alt="Profile pic" height={"50px"} /></li> -
+                    <li>
+                      {
+                        (e.googlePic || e.profilePic)
+                          ?
+                          <img src={e.googlePic || e.profilePic} alt="Profile pic" height={"50px"} />
+                          :
+                          "❗"
+                      }
+                    </li> -
                     <li>{e.username || "❗"}</li> -
                     <li>{e.email || "❗"}</li> -
                     <li>{e.role || "❗"}</li> -
