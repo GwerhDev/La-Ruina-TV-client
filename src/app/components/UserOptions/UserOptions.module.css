@@ -10,6 +10,8 @@
   flex-direction: column;
   grid-template-columns: 1fr 1fr;
   transition: 1s;
+  top: 4.7rem;
+  position: absolute;
 }
 
 .optionProfileBtn:hover {
