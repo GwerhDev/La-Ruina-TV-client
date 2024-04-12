@@ -4,7 +4,7 @@
   background-color: transparent;
   border: none;
   z-index: 99;
-  transition: .4s;
+  transition: 1s;
 }
 
 .container:hover {
