@@ -13,6 +13,7 @@ import { setBackRoute } from '../../../middlewares/redux/actions/navigation';
 import { setOption } from '../../../middlewares/redux/actions';
 import { userButtonEnter } from '../../../functions/UserButton';
 import { resetPlayer } from '../../../middlewares/redux/actions/player';
+import { motion } from 'framer-motion';
 
 export const UserOptions = () => {
   const currentUser = useSelector(state => state.currentUser);
@@ -29,7 +30,13 @@ export const UserOptions = () => {
   };
 
   return (
-    <ul className={s.ulProfileOptions} id='ul-options-profile-menu'>
+    <motion.ul
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className={s.ulProfileOptions}
+      id='ul-options-profile-menu'
+    >
       <li className={s.liProfileMenuDisplay}>
         <button
           id='optionProfileBtn0'
@@ -111,6 +118,6 @@ export const UserOptions = () => {
           SALIR
         </button>
       </li>
-    </ul>
+    </motion.ul>
   )
 }
