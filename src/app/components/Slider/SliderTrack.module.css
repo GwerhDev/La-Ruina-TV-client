@@ -1,7 +1,7 @@
 .container {
   gap: 0;
   width: 100%;
-  max-width: 2000px;
+  max-width: 2100px;
   display: flex;
   justify-content: space-between;
   overflow: hidden;
@@ -103,7 +103,7 @@
   }
 
   .itemList {
-    padding: 0;
+    padding-left: 50px;
   }
 }
 
