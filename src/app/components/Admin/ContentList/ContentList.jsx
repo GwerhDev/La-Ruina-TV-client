@@ -6,6 +6,7 @@ import { resetIdYT, resetOption } from "../../../../middlewares/redux/actions";
 import { resetMedia } from '../../../../middlewares/redux/actions/content';
 import { getMedia } from '../../../../middlewares/redux/actions/admin';
 import { setEdition } from '../../../../middlewares/redux/actions/admin';
+import { Link } from 'react-router-dom/cjs/react-router-dom';
 
 const ContentList = () => {
   const history = useHistory();
@@ -36,6 +37,9 @@ const ContentList = () => {
               <h1>Listado de contenido</h1>
               <h3>Admin</h3>
             </span>
+          </div>
+          <div className={s.adminButtonContainer}>
+            <Link to='/admin/dashboard' className={s.adminButton}>Dashboard</Link>
           </div>
           <div className={s.divList}>
             <ul className={s.ulList0}>

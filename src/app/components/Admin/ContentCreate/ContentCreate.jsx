@@ -112,10 +112,14 @@ const ContentCreate = () => {
                   />
                 </span>
               </section>
-
-              <button disabled={!validatedForm} type="submit" className={s.submit}>
-                Continuar
-              </button>
+              <div className={s.submitButtonsContainer}>
+                <Link to='/admin/dashboard' className={s.submit}>
+                  Dashboard
+                </Link>
+                <button disabled={!validatedForm} type="submit" className={s.submit}>
+                  Continuar
+                </button>
+              </div>
             </form>
           </div>
       }

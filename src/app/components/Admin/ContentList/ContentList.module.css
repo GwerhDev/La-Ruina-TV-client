@@ -9,6 +9,20 @@
     justify-content: center;
 }
 
+.adminButtonContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.adminButton {
+    background-color: #171717;
+    border-radius: 5px;
+    padding: .3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
 .editListFormat {
     background: linear-gradient(to bottom, #ffffffcf, rgb(137, 137, 137));
     margin-top: 80px;
