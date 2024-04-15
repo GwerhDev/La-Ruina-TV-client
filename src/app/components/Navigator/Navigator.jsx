@@ -35,7 +35,7 @@ export const Navigator = () => {
         <section className={s.rightSection}>
           <ul className={s.appsMenuSection}>
             <AppsButton />
-            <ConnectedApps width={"200px"} />
+            <ConnectedApps width={"230px"} />
           </ul>
           <ul className={s.userMenuSection}>
             <UserMenu />

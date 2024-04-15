@@ -23,7 +23,7 @@
 .appsContainer li {
   transition-duration: .4s;
   background-color: #171717;
-  height: 65px;
+  height: 40px;
   width: 100%;
   display: flex;
   align-items: center;

@@ -32,9 +32,9 @@ export const UserButton = () => {
             {
               profilePic
                 ?
-                <img className={s.profilePic} referrerPolicy="no-referrer" src={profilePic} alt='userIcon' width='25px' />
+                <img onClick={userButtonClick} className={s.profilePic} referrerPolicy="no-referrer" src={profilePic} alt='userIcon' width='25px' />
                 :
-                <img className={s.userIcon} referrerPolicy="no-referrer" src={userIcon} alt='userIcon' width='25px' />
+                <img onClick={userButtonClick} className={s.userIcon} referrerPolicy="no-referrer" src={userIcon} alt='userIcon' width='25px' />
             }
             <p onClick={handleClick} id='username' className={s.username}>Hola, <span>{username ? username.substring(0, 5) + "..." : "Usuario"}</span></p>
           </div>

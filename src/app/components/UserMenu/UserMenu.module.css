@@ -18,17 +18,4 @@
   width: 100%;
   display: flex;
   justify-content: flex-end;
-  padding-right: 50px;
-}
-
-@media only screen and (min-width: 2000px) {
-  .loaderContainer {
-    padding-right: 0;
-  }
-}
-
-@media only screen and (max-width: 1300px) {
-  .loaderContainer {
-    padding-right: 25px;
-  }
 }
