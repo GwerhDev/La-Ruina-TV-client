@@ -1,5 +1,5 @@
 import s from './BackButton.module.css';
-import backIcon from '../../../assets/images/ruinatv-icon-play-b.png';
+import backIcon from '../../../assets/images/svg/back-arrow-icon.svg';
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { resetOption } from '../../../middlewares/redux/actions';
@@ -24,8 +24,7 @@ export const BackButton = () => {
 
   return (
     <button className={s.container} onClick={handleButton}>
-      <img className={s.backIcon} src={backIcon} alt='Volver' width='15px' />
-      Volver
+      <img className={s.backIcon} src={backIcon} alt='Volver' width='25px' />
     </button>
   )
 }

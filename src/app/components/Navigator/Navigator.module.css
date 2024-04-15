@@ -28,7 +28,7 @@
   align-items: center;
   justify-content: flex-end;
   gap: 1rem;
-  padding-right: 0;
+  padding-right: 50px;
 }
 
 .appsMenuSection {
@@ -68,5 +68,9 @@
 @media only screen and (max-width: 1300px) {
   .leftSection {
     padding-left: 25px;
+  }
+
+  .rightSection {
+    padding-right: 25px;
   }
 }

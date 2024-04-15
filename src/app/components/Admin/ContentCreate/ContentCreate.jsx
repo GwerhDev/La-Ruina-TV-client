@@ -31,6 +31,10 @@ const ContentCreate = () => {
     setRedirectRoute('/view/v=' + id);
   };
 
+  function continueUpdate() {
+
+  };
+
   function resetForm() {
     setSubmitted(false);
     setData(new Content());
@@ -43,7 +47,7 @@ const ContentCreate = () => {
     } else {
       return setValidatedForm(false);
     }
-  }
+  };
 
   return (
     <div className={s.mainContainer}>
@@ -64,7 +68,7 @@ const ContentCreate = () => {
                 ?
                 <div className={s.buttonsContainer}>
                   <Link to={redirectRoute}>
-                    <PrimaryButton text={"Continuar"} />
+                    <PrimaryButton onClick={continueUpdate} text={"Continuar"} />
                   </Link>
                   <SecondaryButton onClick={resetForm} text={"Crear nuevo contenido"} />
                 </div>

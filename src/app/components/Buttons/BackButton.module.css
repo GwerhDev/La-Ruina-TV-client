@@ -11,7 +11,6 @@
   color: aliceblue;
   font-family: Bebas Neue;
   background-color: transparent;
-  margin-right: 45px;
 }
 
 .container:hover {
@@ -20,7 +19,6 @@
 }
 
 .backIcon {
-  rotate: 180deg;
   opacity: .8;
 }
 
@@ -32,16 +30,4 @@
 .container:hover,
 .backIcon:hover {
   opacity: 1;
-}
-
-@media only screen and (min-width: 2000px) {
-  .container {
-    margin-right: 0;
-  }
-}
-
-@media only screen and (max-width: 1300px) {
-  .container {
-    margin-right: 25px;
-  }
 }
