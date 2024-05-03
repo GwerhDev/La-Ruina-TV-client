@@ -1,6 +1,6 @@
-import { URL_GWERHDINARY } from "../middlewares/config";
+import { URL_STREAMBY } from "../middlewares/config";
 
 export function RenderImageGwerhdinary(id) {
-    const url = `${URL_GWERHDINARY}/i/${id}`;
+    const url = `${URL_STREAMBY}/i/${id}`;
     return url;
 }
