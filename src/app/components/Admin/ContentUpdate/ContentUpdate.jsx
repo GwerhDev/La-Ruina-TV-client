@@ -49,9 +49,10 @@ const ContentUpdate = () => {
   const [newCategory, setNewCategory] = useState("");
   const [newProducer, setNewProducer] = useState("");
   const [newMediatype, setNewMediatype] = useState("");
+  const [visorFile, setVisorFile] = useState("");
+  const [sliderFile, setSliderFile] = useState("");
   const [previewVisor, setPreviewVisor] = useState("");
   const [previewSlider, setPreviewSlider] = useState("");
-
   function handleInputChange(e) {
     dispatch(setInfoDetailViewer({
       ...infoDetailViewer,
@@ -99,11 +100,9 @@ const ContentUpdate = () => {
       idLinkSPOTY: infoDetailViewer.idLinkSPOTY,
       idLinkDRIVE: infoDetailViewer.idLinkDRIVE,
       urlLinkDOWNLOAD: infoDetailViewer.urlLinkDOWNLOAD,
-      newImageVisor: infoDetailViewer.imageVisor,
-      newImageSlider: infoDetailViewer.imageSlider,
     };
 
-    dispatch(updateMedia(id, formData));
+    dispatch(updateMedia(id, formData, visorFile, sliderFile));
     setReady(true);
     return;
   };
@@ -220,6 +219,7 @@ const ContentUpdate = () => {
                           accept="image/*"
                           onChange={(e) => {
                             const file = e.target.files[0];
+                            setSliderFile(file);
                             const reader = new FileReader();
                             reader.onloadend = () => {
                               setPreviewSlider(reader.result);
@@ -239,6 +239,7 @@ const ContentUpdate = () => {
                           accept="image/*"
                           onChange={(e) => {
                             const file = e.target.files[0];
+                            setVisorFile(file);
                             const reader = new FileReader();
                             reader.onloadend = () => {
                               setPreviewVisor(reader.result);

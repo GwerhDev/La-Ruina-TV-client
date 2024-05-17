@@ -38,7 +38,6 @@ export function addFavorites(contentId) {
   return async function (dispatch) {
     await axios.get(`${URL_API}/account/add-favorite/${contentId}`, options())
       .then(res => {
-        console.log(res.data)
         dispatch({
           type: ADD_FAVORITES,
           payload: res.data

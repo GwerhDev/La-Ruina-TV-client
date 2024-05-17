@@ -35,19 +35,43 @@ export const createMedia = (formData) => {
       type: CREATE_CONTENT,
       payload: response.data
     });
+
     dispatch(getMedia());
     return response.data;
   }
 };
 
-export const updateMedia = (id, formData) => {
+export const updateMedia = (id, formData, visorFile, sliderFile) => {
   return async function (dispatch) {
     try {
+      formData.imageVisor = {
+        mimetype: visorFile.type,
+        originalname: visorFile.name
+      };
+
+      formData.imageSlider = {
+        mimetype: sliderFile.type,
+        originalname: sliderFile.name
+      };
+
       const response = await axios.patch(`${URL_API}/admin/content/update/${id}`, formData, options());
       dispatch({
         type: UPDATE_CONTENT,
         payload: response.data
       });
+
+      await axios.put(response.data.presigned.visor, visorFile, {
+        headers: {
+          "Content-Type": visorFile.type,
+        },
+      });
+
+      await axios.put(response.data.presigned.slider, sliderFile, {
+        headers: {
+          "Content-Type": sliderFile.type,
+        },
+      });
+
       dispatch(getMedia());
       return response.data;
     } catch (error) {

@@ -4,7 +4,6 @@ import defaultBackground from '../../../assets/images/default-background.png'
 import { FavIcon } from "../../utils/FavIcon";
 import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { RenderImageGwerhdinary } from '../../../functions/RenderImageGwerhdinary';
 
 export const SliderCard = (props) => {
   const history = useHistory();
@@ -20,7 +19,7 @@ export const SliderCard = (props) => {
   return (
     <div className={s.sliderItem}>
       <img alt='' className={s.media} onClick={handleRedirect}
-        src={RenderImageGwerhdinary(imageSlider) || defaultBackground}
+        src={imageSlider || defaultBackground}
       />
       <div className={s.sliderInfoCanvas} onClick={handleRedirect}>
         <div className={s.ulTitlesItems}>

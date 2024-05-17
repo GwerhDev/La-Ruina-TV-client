@@ -6,7 +6,6 @@ import visorIntroVideo from '../../../assets/videos/laruina-intro.mp4';
 import { VisorFunction } from './Visor.functions';
 import { $d } from "../../../functions";
 import { InfoCanvas } from "../../utils/InfoCanvas";
-import { RenderImageGwerhdinary } from '../../../functions/RenderImageGwerhdinary';
 import { PrimaryButton } from '../Buttons/PrimaryButton';
 import { SecondaryButton } from '../Buttons/SecondaryButton';
 
@@ -24,10 +23,10 @@ export const Visor = () => {
     <div className={s.visorContainer} id='visor'>
       <video className={s.visorVideoIntro} src={visorIntroVideo} autoPlay muted loop type="video/mp4" />
       <div className={s.backgroundCanvas}>
-        <img className={s.background} id='visor-background' src={RenderImageGwerhdinary(visorImage)} alt='' />
+        <img className={s.background} id='visor-background' src={visorImage} alt='' />
       </div>
       <div className={s.visorCanvas} />
-      <InfoCanvas title={visorTitle} artist={visorArtist} id={visorId} image={RenderImageGwerhdinary(visorImage)} />
+      <InfoCanvas title={visorTitle} artist={visorArtist} id={visorId} image={visorImage} />
       {
         contentList?.length &&
         <div className={s.visorInfo} id='visor-info'>
