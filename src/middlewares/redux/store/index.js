@@ -5,7 +5,6 @@ import thunk from 'redux-thunk';
 import { DEVELOPMENT } from '../../misc';
 import { environment } from '../../../environment';
 
-
 var store = {};
 const composeEnhancer = window.REDUX_DEVTOOLS_EXTENSIONS_COMPOSE || compose;
 
