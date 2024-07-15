@@ -7,8 +7,8 @@ export const ConnectedApps = (props) => {
   const { width } = props;
   const currentUser = useSelector((state) => state.currentUser);
   const urlMerch = 'https://merch.laruina.cl/';
-  const urlPlay = currentUser ? 'https://play.laruina.cl/#/auth?token=' + getUserToken() : 'https://play.laruina.cl/';
-  const urlHub = currentUser ? 'https://hub.laruina.cl/#/auth/' + getUserToken() : 'https://hub.laruina.cl/';
+  const urlPlay = currentUser ? 'https://play.laruina.cl/auth?token=' + getUserToken() : 'https://play.laruina.cl/';
+  const urlHub = currentUser ? 'https://hub.laruina.cl/auth/' + getUserToken() : 'https://hub.laruina.cl/';
 
   return (
     <ul className={s.appsContainer} id='apps-container' style={{ width: width || "100%" }}>
